@@ -37,7 +37,7 @@
    <value n="JboProject" v="true"/>
    <value n="JRAD.IS_APPS_PROJECT" v="10.1.3_1312"/>
    <value n="JRAD.JDEV_INSTALL_URL" v="C:\oracle\OA_Framework\jdevbin\jdev\"/>
-   <value n="JRAD.PROJECT_URL" v="C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\Tutorial.jpr"/>
+   <value n="JRAD.PROJECT_URL" v="C:\oracle\GitHub\OAFramework\tutorial\jdevhome\jdev\myprojects\Tutorial.jpr"/>
    <hash n="oracle.adf.mds.dt.ui.util.DBData">
       <value n="reposConnectionName" v="fwk12dev"/>
       <value n="useRepository" v="false"/>
@@ -287,6 +287,14 @@
             <value n="id" v="ADF Web Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="ADF Model Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Tester"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
@@ -302,7 +310,7 @@
    </hash>
    <hash n="oracle.jrad.design.ui.jide.oa.project.JRADRuntimeData">
       <value n="DBCFileName" v="EBSD"/>
-      <value n="fndTop" v="C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\dbc_files"/>
+      <value n="fndTop" v="C:\oracle\GitHub\OAFramework\tutorial\jdevhome\jdev\dbc_files"/>
       <value n="password" v="123Despegar"/>
       <value n="respAppShortName" v="AK"/>
       <value n="responsibility" v="FWK_TBX_TUTORIAL"/>

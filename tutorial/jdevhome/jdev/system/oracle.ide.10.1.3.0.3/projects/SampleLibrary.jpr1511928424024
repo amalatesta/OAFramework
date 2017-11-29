@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
-   <value n="mostRecentPackage" v="oracle.apps.fnd.framework.toolbox.samplelib.server"/>
+   <value n="mostRecentPackage" v="oracle.apps.fnd.framework.toolbox.lov.server"/>
    <list n="recentlyUsedPackages">
+      <string v="oracle.apps.fnd.framework.toolbox.lov.server"/>
       <string v="oracle.apps.fnd.framework.toolbox.samplelib.server"/>
       <string v="oracle.apps.fnd.framework.toolbox.schema.server"/>
-      <string v="oracle.apps.fnd.framework.toolbox.lov.server"/>
       <string v="oracle.apps.fnd.framework.toolbox.poplist.server"/>
       <string v="oracle.apps.fnd.framework.toolbox.samplelib.webui"/>
       <string v="oracle.apps.fnd.framework.toolbox.tutorial"/>

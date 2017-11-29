@@ -232,55 +232,7 @@
          </extensionToContentTypeMap>
          <userExtensionList>
             <Item>
-               <docClassName>oracle.jdevimpl.webapp.xsql.XSLSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.jar.JarFolder</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagXSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagFragmentSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.ide.model.DeployableTextNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.xml.xquery.XQueryNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.toplink.addin.node.MWProjectNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdeveloper.webservices.model.WebServiceProxyNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.JspFragmentSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdeveloper.library.JDKNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.css.addin.CSSSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.help.HelpTopicDocument</docClassName>
+               <docClassName>oracle.bali.xml.addin.XMLSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -288,67 +240,11 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdeveloper.vcs.patch.PatchNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.ide.model.ImageNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
                <docClassName>oracle.tip.tools.ide.workflow.addin.RoutingSlipNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdevimpl.webapp.template.HtmlTemplateSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.adf.dt.navigator.nodes.CpxNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdeveloper.library.JLibraryNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdeveloper.webservices.model.WebServiceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdeveloper.model.JspSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.cm.dt.sqlplus.SqlNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.xsql.XsqlSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.html.XHtmlSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.bali.xml.addin.XMLSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webservices.ide.WSDLArtifactNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdeveloper.model.JavaSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.tip.tools.ide.pm.addin.PMNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.html.HtmlSourceNode</docClassName>
+               <docClassName>oracle.toplink.addin.node.MWProjectNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -356,7 +252,55 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.ide.model.Project</docClassName>
+               <docClassName>oracle.jdeveloper.library.JDKNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.jar.JarFolder</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.library.JLibraryNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.html.XHtmlSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagFragmentSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.xsql.XsqlSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.model.JavaSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.webservices.model.WebServiceProxyNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.cm.dt.sqlplus.SqlNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.template.HtmlTemplateSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.html.HtmlSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.adf.dt.navigator.nodes.CpxNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -368,7 +312,63 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
+               <docClassName>oracle.jdeveloper.webservices.model.WebServiceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.model.JspSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webservices.ide.WSDLArtifactNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagXSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.help.HelpTopicDocument</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
                <docClassName>oracle.jdevimpl.xml.schema.XmlSchemaNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.DeployableTextNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.vcs.patch.PatchNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.css.addin.CSSSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.tip.tools.ide.pm.addin.PMNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.xml.xquery.XQueryNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.xsql.XSLSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.JspFragmentSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.ImageNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.Project</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
          </userExtensionList>

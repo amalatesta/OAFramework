@@ -21,9 +21,16 @@
             <Item class="oracle.ide.editor.RecentFile">
                <editor>oracle.jdevimpl.help.HelpSystemAddin</editor>
                <explicit>false</explicit>
-               <nodeURL path="../../../../../../../../../oracle/OA_Framework/jdevbin/jdev/doc/welcome/welcome.html.help"/>
+               <nodeURL protocol="file" path="/oracle/OA_Framework/jdevbin/jdev/doc/welcome/welcome.html.help"/>
                <projectURL/>
                <workspaceURL/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.jdevimpl.help.HelpSystemAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../../OA_Framework/jdevbin/jdev/doc/welcome/welcome.html.help"/>
+               <projectURL path="../../myprojects/Tutorial.jpr"/>
+               <workspaceURL path="../../myprojects/toolbox.jws"/>
             </Item>
          </lruFiles>
          <recentFilesShowAll>false</recentFilesShowAll>

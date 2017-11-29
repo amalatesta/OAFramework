@@ -5,7 +5,7 @@
          <activeProjectMap class="java.util.HashMap">
             <Item>
                <Key class="java.net.URL" path="../../myprojects/toolbox.jws"/>
-               <Value class="java.net.URL" path="../../myprojects/Tutorial.jpr"/>
+               <Value class="java.net.URL" path="../../myprojects/ExtendLabSolutions.jpr"/>
             </Item>
          </activeProjectMap>
          <activeWorkspaceURL path="../../myprojects/toolbox.jws"/>
