@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<data-sources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/data-sources-10_1.xsd" xmlns="http://xmlns.oracle.com/oracleas/schema">
+    <connection-pool name="jdev-connection-pool-EBSD">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="apps" password="->DataBase_User_tTG6esKYl2rF_fn7SRhArJqVKnGqAk5ByTcsdg-51S8=" url="jdbc:oracle:thin:@ebsdesadb:1521:EBSD"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-EBSD" jndi-name="jdbc/EBSDDS" connection-pool-name="jdev-connection-pool-EBSD"/>
+    <native-data-source name="jdev-connection-native-EBSD" jndi-name="jdbc/EBSDCoreDS" url="jdbc:oracle:thin:@ebsdesadb:1521:EBSD" user="apps" password="->DataBase_User_hGNOMjOHYKQux_EFvIJ6QFBWkZJRBo93kWQsSysqS_s=" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-fwk12dev">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="apps_read_only" password="->DataBase_User_W0_ZsDjbMmfzc6NaSXH-766TAHBHE1eT" url="jdbc:oracle:thin:@ap664sdb.us.oracle.com:4120:fwk12dev"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-fwk12dev" jndi-name="jdbc/fwk12devDS" connection-pool-name="jdev-connection-pool-fwk12dev"/>
+    <native-data-source name="jdev-connection-native-fwk12dev" jndi-name="jdbc/fwk12devCoreDS" url="jdbc:oracle:thin:@ap664sdb.us.oracle.com:4120:fwk12dev" user="apps_read_only" password="->DataBase_User_861n8ZvL-yjxJ2PSwGfJHNzVpV_ZfgNI" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+</data-sources>

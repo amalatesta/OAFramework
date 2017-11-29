@@ -1,0 +1,204 @@
+/* $Header: OAFSlideoutMenu.css 120.0.12010000.7 2010/03/09 06:54:02 sette noship $ */
+
+.submenustyle, .submenustyle ul{ /*topmost and sub ULs, respectively*/
+font: normal 12px Tahoma;
+height:1px;
+overflow:visible;
+margin: 0;
+padding: 0;
+position: absolute;
+left: 0;
+top: 0;
+list-style-type: none;
+_border: 1px solid #c9cbd3;
+_border-style: solid none solid none;
+visibility: hidden;
+//z-index: 100;
+background-color: #eaeff5;
+}
+
+.image{  
+  margin:0;
+  border: 0; 
+}
+
+.drimage{  
+  margin-right: 45px;
+  margin-left: 1px;
+  margin-bottom: -3px;
+  border: 0; 
+}
+.drimage1{  
+  margin-right: 18px;
+  margin-left: 1px;
+  margin-bottom: -3px;
+  border: 0; 
+}
+
+.submenustyle li a{
+display: block;
+color: #013d74;
+background-color: #eaeff5;
+text-decoration: none;
+padding: 2px;
+}
+
+.separator{
+display: block;
+width:270px;
+color: #013d74;
+background-color: #eaeff5;
+text-decoration: none;
+}
+
+* html .submenustyle li a{ /*IE6 CSS hack*/
+display: inline-box;
+color: #013d74;
+background-color: #eaeff5;
+text-decoration: none;
+padding: 2px;
+}
+
+* html .separator{
+display: inline-box;
+width:270px;
+color: #013d74;
+background-color: #eaeff5;
+text-decoration: none;
+}
+
+
+* html .submenustyle li{ /*IE6 CSS hack*/
+display: inline-box;
+border:1px solid #c9cbd3;
+border-style:none solid none solid;
+width: 270px; /*width of menu (include side paddings of LI A*/
+}
+
+* html .submenustyle img{ /*IE6 CSS hack*/
+display: inline-box;
+border: 0; 
+}
+
+* html .submenustyle li a:hover{
+background-color: #a3c2df;
+}
+
+.submenustyle li a:hover{
+padding:-1px;
+background-color: #a3c2df;
+}
+
+/* ######### Neutral CSS  ######### */
+
+.downarrowpointer{ /*CSS for "down" arrow image added to top menu items*/
+padding-left: 0;
+border: 0;
+}
+
+.rightarrowpointer{ /*CSS for "right" arrow image added to drop down menu items*/
+position: absolute;
+padding-top: 0;
+left: 100px;
+border: 0;
+}
+
+.scrImg{
+  cursor:pointer;  
+  padding-left:120px;
+}
+.scrImgUp{
+  cursor:pointer;
+  padding-left:120px;  
+}
+
+* html .scrImg{
+  cursor:pointer;
+  margin-left:120px;
+}
+* html .scrImgUp{
+  cursor:pointer;
+  margin-left:120px;  
+}
+
+.shiftcontainer{
+left: 4px; /*Number should match -left shadow depth below*/
+top: 4px; /*Number should match -top shadow depth below*/
+}
+
+.shadowcontainer{
+background-color: #CCCCCC;
+}
+
+.shadowcontainer .innerdiv{
+/* Add container height here if desired */
+background-color: #eaeff5;
+border: 1px solid #c9cbd3;
+position:relative;
+padding:3px;
+left: -3.6px; /*shadow depth*/
+top: -3.6px; /*shadow depth*/
+}
+
+a.Menu,
+a:hover.Menu,
+a:focus.Menu,
+a:active.Menu
+{
+margin-left:3px;
+text-decoration: none;
+color: white;
+} 
+
+a.Fav,
+a:hover.Fav,
+a:focus.Fav,
+a:active.Fav
+{
+text-decoration: none;
+margin-left:3px;
+color: white;
+} 
+
+
+img.decoration {display: none;}
+
+#ScrollResp {
+    *display:inline;
+}
+#SupArrow,#SdownArrow {
+  position:relative;
+  color:#eaeff5;
+  visibility: hidden;  
+}
+
+#SupArrow {
+	background:#eaeff5 no-repeat center center;
+}
+
+#SdownArrow {
+	background:#eaeff5 no-repeat center center;
+}
+
+#CustomAppsNavLink {
+  display: block;
+  font: normal 14px Tahoma;
+  text-decoration:none;
+  list-style-type:none;
+  color: #013d74;
+  width:260px;
+}
+#CustomAppsNav {
+width:260px; 
+}
+
+#CustomAppsNavLink:hover {
+  background-color: #a3c2df;
+}
+#CustomAppsNav:hover {
+  background-color: #a3c2df;
+}
+
+#topmenubar {
+    margin-bottom:-18px;
+}

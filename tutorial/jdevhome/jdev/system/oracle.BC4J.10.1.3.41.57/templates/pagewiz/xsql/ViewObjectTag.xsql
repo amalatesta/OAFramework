@@ -1,0 +1,8 @@
+<page>
+<xsql:action handler="oracle.jbo.xsql.ViewObject"
+                  configname="{%ConfigName%}"
+                  name="{%ViewName%}"
+                  max-rows="0"
+                  xmlns:xsql="urn:oracle-xsql">
+</xsql:action>
+</page>

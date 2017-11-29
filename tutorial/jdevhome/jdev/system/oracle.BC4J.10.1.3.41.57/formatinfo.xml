@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<FORMATTERS>
+   <DOMAIN CLASS="oracle.jbo.domain.Number">
+      <FORMATTER name="Number" class="oracle.jbo.format.DefaultNumberFormatter">
+         <FORMAT text="0000" />
+         <FORMAT text="####" />
+         <FORMAT text="####;(####)" />
+         <FORMAT text="0000;(0000)" />
+      </FORMATTER>
+      <FORMATTER name="Currency" class="oracle.jbo.format.DefaultCurrencyFormatter"/>
+   </DOMAIN>
+   <DOMAIN CLASS="oracle.jbo.domain.Date">
+      <FORMATTER name="Simple Date" class="oracle.jbo.format.DefaultDateFormatter">
+         <FORMAT text="yyyy-MM-dd" />
+         <FORMAT text="yyyy-MM-dd G 'at' hh:mm:ss"  />
+         <FORMAT text="EEE, MMM d, ''yy"  />
+      </FORMATTER>
+   </DOMAIN>
+   <DOMAIN CLASS="java.sql.Timestamp">
+      <FORMATTER name="Simple Date" class="oracle.jbo.format.DefaultDateFormatter">
+         <FORMAT text="yyyy-MM-dd" />
+         <FORMAT text="hh:mm:ss"  />
+         <FORMAT text="yyyy-MM-dd G 'at' hh:mm:ss"  />
+         <FORMAT text="EEE, MMM d, ''yy"  />
+         <FORMAT text="dd-mm-yy" />
+         <FORMAT text="dd-mmm-yyyy" />
+         <FORMAT text="dd/mmm/yyyy" />
+      </FORMATTER>
+   </DOMAIN>
+   <DOMAIN CLASS="java.lang.Integer">
+      <FORMATTER name="Number" class="oracle.jbo.format.DefaultNumberFormatter">
+         <FORMAT text="0000" />
+         <FORMAT text="####" />
+         <FORMAT text="####;(####)" />
+         <FORMAT text="0000;(0000)" />
+      </FORMATTER>
+   </DOMAIN>
+   <DOMAIN CLASS="java.lang.Double">
+      <FORMATTER name="Currency" class="oracle.jbo.format.DefaultCurrencyFormatter"/>
+      <FORMATTER name="Number" class="oracle.jbo.format.DefaultNumberFormatter">
+         <FORMAT text="0000" />
+         <FORMAT text="####" />
+         <FORMAT text="####;(####)" />
+         <FORMAT text="0000;(0000)" />
+      </FORMATTER>
+   </DOMAIN>
+   <DOMAIN CLASS="java.lang.Float">
+      <FORMATTER name="Number" class="oracle.jbo.format.DefaultNumberFormatter">
+         <FORMAT text="0000" />
+         <FORMAT text="####" />
+         <FORMAT text="####;(####)" />
+         <FORMAT text="0000;(0000)" />
+      </FORMATTER>
+   </DOMAIN>
+   <DOMAIN CLASS="java.lang.Long">
+      <FORMATTER name="Number" class="oracle.jbo.format.DefaultNumberFormatter">
+         <FORMAT text="0000" />
+         <FORMAT text="####" />
+         <FORMAT text="####;(####)" />
+         <FORMAT text="0000;(0000)" />
+      </FORMATTER>
+   </DOMAIN>
+   <DOMAIN CLASS="java.math.BigDecimal">
+      <FORMATTER name="Currency" class="oracle.jbo.format.DefaultCurrencyFormatter"/>
+      <FORMATTER name="Number" class="oracle.jbo.format.DefaultNumberFormatter">
+         <FORMAT text="0000.00" />
+         <FORMAT text="####.##" />
+         <FORMAT text="####.##;(####.##)" />
+         <FORMAT text="0000.00;(0000.00)" />
+      </FORMATTER>
+   </DOMAIN>
+   <DOMAIN CLASS="java.sql.Date">
+      <FORMATTER name="Simple Date" class="oracle.jbo.format.DefaultDateFormatter">
+         <FORMAT text="yyyy-MM-dd" />
+         <FORMAT text="yyyy-MM-dd G 'at' hh:mm:ss"  />
+         <FORMAT text="EEE, MMM d, ''yy"  />
+         <FORMAT text="dd-mm-yy" />
+         <FORMAT text="dd-mmm-yyyy" />
+         <FORMAT text="dd/mmm/yyyy" />
+      </FORMATTER>
+   </DOMAIN>
+   <DOMAIN CLASS="java.util.Date">
+      <FORMATTER name="Simple Date" class="oracle.jbo.format.DefaultDateFormatter">
+         <FORMAT text="yyyy-MM-dd" />
+         <FORMAT text="EEE, MMM d, ''yy"  />
+         <FORMAT text="dd-mm-yy" />
+         <FORMAT text="dd-mmm-yyyy" />
+         <FORMAT text="dd/mmm/yyyy" />
+      </FORMATTER>
+   </DOMAIN>
+</FORMATTERS>

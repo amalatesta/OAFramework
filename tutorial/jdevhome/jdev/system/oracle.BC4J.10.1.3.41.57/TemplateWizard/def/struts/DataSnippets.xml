@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Wizard>
+   <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.input.StaticProperties">
+      <config/>
+      <wizdata>
+         <Property name="HTML_SRC_DIR"/>
+         <Property name="charset"/>
+      </wizdata>
+   </WizardTask>
+   <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.codegen.FileCodeGenerator">
+      <config/>
+      <wizdata>
+         <!-- Start of Tag based code generation -->
+         <selection id="default">
+            <file in="common/cabo/PageTemplate.jsp" action="substitute" out="{%NEW_FILE_NAME(uixpage,jsp,basicpage)%}"/>
+            <file in="common/cabo/uix_errorpage.jsp" action="substitute" out="{%HTML_SRC_DIR%}/errorpage.jsp"/>
+            <configureproject configurer="oracle.jbo.dt.jsp.configurers.StrutsProject" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.SaveStrutsConfigCommand" />
+         </selection>
+      </wizdata>
+   </WizardTask>
+</Wizard>

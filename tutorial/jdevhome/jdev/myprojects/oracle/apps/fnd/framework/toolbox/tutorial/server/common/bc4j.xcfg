@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="CreateAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>Tutorial</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.tutorial.server.CreateAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.tutorial.server.CreateAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="DeleteAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>Tutorial</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.tutorial.server.DeleteAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.tutorial.server.DeleteAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="HelloWorldAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>Tutorial</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.tutorial.server.HelloWorldAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.tutorial.server.HelloWorldAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="HomeAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>Tutorial</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.tutorial.server.HomeAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.tutorial.server.HomeAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="MultistepCreateAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>Tutorial</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.tutorial.server.MultistepCreateAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.tutorial.server.MultistepCreateAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="PoSummaryAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>Tutorial</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.tutorial.server.PoSummaryAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.tutorial.server.PoSummaryAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="PurchaseOrderSAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>Tutorial</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.tutorial.server.PurchaseOrderSAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.tutorial.server.PurchaseOrderSAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="SearchAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>Tutorial</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.tutorial.server.SearchAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.tutorial.server.SearchAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="UpdateAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>Tutorial</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.tutorial.server.UpdateAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.tutorial.server.UpdateAM</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

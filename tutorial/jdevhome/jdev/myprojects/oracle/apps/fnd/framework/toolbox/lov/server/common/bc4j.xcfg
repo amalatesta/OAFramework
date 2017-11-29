@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="LabSolutionsLOVAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>SampleLibrary</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.lov.server.LabSolutionsLOVAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.lov.server.LabSolutionsLOVAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="TutorialLOVAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>SampleLibrary</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.lov.server.TutorialLOVAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.lov.server.TutorialLOVAM</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

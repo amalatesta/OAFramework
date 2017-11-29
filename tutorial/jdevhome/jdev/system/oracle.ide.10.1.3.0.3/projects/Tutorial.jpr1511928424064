@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
+   <value n="mostRecentPackage" v="oracle.apps.fnd.framework.toolbox.tutorial.server"/>
+   <list n="recentlyUsedPackages">
+      <string v="oracle.apps.fnd.framework.toolbox.tutorial.server"/>
+      <string v="oracle.apps.fnd.framework.toolbox.lov.server"/>
+      <string v="oracle.apps.fnd.framework.toolbox.samplelib.server"/>
+      <string v="oracle.apps.fnd.framework.toolbox.poplist.server"/>
+      <string v="oracle.apps.fnd.framework.toolbox.schema.server"/>
+      <string v="oracle.apps.fnd.framework.toolbox.tutorial.test"/>
+      <string v="oracle.apps.fnd.framework.toolbox.tutorial"/>
+      <string v="oracle"/>
+   </list>
+   <hash n="working-sets">
+      <value n=".current" v="Default"/>
+      <hash n="(All Files)">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+      </hash>
+      <hash n="Default">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+      </hash>
+   </hash>
+</jpr:project>

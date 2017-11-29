@@ -1,0 +1,189 @@
+<LayoutInfo>
+   <knownDockableFactories>
+      <LogWindow/>
+      <ExplorerWindow/>
+      <RunManagerWindow/>
+      <SystemNavigatorWindow/>
+      <ApplicationNavigatorWindow/>
+      <ConnectionNavigatorWindow/>
+      <InspectorWindow/>
+      <ComponentPalette/>
+      <Debugger/>
+      <BrowseHierarchy/>
+      <HelpSystemAddin/>
+      <UIDebugger/>
+      <Profiler/>
+      <ToDoAddin/>
+      <ConstraintsWindow/>
+      <TCPPacketMonitor/>
+      <ThumbnailDockable/>
+      <adfdbPanel/>
+      <BPEL_VIEW_TYPE/>
+      <CVSNavigatorWindow/>
+      <CVS-PendingChangesWindow/>
+      <CVS-EditNotificationsWindow/>
+   </knownDockableFactories>
+   <dockingPositions>
+      <WEST floatSize="180" dockSize="280">
+         <box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="SystemNavigatorWindow.SystemNavigatorName">
+                     <properties expandData1.url="file ; ; -1 %2FC%3A%2FDropbox%2FGoogleDrive%2FDespegar%2FOA_Framework%2Ftutorial%2Fjdevhome%2Fjdev%2Fmyprojects%2Ftoolbox.jws ; ;" filter3.key="ApplicationsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jwsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\SampleLibrary.jpr" expandData3.nodePath="Applications,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jws,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\Tutorial.jpr,WEB-INF," flat-level="3" filter2.filterCls="oracle.ide.model.ContentFilter" filter4.filterCls="oracle.ide.model.ContentFilter" filter="6" show-root-dirs="false" filter1.filterCls="oracle.ide.model.ContentFilter" filter5.key="ApplicationsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jws" filter5.filterCls="oracle.ide.model.ContentFilter" expandData1.nodePath="Applications,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jws," expandData2.url="file ; ; -1 %2FC%3A%2FDropbox%2FGoogleDrive%2FDespegar%2FOA_Framework%2Ftutorial%2Fjdevhome%2Fjdev%2Fmyprojects%2FTutorial.jpr ; ;" filter0.key="ApplicationsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jwsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\LabSolutions.jpr" filter0.filterCls="oracle.ide.model.ContentFilter" filter3.filterCls="oracle.ide.model.ContentFilter" filter4.key="Applications" selectionRow="5" filter2.key="ApplicationsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jwsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\Tutorial.jpr" expandData0.nodePath="Applications," sort-by-type="false" show-libs="false" filter1.key="ApplicationsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jwsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\ExtendLabSolutions.jpr" expandData.count="4" expandData2.nodePath="Applications,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jws,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\Tutorial.jpr,"/>
+                  </dockable>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ApplicationNavigatorWindow.ApplicationNavigatorName">
+                     <properties expandData1.url="file ; ; -1 %2FC%3A%2FDropbox%2FGoogleDrive%2FDespegar%2FOA_Framework%2Ftutorial%2Fjdevhome%2Fjdev%2Fmyprojects%2Ftoolbox.jws ; ;" flat-level="3" expandData3.nodePath="Applications,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jws,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\Tutorial.jpr,Web Content," selectionRow="5" filter2.key="ApplicationsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jws" filter2.filterCls="oracle.ide.model.ContentFilter" expandData0.nodePath="Applications," sort-by-type="false" filter="3" show-libs="false" show-root-dirs="false" filter1.filterCls="oracle.ide.model.ContentFilter" filter1.key="Applications" expandData1.nodePath="Applications,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jws," expandData.count="5" expandData2.url="file ; ; -1 %2FC%3A%2FDropbox%2FGoogleDrive%2FDespegar%2FOA_Framework%2Ftutorial%2Fjdevhome%2Fjdev%2Fmyprojects%2FTutorial.jpr ; ;" expandData2.nodePath="Applications,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jws,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\Tutorial.jpr," expandData4.nodePath="Applications,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jws,C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\Tutorial.jpr,Web Content,WEB-INF," filter0.key="ApplicationsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\toolbox.jwsC:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myprojects\Tutorial.jpr" filter0.filterCls="oracle.ide.model.ContentFilter"/>
+                  </dockable>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ConnectionNavigatorWindow.Connections"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ExplorerWindow.SingletonExplorerWindow"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.ThreadsWindow"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.StackWindow"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="BrowseHierarchy"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ThumbnailDockable"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="RunManagerWindow"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="CVSNavigatorWindow.CVS"/>
+               </leafBox>
+            </box>
+         </box>
+      </WEST>
+      <EAST floatSize="180" dockSize="240">
+         <box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ComponentPalette"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="adfdbPanel"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="InspectorWindow.SingletonInspectorWindow"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ConstraintsWindow"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.ClassesWindow"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="HelpSystemAddin.HelpWindow"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="UIDebugger.TREE"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="UIDebugger.OUTLINE"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="UIDebugger.LISTENERS"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="BPEL_VIEW_TYPE.BPEL_OVERVIEW_ID"/>
+               </leafBox>
+            </box>
+         </box>
+      </EAST>
+      <NORTH floatSize="180" dockSize="150"/>
+      <SOUTH floatSize="180" dockSize="150">
+         <box>
+            <leafBox width="400" height="300">
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="LogWindow.Log">
+                  <properties ClosedByUser="false"/>
+               </dockable>
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.BreakpointsWindow"/>
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ToDoAddin.ToDoWindow"/>
+            </leafBox>
+         </box>
+         <box>
+            <leafBox width="400" height="300">
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.SmartWindow"/>
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.LocalsWindow"/>
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.WatchWindow"/>
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.HeapWindow"/>
+            </leafBox>
+         </box>
+         <box>
+            <leafBox width="400" height="300">
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="TCPPacketMonitor"/>
+            </leafBox>
+         </box>
+      </SOUTH>
+      <panel width="408" height="208" position="float" visible="false" y="234" x="483">
+         <box>
+            <leafBox width="400" height="300">
+               <dockable floatHeight="0" dockWidth="400" dockHeight="300" floatWidth="0" ID="Debugger.MonitorsWindow"/>
+            </leafBox>
+         </box>
+      </panel>
+   </dockingPositions>
+   <editorPositions>
+      <box>
+         <leafBox width="400" height="300" selectedPage="0">
+            <state accelerator="-1" document="file ; ; -1 %2FC%3A%2Foracle%2FOA_Framework%2Fjdevbin%2Fjdev%2Fdoc%2Fwelcome%2Fwelcome.html.help ; ;">
+               <paneState currentEditor="oracle.jdevimpl.help.HelpSystemAddin">
+                  <editorState xScrollPos="0" yScrollMin="0" xScrollExtent="0" xScrollMax="0" addin="oracle.jdevimpl.help.HelpSystemAddin" xScrollMin="0" yScrollExtent="0" yScrollPos="0" yScrollMax="0"/>
+               </paneState>
+               <pane>
+                  <box>
+                     <leafBox pane="0" width="1000" height="1000"/>
+                  </box>
+               </pane>
+            </state>
+         </leafBox>
+      </box>
+   </editorPositions>
+   <visibilityLayouts>
+      <Editing displayName="Editing">
+         <UIDebugger.LISTENERS/>
+         <ThumbnailDockable/>
+         <LogWindow.Log visible="true" raised="true"/>
+         <Debugger.ClassesWindow/>
+         <Debugger.LocalsWindow/>
+         <UIDebugger.OUTLINE/>
+         <adfdbPanel/>
+         <ApplicationNavigatorWindow.ApplicationNavigatorName visible="true"/>
+         <BrowseHierarchy visible="true"/>
+         <HelpSystemAddin.HelpWindow/>
+         <UIDebugger.TREE/>
+         <Debugger.HeapWindow/>
+         <BPEL_VIEW_TYPE.BPEL_OVERVIEW_ID/>
+         <Debugger.WatchWindow/>
+         <ConnectionNavigatorWindow.Connections visible="true"/>
+         <SystemNavigatorWindow.SystemNavigatorName visible="true" raised="true"/>
+         <Debugger.SmartWindow/>
+         <RunManagerWindow/>
+         <ToDoAddin.ToDoWindow/>
+         <ExplorerWindow.SingletonExplorerWindow visible="true" raised="true"/>
+         <TCPPacketMonitor/>
+         <CVSNavigatorWindow.CVS/>
+         <Debugger.BreakpointsWindow/>
+         <ComponentPalette/>
+         <ConstraintsWindow/>
+         <Debugger.StackWindow/>
+         <InspectorWindow.SingletonInspectorWindow/>
+         <Debugger.ThreadsWindow/>
+         <Debugger.MonitorsWindow/>
+      </Editing>
+   </visibilityLayouts>
+</LayoutInfo>

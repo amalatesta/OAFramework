@@ -1,0 +1,63 @@
+#resource file for panel text
+
+#datapage wizard
+PG_DIALOG_TITLE=Create Data Page
+PG_WELCOME_PANEL_TITLE=Welcome
+PG_WELCOME_PANEL_BOLD_TEXT=Welcome to the Create Data Page Wizard.
+PG_WELCOME_PANEL_SUBJECT_TEXT=This wizard will help you create databound JSP pages using JSP tags from the BC4J Data Tags custom tag library.\n\nYou will be asked to specify the following information:\n- Client data model definition name\n- View object selection\n\nClick Next to begin.
+
+PG_PROPERTIES_TITLE=Properties
+PG_VIEW_SELECT_TITLE=View Selection
+
+PG_TREE_SELECT_TITLE=Page Selection
+PG_TREE_TOP_NODE_TEXT=Data Pages
+
+PG_TREE_CATEGORY_BASIC_HTML=Basic HTML JSP Pages
+PG_TREE_BASIC_BROWSE_FORM=Browse Form
+PG_TREE_BASIC_BROWSE_EDIT_FORM=Browse & Edit Form
+PG_TREE_BASIC_QUERY_FORM=Query Form
+
+PG_TREE_CATEGORY_BLAF=Oracle BLAF JSP
+PG_TREE_BLAF_STARTER_PAGE=Starter Page
+
+PG_TREE_CATEGORY_BLAF_BC4J=Oracle BLAF JSP with BC4J
+PG_TREE_BLAF_STARTER_PAGE=View Object Browse/Edit
+PG_TREE_BLAF_STARTER_PAGE=View Object Browse (with Hide/Show)
+
+PG_FINISH_TITLE=Finish
+PG_FINISH_CONTENTS_1=Congratulations! You have completed the Create Data Page Wizard.
+PG_FINISH_CONTENTS_2=The wizard will now create web pages for the selection you made.
+
+# Chart wizard
+CHART_DIALOG_TITLE=Customize Graph Binding
+CHART_WELCOME_PANEL_TITLE=Welcome
+CHART_WELCOME_PANEL_BOLD_TEXT=Welcome to the Create JClient Graph Wizard
+CHART_WELCOME_PANEL_SUBJECT_TEXT=This wizard helps you to create a JClient Graph. You will be prompted for the following:\n\n- Graph type\n- Client data model definition name\n- Single or multi-series graph\n- View object and column(s) for the graph data and the labels
+
+CHART_TYPE_PANEL_TITLE=Graph Type
+
+CHART_SERIES_TYPE_PANEL_TITLE=Select Data Collection
+
+CHART_DATADEF_PANEL_TITLE=Data Definition
+
+CHART_COLUMN_SELECT_PANEL_TITLE=Select Attributes
+
+CHART_LABEL_SELECT_PANEL_TITLE=Select Labels
+
+
+CHART_FINISH_TITLE=Finish
+CHART_FINISH_CONTENTS_1=Congratulations! You have completed the Create Graph Wizard. 
+CHART_FINISH_CONTENTS_2=A new panel using JClient Graph control will be created.
+
+WEBAPP_TITLE=New JSP Application
+
+#JSP Chart Wizard
+JSP_CHART_DIALOG_TITLE=JSP Graph
+JSP_CHART_WELCOME_PANEL_TITLE=JSP Graph
+JSP_CHART_WELCOME_PANEL_BOLD_TEXT=Welcome to the JSP Graph Wizard
+JSP_CHART_WELCOME_PANEL_SUBJECT_TEXT=This wizard helps you to create a JSP page with Graph tags. 
+You will be prompted for the following:\n\n- Graph type\n- Client data model definition name\n- Single or multi-series graph\n- View object and column(s) for the graph data and the labels
+
+JSP_CHART_FINISH_TITLE=Finish
+JSP_CHART_FINISH_CONTENTS_1=Congratulations ! You have completed the JSP Graph Wizard.
+JSP_CHART_FINISH_CONTENTS_2=A new JSP page using Graph tags will be created.

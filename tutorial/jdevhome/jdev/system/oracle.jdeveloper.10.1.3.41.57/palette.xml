@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<palette xmlns="http://xmlns.oracle.com/jdeveloper/101303/component-palette">
+   <history>
+      <pageType>java</pageType>
+      <palettePage>Swing</palettePage>
+   </history>
+   <history>
+      <pageType>xsql</pageType>
+      <palettePage>XSQL</palettePage>
+   </history>
+   <history>
+      <pageType>xhtml_act</pageType>
+      <palettePage>HTML Common</palettePage>
+   </history>
+   <history>
+      <pageType>xhtml_usc</pageType>
+      <palettePage>HTML Common</palettePage>
+   </history>
+   <history>
+      <pageType>xhtml_sub</pageType>
+      <palettePage>HTML Common</palettePage>
+   </history>
+   <page>
+      <canRemove>false</canRemove>
+      <canShow>true</canShow>
+      <draggable>true</draggable>
+      <name>Code Snippets</name>
+      <paletteContext>oracle.jdevimpl.palette.CodeSnippetContext</paletteContext>
+      <showForTypes>java;xml;uix;sql;jnlp;htm;html;xhtml;jsp;jspx;tag;tagx</showForTypes>
+      <type>snippet</type>
+      <view>list</view>
+   </page>
+</palette>

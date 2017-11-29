@@ -1,0 +1,32 @@
+<?xml version = '1.0'?>
+<!DOCTYPE connections>
+<connections>
+   <connection>
+      <JDBC_PORT>1521</JDBC_PORT>
+      <ConnectionType>JDBC</ConnectionType>
+      <HOSTNAME>ebsdesadb</HOSTNAME>
+      <user>apps</user>
+      <ConnectionName>EBSD</ConnectionName>
+      <SID>EBSD</SID>
+      <JdbcDriver>oracle.jdbc.OracleDriver</JdbcDriver>
+      <PWD>
+         <![CDATA[056466E040A2EF82AD5DFDCAD82CB0D67ED2EA974A08E43C2B]]>
+      </PWD>
+      <ORACLE_JDBC_TYPE>thin</ORACLE_JDBC_TYPE>
+   </connection>
+   <connection>
+      <JDBC_PORT>4120</JDBC_PORT>
+      <ConnectionType>JDBC</ConnectionType>
+      <HOSTNAME>ap664sdb.us.oracle.com</HOSTNAME>
+      <DeployPassword>true</DeployPassword>
+      <user>apps_read_only</user>
+      <ConnectionName>fwk12dev</ConnectionName>
+      <SID>fwk12dev</SID>
+      <Role>Normal</Role>
+      <PWD>
+         <![CDATA[056D8E8A16E62877F0081CE9051240964E]]>
+      </PWD>
+      <JdbcDriver>oracle.jdbc.driver.OracleDriver</JdbcDriver>
+      <ORACLE_JDBC_TYPE>thin</ORACLE_JDBC_TYPE>
+   </connection>
+</connections>

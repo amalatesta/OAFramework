@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="DebugALabAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>LabSolutions</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.labsolutions.server.DebugALabAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.labsolutions.server.DebugALabAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="DebugBLabAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>LabSolutions</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.labsolutions.server.DebugBLabAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.labsolutions.server.DebugBLabAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="DebugLabAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>LabSolutions</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.labsolutions.server.DebugLabAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.labsolutions.server.DebugLabAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="EmployeeAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>LabSolutions</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.labsolutions.server.EmployeeAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.labsolutions.server.EmployeeAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="FlexfieldAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>LabSolutions</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.labsolutions.server.FlexfieldAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.labsolutions.server.FlexfieldAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="GanttAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>LabSolutions</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.labsolutions.server.GanttAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.labsolutions.server.GanttAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="HomeAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>LabSolutions</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.labsolutions.server.HomeAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.labsolutions.server.HomeAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="SupplierSAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>LabSolutions</jbo.project>
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.labsolutions.server.SupplierSAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.labsolutions.server.SupplierSAM</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

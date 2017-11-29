@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<index>
+   <hash>
+      <url n="shared" path="../../../myprojects/SampleLibrary.jpr"/>
+      <value n="user" v="SampleLibrary.jpr1511928424024"/>
+   </hash>
+   <hash>
+      <url n="shared" path="../../../myprojects/ExtendLabSolutions.jpr"/>
+      <value n="user" v="ExtendLabSolutions.jpr1511928424048"/>
+   </hash>
+   <hash>
+      <url n="shared" path="../../../myprojects/LabSolutions.jpr"/>
+      <value n="user" v="LabSolutions.jpr1511928424055"/>
+   </hash>
+   <hash>
+      <url n="shared" path="../../../myprojects/Tutorial.jpr"/>
+      <value n="user" v="Tutorial.jpr1511928424064"/>
+   </hash>
+   <hash>
+      <url n="shared" path="../../oracle.jdeveloper.10.1.3.41.57/DefaultWorkspace/Project1.jpr"/>
+      <value n="user" v="Project1.jpr1511928445531"/>
+   </hash>
+</index>

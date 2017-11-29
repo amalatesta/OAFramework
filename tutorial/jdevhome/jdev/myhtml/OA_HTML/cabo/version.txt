@@ -1,0 +1,5 @@
+ComponentBuildVersion=3.1.1.10
+ComponentBuildMode=nondebug
+Copyright=Copyright ¬ 2001, 2009, Oracle.  All rights reserved.
+ComponentNumber=na
+ReleaseDescription=BI Beans 3.1.1.x

@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<Wizard>
+  <!-- Definition file for Tag based JSP Web application -->
+  <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.input.StaticProperties">
+    <config />
+    <wizdata>
+      <Property name="HTML_ROOT_DIR"/>
+      <Property name="HTML_SRC_DIR"/>
+      <Property name="charset"/>
+    </wizdata>
+  </WizardTask>
+  
+  <WizardTask class="oracle.jbo.dt.ui.wizards.tagswebapp.CheckForBC4JProjectsTask"/>
+
+  <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.ui.UIWizardSequencer">
+    <config>
+      <!-- this is displayed as wizard image -->
+      <ImageFileName>/oracle/jbo/dt/ui/wizards/tagswebapp/appmgr.gif</ImageFileName>
+      <!-- Used as the title in the wizard dialog -->
+      <WizardDialogTitle translateable="true">TITLE_WIZARD</WizardDialogTitle>
+      <!-- resource retrieved from this bundle, more than one bundle can be specified -->
+      <UIResourceBundle name="res" properties="def/uixwebapp/uixwebapp.rts"/>
+    </config>
+
+    <wizdata>
+      <WelcomePanel>
+        <PanelTitle translateable="true">WELCOME_PAGE_TITLE</PanelTitle>
+        <BoldText translateable="true">WELCOME_TITLE_TEXT</BoldText>
+        <description translateable="true">WELCOME_TEXT</description>
+        <JDeveloperHelpUrl>f1_uixappwelcome_html</JDeveloperHelpUrl>
+        <WelcomePageId>UixWebApp</WelcomePageId>
+      </WelcomePanel>
+      
+      <UIPanel class="oracle.jbo.dt.common.wizard.DataDefinitionSelectionPanel"/>
+      <UIPanel class="oracle.jbo.dt.ui.wizards.tagswebapp.ViewsPanel"/>
+      <UIPanel class="oracle.jbo.dt.ui.wizards.tagswebapp.ViewLinkPanel"/>
+      <UIPanel class="oracle.jbo.dt.ui.wizards.tagswebapp.FinishPanel"/>
+
+      <PanelSettings>
+        <PanelData panelclass="oracle.jbo.dt.common.wizard.DataDefinitionSelectionPanel">
+          <PanelTitle translateable="true">DATADEF_PAGE_TITLE</PanelTitle>
+          <SELECT_DATADEFINITION translateable="true">SELECT_DATADEFINITION_PROMPT</SELECT_DATADEFINITION>
+          <NEW_DATADEFINITION translateable="true">NEW_DATADEFINITION</NEW_DATADEFINITION>
+          <SELECT_APPMODULE translateable="true">SELECT_APPMODULE</SELECT_APPMODULE>
+          <SELECT_DATADEF_INTRO translateable="true">SELECT_DATADEF_INTRO</SELECT_DATADEF_INTRO>
+          <SELECTED_MODEL translateable="true">SELECTED_MODEL</SELECTED_MODEL>
+          <JDeveloperHelpUrl>f1_uixappbusinessapp_html</JDeveloperHelpUrl>
+        </PanelData>
+        <PanelData panelclass="oracle.jbo.dt.ui.wizards.tagswebapp.ViewsPanel">
+          <PanelTitle translateable="true">TITLE_VIEW_SELECTION</PanelTitle>
+          <JDeveloperHelpUrl>f1_uixappviewform_html</JDeveloperHelpUrl>
+          <PROMPT_GEN_PAGE translateable="true">PROMPT_GEN_PAGE</PROMPT_GEN_PAGE>
+          <TITLE_VO translateable="true">TITLE_VO</TITLE_VO>
+          <VIEWS_PANEL_DESCRIPTION translateable="true">VIEWS_PANEL_DESCRIPTION</VIEWS_PANEL_DESCRIPTION>
+          <TITLE_FORM_OPTIONS translateable="true">TITLE_FORM_OPTIONS</TITLE_FORM_OPTIONS>
+          <TITLE_QUERY_FORM translateable="true">TITLE_QUERY_FORM</TITLE_QUERY_FORM>
+          <TITLE_BROWSE_FORM translateable="true">TITLE_BROWSE_FORM</TITLE_BROWSE_FORM>
+          <TITLE_EDIT_FORM translateable="true">TITLE_EDIT_FORM</TITLE_EDIT_FORM>
+          <TITLE_VIEW_SELECTION translateable="true">TITLE_VIEW_SELECTION</TITLE_VIEW_SELECTION>
+          <VIEW_PANEL_FILE_NAME translateable="true">VIEW_PANEL_FILE_NAME</VIEW_PANEL_FILE_NAME>
+        </PanelData>
+        <PanelData panelclass="oracle.jbo.dt.ui.wizards.tagswebapp.ViewLinkPanel">
+          <PanelTitle translateable="true">VIEWLINK_PANEL_TITLE</PanelTitle>
+          <JDeveloperHelpUrl>f1_uixappviewlinks_html</JDeveloperHelpUrl>
+          <VIEWLINK_PANEL_TITLE translateable="true">VIEWLINK_PANEL_TITLE</VIEWLINK_PANEL_TITLE>
+        </PanelData>
+        <PanelData panelclass="oracle.jbo.dt.ui.wizards.tagswebapp.FinishPanel">
+          <PanelTitle translateable="true">FINISH_PAGE_TITLE</PanelTitle>
+          <JDeveloperHelpUrl>f1_uixappfinish_html</JDeveloperHelpUrl>
+          <FINISH_PAGE_TITLE translateable="true">FINISH_PAGE_TITLE</FINISH_PAGE_TITLE>
+          <FINISH_SUMMARY translateable="true">FINISH_SUMMARY</FINISH_SUMMARY>
+          <FINISH_TEXT translateable="true">FINISH_TEXT</FINISH_TEXT>
+        </PanelData>
+      </PanelSettings>
+    </wizdata>
+  </WizardTask>
+  <WizardTask class="oracle.jbo.dt.ui.wizards.tagswebapp.WebAppWizardCodeGenerationTask">
+  </WizardTask>
+  <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.codegen.FileCodeGenerator">
+    <config/>
+    <wizdata>
+      <selection id="Common">
+        <file in="uixwebapp/Main.uix" action="uix-substitute"
+              out="{%HTML_SRC_DIR%}/Main.uix"/>
+        <file in="uixwebapp/oraclelogo.gif" action="bcopy"
+              out="{%HTML_SRC_DIR%}/oraclelogo.gif"/>
+        <file in="uixwebapp/tools_collage.gif" action="bcopy"
+              out="{%HTML_SRC_DIR%}/tools_collage.gif"/>
+        <file in="uixwebapp/www_home.gif" action="bcopy"
+              out="{%HTML_SRC_DIR%}/www_home.gif"/>
+        <file in="uixwebapp/www_contact.gif" action="bcopy"
+              out="{%HTML_SRC_DIR%}/www_contact.gif"/>
+        <file in="uixwebapp/www_help.gif" action="bcopy"
+              out="{%HTML_SRC_DIR%}/www_help.gif"/>
+        <configureproject configurer="oracle.cabo.ide.addin.bc4j.UIXBC4JAddin"/>
+      </selection>
+      <selection id="Association">
+        <RunCommand class="oracle.cabo.ide.addin.bc4j.UIXBC4JGenerationHelper" type="AppViewLink" />      
+        <file in="uixwebapp/Link_View.uix" action="uix-substitute"
+              out="{%HTML_SRC_DIR%}/{%AssociationFileBaseName%}_View.uix"/>
+        <file in="uixwebapp/Link_Create.uix" action="uix-substitute"
+              out="{%HTML_SRC_DIR%}/{%AssociationFileBaseName%}_Create.uix"/>
+        <file in="uixwebapp/Link_Update.uix" action="uix-substitute"
+              out="{%HTML_SRC_DIR%}/{%AssociationFileBaseName%}_Update.uix"/>
+      </selection>
+      <selection id="InsertRecordForm" />
+      <selection id="BrowseOnlyForm">
+        <RunPreCommand class="oracle.cabo.ide.addin.bc4j.UIXBC4JGenerationHelper" type="AppViewObject" />
+        <file in="uixwebapp/View.uix" action="uix-substitute"
+              out="{%HTML_SRC_DIR%}/{%ViewFileBaseName%}_View.uix"/>
+        <file in="uixwebapp/Create.uix" action="uix-substitute"
+              out="{%HTML_SRC_DIR%}/{%ViewFileBaseName%}_Create.uix"/>
+        <file in="uixwebapp/Update.uix" action="uix-substitute"
+              out="{%HTML_SRC_DIR%}/{%ViewFileBaseName%}_Update.uix"/>
+      </selection>
+      <selection id="EditForm" />
+      <selection id="QueryForm" />
+      <selection id="ViewMenu" />
+    </wizdata>
+  </WizardTask>
+</Wizard>

@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8' standalone = 'yes'?>
+<jazn-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/jazn-data-10_0.xsd" filepath="" OC4J_INSTANCE_ID="">
+    <jazn-realm>
+        <realm>
+            <name>jazn.com</name>
+            <users>
+                <user>
+                    <name>DataBase_User_tTG6esKYl2rF_fn7SRhArJqVKnGqAk5ByTcsdg-51S8=</name>
+                    <credentials>{903}tTG6esKYl2rF/fn7SRhArJqVKnGqAk5ByTcsdg+51S8=</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_hGNOMjOHYKQux_EFvIJ6QFBWkZJRBo93kWQsSysqS_s=</name>
+                    <credentials>{903}hGNOMjOHYKQux/EFvIJ6QFBWkZJRBo93kWQsSysqS/s=</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_W0_ZsDjbMmfzc6NaSXH-766TAHBHE1eT</name>
+                    <credentials>{903}W0/ZsDjbMmfzc6NaSXH+766TAHBHE1eT</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_861n8ZvL-yjxJ2PSwGfJHNzVpV_ZfgNI</name>
+                    <credentials>{903}861n8ZvL+yjxJ2PSwGfJHNzVpV/ZfgNI</credentials>
+                </user>
+            </users>
+            <roles/>
+        </realm>
+    </jazn-realm>
+</jazn-data>

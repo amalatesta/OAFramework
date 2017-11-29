@@ -1,0 +1,89 @@
+<?xml version = '1.0' standalone = 'yes'?>
+<!-- The global application config that is the parent of all the other
+     applications in this server. 
+-->
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd" autocreate-tables="true" default-data-source="jdbc/OracleDS" schema-major-version="10" schema-minor-version="0">
+   <web-module id="defaultWebApp" path="../default-web-app"/>
+    <library path="C:\oracle\OA_Framework\jdevbin\j2ee\home\lib\scheduler.jar">jdev-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\lib\jdev-rt.jar">jdev-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\vbroker4\lib\vbjorb.jar">jdev-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\lib\ojc.jar">jdev-generated</library>
+   <!--
+  <web-module id="jmsrouter_web" path="../applications/jmsrouter.war" />
+  <ejb-module id="jmsrouter_ejb" path="../applications/jmsrouter-ejb.jar" />
+  -->
+   <connectors path="./oc4j-connectors.xml"/>
+   <persistence path="../persistence"/>
+    <library path="C:\Dropbox\GoogleDrive\Despegar\OA_Framework\tutorial\jdevhome\jdev\myglobalclasses">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\global_patch_jars">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\BC4J\lib\bc4jdomorcl.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\BC4J\jlib\bc4jdatum.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jlib\jsp-el-api.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jlib\commons-el.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jlib\oracle-el.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jlib\jewt4.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\lib\xmlparserv2.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\regexp.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\share.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\uix2.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\oaext\mds\lib\mdsrt.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\oaext\lib\mdsdt.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\oaext\lib\oamdsdt.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\javacache\lib\cache.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\lib\xschema.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\BC4J\lib">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\fwkjbo.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\fwk.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\atg.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\collections.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\iasjoc.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\rosettaRt.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\portalFlexComps.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\svc.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\pat.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\concurrent.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\oamMaintMode.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\fwkCabo.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\wsrp-container.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\pdkjava.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\ptlshare.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\xml.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\wsrp-container-types.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\jaxb-impl.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\jaxb-libs.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\jazn.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\jazncore.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\biamlocal.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\bipres.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\bicmn.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\bidatasvr.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\bidataclt.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\bidatacmn.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\biext.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\bicmn-nls.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\bipres-nls.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\bidata-nls.zip">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\olap_api.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\oaext\config\oac\oacfilter.jar">oaext-generated</library>
+   <!-- Scheduler supporting classes -->
+   <library path="${oracle.home}/j2ee/home/lib/scheduler.jar"/>
+   <jazn provider="XML"/>
+   <log>
+      <file path="../log/global-application.log"/>
+      <!-- Uncomment this if you want to use ODL logging capabilities
+    <odl path="../log/global-application/" max-file-size="1000" 
+      max-directory-size="10000"/>
+    -->
+   </log>
+   <data-sources path="data-sources.xml"/>
+   <!-- Comment this if you don't want to access OracleAS JMS via 
+       the JCA framework
+  -->
+   <resource-provider class="com.evermind.server.jms.Oc4jResourceProvider" name="oc4jjms">
+      <description>oc4j-jms loop back resource provider</description>
+      <property name="dummy" value="dummy"/>
+   </resource-provider>
+   <imported-shared-libraries>
+        <remove-inherited name="oracle.cache"/>
+    </imported-shared-libraries>
+</orion-application>

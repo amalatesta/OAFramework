@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<client-settings class="java.util.HashMap" xmlns="http://xmlns.oracle.com/jdeveloper/101303/client-preferences">
+   <Item>
+      <Key>disabled.extensions.1013prod</Key>
+      <Value class="oracle.ideimpl.extension.preference.ExtensionPreferences">
+         <disabledIds class="java.util.HashSet"/>
+      </Value>
+   </Item>
+</client-settings>

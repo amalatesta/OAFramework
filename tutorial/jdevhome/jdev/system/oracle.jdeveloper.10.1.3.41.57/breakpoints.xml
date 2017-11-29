@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<breakpoints class="java.util.ArrayList" xmlns="http://xmlns.oracle.com/jdeveloper/101303/breakpoints">
+   <Item class="oracle.jdevimpl.runner.debug.BreakpointSettings">
+      <URL/>
+      <access>false</access>
+      <actionBeep>false</actionBeep>
+      <actionDisableOther class="java.lang.String"/>
+      <actionEnableOther class="java.lang.String"/>
+      <actionHalt>true</actionHalt>
+      <actionLog>true</actionLog>
+      <actionLogExpr class="java.lang.String"/>
+      <actionLogStack>false</actionLogStack>
+      <actionLogTag class="java.lang.String"/>
+      <caught>false</caught>
+      <className/>
+      <condition class="java.lang.String"/>
+      <enabled>true</enabled>
+      <exception>java.lang.Exception</exception>
+      <fieldName/>
+      <file/>
+      <groupName class="java.lang.String"/>
+      <line>0</line>
+      <method/>
+      <modify>false</modify>
+      <ownerURL/>
+      <passCount>1</passCount>
+      <persistent>true</persistent>
+      <pkg/>
+      <threadName class="java.lang.String"/>
+      <threadNameNot class="java.lang.String"/>
+      <type>2</type>
+      <uncaught>true</uncaught>
+   </Item>
+   <Item class="oracle.jdevimpl.runner.debug.BreakpointSettings">
+      <URL/>
+      <access>false</access>
+      <actionBeep>false</actionBeep>
+      <actionDisableOther class="java.lang.String"/>
+      <actionEnableOther class="java.lang.String"/>
+      <actionHalt>true</actionHalt>
+      <actionLog>true</actionLog>
+      <actionLogExpr class="java.lang.String"/>
+      <actionLogStack>false</actionLogStack>
+      <actionLogTag class="java.lang.String"/>
+      <caught>false</caught>
+      <className/>
+      <condition class="java.lang.String"/>
+      <enabled>true</enabled>
+      <exception>java.lang.AssertionError</exception>
+      <fieldName/>
+      <file/>
+      <groupName class="java.lang.String"/>
+      <line>0</line>
+      <method/>
+      <modify>false</modify>
+      <ownerURL/>
+      <passCount>1</passCount>
+      <persistent>true</persistent>
+      <pkg/>
+      <threadName class="java.lang.String"/>
+      <threadNameNot class="java.lang.String"/>
+      <type>2</type>
+      <uncaught>true</uncaught>
+   </Item>
+   <Item class="oracle.jdevimpl.runner.debug.BreakpointSettings">
+      <URL/>
+      <access>false</access>
+      <actionBeep>false</actionBeep>
+      <actionDisableOther class="java.lang.String"/>
+      <actionEnableOther class="java.lang.String"/>
+      <actionHalt>true</actionHalt>
+      <actionLog>true</actionLog>
+      <actionLogExpr class="java.lang.String"/>
+      <actionLogStack>false</actionLogStack>
+      <actionLogTag class="java.lang.String"/>
+      <caught>false</caught>
+      <className/>
+      <condition class="java.lang.String"/>
+      <enabled>true</enabled>
+      <exception/>
+      <fieldName/>
+      <file/>
+      <groupName class="java.lang.String"/>
+      <line>0</line>
+      <method/>
+      <modify>false</modify>
+      <ownerURL/>
+      <passCount>1</passCount>
+      <persistent>true</persistent>
+      <pkg/>
+      <threadName class="java.lang.String"/>
+      <threadNameNot class="java.lang.String"/>
+      <type>3</type>
+      <uncaught>false</uncaught>
+   </Item>
+</breakpoints>

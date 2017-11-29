@@ -1,0 +1,91 @@
+/* $Header: mainMenuTree.css 120.0.12010000.4 2010/02/08 11:59:09 sette noship $*/
+
+.treeview ul{ /*CSS for Simple Tree Menu*/
+margin: 0;
+padding: 0;
+}
+
+.treeview li{ /*Style for LI elements in general (excludes an LI that contains sub lists)*/
+background: #eaeff5 no-repeat left center;
+list-style-type: none;
+padding-left: 22px;
+padding-right: 22px; /* 8716053,8836860 - BiDi handling - tohkubo*/
+margin-bottom: 0px;
+background-color: #eaeff5;
+font: 9pt Tahoma,Arial,Helvetica,Geneva,sans-serif;
+color: #013d74;
+
+}
+
+.treeview li.rootmenu{ /* Style for LI that contains sub lists (other ULs). */
+padding-left: -22px;
+margin-left: -40px;
+cursor: pointer !important;
+background-color: #eaeff5;
+font:normal 9pt Tahoma,Arial,Helvetica,Geneva,sans-serif;
+color:#3c3c3c
+}
+
+.treeview li.rootmenu ul{ /*Style for ULs that are children of LIs (submenu) */
+display: none; /*Hide them by default. Don't delete. */
+}
+
+.treeview .rootmenu ul li{ /*Style for LIs of ULs that are children of LIs (submenu) */
+cursor: default;
+}
+
+.treeview li.submenu{ /* Style for LI that contains sub lists (other ULs). */
+background-repeat: no-repeat;
+margin-left: 0px;
+cursor: pointer !important;
+background-color: #eaeff5;
+font:normal 9pt Tahoma,Arial,Helvetica,Geneva,sans-serif;
+color:#3c3c3c
+}
+
+
+.treeview li.submenu ul{ /*Style for ULs that are children of LIs (submenu) */
+display: none; /*Hide them by default. Don't delete. */
+}
+
+.treeview .submenu ul li{ /*Style for LIs of ULs that are children of LIs (submenu) */
+cursor: default;
+}
+
+.treeview li a{
+
+color: #2b7c92;
+
+}
+
+.treeview li.error{
+padding-left: -32px;
+margin-left: -40px;
+color:#426CA7;  
+font-family: Tahoma,Arial,Helvetica,Geneva,sans-serif;
+font-size: 7pt;
+
+}
+
+
+
+.treeview li a:hover{
+color: #ffffff;
+background: #2b7c92 no-repeat; /*background of tabs for hover state */
+
+}
+
+
+
+.treeview a.selected{ 
+color: #ffffff;
+background: #2b7c92 no-repeat; /*background of tab with "selected" class assigned to its LI */
+
+}
+
+.treeview img{
+border:0;
+color: #2b7c92;
+margin-right: 2px;
+
+}

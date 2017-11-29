@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<connector xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+     http://java.sun.com/xml/ns/j2ee/connector_1_5.xsd"
+ version="1.5">
+
+    <display-name>Oracle JDBC Resource Adapter</display-name>
+    <vendor-name>Oracle Corporation</vendor-name>
+    <eis-type>Database</eis-type>
+    <resourceadapter-version>1.5</resourceadapter-version>
+
+<!-- resourceadapter -->
+
+    <resourceadapter>
+      <resourceadapter-class>oracle.oc4j.sql.spi.ResourceAdapterImpl</resourceadapter-class>
+
+<!-- outbound configuration -->
+
+      <outbound-resourceadapter>
+        <!-- XA Connection Factory -->
+        <connection-definition>
+          <managedconnectionfactory-class>
+              oracle.oc4j.sql.spi.ManagedConnectionFactoryImpl
+          </managedconnectionfactory-class>
+            <config-property>
+                <config-property-name>managedDataSourceConfigXML</config-property-name>
+                <config-property-type>java.lang.String</config-property-type>
+                <config-property-value></config-property-value>
+            </config-property>
+          <connectionfactory-interface>
+              javax.sql.DataSource
+          </connectionfactory-interface>
+          <connectionfactory-impl-class>
+              oracle.oc4j.sql.ManagedDataSource
+          </connectionfactory-impl-class>
+          <connection-interface>
+              java.sql.Connection
+          </connection-interface>
+          <connection-impl-class>
+              oracle.oc4j.sql.spi.ConnectionHandle
+          </connection-impl-class>
+        </connection-definition>
+
+<!-- adapter settings, txn level, authentication, etc -->
+        <transaction-support>XATransaction</transaction-support>
+
+        <authentication-mechanism>
+            <authentication-mechanism-type>
+               BasicPassword
+            </authentication-mechanism-type>
+            <credential-interface>javax.resource.spi.security.PasswordCredential</credential-interface>
+        </authentication-mechanism>
+        <reauthentication-support>false</reauthentication-support>
+
+      </outbound-resourceadapter>
+    </resourceadapter>
+</connector>
+

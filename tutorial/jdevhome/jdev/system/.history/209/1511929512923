@@ -1,0 +1,127 @@
+  /*@lineinfo:filename=/test_fwktutorial.jsp*/
+  /*@lineinfo:generated-code*/
+
+import oracle.jsp.runtime.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import oracle.apps.fnd.framework.webui.OAJSPHelper;
+import oracle.apps.fnd.framework.webui.URLMgr;
+import oracle.apps.fnd.common.WebAppsContext;
+
+
+public class _jqc_e_ extends com.orionserver.http.OrionHttpJspPage {
+
+
+  // ** Begin Declarations
+
+  /*@lineinfo:user-code*//*@lineinfo:10^1*/ public static final String RCS_ID = "$Header: test_fwktutorial.jsp 115.5 2003/05/05 10:20:28 gmallesh noship $";   /*@lineinfo:generated-code*/
+
+  // ** End Declarations
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response) throws java.io.IOException, ServletException {
+
+    response.setContentType( "text/html");
+    /* set up the intrinsic variables using the pageContext goober:
+    ** session = HttpSession
+    ** application = ServletContext
+    ** out = JspWriter
+    ** page = this
+    ** config = ServletConfig
+    ** all session/app beans declared in globals.jsa
+    */
+    PageContext pageContext = JspFactory.getDefaultFactory().getPageContext( this, request, response, "OAErrorPage.jsp", true, JspWriter.DEFAULT_BUFFER, true);
+    // Note: this is not emitted if the session directive == false
+    HttpSession session = pageContext.getSession();
+    int __jsp_tag_starteval;
+    ServletContext application = pageContext.getServletContext();
+    JspWriter out = pageContext.getOut();
+    _jqc_e_ page = this;
+    ServletConfig config = pageContext.getServletConfig();
+
+    try {
+
+
+      out.write( "\n\n");
+      out.write( "\n\n");
+      /*@lineinfo:translated-code*//*@lineinfo:12^1*/      oracle.apps.fnd.framework.CreateIcxSession sessionBean;
+      synchronized (request) {
+        if ((sessionBean = (oracle.apps.fnd.framework.CreateIcxSession) pageContext.getAttribute( "sessionBean", PageContext.REQUEST_SCOPE)) == null) {
+          sessionBean = (oracle.apps.fnd.framework.CreateIcxSession) new oracle.apps.fnd.framework.CreateIcxSession();
+          pageContext.setAttribute( "sessionBean", sessionBean, PageContext.REQUEST_SCOPE);
+          /*@lineinfo:generated-code*/
+          out.write( "\n");
+        /*@lineinfo:translated-code*//*@lineinfo:15^27*/        }
+      }
+      /*@lineinfo:generated-code*/
+      out.write( "\n\n");
+      /*@lineinfo:user-code*//*@lineinfo:18^1*/      
+        response.setHeader("Cache-Control", "no-cache,no-store,max-age=0"); // HTTP 1.1
+        response.setHeader("Pragma", "no-cache");                           // HTTP 1.0
+        response.setDateHeader("Expires", -1);                              // Prevent caching at the proxy server
+      
+        //    Obtain the Runtime Connection directly from the Project Settings.
+        //    NOTE: This option will not work under Apache/JServ. In order to run under Apache/JServ
+        //    you will need to hard code these values as shown in the commented alternatives
+        //    below.
+      
+        String dbcFullPathName     = oracle.apps.fnd.framework.webui.OAJSPHelper.getWebAppContextInitParameter(pageContext, "DBC_FULL_PATH_NAME"); // OAJSPHelper.getWebAppContextInitParameter(pageContext, "DBC_FULL_PATH_NAME");
+        String userName            = OAJSPHelper.getWebAppContextInitParameter(pageContext, "OA_LOGIN_USERNAME");
+        String userPassword        = OAJSPHelper.getWebAppContextInitParameter(pageContext, "OA_LOGIN_PASSWORD");
+        String appShortName        = OAJSPHelper.getWebAppContextInitParameter(pageContext, "OA_RESPONSIBILITY_APPS_SHORT_NAME");
+        String responsibilityKey   = OAJSPHelper.getWebAppContextInitParameter(pageContext, "OA_RESPONSIBILITY_KEY");
+      
+      //  String userName           = "< your user name >";
+      //  String userPassword       = "< your password >";
+      //  String appShortName       = "AK";
+      //  String responsibilityKey  = "FWK_TBX_TUTORIAL";
+      
+        String sessionid          = sessionBean.createSession(request, response, dbcFullPathName, userName, userPassword, appShortName, responsibilityKey);
+        String transactionid      = sessionBean.createTransaction(sessionBean.mRespInfo[0], sessionBean.mRespInfo[1], sessionBean.mRespInfo[2], dbcFullPathName);
+        WebAppsContext wctx = sessionBean.getWebAppsContext();
+      
+      /*@lineinfo:generated-code*/
+      out.write( "\n\n<HTML>\n<HEAD>\n<title>Test Framework ToolBox Tutorial</title>\n<SCRIPT LANGUAGE=\"JavaScript\" TYPE=\"text/javascript\">\n  document.cookie = \"OADiagnostic=1\";\n  document.cookie = \"OADeveloperMode=1\";\n  document.cookie = \"OAPassivationTestMode=0\";\n  document.cookie = \"OAConnectionTestMode=0\";\n  document.cookie = \"OADumpUIXTree=0\";\n</SCRIPT>\n</HEAD>\n\n<BODY>\n\n<a href=\"");
+      /*@lineinfo:user-code*//*@lineinfo:58^10*/      out.print(URLMgr.processOutgoingURL("OA.jsp?OAFunc=FWK_TOOLBOX_HELLO&OAPB=FWK_TOOLBOX_BRAND&OAHP=FWK_TOOLBOX_TUTORIAL_APP&OASF=FWK_TOOLBOX_HELLO&transactionid=" + transactionid, wctx) );
+      /*@lineinfo:generated-code*/
+      out.write( "\">Hello, World!</a><br>\n<a href=\"");
+      /*@lineinfo:user-code*//*@lineinfo:59^10*/      out.print(URLMgr.processOutgoingURL("OA.jsp?OAFunc=FWK_TOOLBOX_PO_SEARCH&OAPB=FWK_TOOLBOX_BRAND&OAHP=FWK_TOOLBOX_TUTORIAL_APP&OASF=FWK_TOOLBOX_PO_SEARCH&transactionid=" + transactionid, wctx) );
+      /*@lineinfo:generated-code*/
+      out.write( "\">Search &amp; Drilldown</a><br>\n<a href=\"");
+      /*@lineinfo:user-code*//*@lineinfo:60^10*/      out.print(URLMgr.processOutgoingURL("OA.jsp?OAFunc=FWK_TOOLBOX_SUPPLIER_SEARCH&OAPB=FWK_TOOLBOX_BRAND&OAHP=FWK_TOOLBOX_TUTORIAL_APP&OASF=FWK_TOOLBOX_SUPPLIER_SEARCH&transactionid=" + transactionid, wctx) );
+      /*@lineinfo:generated-code*/
+      out.write( "\">Create (Single Step)</a><br>\n<a href=\"");
+      /*@lineinfo:user-code*//*@lineinfo:61^10*/      out.print(URLMgr.processOutgoingURL("OA.jsp?OAFunc=FWK_TOOLBOX_PO_SUMMARY_DEL&OAPB=FWK_TOOLBOX_BRAND&OAHP=FWK_TOOLBOX_TUTORIAL_APP&OASF=FWK_TOOLBOX_PO_SUMMARY_DEL&transactionid=" + transactionid, wctx) );
+      /*@lineinfo:generated-code*/
+      out.write( "\">Delete From Table</a><br>\n<a href=\"");
+      /*@lineinfo:user-code*//*@lineinfo:62^10*/      out.print(URLMgr.processOutgoingURL("OA.jsp?OAFunc=FWK_TOOLBOX_PO_SUMMARY_UP&OAPB=FWK_TOOLBOX_BRAND&OAHP=FWK_TOOLBOX_TUTORIAL_APP&OASF=FWK_TOOLBOX_PO_SUMMARY_UP&transactionid=" + transactionid, wctx) );
+      /*@lineinfo:generated-code*/
+      out.write( "\">Update </a><br>\n<a href=\"");
+      /*@lineinfo:user-code*//*@lineinfo:63^10*/      out.print(URLMgr.processOutgoingURL("OA.jsp?OAFunc=FWK_TOOLBOX_PO_SUMMARY_CR&OAPB=FWK_TOOLBOX_BRAND&OAHP=FWK_TOOLBOX_TUTORIAL_APP&OASF=FWK_TOOLBOX_PO_SUMMARY_CR&transactionid=" + transactionid, wctx) );
+      /*@lineinfo:generated-code*/
+      out.write( "\">Create (Multistep)</a><br>\n<a href=\"");
+      /*@lineinfo:user-code*//*@lineinfo:64^10*/      out.print(URLMgr.processOutgoingURL("OA.jsp?OAFunc=FWK_TOOLBOX_HOME&OAPB=FWK_TOOLBOX_BRAND&OAHP=FWK_TOOLBOX_TUTORIAL_APP&OASF=FWK_TOOLBOX_HOME&transactionid=" + transactionid, wctx) );
+      /*@lineinfo:generated-code*/
+      out.write( "\">Home Page</a><br>\n<a href=\"");
+      /*@lineinfo:user-code*//*@lineinfo:65^10*/      out.print(URLMgr.processOutgoingURL("OA.jsp?OAFunc=FWK_TOOLBOX_SAMPLE_BROWSE&OAPB=FWK_TOOLBOX_BRAND&OAHP=FWK_TOOLBOX_TUTORIAL_APP&OASF=FWK_TOOLBOX_SAMPLE_BROWSE&transactionid=" + transactionid, wctx) );
+      /*@lineinfo:generated-code*/
+      out.write( "\">Sample Library</a><br>\n\n</BODY>\n</HTML>\n");
+
+    }
+    catch (Throwable e) {
+      if (!(e instanceof javax.servlet.jsp.SkipPageException)){
+        try {
+          if (out != null) out.clear();
+        }
+        catch (Exception clearException) {
+        }
+        pageContext.handlePageException(e);
+      }
+    }
+    finally {
+      OracleJspRuntime.extraHandlePCFinally(pageContext, true);
+      JspFactory.getDefaultFactory().releasePageContext(pageContext);
+    }
+
+  }
+}

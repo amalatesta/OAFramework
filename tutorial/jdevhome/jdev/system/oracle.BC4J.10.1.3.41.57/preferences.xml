@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<client-settings class="java.util.HashMap" xmlns="http://xmlns.oracle.com/jdeveloper/101303/client-preferences">
+   <Item>
+      <Key>DataControlPaletteSettings</Key>
+      <Value class="oracle.adf.dt.dbpanel.settings.DbPanelSettings">
+         <showUnderlyingAccessors>false</showUnderlyingAccessors>
+      </Value>
+   </Item>
+</client-settings>

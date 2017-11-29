@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+  <!-- A demo servlet, add servlets below -->
+
+  <servlet>
+    <servlet-name>SnoopServlet</servlet-name>
+    <servlet-class>SnoopServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ServletToJsp</servlet-name>
+    <servlet-class>ServletToJsp</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>BBoardServlet</servlet-name>
+    <servlet-class>BBoardServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ConfigServlet</servlet-name>
+    <servlet-class>ConfigServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>CookieExample</servlet-name>
+    <servlet-class>CookieExample</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Counter</servlet-name>
+    <servlet-class>Counter</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>DateServlet</servlet-name>
+    <servlet-class>DateServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>HelloworldExample</servlet-name>
+    <servlet-class>HelloWorldExample</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>HelloworldServlet</servlet-name>
+    <servlet-class>HelloWorldServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RedirectServlet</servlet-name>
+    <servlet-class>RedirectServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RequestInfoExample</servlet-name>
+    <servlet-class>RequestInfoExample</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RequestParamExample</servlet-name>
+    <servlet-class>RequestParamExample</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>SessionExample</servlet-name>
+    <servlet-class>SessionExample</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>SessionServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>SimpleServlet</servlet-name>
+    <servlet-class>SimpleServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ToJSPServlet</servlet-name>
+    <servlet-class>ToJSPServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RequestHeaderExample</servlet-name>
+    <servlet-class>RequestHeaderExample</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ViewSrc</servlet-name>
+    <servlet-class>ViewSrc</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SnoopServlet</servlet-name>
+    <url-pattern>/servlet/SnoopServlet</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+    <servlet-name>ServletToJsp</servlet-name>
+    <url-pattern>/servlet/servletToJsp</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+    <servlet-name>BBoardServlet</servlet-name>
+    <url-pattern>/servlet/BBoardServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ConfigServlet</servlet-name>
+    <url-pattern>/servlet/ConfigServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>CookieExample</servlet-name>
+    <url-pattern>/servlet/CookieExample</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Counter</servlet-name>
+    <url-pattern>/servlet/Counter</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DateServlet</servlet-name>
+    <url-pattern>/servlet/DateServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>HelloworldExample</servlet-name>
+    <url-pattern>/servlet/HelloWorldExample</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>HelloworldServlet</servlet-name>
+    <url-pattern>/servlet/HelloWorldServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RedirectServlet</servlet-name>
+    <url-pattern>/servlet/RedirectServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RequestInfoExample</servlet-name>
+    <url-pattern>/servlet/RequestInfoExample</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RequestParamExample</servlet-name>
+    <url-pattern>/servlet/RequestParamExample</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SessionExample</servlet-name>
+    <url-pattern>/servlet/SessionExample</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/servlet/SessionServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SimpleServlet</servlet-name>
+    <url-pattern>/servlet/SimpleServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ToJSPServlet</servlet-name>
+    <url-pattern>/servlet/ToJSPServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RequestHeaderExample</servlet-name>
+    <url-pattern>/servlet/RequestHeaderExample</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ViewSrc</servlet-name>
+    <url-pattern>/servlet/ViewSrc/*</url-pattern>
+  </servlet-mapping>
+
+  <jsp-config>
+    <taglib>
+      <taglib-uri>
+        http://jakarta.apache.org/tomcat/examples-taglib
+      </taglib-uri>
+      <taglib-location>
+        /WEB-INF/jsp/example-taglib.tld
+      </taglib-location>
+    </taglib>
+
+    <taglib>
+      <taglib-uri>
+        http://jakarta.apache.org/tomcat/jsp2-example-taglib
+      </taglib-uri>
+      <taglib-location>
+        /WEB-INF/jsp2/jsp2-example-taglib.tld
+      </taglib-location>
+    </taglib>
+
+    <jsp-property-group>
+      <description>
+        Special property group for JSP Configuration JSP example.
+      </description>
+      <display-name>JSPConfiguration</display-name>
+      <url-pattern>/examples/jsp/jsp2/misc/config.jsp</url-pattern>
+      <el-ignored>true</el-ignored>
+      <page-encoding>ISO-8859-1</page-encoding>
+      <scripting-invalid>true</scripting-invalid>
+      <include-prelude>/examples/jsp/jsp2/misc/prelude.jspf</include-prelude>
+      <include-coda>/examples/jsp/jsp2/misc/coda.jspf</include-coda>
+    </jsp-property-group>
+  </jsp-config>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

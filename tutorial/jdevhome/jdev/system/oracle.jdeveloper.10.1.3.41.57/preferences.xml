@@ -1,0 +1,1233 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<client-settings class="java.util.HashMap" xmlns="http://xmlns.oracle.com/jdeveloper/101303/client-preferences">
+   <Item>
+      <Key>AntOptions</Key>
+      <Value class="oracle.jdevimpl.ant.AntOptions">
+         <debugColor>-8092540</debugColor>
+         <errColor>-3407872</errColor>
+         <infoColor>-16777012</infoColor>
+         <showImportedTargets>true</showImportedTargets>
+         <showOnlyMainTargets>false</showOnlyMainTargets>
+         <verboseColor>-16738048</verboseColor>
+         <warnColor>-31744</warnColor>
+      </Value>
+   </Item>
+   <Item>
+      <Key>ApplicationTemplateOptions</Key>
+      <Value class="oracle.jdeveloper.wizard.apptemplate.ApplicationTemplateOptions">
+         <path>
+            <entries class="[Ljava.net.URL;"/>
+         </path>
+      </Value>
+   </Item>
+   <Item>
+      <Key>audit-preferences</Key>
+      <Value class="oracle.jdevimpl.audit.preferences.AuditPreferences">
+         <assistProfile/>
+         <auditDuringCompile>false</auditDuringCompile>
+         <auditWhileEditing>true</auditWhileEditing>
+         <compileProfile/>
+         <editorDelay>700</editorDelay>
+         <showCodeAssistanceInGutter>true</showCodeAssistanceInGutter>
+      </Value>
+   </Item>
+   <Item>
+      <Key>BookmarkOptions</Key>
+      <Value class="oracle.jdevimpl.bookmarks.BookmarkOptions">
+         <discardOnClose>true</discardOnClose>
+         <discardOnExit>true</discardOnExit>
+         <missingLineBehavior>2</missingLineBehavior>
+         <traverseBehavior>2</traverseBehavior>
+      </Value>
+   </Item>
+   <Item>
+      <Key>BreakpointsWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.BreakpointsWindowSettings">
+         <breakpointScope>workspace</breakpointScope>
+         <columnOrder/>
+         <columnVisible>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>false</Item>
+            <Item>false</Item>
+            <Item>false</Item>
+            <Item>false</Item>
+            <Item>false</Item>
+            <Item>false</Item>
+            <Item>false</Item>
+            <Item>false</Item>
+         </columnVisible>
+         <columnWidth>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+         </columnWidth>
+         <defaultActionBeep>false</defaultActionBeep>
+         <defaultActionDisableOther class="java.lang.String"/>
+         <defaultActionEnableOther class="java.lang.String"/>
+         <defaultActionHalt>true</defaultActionHalt>
+         <defaultActionLog>true</defaultActionLog>
+         <defaultActionLogExpr class="java.lang.String"/>
+         <defaultActionLogStack>false</defaultActionLogStack>
+         <defaultActionLogTag class="java.lang.String"/>
+      </Value>
+   </Item>
+   <Item>
+      <Key>CaretOptions</Key>
+      <Value class="oracle.ide.ceditor.options.CaretOptions">
+         <blinkRate>500</blinkRate>
+         <caretColor>-16777216</caretColor>
+         <enableBlink>true</enableBlink>
+         <insertShape>2</insertShape>
+         <overwriteShape>6</overwriteShape>
+         <rightClickSelection>true</rightClickSelection>
+      </Value>
+   </Item>
+   <Item>
+      <Key>ClassesWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.ClassesWindowSettings">
+         <columnOrder/>
+         <columnVisible>
+            <Item>true</Item>
+            <Item>false</Item>
+            <Item>false</Item>
+            <Item>false</Item>
+         </columnVisible>
+         <columnWidth>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+         </columnWidth>
+         <showClassLoaders>false</showClassLoaders>
+         <showClassLoadersAsTree>true</showClassLoadersAsTree>
+         <showPackages>true</showPackages>
+         <showPackagesAsTree>true</showPackagesAsTree>
+         <sortAscending>true</sortAscending>
+         <sortColumn>0</sortColumn>
+      </Value>
+   </Item>
+   <Item>
+      <Key>code-template-options</Key>
+      <Value class="oracle.jdeveloper.ceditor.template.TemplateOptions"/>
+   </Item>
+   <Item>
+      <Key>CodingStylePreferences</Key>
+      <Value class="oracle.jdevimpl.style.preferences.CodingStylePreferences">
+         <activeProfile/>
+      </Value>
+   </Item>
+   <Item>
+      <Key>compareOptions</Key>
+      <Value class="oracle.jdevimpl.compare.CompareOptions">
+         <ignoreWhitespace>true</ignoreWhitespace>
+         <showCharDifferences>false</showCharDifferences>
+         <showOnlyDifferences>false</showOnlyDifferences>
+      </Value>
+   </Item>
+   <Item>
+      <Key>DebugWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.DebugWindowSettings">
+         <connectionRetries>30</connectionRetries>
+         <contextMenusOnMainMenu>false</contextMenusOnMainMenu>
+         <localPortRange>false</localPortRange>
+         <localPortRangeMax>4999</localPortRangeMax>
+         <localPortRangeMin>4000</localPortRangeMin>
+         <promptForDebuggerHostForDatabaseDebugging>false</promptForDebuggerHostForDatabaseDebugging>
+         <showToolTipInCodeEditor>true</showToolTipInCodeEditor>
+         <showToolbarInLogWindow>true</showToolbarInLogWindow>
+         <startOption>running</startOption>
+         <tableResizeMode>1</tableResizeMode>
+         <useFilters>false</useFilters>
+      </Value>
+   </Item>
+   <Item>
+      <Key>deployment-options</Key>
+      <Value class="oracle.jdeveloper.deploy.dt.DeploymentOptions">
+         <autoUpdateWebXmlEjbRefs>true</autoUpdateWebXmlEjbRefs>
+         <compileBeforeDeploy>true</compileBeforeDeploy>
+         <defaultDeployHeapSize/>
+         <deployOutputFolder>deploy</deployOutputFolder>
+         <deployOutputURL/>
+         <forceJarRewrite>false</forceJarRewrite>
+         <includeDataSources>true</includeDataSources>
+         <oc4jHome/>
+      </Value>
+   </Item>
+   <Item>
+      <Key>DisplayOptions</Key>
+      <Value class="oracle.ide.ceditor.options.DisplayOptions">
+         <autoBraceMatch>true</autoBraceMatch>
+         <braceEnclosingBlock>true</braceEnclosingBlock>
+         <braceEnclosingParens>true</braceEnclosingParens>
+         <braceMatchDelay>300</braceMatchDelay>
+         <codeFoldingEnabled>true</codeFoldingEnabled>
+         <enableClickDragging>true</enableClickDragging>
+         <gutterBackgroundColor>-4144960</gutterBackgroundColor>
+         <gutterColorSource>2</gutterColorSource>
+         <gutterForegroundColor>-12566464</gutterForegroundColor>
+         <rightMarginColor>-4144960</rightMarginColor>
+         <rightMarginColumn>80</rightMarginColumn>
+         <sharedIconColumn>true</sharedIconColumn>
+         <showCodeFoldingHighlight>true</showCodeFoldingHighlight>
+         <showCodeFoldingMargin>true</showCodeFoldingMargin>
+         <showLineNumbers>false</showLineNumbers>
+         <showRightMargin>true</showRightMargin>
+         <useAAText>false</useAAText>
+      </Value>
+   </Item>
+   <Item>
+      <Key>document-extensions-options</Key>
+      <Value class="oracle.ide.config.DocumentExtensions">
+         <defaultEditorMap/>
+         <excludeFilterSettings/>
+         <extensionToContentTypeMap class="java.util.HashMap">
+            <Item>
+               <Key>.class</Key>
+               <Value>BINARY</Value>
+            </Item>
+            <Item>
+               <Key>.ear</Key>
+               <Value>BINARY</Value>
+            </Item>
+            <Item>
+               <Key>.gif</Key>
+               <Value>BINARY</Value>
+            </Item>
+            <Item>
+               <Key>.jar</Key>
+               <Value>BINARY</Value>
+            </Item>
+            <Item>
+               <Key>.jpeg</Key>
+               <Value>BINARY</Value>
+            </Item>
+            <Item>
+               <Key>.jpg</Key>
+               <Value>BINARY</Value>
+            </Item>
+            <Item>
+               <Key>.png</Key>
+               <Value>BINARY</Value>
+            </Item>
+            <Item>
+               <Key>.rar</Key>
+               <Value>BINARY</Value>
+            </Item>
+            <Item>
+               <Key>.war</Key>
+               <Value>BINARY</Value>
+            </Item>
+            <Item>
+               <Key>.zip</Key>
+               <Value>BINARY</Value>
+            </Item>
+         </extensionToContentTypeMap>
+         <userExtensionList>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.xsql.XSLSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.jar.JarFolder</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagXSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagFragmentSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.DeployableTextNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.xml.xquery.XQueryNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.toplink.addin.node.MWProjectNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.webservices.model.WebServiceProxyNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.JspFragmentSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.library.JDKNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.css.addin.CSSSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.help.HelpTopicDocument</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.Workspace</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.vcs.patch.PatchNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.ImageNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.tip.tools.ide.workflow.addin.RoutingSlipNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.template.HtmlTemplateSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.adf.dt.navigator.nodes.CpxNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.library.JLibraryNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.webservices.model.WebServiceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.model.JspSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.cm.dt.sqlplus.SqlNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.xsql.XsqlSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.html.XHtmlSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.bali.xml.addin.XMLSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webservices.ide.WSDLArtifactNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.model.JavaSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.tip.tools.ide.pm.addin.PMNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.html.HtmlSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.adf.dt.navigator.nodes.DataControlConfigurationNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.Project</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.model.JavaClassNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.xml.schema.XmlSchemaNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+         </userExtensionList>
+      </Value>
+   </Item>
+   <Item>
+      <Key>EditorOptions</Key>
+      <Value class="oracle.ide.ceditor.options.EditorOptions">
+         <autoIndent>true</autoIndent>
+         <cutCopyLine>true</cutCopyLine>
+         <escapeStringPaste>true</escapeStringPaste>
+         <importsCopyPaste>true</importsCopyPaste>
+         <indentCopyPaste>true</indentCopyPaste>
+         <reuseDocEvent>true</reuseDocEvent>
+         <reuseUndoEvent>true</reuseUndoEvent>
+         <tabSize>2</tabSize>
+         <useBlockOnSelection>true</useBlockOnSelection>
+         <useCaseDelimitedWord>false</useCaseDelimitedWord>
+         <useExpensivePasteChecking>false</useExpensivePasteChecking>
+         <useJumpScroll>false</useJumpScroll>
+         <useLineEndForWord>true</useLineEndForWord>
+         <useLineStartForWord>false</useLineStartForWord>
+         <useSmartEnd>false</useSmartEnd>
+         <useSmartHome>true</useSmartHome>
+         <useSpaces>true</useSpaces>
+      </Value>
+   </Item>
+   <Item>
+      <Key>FindOptions</Key>
+      <Value class="oracle.ide.ceditor.find.FindOptions">
+         <highlightOccurrences>false</highlightOccurrences>
+         <matchCase>false</matchCase>
+         <regexpSearch>false</regexpSearch>
+         <saveOnExit>false</saveOnExit>
+         <searchFromBeginning>false</searchFromBeginning>
+         <wholeWordOnly>false</wholeWordOnly>
+         <wrapAround>true</wrapAround>
+      </Value>
+   </Item>
+   <Item>
+      <Key>FontSizeOptions</Key>
+      <Value class="oracle.ide.ceditor.options.FontSizeOptions">
+         <fontFamily>DialogInput</fontFamily>
+         <fontSize>12</fontSize>
+         <showOnlyFixedWidth>false</showOnlyFixedWidth>
+      </Value>
+   </Item>
+   <Item>
+      <Key>HeapWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.HeapWindowSettings">
+         <dataPanelSettings>
+            <columnOrder/>
+            <columnVisible>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+            </columnVisible>
+            <columnWidth>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+            </columnWidth>
+            <hideFinalFields>false</hideFinalFields>
+            <hideNullArrayElements>true</hideNullArrayElements>
+            <hideStaticFields>true</hideStaticFields>
+            <hideUnrelated>true</hideUnrelated>
+            <showOnlyRootAncestors>true</showOnlyRootAncestors>
+            <showPackages>false</showPackages>
+            <sortFieldsByName>false</sortFieldsByName>
+         </dataPanelSettings>
+         <ignoreSoftWeak>true</ignoreSoftWeak>
+         <maximumDepth>-1</maximumDepth>
+      </Value>
+   </Item>
+   <Item>
+      <Key>HelpOptions</Key>
+      <Value class="oracle.jdevimpl.help.HelpOptions">
+         <openInWindow>false</openInWindow>
+         <showCueCards>true</showCueCards>
+         <showDynamicLinks>true</showDynamicLinks>
+         <showFavorites>false</showFavorites>
+         <showFullTextSearch>true</showFullTextSearch>
+         <showKeywordIndex>true</showKeywordIndex>
+         <showTOC>true</showTOC>
+      </Value>
+   </Item>
+   <Item>
+      <Key>InsightOptions</Key>
+      <Value class="oracle.ide.ceditor.options.InsightOptions">
+         <completionEnablePopup>true</completionEnablePopup>
+         <completionPopupDelay>1000</completionPopupDelay>
+         <filterCompletion>true</filterCompletion>
+         <fontFamily>Dialog</fontFamily>
+         <fontSize>12</fontSize>
+         <invokeCompleteMatch>true</invokeCompleteMatch>
+         <newDataCompleteMatch>true</newDataCompleteMatch>
+         <parameterEnablePopup>true</parameterEnablePopup>
+         <parameterPopupDelay>1000</parameterPopupDelay>
+         <partialCompleteMatch>true</partialCompleteMatch>
+         <typedCompleteMatch>false</typedCompleteMatch>
+      </Value>
+   </Item>
+   <Item>
+      <Key>InspectorWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.InspectorWindowSettings">
+         <dataPanelSettings>
+            <columnOrder/>
+            <columnVisible>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+            </columnVisible>
+            <columnWidth>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+            </columnWidth>
+            <hideFinalFields>false</hideFinalFields>
+            <hideNullArrayElements>true</hideNullArrayElements>
+            <hideStaticFields>true</hideStaticFields>
+            <hideUnrelated>true</hideUnrelated>
+            <showOnlyRootAncestors>true</showOnlyRootAncestors>
+            <showPackages>false</showPackages>
+            <sortFieldsByName>false</sortFieldsByName>
+         </dataPanelSettings>
+      </Value>
+   </Item>
+   <Item>
+      <Key>JavaCodeFoldingOptions</Key>
+      <Value class="oracle.jdevimpl.java.folding.JavaCodeFoldingOptions">
+         <foldAnonymousClasses>true</foldAnonymousClasses>
+         <foldConstructors>false</foldConstructors>
+         <foldImports>true</foldImports>
+         <foldInitializers>false</foldInitializers>
+         <foldInnerClasses>true</foldInnerClasses>
+         <foldJavadoc>false</foldJavadoc>
+         <foldMethods>false</foldMethods>
+      </Value>
+   </Item>
+   <Item>
+      <Key>JavadocSettings</Key>
+      <Value class="oracle.jdeveloper.javadoc.JavadocSettings">
+         <autoGenFields>false</autoGenFields>
+         <autoGenMethods>false</autoGenMethods>
+         <autoGenTypes>false</autoGenTypes>
+         <tagList class="java.util.ArrayList">
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>true</allowDuplicates>
+               <allowsTemplate>true</allowsTemplate>
+               <custom>false</custom>
+               <label>@author</label>
+               <name>@author</name>
+               <params>1</params>
+               <reference class="java.lang.String"/>
+               <required>false</required>
+               <scope>1</scope>
+               <template class="java.lang.String"/>
+            </Item>
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>false</allowDuplicates>
+               <allowsTemplate>true</allowsTemplate>
+               <custom>false</custom>
+               <label>@version</label>
+               <name>@version</name>
+               <params>1</params>
+               <reference class="java.lang.String"/>
+               <required>false</required>
+               <scope>1</scope>
+               <template class="java.lang.String"/>
+            </Item>
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>false</allowDuplicates>
+               <allowsTemplate>false</allowsTemplate>
+               <custom>false</custom>
+               <label>@param</label>
+               <name>@param</name>
+               <params>2</params>
+               <reference class="java.lang.String"/>
+               <required>true</required>
+               <scope>12</scope>
+               <template>&lt;parameter name></template>
+            </Item>
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>false</allowDuplicates>
+               <allowsTemplate>false</allowsTemplate>
+               <custom>false</custom>
+               <label>@return</label>
+               <name>@return</name>
+               <params>1</params>
+               <reference class="java.lang.String"/>
+               <required>true</required>
+               <scope>4</scope>
+               <template class="java.lang.String"/>
+            </Item>
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>false</allowDuplicates>
+               <allowsTemplate>false</allowsTemplate>
+               <custom>false</custom>
+               <label>@throws</label>
+               <name>@throws</name>
+               <params>2</params>
+               <reference class="java.lang.String"/>
+               <required>true</required>
+               <scope>12</scope>
+               <template>&lt;throws type></template>
+            </Item>
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>true</allowDuplicates>
+               <allowsTemplate>false</allowsTemplate>
+               <custom>false</custom>
+               <label>@see</label>
+               <name>@see</name>
+               <params>1</params>
+               <reference class="java.lang.String"/>
+               <required>false</required>
+               <scope>15</scope>
+               <template class="java.lang.String"/>
+            </Item>
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>false</allowDuplicates>
+               <allowsTemplate>true</allowsTemplate>
+               <custom>false</custom>
+               <label>@since</label>
+               <name>@since</name>
+               <params>1</params>
+               <reference class="java.lang.String"/>
+               <required>false</required>
+               <scope>15</scope>
+               <template class="java.lang.String"/>
+            </Item>
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>false</allowDuplicates>
+               <allowsTemplate>false</allowsTemplate>
+               <custom>false</custom>
+               <label>@serial</label>
+               <name>@serial</name>
+               <params>1</params>
+               <reference class="java.lang.String"/>
+               <required>false</required>
+               <scope>3</scope>
+               <template class="java.lang.String"/>
+            </Item>
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>false</allowDuplicates>
+               <allowsTemplate>false</allowsTemplate>
+               <custom>false</custom>
+               <label>@serialData</label>
+               <name>@serialData</name>
+               <params>1</params>
+               <reference class="java.lang.String"/>
+               <required>false</required>
+               <scope>12</scope>
+               <template class="java.lang.String"/>
+            </Item>
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>false</allowDuplicates>
+               <allowsTemplate>false</allowsTemplate>
+               <custom>false</custom>
+               <label>@serialField</label>
+               <name>@serialField</name>
+               <params>1</params>
+               <reference class="java.lang.String"/>
+               <required>false</required>
+               <scope>2</scope>
+               <template class="java.lang.String"/>
+            </Item>
+            <Item class="oracle.jdeveloper.javadoc.TagDescriptor">
+               <allowDuplicates>false</allowDuplicates>
+               <allowsTemplate>false</allowsTemplate>
+               <custom>false</custom>
+               <label>@deprecated</label>
+               <name>@deprecated</name>
+               <params>1</params>
+               <reference class="java.lang.String"/>
+               <required>false</required>
+               <scope>15</scope>
+               <template class="java.lang.String"/>
+            </Item>
+         </tagList>
+         <visibility>1</visibility>
+      </Value>
+   </Item>
+   <Item>
+      <Key>JavaEditingOptions</Key>
+      <Value class="oracle.jdevimpl.java.editing.JavaOptions">
+         <alignCloseBrace>true</alignCloseBrace>
+         <autoAsterisk>true</autoAsterisk>
+         <autoBraceEnd>true</autoBraceEnd>
+         <autoCommentEnd>true</autoCommentEnd>
+         <autoGenDocComments>true</autoGenDocComments>
+         <autoParenEnd>true</autoParenEnd>
+         <autoQuoteEnd>true</autoQuoteEnd>
+         <autoQuoteExtend>true</autoQuoteExtend>
+         <moveOpenBrace>true</moveOpenBrace>
+         <openBraceSameLine>false</openBraceSameLine>
+         <showIndexerDialog>false</showIndexerDialog>
+      </Value>
+   </Item>
+   <Item>
+      <Key>JavaExplorerOptions</Key>
+      <Value class="oracle.jdevimpl.java.explorer.JavaExplorerOptions">
+         <expandedFolders>12</expandedFolders>
+         <expandedGroups>1842</expandedGroups>
+         <groupOrder class="[I"/>
+         <hideFilter>0</hideFilter>
+         <showAccessIcons>true</showAccessIcons>
+         <showFilter>511</showFilter>
+         <sortOrder>2</sortOrder>
+      </Value>
+   </Item>
+   <Item>
+      <Key>JavaImportOptions</Key>
+      <Value class="oracle.jdevimpl.java.imports.JavaImportOptions">
+         <assistEnablePopup>true</assistEnablePopup>
+         <assistPopupDelay>1000</assistPopupDelay>
+         <checkPackageAccess>true</checkPackageAccess>
+         <collapseGroups>true</collapseGroups>
+         <groupImports>true</groupImports>
+         <ignoreNonUppercase>true</ignoreNonUppercase>
+         <ignoreShortClasses>true</ignoreShortClasses>
+         <moveCaret>true</moveCaret>
+         <packageDepth>2</packageDepth>
+         <sortOnOrganize>true</sortOnOrganize>
+      </Value>
+   </Item>
+   <Item>
+      <Key>JavaInsightOptions</Key>
+      <Value class="oracle.jdevimpl.java.insight.JavaInsightOptions">
+         <autoImport>true</autoImport>
+         <boldDeclaredMembers>true</boldDeclaredMembers>
+         <explicitImport>true</explicitImport>
+         <italicLocalVariables>false</italicLocalVariables>
+         <showAccessIcons>true</showAccessIcons>
+         <showDefiningClass>false</showDefiningClass>
+         <showDeprecated>true</showDeprecated>
+         <showImportedClasses>true</showImportedClasses>
+         <showObjectDotStatic>false</showObjectDotStatic>
+         <showObjectMethods>true</showObjectMethods>
+         <showOverloadedMethods>true</showOverloadedMethods>
+         <showTopLevelPackages>false</showTopLevelPackages>
+         <strikethruDeprecated>true</strikethruDeprecated>
+      </Value>
+   </Item>
+   <Item>
+      <Key>JavaUnderlinesOptions</Key>
+      <Value class="oracle.jdevimpl.java.editing.JavaUnderlinesOptions">
+         <classSeparatorColor>-4144960</classSeparatorColor>
+         <largeFileUpdateDelay>1500</largeFileUpdateDelay>
+         <memberSeparatorColor>10066329</memberSeparatorColor>
+         <semanticErrorColor>-16776961</semanticErrorColor>
+         <showClassSeparators>true</showClassSeparators>
+         <showMemberSeparators>true</showMemberSeparators>
+         <skipAdjacentFields>true</skipAdjacentFields>
+         <smallFileUpdateDelay>500</smallFileUpdateDelay>
+         <syntaxErrorColor>-65536</syntaxErrorColor>
+         <underlineErrors>true</underlineErrors>
+         <underlineSemantic>true</underlineSemantic>
+      </Value>
+   </Item>
+   <Item>
+      <Key>LibraryManagerOptions</Key>
+      <Value class="oracle.ide.net.URLPath">
+         <entries class="[Ljava.net.URL;"/>
+      </Value>
+   </Item>
+   <Item>
+      <Key>LocalsWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.LocalsWindowSettings">
+         <dataPanelSettings>
+            <columnOrder/>
+            <columnVisible>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+            </columnVisible>
+            <columnWidth>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+            </columnWidth>
+            <hideFinalFields>false</hideFinalFields>
+            <hideNullArrayElements>true</hideNullArrayElements>
+            <hideStaticFields>true</hideStaticFields>
+            <hideUnrelated>true</hideUnrelated>
+            <showOnlyRootAncestors>true</showOnlyRootAncestors>
+            <showPackages>false</showPackages>
+            <sortFieldsByName>false</sortFieldsByName>
+         </dataPanelSettings>
+         <hideOutOfScopeVars>true</hideOutOfScopeVars>
+         <showStaticFolder>true</showStaticFolder>
+         <sortVarsByName>false</sortVarsByName>
+      </Value>
+   </Item>
+   <Item>
+      <Key>MonitorsWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.MonitorsWindowSettings">
+         <dataPanelSettings>
+            <columnOrder/>
+            <columnVisible>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+            </columnVisible>
+            <columnWidth>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+            </columnWidth>
+            <hideFinalFields>false</hideFinalFields>
+            <hideNullArrayElements>true</hideNullArrayElements>
+            <hideStaticFields>true</hideStaticFields>
+            <hideUnrelated>true</hideUnrelated>
+            <showOnlyRootAncestors>true</showOnlyRootAncestors>
+            <showPackages>false</showPackages>
+            <sortFieldsByName>false</sortFieldsByName>
+         </dataPanelSettings>
+         <threadsPanelSettings>
+            <columnOrder/>
+            <columnVisible>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+            </columnVisible>
+            <columnWidth>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+            </columnWidth>
+         </threadsPanelSettings>
+      </Value>
+   </Item>
+   <Item>
+      <Key>oracle.bali.xml.addin.schema.SchemaOptions</Key>
+      <Value class="oracle.bali.xml.addin.schema.SchemaOptions">
+         <schemas>
+            <data class="java.util.ArrayList"/>
+         </schemas>
+      </Value>
+   </Item>
+   <Item>
+      <Key>oracle.bali.xml.addin.XMLEditorOptions</Key>
+      <Value class="oracle.bali.xml.addin.XMLEditorOptions">
+         <endTagCompletion>false</endTagCompletion>
+         <requiredAttributeInsertion>true</requiredAttributeInsertion>
+         <showErrors>true</showErrors>
+         <smartIndent>false</smartIndent>
+      </Value>
+   </Item>
+   <Item>
+      <Key>oracle.jdeveloper.xml.j2ee.J2eeNode$1</Key>
+      <Value class="oracle.bali.xml.preference.jdev.JDevXmlPreferenceManager">
+         <preferenceManagerName>oracle.jdeveloper.xml.j2ee.J2eeNode$1</preferenceManagerName>
+         <preferences class="java.util.HashMap"/>
+      </Value>
+   </Item>
+   <Item>
+      <Key>oracle.jdevimpl.webapp.jsp.JspXmlModel</Key>
+      <Value class="oracle.bali.xml.preference.jdev.JDevXmlPreferenceManager">
+         <preferenceManagerName>oracle.jdevimpl.webapp.jsp.JspXmlModel</preferenceManagerName>
+         <preferences>
+            <Item>
+               <Key>ShowExpertItems</Key>
+               <Value class="java.lang.Boolean">true</Value>
+            </Item>
+         </preferences>
+      </Value>
+   </Item>
+   <Item>
+      <Key>PrintingHTMLOptions</Key>
+      <Value class="oracle.ide.ceditor.options.PrintingHTMLOptions">
+         <charsetEncoding>utf-8</charsetEncoding>
+         <fontFamily>DialogInput</fontFamily>
+         <fontSize>12</fontSize>
+         <printColors>true</printColors>
+         <printFileHeader>true</printFileHeader>
+         <printFontStyles>true</printFontStyles>
+         <printLineNumbers>1</printLineNumbers>
+         <printTimeStamp>true</printTimeStamp>
+         <useAnchors>true</useAnchors>
+         <useFontInfo>false</useFontInfo>
+         <wrapBehavior>0</wrapBehavior>
+         <wrapColumn>80</wrapColumn>
+         <wrapSymbol>\</wrapSymbol>
+      </Value>
+   </Item>
+   <Item>
+      <Key>PrintingOptions</Key>
+      <Value class="oracle.ide.ceditor.options.PrintingOptions">
+         <fontFamily>DialogInput</fontFamily>
+         <fontSize>10</fontSize>
+         <printColors>false</printColors>
+         <printFileHeader>true</printFileHeader>
+         <printFontStyles>true</printFontStyles>
+         <printLineNumbers>1</printLineNumbers>
+         <printPageNumbers>true</printPageNumbers>
+         <wrapBehavior>1</wrapBehavior>
+         <wrapSymbol>\</wrapSymbol>
+      </Value>
+   </Item>
+   <Item>
+      <Key>ProfilerSettings</Key>
+      <Value class="oracle.jdevimpl.runner.profile.ProfilerSettings">
+         <eventColumnVisible>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+         </eventColumnVisible>
+         <memColumnVisible>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+         </memColumnVisible>
+         <sampleColumnVisible>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>true</Item>
+         </sampleColumnVisible>
+      </Value>
+   </Item>
+   <Item>
+      <Key>SmartWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.SmartWindowSettings">
+         <dataPanelSettings>
+            <columnOrder/>
+            <columnVisible>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+            </columnVisible>
+            <columnWidth>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+            </columnWidth>
+            <hideFinalFields>false</hideFinalFields>
+            <hideNullArrayElements>true</hideNullArrayElements>
+            <hideStaticFields>true</hideStaticFields>
+            <hideUnrelated>true</hideUnrelated>
+            <showOnlyRootAncestors>true</showOnlyRootAncestors>
+            <showPackages>false</showPackages>
+            <sortFieldsByName>false</sortFieldsByName>
+         </dataPanelSettings>
+         <numberOfLines>1</numberOfLines>
+         <numberOfLocations>2</numberOfLocations>
+         <sortExpressions>true</sortExpressions>
+      </Value>
+   </Item>
+   <Item>
+      <Key>StackWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.StackWindowSettings">
+         <columnOrder/>
+         <columnVisible>
+            <Item>true</Item>
+            <Item>true</Item>
+            <Item>false</Item>
+            <Item>false</Item>
+         </columnVisible>
+         <columnWidth>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+            <Item>0</Item>
+         </columnWidth>
+         <showPackages>false</showPackages>
+      </Value>
+   </Item>
+   <Item>
+      <Key>SyntaxColorsOptions</Key>
+      <Value class="oracle.ide.ceditor.options.SyntaxColorsOptions">
+         <firstTime>false</firstTime>
+         <migrated>true</migrated>
+         <selectedScheme>Default</selectedScheme>
+         <styleList class="java.util.ArrayList">
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-plain-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="false" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-comment-style" usepfg="false" frgb="-8355712" usepbg="true" brgb="-1" usepfont="false" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-keyword-style" usepfg="false" frgb="-13408615" usepbg="true" brgb="-1" usepfont="false" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-string-style" usepfg="false" frgb="-16763956" usepbg="true" brgb="-1" usepfont="false" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-number-style" usepfg="false" frgb="-16751104" usepbg="true" brgb="-1" usepfont="false" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-identifier-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-brace-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-operator-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-markup-style" usepfg="false" frgb="-16750951" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-element-style" usepfg="false" frgb="-16750951" usepbg="true" brgb="-1" usepfont="false" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-attribute-name-style" usepfg="false" frgb="-6750208" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="base-attribute-value-style" usepfg="false" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="java-comment-style" usepfg="true" frgb="-8355712" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="java-string-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="java-keyword-style" usepfg="true" frgb="-13408615" usepbg="true" brgb="-1" usepfont="true" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="java-literals-style" usepfg="false" frgb="-6724096" usepbg="true" brgb="-1" usepfont="false" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="java-number-style" usepfg="true" frgb="-16751104" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="java-identifier-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="java-operator-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="java-brace-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="java-sqlj-style" usepfg="false" frgb="-16738048" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="javadoc-comment-style" usepfg="false" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="javadoc-tag-text-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="false" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="javadoc-tag-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="false" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="html-comment-style" usepfg="true" frgb="-8355712" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="html-symbol-style" usepfg="true" frgb="-16750951" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="html-element-style" usepfg="true" frgb="-16750951" usepbg="true" brgb="-1" usepfont="true" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="html-attribute-name-style" usepfg="true" frgb="-6750208" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="html-attribute-value-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="plsql-comment-style" usepfg="true" frgb="-8355712" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="plsql-string-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="plsql-keyword-style" usepfg="true" frgb="-13408615" usepbg="true" brgb="-1" usepfont="true" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="plsql-identifier-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="plsql-number-style" usepfg="true" frgb="-16751104" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="plsql-brace-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="plsql-operator-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="properties-comment-style" usepfg="true" frgb="-8355712" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="properties-name-style" usepfg="true" frgb="-6750208" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="properties-value-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="idl-comment-style" usepfg="true" frgb="-8355712" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="idl-string-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="idl-keyword-style" usepfg="true" frgb="-13408615" usepbg="true" brgb="-1" usepfont="true" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="idl-identifier-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="idl-number-style" usepfg="true" frgb="-16751104" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="idl-brace-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="idl-operator-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="c++-comment-style" usepfg="true" frgb="-8355712" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="c++-string-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="c++-keyword-style" usepfg="true" frgb="-13408615" usepbg="true" brgb="-1" usepfont="true" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="c++-identifier-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="c++-number-style" usepfg="true" frgb="-16751104" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="c++-brace-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="c++-operator-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="js-comment-style" usepfg="true" frgb="-8355712" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="js-string-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="js-keyword-style" usepfg="true" frgb="-13408615" usepbg="true" brgb="-1" usepfont="true" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="js-identifier-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="js-number-style" usepfg="true" frgb="-16751104" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="js-brace-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="js-operator-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xml-comment-style" usepfg="true" frgb="-8355712" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xml-declaration-style" usepfg="false" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xml-symbol-style" usepfg="true" frgb="-16750951" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xml-element-style" usepfg="true" frgb="-16750951" usepbg="true" brgb="-1" usepfont="true" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xml-attribute-name-style" usepfg="true" frgb="-6750208" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xml-attribute-value-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xml-cdata-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="false" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xml-text-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="false" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xml-processing-instruction-style" usepfg="false" frgb="-8355712" usepbg="true" brgb="-1" usepfont="false" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-comment-style" usepfg="true" frgb="-8355712" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-at-rule-style" usepfg="false" frgb="-10079488" usepbg="true" brgb="-1" usepfont="false" font="3"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-selector-style" usepfg="true" frgb="-16750951" usepbg="true" brgb="-1" usepfont="true" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-property-style" usepfg="true" frgb="-13408615" usepbg="true" brgb="-1" usepfont="true" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-error-style" usepfg="false" frgb="-65536" usepbg="true" brgb="-1" usepfont="false" font="2"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-identifier-style" usepfg="false" frgb="-16776961" usepbg="true" brgb="-1" usepfont="false" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-unit-style" usepfg="true" frgb="-16751104" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-string-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-function-style" usepfg="false" frgb="-6737152" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-important-style" usepfg="false" frgb="-65536" usepbg="true" brgb="-1" usepfont="false" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-medium-style" usepfg="false" frgb="-13395508" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="css-uri-style" usepfg="false" frgb="-6736948" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xquery-keyword-style" usepfg="true" frgb="-13408615" usepbg="true" brgb="-1" usepfont="true" font="1"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xquery-comment-style" usepfg="true" frgb="-8355712" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xquery-variable-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xquery-string-style" usepfg="true" frgb="-16763956" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xquery-operator-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xquery-number-style" usepfg="true" frgb="-16751104" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Style" name="xquery-brace-style" usepfg="true" frgb="-16777216" usepbg="true" brgb="-1" usepfont="true" font="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="bookmark-style" enabled="false" priority="20" usefg="false" frgb="-16777216" usebg="true" brgb="-3342337" fs="0" us="-1" urgb="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="brace-match1-highlight" enabled="true" priority="80" usefg="true" frgb="-16777216" usebg="true" brgb="-6697729" fs="0" us="-1" urgb="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="brace-match2-highlight" enabled="true" priority="80" usefg="true" frgb="-16777216" usebg="true" brgb="-13395508" fs="0" us="-1" urgb="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="brace-mismatch-highlight" enabled="true" priority="80" usefg="true" frgb="-16777216" usebg="true" brgb="-65536" fs="0" us="-1" urgb="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="find-results-highlight" enabled="true" priority="60" usefg="true" frgb="-16777216" usebg="true" brgb="-154" fs="0" us="-1" urgb="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="caret-line-highlight" enabled="true" priority="50" usefg="false" frgb="-16777216" usebg="true" brgb="-329001" fs="0" us="-1" urgb="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="disabled-breakpoint" enabled="false" priority="25" usefg="true" frgb="-16777216" usebg="true" brgb="-13108" fs="0" us="-1" urgb="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="enabled-breakpoint" enabled="true" priority="30" usefg="false" frgb="-1" usebg="true" brgb="-13108" fs="0" us="-1" urgb="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="execution-point" enabled="true" priority="90" usefg="false" frgb="-1" usebg="true" brgb="-6697729" fs="0" us="-1" urgb="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="highlight-selection" enabled="true" priority="100" usefg="true" frgb="-1" usebg="true" brgb="-13408615" fs="0" us="-1" urgb="0"/>
+            <Item class="oracle.ide.ceditor.options.S2Highlight" name="todo-style" enabled="true" priority="20" usefg="true" frgb="-65281" usebg="false" brgb="-65281" fs="0" us="-1" urgb="0"/>
+         </styleList>
+      </Value>
+   </Item>
+   <Item>
+      <Key>ThreadsWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.ThreadsWindowSettings">
+         <showThreadGroupStructure>true</showThreadGroupStructure>
+         <threadsPanelSettings>
+            <columnOrder/>
+            <columnVisible>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+            </columnVisible>
+            <columnWidth>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+            </columnWidth>
+         </threadsPanelSettings>
+      </Value>
+   </Item>
+   <Item>
+      <Key>ToDoOptions</Key>
+      <Value class="oracle.jdevimpl.todo.ToDoOptions">
+         <dateFormatString>M/d/yy</dateFormatString>
+         <filterList class="java.util.ArrayList"/>
+         <priorityIdGenerator>100</priorityIdGenerator>
+         <priorityList class="java.util.ArrayList">
+            <Item class="oracle.jdevimpl.todo.ToDoPriority">
+               <iconURLString>jar:file:/C:/oracle/OA_Framework/jdevbin/jdev/lib/jdev.jar!/oracle/jdevimpl/resource/images/task_high.gif</iconURLString>
+               <id>1</id>
+               <ranking>3</ranking>
+               <text>High</text>
+            </Item>
+            <Item class="oracle.jdevimpl.todo.ToDoPriority">
+               <iconURLString>jar:file:/C:/oracle/OA_Framework/jdevbin/jdev/lib/jdev.jar!/oracle/jdevimpl/resource/images/task_medium.gif</iconURLString>
+               <id>2</id>
+               <ranking>2</ranking>
+               <text>Medium</text>
+            </Item>
+            <Item class="oracle.jdevimpl.todo.ToDoPriority">
+               <iconURLString/>
+               <id>3</id>
+               <ranking>1</ranking>
+               <text>Low</text>
+            </Item>
+            <Item class="oracle.jdevimpl.todo.ToDoPriority">
+               <iconURLString/>
+               <id>0</id>
+               <ranking>0</ranking>
+               <text>None</text>
+            </Item>
+         </priorityList>
+         <tagList class="java.util.ArrayList">
+            <Item class="oracle.jdevimpl.todo.ToDoTag">
+               <priorityId>3</priorityId>
+               <tag>TODO</tag>
+            </Item>
+            <Item class="oracle.jdevimpl.todo.ToDoTag">
+               <priorityId>3</priorityId>
+               <tag>TASK</tag>
+            </Item>
+            <Item class="oracle.jdevimpl.todo.ToDoTag">
+               <priorityId>3</priorityId>
+               <tag>FIXME</tag>
+            </Item>
+         </tagList>
+      </Value>
+   </Item>
+   <Item>
+      <Key>UIEditorOptions</Key>
+      <Value class="oracle.jdeveloper.uieditor.UIEditorOptions">
+         <defaultMemberScope>3</defaultMemberScope>
+         <gridSpacing>5</gridSpacing>
+         <gridVisible>true</gridVisible>
+         <matchExistingCode>false</matchExistingCode>
+         <snapToGrid>true</snapToGrid>
+         <useAnonymousInnerClass>true</useAnonymousInnerClass>
+         <useBeansInstantiate>false</useBeansInstantiate>
+      </Value>
+   </Item>
+   <Item>
+      <Key>UndoOptions</Key>
+      <Value class="oracle.ide.ceditor.options.UndoOptions">
+         <editMergeCount>10</editMergeCount>
+         <enableNavigationUndo>false</enableNavigationUndo>
+         <mergeDeleteNext>true</mergeDeleteNext>
+         <mergeDeletePrevious>true</mergeDeletePrevious>
+         <mergeTypedInsert>true</mergeTypedInsert>
+         <mergeTypedReplace>true</mergeTypedReplace>
+         <navigationMergeCount>20</navigationMergeCount>
+      </Value>
+   </Item>
+   <Item>
+      <Key>WatchWindowOptions</Key>
+      <Value class="oracle.jdevimpl.runner.debug.WatchWindowSettings">
+         <dataPanelSettings>
+            <columnOrder/>
+            <columnVisible>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>true</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+               <Item>false</Item>
+            </columnVisible>
+            <columnWidth>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+               <Item>0</Item>
+            </columnWidth>
+            <hideFinalFields>false</hideFinalFields>
+            <hideNullArrayElements>true</hideNullArrayElements>
+            <hideStaticFields>true</hideStaticFields>
+            <hideUnrelated>true</hideUnrelated>
+            <showOnlyRootAncestors>true</showOnlyRootAncestors>
+            <showPackages>false</showPackages>
+            <sortFieldsByName>false</sortFieldsByName>
+         </dataPanelSettings>
+      </Value>
+   </Item>
+</client-settings>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone='yes'?>
+
+<jazn 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/jazn-10_0.xsd"
+  schema-major-version="10"
+  schema-minor-version="0"
+  provider="XML" 
+  location="./system-jazn-data.xml" 
+  default-realm="jazn.com">
+        <!-- properties to configure the 3rd party IDM framework -->
+	<property name="idm.authentication.name" value="JavaSSO" />
+	<property name="idm.token.asserter.class" value="oracle.security.jazn.sso.SSOCookieTokenAsserter" />
+	<property name="idm.token.collector.class" value="oracle.security.jazn.sso.SSOCookieTokenCollector" />
+	<property name="idm.token.type" value="HTTP_COOKIE" />
+	<property name="idm.token.collector.cookie.1" value="ORA_OC4J_SSO" />
+
+        <!-- properties for the out of the box Java SSO -->
+	<property name="custom.sso.url.login" value="/jsso/SSOLogin" />
+	<property name="custom.sso.url.logout" value="/jsso/SSOLogout" />
+	<property name="custom.sso.key.alias" value="ssoSymmetricKey" />
+</jazn>
+
+<!--
+<jazn 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/jazn-10_0.xsd"
+  schema-major-version="10"
+  schema-minor-version="0"
+  provider="LDAP" 
+  location="ldap://myoid.us.oracle.com:389"
+/>
+-->
+
+
+

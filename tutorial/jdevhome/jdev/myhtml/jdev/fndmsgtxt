@@ -1,0 +1,4749 @@
+# dbdrv: exec fnd bin FNDLOAD bin &phase=dat  checkfile:~PROD:~PATH:~FILE \
+# dbdrv: &ui_apps 0 Y UPLOAD @ICX:patch/115/import/icxfwkmsg.lct  @~PROD:~PATH/~FILE
+
+# $Header: icx1371518f.ldt 115.166 2003/07/31 05:17:22 nigoel noship $
+
+# 
+LANGUAGE = "US"
+LDRCONFIG = "icxfwkmsg.lct 115.162"
+
+# -- Begin Entity Definitions -- 
+
+DEFINE FND_NEW_MESSAGES
+  KEY   APPLICATION_SHORT_NAME          VARCHAR2(50)
+  KEY   MESSAGE_NAME                    VARCHAR2(30)
+  CTX   OWNER                           VARCHAR2(7)
+  CTX   MESSAGE_NUMBER                  VARCHAR2(50)
+  TRANS MESSAGE_TEXT                    VARCHAR2(2000)
+  CTX   DESCRIPTION                     VARCHAR2(240)
+  CTX   TYPE                            VARCHAR2(30)
+  CTX   MAX_LENGTH                      NUMBER(22)
+END FND_NEW_MESSAGES
+
+# -- End Entity Definitions -- 
+
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_SS_MON_SELECT_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "To see all notifications sent by the workflow, select \"Notification History.\"  Select \"Participant Responses\" to view comments and other data collected for response-required notifications."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_SS_MON_STOP_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select the \"Stop Workflow\" button below to terminate the workflow."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_MONITOR_RESPONSES_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Only completed, response-required notifications are shown below.  If you're interested in information-only notifications, or unanswered response-required notifications, see the complete Activity History."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_MONITOR_TIP_PURGE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Workflow histories are periodically purged from the system and may no longer be available for review."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_SS_MON_REASSIGN_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select a \"Reassign\" link in the \"Reminders Sent\" column to reassign a notification to which the recipient has not replied as expected."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_SS_MON_SEARCH_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Specify search criteria and select \"Go\" to find workflows."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CLEAR"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Clear"
+  DESCRIPTION = "button label for AOL dialogs - clear contents of dialog"
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_BAD_ENTITY_USAGE_NAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Invalid entity usage name: &ENTITYUSAGENAME"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_BAD_FACTORY_CREATE_CALLED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Invalid create method called. This method call is not supported."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_BAD_INVOKE_METHOD"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No method with signature - &SIGNATURE"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_NULL_CRITERIA"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "You must enter a value for &ITEM as criteria for LOV."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_GO"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "To find your item, select a filter item in the pulldown list and enter a value in the text field, then select the \"Go\" button."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_RESULT_NOT_DISPLAYED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The Node Display flag for item &ITEM is not checked.  This item is defined in a \"result\" relationship in the LOV Relations form. Because the Node Display flag is not checked, it has not been added to the LOV result table and its value cannot be returned to the base page."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_LOV_RELATION_INFO"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No Lov Target Relationship data for region (&REGION); regionAppId (&REGIONAPPLID); RegionItem: &ITEM_NAME)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_RESULTS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Results"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SEARCH_AND_SELECT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Search and Select:"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANNOT_CREATE_ROWSET"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot create rowset for view usage (&VONAME); ApplicationModule: (&APPMOD); RegionItem: (&REGIONITEM)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANNOT_CREATE_WEBBEAN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Could not create web bean, could not find item metadata Item Name: (&ITEM); Region: (&REGION)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANNOT_INIT_REGION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot initialize region, Region Code must not be null"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CLASS_CREATION_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Could not create Java class: (&CLASS) associated with region: (&REGION). This is probably because the class name is wrong or not included in project."
+  DESCRIPTION = "Wrong controller for region."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_COOKIE_HAS_NO_DBC"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "dbc file cookie is missing"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_COOKIE_HAS_NO_ICX_ENTRY"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No Self Service cookie available"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DBC_FILE_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Could not locate the DBC file: &DBCFILENAME"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DUP_ITEM_NAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Duplicate item name; Item Name: &ITEM; Region Code: &REGION; Region App ID: &REGIONAPPLID"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ENV_TXT_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Could not locate the env.txt file: &URL"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ERR_CALLING_GETSESSIONID"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Session Id cannot be accessed without a WebAppsContext"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GENERIC_MESSAGE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "&MESSAGE"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_ROW_TYPE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Programming error. Row (&ROWTYPE) must be of type oracle.apps.fnd.framework.OARow."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ITEM_NAME_INVALID"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot create region, item name is null or blank; Attribute Code: (&ATTRIBUTE); Attribute App ID: (&ATTRIBUTEAPPLID)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NON_SUPPORTED_REGION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Region style (&REGIONSTYLE) is currently not supported."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NOT_AN_OAWEBUIBEAN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Programming error. Program tried to instantiate a web bean (&WEBBEAN) which was not an OAWebuiBean."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NOT_OAVIEWOBJECTIMPL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "ViewObject (&VONAME) is not a subclass of OAViewObjectImpl"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_COOKIE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No cookie available."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_CURRENT_ROW"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No current row for View (&VONAME)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_DATABASE_CONNECTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Illegal method call because there is no database connection."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_FIELD_NAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Field name is missing"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_JDBC_CONNECT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No JDBC connection available. Automatic reconnect currently not supported by OADBTransactionImpl."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_REGION_CODE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Region could not be found in AK_REGIONS; RegionCode: &REGION RegionApplicationId: &REGIONAPPLID"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NULL_APPS_CONTEXT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Null applications context for current database transaction."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PAGE_BEAN_DECLARE_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "PageBean must be declared with scope of page or request"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PCKLIST_OBJS_ARE_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot create picklist for region item (&ITEM); both PickListRowset and PickListViewObject is null"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PCKLIST_VO_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot create picklist ViewObject for region item (&ITEM); ViewObject (&VIEWOBJECT) not found"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_POOL_CHKOUT_NULL_APP_MOD"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The application module checked out from the application module pool is null."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_RECONNECT_NOT_SUPPORTED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "reconnect(boolean) currently not supported for OADBTransactionImpl. You should create a new ApplicationModule instead."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SELECT_ITEMS_AND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Select Item(s) and ..."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VIEW_USAGE_MUST_BE_SAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The region item ViewUsageNames must be the same for a Table; RegionCode: (&REGION); Region App ID: (&REGIONAPPLID)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VIEW_USAGE_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The view usage/instance name of the table and its columns cannot be null. Region in error: (&REGION); Application ID: (&REGIONAPPLID); Item in error: (&REGIONITEM). Please specify a view instance for the table region or the item in question."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VO_ATTR_IS_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "ViewObject attribute is null; ViewUsageName: (&VIEWUSAGE); RegionItem: (&REGIONITEM)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VO_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "ViewObject attribute (&VOATTR) not found; ViewUsageName: (&VIEWUSAGENAME); RegionItem: (&REGIONITEM)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_ALL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "All"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_ATTACHMENTS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Attachment(s)"
+  DESCRIPTION = "Attachments in the details page"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_CANCELED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Canceled"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_CLOSED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Closed"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_CLOSE_FAILED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Unable to close all selected notifications."
+  DESCRIPTION = "Used to flag failure to close notifications"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_CLOSE_FAILED_NTF"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Unable to close notification &NID."
+  DESCRIPTION = "Used to flag failure to close a particular notification"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_DATE_FORMAT_EXAMPLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "(example: MM/DD/YY)"
+  DESCRIPTION = "Tip for date fields in self service pages"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_EXECUTE_FORM_FAILED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Some buttons are disabled, because your responsibility does not allow you to launch these forms."
+  DESCRIPTION =
+ "This appears in the details of a notification if forms applets were not run"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NOTIFICATIONS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Notifications"
+  DESCRIPTION = "FWK:"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NOTIFICATION_DETAILS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Notification Details"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NO_ATTACH"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "This notification has no attachments."
+  DESCRIPTION =
+ "This appears in the details of a notification if there are no attachments"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NO_NOTIFY"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "There are no notifications in this view."
+  DESCRIPTION = "Appears in the self service pages"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NO_RESPONSE_REQD"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "This notification does not require a response."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NO_RESPONSE_WAS_REQD"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "This notification did not require a response."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NO_SELECTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No selection was made. Please select items from the list and try the operation again."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NTF_NOT_EXIST"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Notification &NID does not exist."
+  DESCRIPTION = "Error message if a notification does not exist"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_PRIORITY_HIGH"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "High"
+  DESCRIPTION = "High priority"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_PRIORITY_LOW"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Low"
+  DESCRIPTION = "Low priority"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_REASSIGN_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Reassign the selected notifications to a person or role."
+  DESCRIPTION = "The text at the top of the reassign page"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_REASSIGN_NOTIFICATIONS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Reassign Notifications"
+  DESCRIPTION = "FWK:"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RETURN_TO_ROUTING_RULES"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Return to Routing Rules"
+  DESCRIPTION = "Return to Routing Rules list link on SS pages"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RETURN_TO_WORKLIST"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Return to Worklist"
+  DESCRIPTION = "Return to Worklist link on SS pages"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_ROUTING_MESSAGE_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Comments will display with each routed notification"
+  DESCRIPTION = "Tip for message box in setting up a routing rule"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_ROUTING_RULES"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Notification Routing Rules"
+  DESCRIPTION = "This appears in the routing rules page"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_ROUTING_RULES_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "TIP: Redirect or auto-respond to notifications using"
+  DESCRIPTION = "Routing rules tip in the worklist"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_ROUTING_RULES_LINK"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "routing rules"
+  DESCRIPTION = "Link to routing rules page"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RULE_ACTION_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Reassign or respond to the work item."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RULE_ACTIVE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Active"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RULE_RESPONSE_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Complete the form below to set up the proper response for the rule."
+  DESCRIPTION =
+ "The text at the top of the rule response in the create/edit routing rules page"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_SELECT_NOTIFICATIONS_AND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Select Notification(s) and ..."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_SELECT_ROUTING_RULES_AND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Select Routing Rule(s) and ..."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_WORKLIST_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select one or more notifications from the list and Open or Reassign them using the appropriate buttons. You may also click on the notification subject to open a particular notification."
+  DESCRIPTION = "The text at the top of the worklist in the worklist page"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ADD_ANOTHER_ROW_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Add Another Row"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_HIDDEN_COL_MUST_BE_LAST"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Hidden columns must be last columns in table"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_COLUMN_NUM"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The number of columns of Default Table Layout Style must be positive"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_SEARCH_AND_SELECT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Search and Select List of Values"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MISSING_REQUIRED_VALUE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Missing value for required field"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_INSERT_ON_SORT_TABLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Table cannot be marked as isInsertable(true) if columns are marked as isSortable(true)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SEARCH"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Search"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SEESQL_INVALID_COL_NAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Can not sort on column with VO XML ViewAttribute Expression of \"See the SQL...\". Must change Expression to column name."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SORTABLE_MISSING_COL_NAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Can not sort on column without a ViewAttributeName defined on column webbean"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_TIP_REQDEMO_DYNAMIC_LOV"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You can further restrict the LOV query by UserId here. This is an exmaple of a \"Passive Criteria\". Note that the Lov VO has a where clause (email_address like p%) defined via the wizard."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_TIP_REQDEMO_USER_LOV"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "(e.g. User Name)"
+  DESCRIPTION = "FWK: TIP"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_UPDATE_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Update"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_ADVANCED_FIND_REG_TIP"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "If you know the exact value you are looking for, using \"is\" or \"starts with\" will return results more quickly."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_ADVANCED_SEARCH_TEXT"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Advanced Search"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_CALLTYPE"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "The callType &CALLTYPE is not supported. Please check your function definition."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_CANNOT_FIND_VO"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "System Error: Cannot find view object &VONAME"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_CLEAR_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Clear"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_FIND_MATCH_CASE_TIP"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Selecting \"Match case\" improves speed."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_FIND_RADIO_TIP"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Specify how your search values will be applied."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_NO_FIRST_REGION"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Error in retrieving the first region of page &PAGE."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_NO_REGIONS"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "The page &PAGE in this flow has no regions."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_REGION_HAS_NO_ITEMS"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "The region &REGION has no items. Please check your region definition."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_RESULTS_HEADING"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Results"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_SEARCH_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Search"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_SEARCH_HEADING"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Search"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_SIMPLE_SEARCH_TEXT"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Simple Search"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_STYLE_NOT_SUPPORTED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "The region style &STYLE is not currently supported for custom calls."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_WRONG_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "Please change your item style from \"BUTTON\" to \"BUTTON_SUBMIT\" for item &ITEM in region &REGION."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_WRONG_COLUMNS"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Error processing the columns for the region &REGION."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_WRONG_FK_DEFN"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "The relationship for the &FKNAME has not been properly defined. Please check your relationship definition."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_WRONG_FK_DEFN2"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "The relationship has not been properly defined. Please check your relationship definition."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_WRONG_ITEM_STYLE"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "The item style &ITEM_STYLE is not currently supported."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_WRONG_PAGE_NAME"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "The page name for &PAGE has not been properly defined."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NID_NOT_OPEN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You may not close notification &NID since it is no longer open."
+  DESCRIPTION = "SS FWK: Trying to close a notification which is not open"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NID_RESP_REQD"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You may not close notification &NID since it requires a response. Please respond to this notification before closing it."
+  DESCRIPTION =
+ "SS FWK: Trying to close a notification which requires a response"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NO_SELECTION_OPEN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You have not selected any notifications to open. Please select one or more notifications from the worklist using the checkboxes and click the 'Open' button in order to open them. Alternately, you can open a single notification by clicking on its subject line."
+  DESCRIPTION =
+ "SS FWK: Attempting to open multiple notifications without making any selection"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NO_SELECTION_REASSIGN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You have not selected any notifications to reassign. Please select one or more notifications from the worklist using the checkboxes and click the 'Reassign' button in order to reassign them. Alternately, you can reassign a single notification by clicking on its subject line to bring up the Notification Details page, and then click the 'Reassign' button. Please note that notifications which are closed cannot be reassigned."
+  DESCRIPTION =
+ "SS FWK: Attempting to reassign multiple notifications without making any selection"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_REASSIGN_HELP_MULTIPLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Reassign the following notifications to a person or role. You may choose to delegate authority for or, transfer ownership of, these notifications."
+  DESCRIPTION = "SS FWK: The text at the top of the reassign page (plural)"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NO_RULES"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You have not setup any notification routing rules. Please use the Create Rule button to create a new notification routing rule."
+  DESCRIPTION = "Appears in the self service pages"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_PRIORITY_MEDIUM"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Normal"
+  DESCRIPTION = "Medium priority"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RULE_ACTION_R"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Please reassign the work item."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RULE_ACTION_RC"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Please reassign or close the work item."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RULE_ACTION_RCD"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please reassign or close the work item. You may also choose to have all such work items delivered to you regardless of other rules."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RULE_ACTION_RD"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please reassign the work item. You may also choose to have all such work items delivered to you regardless of other rules."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RULE_ACTION_RR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Please reassign or respond to the work item."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RULE_ACTION_RRD"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please reassign or respond to the work item. You may also choose to have all such work items delivered to you regardless of other rules."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_NO_ITEMNAME"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "Items that have an LOV region associated should have a non-null value for the ItemName column."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_NO_SEARCHABLE_ITEMS"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "There are no queryable nodes on the region &REGION_CODE."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_COOKIE_FAIL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Failed to create a cookie.  Your database or its WEBDB listener may be down.  Make sure you can sign on to the Personal Home Page for your database. If you are able to successfully log in then report this problem to OACTECH."
+  DESCRIPTION = "Used by new SS framework (CreateIcxSession.java)"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_CREAT_SESSION_FAIL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Could not create a session."
+  DESCRIPTION = "Used by new SS framework (CreateIcxSession.java)"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_DECRYPT_COOKIE_FAIL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Could decrypt the session cookie."
+  DESCRIPTION = "Used by new SS framework (CreateIcxSession.java)"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INVALID_APP_RESP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You must specify a valid applicationShortName and responsibilityKey, in order to successfully login."
+  DESCRIPTION = "Used by new SS framework (CreateIcxSession.java)"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_PROB_READING_ENV"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Problems reading env.txt"
+  DESCRIPTION = "Used by new SS framework (CreateIcxSession.java)"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_RESP_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Could not find the specified responsibility"
+  DESCRIPTION = "Used by new SS framework (CreateIcxSession.java)"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_SESS_UPDATE_FAIL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Could not update icx sessions with the responsibility information."
+  DESCRIPTION = "Used by new SS framework (CreateIcxSession.java)"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_VALID_SESS_ID_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Could not find a valid session id."
+  DESCRIPTION = "Used by new SS framework (CreateIcxSession.java)"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_WEB_AGENT_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Could not figure out the apps web agent."
+  DESCRIPTION = "Used by new SS framework (CreateIcxSession.java)"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SEARCH_FOR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Search for &SHORT_DESC"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_REQUIRES_RESTART"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "20003"
+  MESSAGE_TEXT =
+ "The action you have selected cannot be executed successfully.  This situation can be caused by using the Browser [Back] button followed by an attempt to re-execute transactions or inquiry pages.  Please click on the [Home] Button or Link and then retry your transaction or inquiry."
+  DESCRIPTION =
+ "Tells the user that their Self Service Session is in a bad state and that they should restart their tranaction"
+  TYPE = "ERROR"
+  MAX_LENGTH = "1000"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_REQUIRED_MISSING"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Can't insert new lookup code.  A required field is missing."
+  DESCRIPTION = "required field missing"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "AK" "AK_ENTITY_DUPLICATE_PK"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Primary key &PK is already in use.  Please replace or remove it."
+  DESCRIPTION = "duplicate primary keys"
+  TYPE = "ERROR"
+  MAX_LENGTH = "200"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "AK" "AK_ENTITY_ID_INVALID"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The Entity ID you entered is already is use.  Please choose a different Entity ID."
+  DESCRIPTION = "Entity ID already in use"
+  TYPE = "ERROR"
+  MAX_LENGTH = "150"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "AK" "AK_ENTITY_INVALID_PK"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The view attribute name for primary key &PK is not valid."
+  DESCRIPTION = "invalid primary key"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "AK" "AK_ENTITY_INVALID_REGION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Invalid region code entered."
+  DESCRIPTION = "invalid region for new entity"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "AK" "AK_ENTITY_NO_ENTITYID"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No Entity ID entered."
+  DESCRIPTION = "No Entity Id"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "AK" "AK_ENTITY_SKIPPED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Primary key fields can not be skipped.  Please provide a value for primary key &PK."
+  DESCRIPTION = "skipped a primary key"
+  TYPE = "ERROR"
+  MAX_LENGTH = "200"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "AK" "AK_NULL_ENTITYID"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No Entity Id defined."
+  DESCRIPTION = "No Entity Id defined when selecting categories"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "AK" "AK_WRONG_ITEMSTYLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Incorrect item style for attachments.  Select either ATTACHMENT_IMAGE or ATTACHMENT_LINK."
+  DESCRIPTION = "Incorrect item style for categories"
+  TYPE = "ERROR"
+  MAX_LENGTH = "150"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_APPID"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "1"
+  MESSAGE_TEXT = "No Application ID entered."
+  DESCRIPTION = "no application id"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_CODES_EXIST"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Can not delete lookup type because it has lookup codes.  Delete the lookup codes first."
+  DESCRIPTION = "Can not delete row because codes exists"
+  TYPE = "ERROR"
+  MAX_LENGTH = "200"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_DESC"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No description entered."
+  DESCRIPTION = "no description"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_LOOKUPTYPE"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "1"
+  MESSAGE_TEXT = "No lookup type entered."
+  DESCRIPTION = "no lookup type"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_MEANING"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No entry for meaning field."
+  DESCRIPTION = "no meaning"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_NO_DATE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Disabled date entered but no enabled date entered."
+  DESCRIPTION = "enabled flag with no dates"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_NO_ENABLED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Dates entered but enabled flag is not selected."
+  DESCRIPTION = "dates with no enabled flag"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_NO_UPDATE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The lookup code column can not be updated."
+  DESCRIPTION = "can't update lookup code"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_INVALID_DISPLAY_NAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "'&DISPLAY_NAME' is not a valid role or user name. Please use the list of values to select a user or role."
+  DESCRIPTION = "Error when an invalid name is entered in the user name LOV"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_MISSING_REASSIGN_TO"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please use the list of values to select a user or role to whom notifications which match the current rule need to be reassigned."
+  DESCRIPTION = "Error when data is missing for a field"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NON_UNIQUE_DISPLAY_NAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "'&DISPLAY_NAME' is not a unique user or role name. Please use the list of values to select a unique user or role."
+  DESCRIPTION =
+ "Error when an non-unique display name is entered in the user name LOV"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_TYPE_CONFIRMATION"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Confirmation"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_TYPE_ERROR"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Error"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_TYPE_WARNING"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Warning"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_TYPE_INFORMATION"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Information"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "AK" "AK_DELETE_ATTACH_WARNING"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Are you sure you want to detach the attachment type:&DATATYPE &FILENAME for this record?  For E-Business Suite attachment, the document content will also be deleted."
+  DESCRIPTION = "OAFramework Attachment Deletion Warning Message"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_LONG_TIP_RGN_CODE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Invalid region code or region application ID for the long tip."
+  DESCRIPTION = "Used by self service framework"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_WF_IN_PROGRESS_FOR_TXN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Workflow with item type (&ITEMTYPE) and item key (&ITEMKEY) is in progress. Abort existing workflow before launching a new process for this transaction."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_NO_QUERYABLE_ITEM"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You must have at least one region item marked as queryable on the LOV region."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_BADWEBBEAN_STYLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "WebBean style not supported (&STYLE)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_BAD_CREATE_WITH_DATATYPE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The createWebBean(OAPageContext pageContext, String style, String dataType) signature only supports TextInputBean"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DICTIONARY_KEY_BLANK"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Key value for dictionary is null"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LONG_TIP_FLYOVER_DESC"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Long Tip"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_REGION_DATA"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No data found for region (&REGIONCODE)."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_OAWEBBEAN_EXPECTED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Child bean was not an OAWebBean"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VO_CHANGED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The view object(s) referred to by the page have changed. You will need to restart the current operation."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANCEL_ALERT"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Would you like to proceed with this action?"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANCEL_WARNING"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "This action will cancel the current transaction and operations.  Data changes will be lost as a result of this action."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_TRANSACTION_ID"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "A transactionid has not been specified in the URL"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_DCONDN_NOT_SUPPORTED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "The condition &CONDITION cannot be applied to a date field."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_INQ_NO_SEARCH_CONDITION"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Please specify a search condition."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_BAD_PROFILE_NUM_FORMAT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Invalid number format (&PROFILE_VALUE) for profile (&PROFILE_NAME). Use an integer value."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANT_CHANGE_FROM_DATE_TYPE"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Data type cannot be changed from DATE type to another type."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANT_CHANGE_TO_DATE_TYPE"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Data type cannot be changed to DATE type from another type."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SETTRACE_CONFIRMATION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Sql Trace Level set to &TRACE."
+  DESCRIPTION = "confirmation for sql trace setting"
+  TYPE = "NOTE"
+  MAX_LENGTH = "250"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_NULL_VIEW_USAGE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "LOV region item (&ITEM) is marked as rendered and therefore cannot have null view usage name."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICX_INQ_ADD_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Add"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICX_INQ_ADD_MORE_ROWS_TEXT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Add column"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FNDWF_LOOKUP_NEEDS_VALUE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Missing required value for lookup \"&LKPNAME\"."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_ROOT_BEAN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "This region <RegionCode=&REGION_CODE> <RegionApplicationId=&REGION_APPL_ID> has an invalid root bean <&STYLE>. This can be caused in one of the following two ways:\n\
+\n\
+1) An attempt has been made to reference an application module or view object which is not yet known. Be sure to add this bean to its parent before setting or getting any attributes which is associated to an application module or view object.\n\
+\n\
+2) All regions must have an OABodyBean as it's root bean.\n\
+\n\
+\n\
+"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_AM_FOR_REGION"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No application module found in this region's hierarchy (RegionCode=&REGION_CODE RegionApplicationId=&REGION_APPL_ID)."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_AM_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Could not find Application Module with usage name: &USAGE_NAME."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INCORRECT_AM_DEF_NAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The Application Module found by the usage name &USAGE_NAME has a definition name &AM_DEFINITION_NAME different than &DEFINITION_NAME specified for the region.\n\
+"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ROUTING_RULE_CONFIRM"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "A new notification routing rule has been created for Item Type: &ITEMTYPE and Notification: &NOTIFICATION."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICX_INQ_NO_CONTROLLER"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Controller cannot be null for a button select within Inquiries. Please seed a value in the ICX_CUSTOM_CALL column."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "ICX" "ICX_MATCHCASE_VIEW"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "\"Match case\" has been selected for you."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_URL_SHOULD_BE_STRING"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Invalid attempt to set value of an OADataBoundValue to non-String value. This usually happens when a data bound value has been set on a bean for the DESTINATION_ATTR property and an attempt is made to place a second data bound value for the same property."
+  DESCRIPTION = "Error in data bound values"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NOTIFICATION_SUBJECTS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Subject(s)"
+  DESCRIPTION = "Field prompt on notification reassign screen"
+  TYPE = "OTHER"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NTFRR_ALL_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "If \"--All--\" is selected, you will skip to Step 3."
+  DESCRIPTION = "Tip for routing rules creation screen"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_REASSIGN_COMMENT_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Message will display with each reassigned notification."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_DELIVER_TO_ME"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Deliver notifications to me regardless of any general rules"
+  DESCRIPTION =
+ "One of the options while setting up a notification routing rule."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_ROUTING_MESSAGE_TIP2"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Message will display with each routed notification"
+  DESCRIPTION = "Tip for message box in setting up a routing rule"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PCKLIST_USAGE_DEF_CONFLICT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot create picklist ViewObject for region item (&ITEM); Picklist view usage type does not match picklist view object definition."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PCKLIST_VIEWDEF_EMPTY"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot create picklist ViewObject for region item (&ITEM); Pick list view object definition must be supplied, if pick list view usage or list view object is not set."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_JSP_URL_NEEDS_DBC"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot launch an Oracle Applications JSP URL if it does not have the DBC parameter."
+  DESCRIPTION =
+ "Error when launching an applications JSP URL without the DBC parameter"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_RULE_INACTIVE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Inactive"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NO_SELECTION_CLOSE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You have not selected any notifications to close. Please select one or more notifications from the worklist using the checkboxes and click the 'Close' button in order to close them. Please note that notifications requiring a response or, notifications that are already closed, cannot be closed."
+  DESCRIPTION =
+ "SS FWK: Attempting to close multiple notifications without making any selection"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_DUP_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Can not insert new lookup code.  The lookup code &CODE already exists."
+  DESCRIPTION = "new lookup code is duplicate"
+  TYPE = "ERROR"
+  MAX_LENGTH = "200"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_URL_HAS_NO_ICX_SESSION_ID"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "URL does not have the sessionid parameter on it."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_WEBBEAN_IS_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No application module for the current webBean. OAWebBeanHelper.getApplicationModule could not print out the original exception message because the webBean is currently null."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICX_INQ_MATCH_CASE_TEXT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Match Case"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_INVALID_NID"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Invalid notification ID."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_AMSTATE_CHECK_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The value of the root application module state cannot be determined.  The value has not yet been set."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ILLEGAL_AMSTATE_FLAG"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "AM State Required property should not be set to true if retainAM value is N."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_RETURN_TO_PORTAL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Return to the portal menu or choose a different menu option to navigate out of this page."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STALE_DATA_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The requested page contains stale data.  This error could have been caused through the use of the browser navigation button."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STALE_DATA_ERROR_TITLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Stale Data"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STATE_LOSS_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Transaction context has been lost for the page you requested.  Further action on this page is prohibited.  This error could have been caused through the use of the browser navigation button, an expired user session, or a system failure."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STATE_LOSS_ERROR_TITLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Unable to Recover Previous State"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICX_INQ_NO_ITALIC"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Please unset the italic property of attribute &ATTRIBUTE"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_DATA_TO_EXPORT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "There is no data to export."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_PAGELAYOUTBEAN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Your current page needs to have a page layout bean for exporting."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FLEX_VO_CURRENT_ROW_MOVED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The current row of the flex VO cannot be changed."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ILLEGAL_URL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Illegal URL string. The URL contains illegal characters. You need to encode these illegal characters: &URL"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ILLEGAL_USE_FINDFORM"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Illegal method usage: You should not use &METHOD method to find a form added for the page layout region with the Form AK region checkbox."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INSTANTIATION_FAILED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Instantiation of the class <&CLASS> failed."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANNOT_REL_AM_IMMEDIATELY"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Releasing the current application module <&AM> immediately is not allowed."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FLEX_INVALID_DEP_VALUE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "If you have changed the value of another field this is dependent on, please re-enter a valid value for this field."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FLEX_NO_CCID_ATTR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "CCIDAttributeName is not set on the key flex bean."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CCID_EMPTY"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "CCID not found in the current row. This exception should not occur."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CCID_NOT_INTEGER"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "CCID is not numeric."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_COULD_NOT_GET_CCID"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Unable to get the CCID from the key flexfield."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_COULD_NOT_LOAD_VALUES"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Unable to set the CCID on the key flexfield."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_AVAILABLE_COLUMNS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Available Columns"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANNOT_CUSTOMIZE_UNKNOWN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Region information necessary to personalize a particular region not found. Please check the parameters on the URL used to navigate to this page."
+  DESCRIPTION =
+ "Error on custom table views when necessary parameters are missing"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_COLUMN_DISPLAYED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Columns Displayed (in Order)"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_COL_PROP_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Update the appropriate column attributes as desired."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_COL_SHOWN_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "TIP: Columns with totaling capabilities shown can only display as the end columns of the table."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CREATE_VIEW"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Create View"
+  DESCRIPTION = "Heading for the update view region"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUST_TABLE_VIEW_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Below is a list of all pre-configured and/or personalized views applicable to \"&REGIONNAME\" table on the previous screen."
+  DESCRIPTION = "Help text for the custom table views page"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUST_TABLE_VIEW_LINK"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Return to &REGIONNAME"
+  DESCRIPTION = "Link to return to the table being customized"
+  TYPE = "OTHER"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUST_VIEWS_NO_SELECTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No view selected. Please select a view and retry the last operation."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUST_VIEW_UPDATE_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Below is a list of attributes that can be edited to change the view and/or filter the data that is displayed in your table."
+  DESCRIPTION = "Help text for the custom table view update page"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DUPLICATE_VIEW"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Duplicate View"
+  DESCRIPTION = "Heading for the update view region"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SELECT_VIEW_AND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Select View and ..."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_UPDATE_VIEW"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Update &VIEWNAME"
+  DESCRIPTION = "Heading for the update view region"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_NONFORM_CRITERIA_TABLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Table item &ITEM cannot be used as LOV criteria beause it is not a form element."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_NONFORM_CRITERIA"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Item &ITEM cannot be used as LOV criteria beause it is not a form element."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MBOX_CONFIRM_CONSTANT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Confirmation"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MBOX_ERROR_CONSTANT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Error"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MBOX_INFO_CONSTANT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Information"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MBOX_ROW_CONSTANT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Row"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MBOX_WARN_CONSTANT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Warning"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PAGELAYOUT_REQUIRE_STACK"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The first indexed child of the page layout bean should be a stack layout bean."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ALL_CONDITIONS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Show table data when all conditions are met."
+  DESCRIPTION = "One of the values in a radio group"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ANY_CONDITIONS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Show table data when any conditions are met."
+  DESCRIPTION = "One of the values in a radio group"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ASCENDING"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "ascending"
+  DESCRIPTION = "Value for sort order poplist"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DESCENDING"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "descending"
+  DESCRIPTION = "Value for sort order poplist"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FIRST_SORT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "First Sort"
+  DESCRIPTION = "Row header for a table used to select sort columns"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOCK_RECORD_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Unable to lock the record.\n\
+\n\
+Cause: The record is being modified by another user."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_SORT_ORDER"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "no sort order"
+  DESCRIPTION = "Value for sort order poplist"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_RECORD_CHANGED_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Unable to perform transaction on the record.\n\
+\n\
+Cause: The record contains stale data.  The record has been modified by another user.\n\
+\n\
+Action: Re-query the record to get the new data."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SEARCH_QUERY_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Specify parameters and values to filter the data that is displayed in your table."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SECOND_SORT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Second Sort"
+  DESCRIPTION = "Row header for a table used to select sort columns"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_THIRD_SORT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Third Sort"
+  DESCRIPTION = "Row header for a table used to select sort columns"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "RENDERED_NOT_BOOLEAN"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Rendered Property needs to be set with a boolean value."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICX_INQ_NO_COLUMNS_TO_SELECT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "There are no columns to select for this region"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICX_INQ_NO_FLOW"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Your flow definition does not exist. Please check your AK definition"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICX_INQ_NO_REGION_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No Region has been found. Please check your AK definition"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SEARCH_QUERY_REGION_TITLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Search Query to Filter Data in Table"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_PORTLET_TITLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Portlet Title"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_COPY_OF"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Duplicate of [&VIEWNAME]"
+  DESCRIPTION = "Copy of a view"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FWK_INVALID_DATE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "&DATE is not a valid date. Please re-enter."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_NULL_VIEW_OBJECT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot find LOV view object (&VIEWUSAGE) in LOV AM."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ROWS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Rows"
+  DESCRIPTION = "For use in a poplist to select the number of rows"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_TABLE_VIEW_DELETE_WARN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Are you sure you want to delete your table personalization view: [&VIEWNAME]?"
+  DESCRIPTION = "Warning message before deleting a view"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANCEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cancel"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FLEX_NULL_VO_ROW"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Flex VO (&VIEW_USAGE) of flex bean (&ITEM_NAME) contains no row."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FLEX_NULL_VO"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Flex VO (&VIEW_USAGE) of flex bean (&ITEM_NAME) is null."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_LONG_TIP_MSG_CODE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Invalid message code specified for long tip."
+  DESCRIPTION = "Used by self service framework"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SAME_MIDDLE_TIER_SESSION"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The previous Oracle Applications session for this browser has been deleted.  Please use Home\n\
+button and select your function again."
+  DESCRIPTION = "Used by self service framework"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_RESPONSIBILITY"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Responsibility"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_ORG"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Organization"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_SITE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Site"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_LOCALIZATION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Localization"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_VERTICALIZATION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Verticalization"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SYSAD_CHOOSE_RESP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select the responsibility for which you want to personalize the page."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SYSAD_CHOOSE_ORG"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select the organization for which you want to personalize the page."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SYSAD_CHOOSE_SITE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Select the site for which you want to personalize the page."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SYSAD_CHOOSE_VERT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select the verticalization for which you want to personalize the page."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SYSAD_CHOOSE_LEVEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select the level at which you want to personalize the page. When you personalize a page, you can control the scope of  impact.  For example, select a \"Personalization Level\" of \"Site\" to ensure that all users see your changes.  Select \"Responsibility\" to limit the effect to users with the designated responsibility."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USE_RESPONSIBILITY_LOV"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please use the list of values control to select the responsibility for which the region is to be personalized."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USE_ORG_LOV"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please use the list of values control to select the organization for which the region is to be personalized."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USE_SITE_LOV"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please use the list of values control to select the site for which the region is to be personalized."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USE_VERTICALIZATION_LOV"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please use the list of values control to select the verticalization for which the region is to be personalized."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USE_LOCALIZATION_LOV"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please use the list of values control to select the localization for which the region is to be personalized."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USE_REGION_LOV"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please use the list of values control to select the region to be customized."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANNOT_EDIT_CUSTOMIZATION"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You do not have sufficient privileges to edit the \"&CUSTOMIZATIONNAME\" personalization."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SUBMITBUTTON_CACHE_MISSING"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot retrieve the submitButtonBean (&ITEM) from cache."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_BUTTON_BEANS_CACHE_MISSING"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot retrieve the submitButtonBeans cache from the root web bean."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ADV_SETTINGS_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Rename the columns below that will be displayed in your table. Select the checkbox in the \"Show Total\" column as applicable, if you would like a total to display."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_CUSTOM_VIEWS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "(No personal table views)"
+  DESCRIPTION = "Alternate text for results table when no results found."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANNOT_NEST_IN_SWITCHER"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Switcher region does not support child of type Nested Region."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ONCHANGE_SHOULD_BE_STRING"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The 'onChange' attribute for a form element should be a String."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUST_RGNITM_PROP_FAIL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot create AkAdminCustomRegionItemPropVO"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUST_RGN_PROP_FAIL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot create AkAdminCustomRegionPropVO"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_LEVEL_VO"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot find the customization level VO."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CANNOT_FIND_ITEM"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Method findChildIndex cannot find the child with the given itemName."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_APPLICATION_MODULE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot find the root application module for this page."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CONDITION_IS_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The condition picklist cannot be null if you want a search criteria to be applied."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_SEARCH_BEAN"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot find the search region for this query region."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_DISPLAYED_ITEMS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot find any displayed items for the advanced search region."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "VIEW_CONFIGURATION_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select one of the search queries from the pulldown list and choose the \"Go\" button to view the results. To create a new saved search or update an existing one select the \"Personalize\" button."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "VIEW_CONFIGURATION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "View Personalizations"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CUSTOM_SAVE_SEARCH"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Save Search"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "SUBMIT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Submit"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CUSTOM_VIEW_TEXT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "View"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CUSTOM_GO_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Go"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CUSTOM_SEARCH_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Search"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CUSTOM_CUSTOMIZE_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Personalize"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CUSTOM_ADVANCED_SEARCH_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Advanced Search"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_BEANS_TO_ADD"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No rendered columns are found for the \"Add Columns\" Poplist."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CONDITION_NOT_VALID"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The condition is not a part of the lookup ICX_CONDITIONS."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "RESULTS_BEAN_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ " The results table bean cannot be found under this query bean. Please make sure that your add indexed flag is checked for the query region"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DESC_FLEX_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Descriptive Flex error occurs for item &ITEM: &MSG"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SYSAD_LEVEL_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "If you select \"Site\" you will skip Step 2 and proceed directly to Step 3."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ADD_INDEXED_CHILDREN_FALSE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Add Indexed Children checkbox should be checked for the following region: region application id = &REGION_APPL_ID, region code = &REGION_CODE, region style &REGION_STYLE."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DEFAULT_CUST_YES"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Yes"
+  DESCRIPTION =
+ "Entry in a table column indicating whether a customization is default or not"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DEFAULT_CUST_NO"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No"
+  DESCRIPTION =
+ "Entry in a table column indicating whether a customization is default or not"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_SET_AS_DEFAULT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Set as Default"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_NESTED_REGION"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Region item &ITEMNAME has style NESTED_REGION but does not have a nested region specified."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USE_FUNCTION_LOV"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please use the list of values control to select the function for which the region is to be personalized."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ADV_SETTINGS_HELP_ADMIN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Use the table below to perform the following personalizations. Rename the items below that will be displayed in the region. Select the checkbox in the \"Show Total\" column as applicable, if you would like a total to display. Set default values for the items. Define tips for the items. Mark items as required by selecting the checkbox in the \"Required\" column. Items marked as required in the base definition cannot be unchecked."
+  TYPE = "OTHER"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_FUNCTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Function"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SYSAD_CHOOSE_FUNC"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select the function for which you want to personalize the page."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ACCT_IP_LOCK_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The user has commited too many login failures from this IP address and has been locked out."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ACCT_LOCK_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The user has commited too many login failures from any IP address and has been globally locked out."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NULL_UNAME_PWD_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The user did not type in a username."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_PAPP_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The partner application configuration is missing or expired."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "SSL_NOT_USED_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "SSL is not being used."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "LS_CONFIG_NOT_FOUND_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The login server configuration is missing."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "COOKIES_DISABLED_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The user's browser is not accepting cookies."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "AUTH_FAIL_EXCEPTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Authentication has failed."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ACCOUNT_DEACTIVATED_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The user's account has been terminated."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "VALUE_ERROR_EXCEPTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "An invalid value was specified in site2pstoretoken."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NULL_PASSWORD_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The user did not type in a password."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "EXT_AUTH_UNKNOWN_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "There was an error in accessing the external authentication mechanism."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "EXT_AUTH_SETUP_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "There was an error in the setup of the external authentication mechanism."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "SSO_COOKIE_EXPIRED_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The login cookie has expired.  The user needs to log  in again."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "UNEXPECTED_EXCEPTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "An unexpected error occurred during authentication."
+  DESCRIPTION = "Oracle Portal Login Error"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_DATE_FORMAT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "(example: &FORMAT)"
+  DESCRIPTION = "Tip for date fields in self service pages"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_CODES_NODELSEED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Lookup Code &CODE is seed data and can not be deleted from an extensible lookup type."
+  DESCRIPTION = "Can't delete seed data from extensible lookup type."
+  TYPE = "ERROR"
+  MAX_LENGTH = "300"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_FLEX_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Enter the flex segment list separated by | for each of the flex fields in the region."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CREATE_SEEDED_USER_CUST"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select the region for which you want to create a seeded user level customization; currently this is valid only for table regions. Note: This page is for internal use by Oracle Application developers and should not be used by customers."
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_CREATE_CONFIRM"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Lookup Type &LOOKUPTYPE has been created."
+  DESCRIPTION = "Confirmation for creating a lookup type"
+  TYPE = "OTHER"
+  MAX_LENGTH = "200"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_EDIT_CONFIRM"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Your changes to lookup type &LOOKUPTYPE have been saved."
+  DESCRIPTION = "Confirmation for editing a lookup type"
+  TYPE = "OTHER"
+  MAX_LENGTH = "200"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_CODES_SAVED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Your changes have been saved."
+  DESCRIPTION = "Confirmation for saved lookup codes changes"
+  TYPE = "OTHER"
+  MAX_LENGTH = "200"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_DEFINE_CRITERIA"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Specify parameters and values to filter the data that is displayed in your table."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_CRITERIA_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Incorrect specification of criterion &NUMBER on item &ITEMNAME."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_FUNCTION_LEVEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Function Level"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_LOCALIZATION_LEVEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Localization Level"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_VERCALIZATION_LEVEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Verticalization Level"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_SITE_LEVEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Site Level"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_ORG_LEVEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Org Level"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_RESP_LEVEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Responsibility Level"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_CODES_DUP_MEANING"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Lookup code with Meaning &MEANING already exists."
+  DESCRIPTION = "duplicate meaning for lookup code"
+  TYPE = "ERROR"
+  MAX_LENGTH = "200"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOOKUP_NODELTYPE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Extended or System level Lookup Types can not be deleted."
+  DESCRIPTION = "can not delete type"
+  TYPE = "ERROR"
+  MAX_LENGTH = "200"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INQ_CUST_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Use the region navigation tree at the left to select the inquiry region to be customized."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CREATE_FUNCTION_CUST"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select the region for which you want to create a function level customization. Note: this page is for internal use by Oracle Application developers and should not be used by customers."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "PAGENAME_VO_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The view object necessary to determine the page name for the given inquiry page was not found."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "PAGENAME_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No page was found corresponding to page code &PAGECODE (page application ID &PAGEAPPLID)."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_RENDERED_TABLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "There are no rendered tables found under this query bean."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_ITEMS_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "(No items found.)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_ATTACHMENT"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Has no attachments."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VIEW_ATTRIBUTE_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The ViewAttributeName property must not be null for a Table column; RegionCode: (&REGION); Region App ID: (&REGIONAPPLID); RegionItem: (&REGIONITEM)"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DEF_ALTERNATE_TEXT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No data exists."
+  DESCRIPTION = "Default alternate text for a table in OA Framework"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ADVANCED_SEARCH_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Specify parameters and values to filter the data that is displayed in your results set."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "PANEL_ROW_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot find the panel row to add the instruction text. "
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ATTACH_URL_TOO_LONG"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The attached url is too long.  Please shorten it to less than 255 characters."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ATTACH_SHOW_ALL_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "To show all attachments, please first make sure \"Miscelleneous\" category is the only one category that is selected.  Save the changes, this message will be replaced by \"Show All Attachments\" checkbox.  Then check the \"Show All Attachments\" checkbox and save the changes again."
+  DESCRIPTION = "FWK:"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_HOME_WORKLIST_HELP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Below is a list of your most important notifications. Select the subject to respond or select \"Full List\" to see all your notifications."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_SEARCH_PANEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "There are no panels for this query region. You should have only one panel checked for a query region."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "AK" "AK_ATTACH_NO_FIELDS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No Attachments has been specified.  Please select an attachment type and enter value into the corresponding field."
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CONNECTION_PROPS_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Database connection properties are not supplied."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ILLEGAL_APPS_CONTEXT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Illegal access error.  This method can be used for application module transactions that have been created with WebAppsContext only."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CANNOT_RETURN_TO_PORTAL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Error occurs while returning to Portal Home Page: '&PORTAL_URL'"
+  DESCRIPTION = "OA Framework"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INQUIRIES_GO"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please enter your search criteria and hit the \"Go\" button.  You may note that the search is case insensitive."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_WEBBEAN_ACCESS_RESTRICTED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "(This developer mode error is thrown instead of being registered due to the lack of the page context object.) The OA passivation framework coding standard has been violated.  Web bean properties cannot be modified in the controller processFormData or processFormRequest method.  Web bean properties should be modified in the processRequest method only.  An attempt to modify a web bean has been made in the following call stack: &CALL_STACK"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FWK_INVALID_NUMBER"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "&NUMBER is not a valid number. Please re-enter."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_DELETE_WARNING"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Are you sure you want to delete &MESSAGE_NAME?"
+  DESCRIPTION = "warning before deleting a message"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_MAXLEN_RANGE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Maximum Length must be in range 10 to 1800."
+  DESCRIPTION = "maximum length must be in range 10 to 1800"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CURR_CONVERT_NEG_FAIL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Unable to convert the value, &CURR_VAL.  Negative sign, &NEG_SIGN, must be placed at the beginning."
+  DESCRIPTION = "CurrencyHelper"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_SORT_ALLOWED_VO_IS_DIRTY"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The table cannot be sorted because it has pending changes which would be lost."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "EXT_ADD_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Add New Item"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "DELETE_EXT_REGITEM_WARNING"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Are you sure you want to delete the extended region item with region application id = &REGAPPLID, region code = &REGIONCODE and item name = &ITEMNAME ?"
+  DESCRIPTION = "OA"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICXCUSTFAVPORTLETINST"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Below is a list of attributes that can be edited to change the view and/or filter the data that is displayed in your portlet."
+  DESCRIPTION = "Instruction text for favorites portlet customization page"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICXCUSTFAVPORTLETSELECT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "To add a new Favorite item, browse through the Responsibility (functional grouping) list to find the Option you want, then select it and click the right arrow. You can also select an existing option and then remove it using the left arrow, or change where it will appear in the list by using the up and down arrows."
+  DESCRIPTION = "Instruction text for favorites portlet customization page"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICXNOFAVORITES"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You have not selected any favorites. Please use the \"Customize\" link to setup your favorites."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICXAVAILABLETOSELECT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Available to Select"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICXSELECTEDTODISPLAY"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Selected to Display"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SYSAD_CHOOSE_LOCAL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Select the localization for which you want to personalize the page."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ROOT_NODE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Root Node"
+  DESCRIPTION =
+ "Name of dummy root node in a HGrid when data specifies multiple root nodes"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_AGR_NO_ROWS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No responsibilities have been chosen in the table."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_AGR_CONF"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The following global responsibilities have been successfully assigned."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_AGR_WARNING"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Are you sure you want to assign these global responsibilities?"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_AGR_INVALID_USER"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "&USERNAME is an invalid username. Please try again. "
+  DESCRIPTION = "Error message given when an incorrect username is provided."
+  TYPE = "E"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_AGR_SELECT_USER"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Please enter a username."
+  TYPE = "E"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_AGR_OPTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Please select one of the given options. "
+  DESCRIPTION = "Error message given when a user does not select an option"
+  TYPE = "E"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_TYPELEN_SMALL_TRN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Message &MESSAGE_NAME has a type of &TYPE that imposes a limit of &MAXIMUM_LENGTH characters on the message text. Allowing for translation, messages of that type need to be less than &TRANSLATED_MAXIMUM_LENGTH characters. The actual character size, &MESSAGE_TEXT_LENGTH, of the message text is too long."
+  DESCRIPTION =
+ "error validiation: maximum message length too small for the type to include translation characters"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_TYPELEN_SMALL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The character length (&MESSAGE_TEXT_LENGTH) of the message &MESSAGE_NAME is too long. The length should be no longer than &MAXIMUM_LENGTH, which is the maximum length for the message type &TYPE."
+  DESCRIPTION =
+ "error validiation: maximum message length too small for the type"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_MAXLEN_SMALL_TRN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Message &MESSAGE_NAME has a value in the Maximum Length field of &MAXIMUM_LENGTH, of which only &TRANSLATED_MAXIMUM_LENGTH characters are available allowing for translation expansion. This is too small to hold the actual character size, &MESSAGE_TEXT_LENGTH, of the message text."
+  DESCRIPTION =
+ "error validation: maximum message length too small for translation"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_CREATE_ALERT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "There already exists a message with the name &MESSAGE_NAME in application &APPLICATION_ID, in a different language.  In general, messages with the same name and application are translations of the same message."
+  DESCRIPTION = "alert in message creation"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_MAXLEN_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Maximum Length must be an integer value."
+  DESCRIPTION = "maximum length must be a numeric value"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_MAXLEN_SMALL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Message &MESSAGE_NAME has a value in the Maximum Length field of &MAXIMUM_LENGTH, which is too small to hold the actual character size, &MESSAGE_TEXT_LENGTH, of the message text."
+  DESCRIPTION = "error validation: maximum message length too small"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_MSGNAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No message name entered."
+  DESCRIPTION = "no message name"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_APPID"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No Application ID entered."
+  DESCRIPTION = "no application id"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_DUPLICATE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "This message is already in use. Please enter a unique message name. \n\
+\n\
+Message names are case insensitive so an uppercase message name is the same as a lowercase message name."
+  DESCRIPTION = "duplicate message"
+  TYPE = "ERROR"
+  MAX_LENGTH = "250"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_CREATE_WARNING"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Are you sure you want to create this message?"
+  DESCRIPTION = "warning in message creation"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_MSGNUM_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Message Number must be a numeric value."
+  DESCRIPTION = "message number must be a numeric value"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_MSGTEXT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No message text entered."
+  DESCRIPTION = "no message text"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_LANGCODE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No language code entered."
+  DESCRIPTION = "no language code"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_FROM_REASSIGN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You are currently viewing notifications from you and cannot reassign these notifications."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_FROM_CLOSE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You are currently viewing notifications from you and cannot close these notifications."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_AGR_NORESPS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No responsibilities have been assigned to username &USERNAME. Please choose another template user."
+  TYPE = "E"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_AGR_INVALID_RESP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "&RESPNAME, &APPNAME is not a valid responsibility."
+  TYPE = "E"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MENU_FUNCTION_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Function name: '&FUNCTION' is not under menu: '&MENU', or the menu is not a HOMEPAGE menu."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FUNCTION_NOT_UNDER_HOMEPAG"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Function '&NAME' is not under a HOMEPAGE menu in the menu hierarchy."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MENU_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Could not find menu: &NAME"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FUNCTION_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Could not find function: &NAME"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MULTIPLE_FORMS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "This page contains multiple form instances.  Only one form should be enabled on an OA Framework page through page layout region Form attribute.\n\
+\n\
+Action: Turn off the developer mode (OADeveloperMode) option and run your page again.  Then check your output HTML source for the FORM tags."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DUPLICATE_ITEM_NAMES"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Web beans with duplicate item names (item name: &ITEM_NAME) have been found.  Web beans associated with form actions should have unique item names within a form.\n\
+\n\
+Action: Turn off the developer mode (OADeveloperMode) option and run your page again.  Then check your output HTML source for the occurrence of the item name."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FAVORITES_ADD_INSTRUCTIONS"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "Enter the name and URL address for the site or file you would like to include in your Applications Favorites List. The URL address can be any web site you visit on a regular basis or a file name on your local file system.  You may enter any address that you would otherwise enter as a browser location."
+  DESCRIPTION =
+ "Instructions on how to create a new Favorites link for the Applications Favorites Portlet"
+  TYPE = "TEXT"
+  MAX_LENGTH = "400"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FAVORITES_UPD_INSTRUCTIONS"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "Update the name of the link you would like to include in your Applications Favorites List. You may also update any URL address that you have manually added to this list."
+  DESCRIPTION =
+ "Instructions on how to update names of existing Favorites links for the Applications Favorites Portlet"
+  TYPE = "TEXT"
+  MAX_LENGTH = "400"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_POTENTIALLY_MORE_DATA"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Query has exceeded &MAX_FETCH_SIZE rows. Potentially more rows exists, please restrict your query."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "POTENTIALLY_MORE_DATA_SHORT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "<Max rows exceeded>: &EOD_VALUE"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_IMAGE_PREGEN_ERROR_INPUT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Invalid input: Region Name not part of Application."
+  DESCRIPTION = "Invalid input error message"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_IMAGE_PREGEN_GENERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Generic error: &errMsg."
+  DESCRIPTION = "Generic error message"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_IMAGE_PREGEN_INFLOOP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Specified Region Name criteria caused infinite loop during execution. Please narrow down the search criteria or eliminate Region Name field completely."
+  DESCRIPTION = "Infinite user data loop exception"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_IMAGE_PREGEN_MAIN_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please select the Application and the Region Name to pre-generate the images for the region(s)"
+  DESCRIPTION = "Main tip"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_IMAGE_PREGEN_TIPMSG"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "(Leave Region Name blank to generate image cache for whole application)"
+  DESCRIPTION = "Hint for Image Cache Pregeneration Search region"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_IMAGE_PREGEN_TABBAR_NOTE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "(The count may include those that may already be in the cache)"
+  DESCRIPTION = "Note for the tab-bar count"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_IMAGE_PREGEN_CACHEDIR_NOTE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "(The images will be present under the locale directory)"
+  DESCRIPTION = "Note for the cache directory"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ATTCH_TOO_MANY_PKVALUES"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Too Many Primary Key Values.  Maximum number of primary key values allowed for a record which contains attachment is 5."
+  DESCRIPTION = "OA"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ATTCH_PKVALUES_CANNOT_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Primary key values of record cannot be null."
+  DESCRIPTION = "OA"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_AK_VO_SIZE_MISMATCH"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Developer Mode Exception encountered in item &REGION\n\
+\n\
+Error: The item &AK_ATTR has a maximum length (&AK_SIZE) which is not equal to that of the corresponding VO attribute,  &VO_ATTR length (&VO_SIZE).\n\
+\n\
+Action: Make sure they are equal in size.\n\
+\n\
+"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_AK_VO_ATTR_MISMATCH"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Developer Mode Exception encountered in item &REGION\n\
+\n\
+Error: The item &AK_ATTR has a type (&AK_TYPE) which is incompatible with the associated VO attribute, &VO_ATTR (&VO_TYPE).\n\
+\n\
+Action: Make sure they are compatible by either changing the datatype or the attribute associated with the item.\n\
+\n\
+"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_IMAGE_TYPE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Image type  (&TYPE) is not valid.  Please use one of these two valid types : OAWebBeanConstants.OA_TEMPORARY_IMAGE, OAWebBeanConstants.OA_PERMANENT_IMAGE."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_XSS_FILE_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "File not found : &TOKEN1"
+  DESCRIPTION =
+ "This is the error message displayed if \"custom.xss\" is not found."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_SAMPLE_TEXT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Sample Text"
+  DESCRIPTION = "Sample text for relevant beans."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_SAMPLE_LABEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Sample Label"
+  DESCRIPTION = "Sample Label for Message Beans"
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_RESULTS_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The following table shows the Item Style selecetd with the Style(s) applied."
+  DESCRIPTION =
+ "This tip explains to the user the contents of the results table."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_POPLIST_SECOND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No"
+  DESCRIPTION = "Second item of Poplist Item Style, if selected."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_POPLIST_FIRST"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Yes"
+  DESCRIPTION = "First item of the Poplist Item Style ,if selecetd."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_TEXT_AREA"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Text Input rendered with multiple lines"
+  DESCRIPTION =
+ "Text Input is also rendered as a Text Area as the Text Area bean is not supported."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_TEXT_URL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Text rendered as a URL"
+  DESCRIPTION =
+ "Text is also rendered as a URL as the URL bean is not supported."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_INVALID_BEAN_TEXT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Styles cannot be applied on &TOKEN1"
+  DESCRIPTION =
+ "An information being rendered to the user if an Item style is selected for which applying the Style class doesn't make sense."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_TABLE_HEADER_RIGHT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Item style with the selected style applied"
+  DESCRIPTION = "The right column table header"
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_TABLE_HEADER_LEFT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Style that has been applied"
+  DESCRIPTION = "The left column table header."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_SUBMIT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Submit"
+  DESCRIPTION = "\"Submit\" appearing for relevant beans."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_SELECTION_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please select an Item Style and Style Type and click the \"Go\" button to view the Item Style rendered with the chosen Style(s) applied. If no Style is selected, the Item Style is rendered with all Styles applied."
+  DESCRIPTION =
+ "This tip requests the user to select an Item Style and the Style that he wishes to apply."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STYLE_ALL_STYLES"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "All Styles"
+  DESCRIPTION = "\"All Style\" has to be added to the Styles poplist."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CHARSET_NOT_SET"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The charset for export is not set. Please set it using the profile options - FND_NATIVE_CLIENT_ENCODING or ICX_CLIENT_IANA_ENCODING"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRANTS_INVALID_INPUT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Invalid Entry : Some of the values have syntax error / format / duplicate entry / missing or null value."
+  DESCRIPTION = "Error Message to tell user that entry is wronge"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRANTS_FOREIGN_KEY_EXISTS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Can not delete record of id : &PRIMARY_KEY . Please delete Instance Objects of this master id first."
+  DESCRIPTION =
+ "Error message to tell user to delete detail records before master record"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRANTS_PREDICATE_TIP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Note:Where clause is auto-prepended. Just enter where clause"
+  DESCRIPTION = "Tip to tell user to enter correct where clause"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRANTS_RECORD_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Record not Found"
+  DESCRIPTION = "Record not found"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRANTS_NO_SPACE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Enter as a single word , without any spaces."
+  DESCRIPTION = "Tip to userto enter as a single word."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRANTS_INVALID_PREDICATE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Invalid Predicate. Enter correct Where Clause."
+  DESCRIPTION = "Ask User to enter Correct Where Clause"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRANTS_DELETE_ALL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Are you sure you want to delete &COUNT Records ?"
+  DESCRIPTION = "Ask User if he wants to delete the choosen records."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ONLY_ONE_DBC_ALLOWED_PER_JVM"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "Only one dbc file name is allowed per JVM. The cached dbc file name is: &CACHED_DBC. The dbc file name for the request is: &DBC_ON_REQUEST."
+  DESCRIPTION = "fwk:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_TABLE_VIEWS_NAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Personal &TOKEN1 Views"
+  DESCRIPTION =
+ "The header name for the table that shows the user customizations done for a page."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NON_VIEW_ATTRIBUTE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "View attribute name is null for item &ITEM_NAME. Please specify a view attribute name"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_CONFIGURE_LINK"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Personalize &REGIONNAME"
+  DESCRIPTION = "Link to start Customizing a region."
+  TYPE = "OTHER"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CLOSE_NOT_PERMITTED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You may not close notification \"&SUBJECT\" since it was not sent to you."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_REASSIGN_NOT_PERMITTED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You may not reassign notification \"&SUBJECT\" since it was not sent to you."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NEW_COMMENT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "New comment"
+  DESCRIPTION = "Tooltip for image indicating a new comment"
+  TYPE = "OTHER"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_HISTORY"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "History"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "INVALID_SELECTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Invalid value selected: &INVALID_VALUE. Please change your selection."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_CHARACTER"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The value \"&VALUE\" contained an invalid character \"&CHAR\". Valid values are 0-9 and %."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CHK_TBL_SIZE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "This size of the table appears to be large. Verify if the table belonging to this View Object (&VO_NAME) really needs to have a table size of &SIZE. The Application's standard is 25."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MORE_INFO_REQUEST"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "User &FROM has requested more information."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MORE_INFO_REQUESTED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "More Information Requested:"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_REQUEST_INFO_FROM"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Request More Information From"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_CHOOSE_ANY_USER"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please use the list of values to select a user from whom you would like to receive more information regarding this notification."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_CHOOSE_PARTICIPANT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please choose a user from whom you would like to receive more information regarding this notification."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ILLEGAL_AM_RETENTION_LEVEL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The application module retention level value &RETENTION_LEVEL is illegal."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICX_JAVASCRIPT_DISCLAIMER"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "JavaScript enabled browser required."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_USER_EXISTS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "A user by name &USERNAME alredy exists. Please select a different User name."
+  DESCRIPTION = "Error message for duplicate user name"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_SUPPLIER_INVALID"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "&SUPPNAME is not a valid Supplier. Please use the LOV to select a valid supplier."
+  DESCRIPTION =
+ "Error message shown when the supplier name specified by the user is invalid"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_EMP_NOTAVAILABLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "&EMPNAME has already been assigned to a different user. Please select another Employee."
+  DESCRIPTION =
+ "Error message shown when the Employee is already assigne to another user"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_EMPLOYEE_INVALID"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "&EMPNAME is not a valid Employee. Please use the LOV to select a valid Employee"
+  DESCRIPTION =
+ "Error message shown when the Employee name entered is not valid"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_CUSTOMER_INVALID"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "&CUSTNAME is not a valid Customer Name. Please use the LOV to select a valid Customer"
+  DESCRIPTION = "Error message shown when the Customer name entered is invalid"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_UPDATEUSER_TITLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Update User :"
+  DESCRIPTION =
+ "Text used for creating the title for user admin steps when user details are being updated"
+  TYPE = "OTHER"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_CREATEUSER_TITLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Create User :"
+  DESCRIPTION =
+ "Text used for creating the title for user admin steps when a user is being created."
+  TYPE = "OTHER"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_SELECT_DELETE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Please select the users to be disabled."
+  DESCRIPTION = "Error message shown when no users are selected for deletion."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_DELETE_USERS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Are you sure you want to disable the following users - &USER_LIST"
+  DESCRIPTION = "Alert message for deleting multiple users"
+  TYPE = "OTHER"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_DELETE_USER"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Are you sure you want to disable the user &USER_LIST"
+  DESCRIPTION = "Alert message for confirming deleting a single user."
+  TYPE = "OTHER"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_PASSWORD_DIFFER"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Password and Confirm password are different."
+  DESCRIPTION =
+ "Error message shown when Password and Confirm password are different"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_PASSWORD_SHORT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The password should be atleast &MIN_PASS_LEN characters long."
+  DESCRIPTION =
+ "Error message shown when the password is shorter than minmum number of charactes"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_USERADMIN_RESP_INVALID"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "&RESPNAME is not a valid responsibility. Please use the LOV to select a valid responsibility"
+  DESCRIPTION =
+ "Error message shown when the Repsonsibility entered by user is not found"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_RECORD_DELETED_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Unable to perform transaction on the record.\n\
+\n\
+Cause: The record has been deleted by another user.\n\
+\n\
+Action: Re-query the records to get the new data."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_VIEW_NAME_EXISTS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "A view with the name you have chosen already exists . Please choose a different name for the view."
+  DESCRIPTION =
+ "If a existing view name is sought to be assosciated with a new view created, an error message should be thrown."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "WF_NO_UNIQUE_RESTRICTOR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The selected notifications cannot be reassigned together since the set of users each can be reassigned to are not distinct. Please reassign each notification separately."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DATE_FORMAT_EXAMPLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "(example: &DATE_EXAMPLE)"
+  DESCRIPTION = "Used to displaye date example hint for date fields."
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ILLEGAL_SESSION_VALUE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Illegal argument exception.  Session manager requires a valid session parameter value.  Session parameter value is null."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SESSION_MGR_INST_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot instantiate the session manager.  Session binding listener should be registered before the instantiation of the session manager."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_REQUIRED_ITEM_ERROR_MSG"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "&REQUIRED is a required item. Items that are required cannot be removed but can be re-ordered."
+  DESCRIPTION =
+ "The error message that is thrown if a required item is sought to be hidden through the OA Personalization Framework"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_REQUIRED_ITEM_MSG"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Items with an asterisk cannot be removed but can be re-ordered."
+  DESCRIPTION =
+ "A tip message that indicates that required items cannot be removed but can be re-ordered through the OA Personalization Farmework."
+  TYPE = "30_PCT_EXPANSION_PROMPT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_REQUIRED_ITEM_NOT_RENDERED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Required item (&ITEMNAME) is not rendered."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_ATTR_SHOWN"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Attributes Shown and Attribute Order"
+  DESCRIPTION = "Attributes Shown in the Customization UI."
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_ATTRS_DISPLAYED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Attributes Displayed (in Order)"
+  DESCRIPTION = "Attributes Displayed (in Order)"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_ATTR_PROPERTIES"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Attribute Properties"
+  DESCRIPTION =
+ "In the Customization UI of OAF, the non-table children would have the title \"Attribute Properties\""
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_AVAILABLE_ATTRS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Available Attributes"
+  DESCRIPTION =
+ "Available Properties as header text when the region being customized is not a table."
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_HELPTARGET_APPCODE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Invalid iHelp Target Application Code : &CODE"
+  DESCRIPTION = "Invalid iHelp Target Application Code is set"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FNDWF_STATUS_OPEN"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Open"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FNDWF_STATUS_CLOSED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Closed"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FNDWF_STATUS_CANCELED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Canceled"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "UPLOAD_FILESIZE_LIMIT_EXCEEDED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The uploaded file size has exceeded the limit.  The largest file size that can be uploaded is &FILESIZE KB."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CONNPROP_REQUEST_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Connection properties cannot be created without a request object."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRPH_VIEW_USAGE_NOT_SAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "View usage name must be the same for all Graph columns."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRPH_INSUFFICENT_COLS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "At least 2 columns need to be defined on the graph, \n\
+one mapped to \"groupLabels\" and other mapped to \"data\"."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRPH_NULL_VIEW_OBJECT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Graph View Object (&VIEWUSAGE) not found in \n\
+Application Module (&APPLICATIONMODULE)."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRPH_GDS_NO_DATA_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Graph data source returned 0 rows."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ILLEGAL_PASSTEST_MODE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The passivation test mode value &TEST_MODE_VAL is illegal."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_ACCESS_TO_FN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You are currently logged in with responsibility &RESP_NAME; function &FUNC_NAME cannot be accessed using the same. Please contact your system administrator if you need access to the function &FUNC_NAME."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STMT_LOG_ON_WARNING"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Statement level logging is currently enabled.   Your application will not perform as well while statement level logging is on."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_MENUNAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Menu: &MENU_NAME, either does not exist or is misspelled"
+  DESCRIPTION = "Error message thrown when the menu user ref to is invalid"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_STATIC_TEXT_CANNOT_USE_VO"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Error: Static Styled Text region item &ITEM_NAME uses View Usage &VIEW_USAGE and View Attribute &VIEW_ATTRIBUTE properties.  View Usage and View Attribute properties should not be set on the Static Styled Text region items.  \n\
+\n\
+Action: Use Styled Text item style for dynamic text with View Usage and View Attribute."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PERSONALIZE_REGION_LINK"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Personalize Region"
+  DESCRIPTION = "Link to start customizing a region."
+  TYPE = "OTHER"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MORE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "More..."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DISCLOSED_NOT_BOOLEAN"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Disclosed property cannot be set with a non-Boolean value."
+  DESCRIPTION = "Disclosed Boolean property"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "BETWEEN_MISSING"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please enter both the \"from\" value and the \"to\" value for the between condition."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ACTIVATED_ROW_DELETED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "A queried record has been deleted by another user and could not be recovered.  Any modifications to the deleted record cannot be restored.  If an error is encountered due to the deleted record, re-query the records to get the new data or restart the transaction."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_REQUIRED_ITEM_ABSENT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "LOV required item (&ITEMNAME) is not rendered."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_LOVINPUT_DATA"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "1"
+  MESSAGE_TEXT = "listOfValues and lovMap are not defined for messageLovInput"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+  MAX_LENGTH = "100"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_LISTOFVALUES_DATA"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "1"
+  MESSAGE_TEXT = "listOfValues not specified for messageLovInput"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+  MAX_LENGTH = "80"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_LOVMAP_DATA"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "1"
+  MESSAGE_TEXT = "No lovMap(s) for defined for messageLovInput"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+  MAX_LENGTH = "60"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_LOVITEM_DATA"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "1"
+  MESSAGE_TEXT = "invalid lovItem"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+  MAX_LENGTH = "25"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_BASEITEM_DATA"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "1"
+  MESSAGE_TEXT = "either criteriaFrom or resultTo should be specified"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+  MAX_LENGTH = "80"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_RESULTTO_DATA"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "1"
+  MESSAGE_TEXT = "resultTo should be unique among the lovMaps"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+  MAX_LENGTH = "80"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_CRITERIAFROM_DATA"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "1"
+  MESSAGE_TEXT =
+ "lovItem cannot recieve criteria from multiple items on the base page"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+  MAX_LENGTH = "160"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "TABLE_METADATA_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No table found for customization."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ADVANCEDSEARCH_NULL_META_DATA"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot find the metadata for advanced search."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_FAILOVER_STATE_LOSS_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Transaction context has been lost for the page you requested.  This error could have been caused by an expired user session or a system failure."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOGOUT_LOGIN"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Please log out and log in again."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_ENTITYMAP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Entity (&ENTITY) defined for attachment item (&ITEM) is invalid."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INVALID_CATEGORYMAP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Category Id (&CATEGORYID) defined for attachment item (&ITEM) with entity (&ENTITY) is invalid."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_CATEGORYMAPS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No categories found, categoryMaps not defined for attachment item (&ITEM) with entity (&ENTITY)."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_ENTITYMAPS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No entities found, entityMaps not defined for attachment item (&ITEM)."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOM_SEEDED_USER"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "User"
+  TYPE = "MENU"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ACCESS_FROM_PORTAL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please click Home and access this page using the application navigation."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ILLEGAL_BACKTEST_MODE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The back button test mode value &TEST_MODE_VAL is illegal."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ATTACH_VO_IS_DIRTY"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Query on Attachments cannot be performed once the data is changed.  Please commit the changes before executing the query."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ATTACH_HIDE_SEARCH"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Hide Simple Search"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ATTACH_SHOW_SEARCH"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Show Simple Search"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_RESULTTO_ATTR"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Attribute \"resultTo\" should be set on atleast one lovMap."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_CRITERIAFROM_ATTR"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT =
+ "Attribute \"criteriaFrom\" should be set on atleast one lovMap."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DEVMODE_ERROR_CONSTANT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Developer Mode Error"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DIALOG_YES"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Yes"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DIALOG_NO"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "No"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NOT_VALID_LOV_TABLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Make sure you add Selector(Single or Multiple) to the Table Region inside LOV"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_HGRID_ROLLOVER"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Select for details"
+  DESCRIPTION = "Rollover text for items in hGrid hierarchy"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "EDIT_ATTACH_PAGE_TITLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Edit Attachment"
+  DESCRIPTION = "FWK:"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DETAIL_INCORRECT_TYPE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Incorrect datatype for \"Detail View Attribute Name\"; should be a Boolean or a String."
+  DESCRIPTION =
+ "Exception message if incorrect datatype for detailViewAttr in tables"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SWITCHER_CHILD_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Incorrect child name &CHILD for switcher &SWITCHER. Check your VO attribute definitions to return the correct child item name."
+  DESCRIPTION = "Exception if switcher child is named wrongly."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "OAFND_SUBTAB_CHILD_NO_REGION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "SubTabLayout Can only have Nested Regions as it's Children"
+  DESCRIPTION = "SubTabLayout Can only have Nested Regions as it's Children"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "OAFND_SUBTAB_INDEXOUTOFBOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "SubTabLayout has it's Index set either too high or too low."
+  DESCRIPTION = "SubTabLayout has it's Index set either too high or too low."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "OAFND_SUBTAB_PROMPT_MISSING"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "One of the children of SubTabLayout does not have Prompt."
+  DESCRIPTION = "All children of SubTabLayout should have prompt"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "OAFND_SUBTAB_ALREADY_EXIST"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Only One SubTabLayoutBean can exist on the page."
+  DESCRIPTION = "Only one SubTabLayoutBean can exist on the page."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DEFAULT_CRITERIA_RESULT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Developer Mode Exception : Lov Input should by default be the queryable criteria and Result."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_DISPLAYABLE_CHILD"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Atleast one of the LovItem should be of Style : MessageStyledText"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DIALOG_OK"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "OK"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CUSTOMJRAD_EXT_DELETE_WARN"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Are you sure you want to delete the extended region item with item name = &ITEMNAME from the document = &DOCNAME ?"
+  DESCRIPTION = "The delete warning for the OA Extensibility Framework."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CANNOT_FIND_AM"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot find the application module for the lovInput."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "LOV_VIEW_USAGE_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The view object is not found for the LOV region &REGION_CODE under the application &REGIONAPPLID"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CANNOT_FIND_LOV_ROW"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot find LOV row to save on the session. Please try your operation again."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "INVALID_LOV_RELATIONS_TO_ADD"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The LOV relation that you are trying to add is invalid."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_RELATION_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot delete the LOV relation. LOV relation not found."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_RESULT_FIELDS_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Result lovMaps have not been found for &REGIONITEM"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_BLOCK_NAVIGATE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The changes you made to this page have not been saved.  If you continue, the changes will be discarded.  Do you wish to continue?"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRPH_INVALID_CUST_SIZE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Invalid values specified: Custom Graph width= &WIDTH, Custom Graph height= &HEIGHT"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_VAL_HIDDENLOVRES"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Unable to verify the value entered into the &LOV_PROMPT field. Please select the List of Values icon for this field to select a valid value."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DETAIL_VIEW_UNSET"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Detail View Attribute Name is not set for the table even though a detail named child has been specified. Please specify a Boolean or String (\"Y\" or \"N\") view attribute for this table property."
+  DESCRIPTION = "Error when the detailViewAttr is not set in table metadata."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_NO_RESULTS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "No items were found matching your request. Try entering a different word or a phrase, or selecting a different item from the pulldown list in the search area above."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_OABVID_MISSING_PK"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Primary Key used to generate unique ID can't be NULL"
+  DESCRIPTION = "Primary Key used to generate unique ID can't be NULL"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_OABVID_INVALID_MODE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Invalid ID Generator Mode"
+  DESCRIPTION = "Invalid ID Generator Mode"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_TABLE_INVALID_VL_ATTRIBUTE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Invalid or missing view link accessor attribute."
+  DESCRIPTION =
+ "Invalid or missing view link accessor attribute. Generate VL Accessor Attribute."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_TABLE_INVALID_VL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Invalid or missing view link. Please attach view link with the bean."
+  DESCRIPTION =
+ "Invalid or missing view link. Please attach view link with the bean."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_TABLE_INVALID_VIEWOBJECT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Invalid or missing view object"
+  DESCRIPTION = "Invalid or missing view object"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SAVE_SUCCESS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Record saved successfully."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PORTAL_APPSNAV_APPS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Applications"
+  DESCRIPTION = "This message is used for the Apps Navigator portlet"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PER_AK_REPOS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The definition of this page is stored in AK repository."
+  DESCRIPTION = "Personalization in AK repos"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PER_MDS_REPOS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The definition of this page is stored in MDS repository."
+  DESCRIPTION = "Personalization in MDS repos"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRPH_IMG_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Graph image could neither be generated nor looked up from cache"
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CVU_INVALID_PK"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Primary Key or \"CHILD_VIEW_ATTRIBUTE_NAME\" Attribute in Child View Usage, is NULL.\n\
+"
+  DESCRIPTION = "Invalid or Missing PK value to uniquely identify beans."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SELECT_NO_VIEW"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The selector column for table: &TABLE has an empty view attribute. Please provide an appropriate view attribute for this column."
+  DESCRIPTION = "Error message if no view for selector"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_UNDEFINED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Undefined"
+  DESCRIPTION = "Framework"
+  TYPE = "TEXT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ATTACH_OPTIONAL_NAME"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Optional: provide a name to Text attachment"
+  DESCRIPTION = "Framework"
+  TYPE = "HINT"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "VIEW_IS_NULL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Please select a view from the drop-down list."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANNOT_VIEW_EXTERNAL"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Not able to view repository attachment."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRPH_TYPE_NOT_SUPPORTED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Graph type selected is currently not supported. It will be available in the next release."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ATTACH_NO_MATCH"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Selected Attachment Type does not match the attachment. Please re-select Attachment Type."
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_ENCLOSING_QUERY_BEAN"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Cannot find the enclosing query bean for the table or hgrid."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ONLY_ALLOWED_JRAD_MODE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The method OAPageContext.getDisplayedItemsForView can be used  only in the JRAD mode."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "USER_PER_NOT_ALLOWED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "User personalizations are allowed only for Tables and HGrids."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DATA_TYPE_MISMATCH"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Base item's datatype(&BASE_ITEM) doesn't match with LOV item's(&LOV_ITEM) datatype"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ATTACHMENT_NOT_UPDATED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Attachment cannot be updated due to the error: &ERR"
+  DESCRIPTION = "OA Framework"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ATTACHMENT_NOT_DELETED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Attachment cannot be deleted due to the error: &ERR"
+  DESCRIPTION = "OA Framework"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ATTACHMENT_NOT_CREATED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Attachment cannot be created due to the error: &ERR"
+  DESCRIPTION = "OA Framework"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "BYTE_LENGTH_TOO_LONG"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Value '&VALUE' is too long."
+  DESCRIPTION =
+ "Displayed when the byte length of the string is more than what the field can hold for multi-byte charactersets."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_AM_NULL_NO_DB_CONNECTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The application module is not connected to a database.  The root application module instance does not exist."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ILLEGAL_MDS_FLAG"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Illegal MDS flag value for OAWebBeanFactory.createWebBean method, MDS Reference Name: (&MDS_REF_NAME); Item Name: (&ITEM_NAME).  Setting the MDS flag value to false will not cause the web bean to be created for pages that have not been migrated to 11.5.57 in future releases.\n\
+\n\
+Action: Set the MDS flag value to true."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "NO_EXECUTE_VO_DIRTY"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The search cannot be executed because the table has pending changes that would be lost."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_RENDERED_TRUE_REQUIRED"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "If &ITEM_NAME is a criteriaFrom item or lovItem in a lovMap, then its attribute 'rendered' should be set to 'true'."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "PICK_VALID_RESPONSIBILITY"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please pick a valid responsibility from the picklist and click the Go button."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "SELECT_RESP"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Select Responsibility"
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "UNEXPECTED_ILLEGAL_ACCESS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "System error. Please login through the personal home page."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_TABLE_IN_LISTOFVALUES"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "lisOfValues (&LISTOFVALUES) should contain a child table region to hold all LOV items."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_READONLY_ASSOC_ATTR"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27001"
+  MESSAGE_TEXT = "Association attribute &ATTR_NAME is not updatable"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_ATTRIBUTE_NOT_FOUND"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27006"
+  MESSAGE_TEXT =
+ "Validation failed because attribute &ATTR_NAME is not found in &OBJECT_NAME"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_ATTR_MANDATORY"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27014"
+  MESSAGE_TEXT = "Attribute &ATTR_NAME in &OBJECT_NAME is required"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_ATTR_RESOLVEGET_FAILED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27019"
+  MESSAGE_TEXT =
+ "Get method for attribute \\\"&ATTR_NAME\\\" in &OBJECT_NAME could not be resolved"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_ATTR_RESOLVESET_FAILED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27020"
+  MESSAGE_TEXT =
+ "Set method for attribute \\\"&ATTR_NAME\\\" in &OBJECT_NAME could not be resolved"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_ATTR_SET_FAILED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27011"
+  MESSAGE_TEXT =
+ "Attribute set with value &ATTR_VALUE for &ATTR_NAME in &OBJECT_NAME failed"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_ATTR_SET_TYPE_MISMATCH"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27018"
+  MESSAGE_TEXT =
+ "Attribute set with value &ATTR_VALUE for &ATTR_NAME in &OBJECT_NAME failed because of type mismatch\n\
+"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_BATCH_ATTR_SET_FAILED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27009"
+  MESSAGE_TEXT = "Batch set of attributes in view object &OBJECT_NAME failed"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_METHOD_ON_ROW_FAILED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27012"
+  MESSAGE_TEXT =
+ "Row validation method failed for row with key &KEY in &OBJECT_NAME"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_MTD_ON_ATTR_SET_FAILED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27013"
+  MESSAGE_TEXT =
+ "Attribute set validation method failed for attribute &ATTR_NAME in &OBJECT_NAME"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_PRECISION_VALIDATOR"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27010"
+  MESSAGE_TEXT =
+ "Attribute set with value &ATTR_VALUE for &ATTR_NAME in &OBJECT_NAME has invalid precision/scale"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_VO_VALIDATE_FAILED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27003"
+  MESSAGE_TEXT = "Validation of rows in view object &OBJECT_NAME failed"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_VR_ATTR_SET_FAILED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27008"
+  MESSAGE_TEXT =
+ "Attribute set for &ATTR_NAME in view object &OBJECT_NAME failed"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VAL_VR_VALIDATE_FAILED"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "27007"
+  MESSAGE_TEXT = "Validation of a view row in view object &OBJECT_NAME failed"
+  DESCRIPTION = "FWK"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CLASS_INSTANTIATION_ERR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Could not instantiate Java class: (&CLASS) associated with region: (&REGION). This is probably because the \n\
+class is not public, or does not have a public default constructor."
+  TYPE = "ERROR"
+  MAX_LENGTH = "280"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_APPSNAV_NO_AVAIL_APPS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "There are no applications available for this responsibility. Please click on a different responsibility link to display the list of available applications."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_APPSNAV_NO_SELRESP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please click on a responsibility link to display the list of available applications."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CONFIRM_ADD_ATTACHMENT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The attachment, \"&NAME\", has been added successfully."
+  DESCRIPTION = "OA Framework"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CONFIRM_ADD_ATTACH_REQ"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The attachment, \"&NAME\", has been added successfully.  Note that if you specified search criteria on the Attachments page prior to adding this attachment, the new attachment that appears in the Attachments table may not reflect the appropriate results of your original search criteria.  To update this page accordingly, please return to the application base page, save the transaction, then return to this Attachments page to re-query with your search critieria."
+  DESCRIPTION = "OA Framework"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CONFIRM_EDIT_ATTACHMENT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "The attachment, \"&NAME\", has been updated successfully."
+  DESCRIPTION = "OA Framework"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CONFIRM_EDIT_ATTACH_REQ"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The attachment, \"&NAME\", has been updated successfully.  Note that if you specified search criteria on the Attachments page prior to updating this attachment, the updated attachment that appears in the Attachments table may not reflect the appropriate results of your original search criteria.  To update this page accordingly, please return to the application base page, save the transaction, then return to this Attachments page to re-query with your search critieria."
+  DESCRIPTION = "OA Framework"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DEVMODE_CONFIRM_CONSTANT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Developer Mode Confirmation"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DEVMODE_INFORM_CONSTANT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Developer Mode Information"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DEVMODE_WARNING_CONSTANT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Developer Mode Warning"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DEV_FAILOVER_PTEST_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "<html><b>Transaction context has been lost for the page you requested.</b> <p><b>Cause:</b><br> This error has been encountered because SESSION_FAILOVER_ENABLED profile option value was set to \"Yes\" when the page was run with OAPassivationTestMode value \"1\". <p><b>Action:</b><br>Use a combination of user, responsibility, and application that has SESSION_FAILOVER_ENABLED profile option value set to \"No\".  For the application level value, the <i>application of the page</i> will be used for this profile, not the application of the responsibility.  Or set OAPassivationTestMode value to \"2\" to bypass this error.  Setting the passivation test mode to \"2\" fakes as if the SESSION_FAILOVER_ENABLED value is No and the application module retention level value is MANAGE_STATE."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_DEV_FAILOVER_STATE_ERROR"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "<html><b>Transaction context has been lost for the page you requested.</b> <p><b>Possible Causes:</b><br> <ol><li>You have left your session idle past the timeout period. <li>JDeveloper OC4J process did not fully shut down before restarting the application. <li>You closed one of the Internet Explorer browser windows while the request is being processed in another Internet Explorer window.  Closing an Internet Explorer window causes the OC4J to expire a user session. <li>OC4J XML files in your JDeveloper user home system directory have been modified or corrupted.  This causes OC4J to expire a user session.</ol> <b>Action:</b> <p>Go to JDeveloper menu and select the option <b>Run | Terminate</b> to terminate the OC4J process.  Then re-run your application.  If you still encounter this error when you re-run your application, exit JDeveloper and remove the user home system directory.  Then restart JDeveloper and run the application again.</html>"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ILLEGAL_LIST_SELECT_CALL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "(This developer mode error is thrown instead of being registered due to the lack of the page context object.) setSelectedValue method has been called on a poplist or radio group bean (item name: &ITEM_NAME).  setSelectedValue method at the UIX bean clashes with how OA Framework determines the selected choice.  OA Framework relies on the BC4J view object and default value upon determining the selection.\n\
+\n\
+Action: Use setDefaultValue or setSelectionValue method instead.  Check the javadoc on OAWebBeanPickList.setDefaultValue and setSelectionValue methods to figure out how to correctly set the list selection."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MENU_NOT_UNDER_RESP"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Menu (&NAME) is not under the current responsibility menu tree."
+  TYPE = "ERROR"
+  MAX_LENGTH = "180"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_NO_WINDOW_TITLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The window title attribute for the page layout region has not been set.  This attribute value will be used for the browser window title and should be set according to the UI standards.  A default window title will be displayed for all such pages that violate the standards.\n\
+\n\
+Action: Set the window title or title attribute for the page layout region.  The title attribute is used as a secondary source for the window title if the window title is missing."
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "ICXNOFAVHOMEPAGE"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "You have not selected any favorites. Please use the \"Edit Favorites\" button to setup your favorites."
+  DESCRIPTION = "FWK:"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "CANNOT_ADD_ITEM_WITH_DOT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Cannot add a new item with an id that has a \".\" in it. Please change the id."
+  DESCRIPTION = "FWK:"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ABOUT_LINK_TITLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "About this Page"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANNOT_EDIT_SEEDED_CUSTOMI"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "You cannot modify the seeded customizations."
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CANNOT_USE_PROFILE_OPTION"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "You cannot use profile option to update this customization."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CATEGORYNAME_INVALID"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Category Name (&CATEGORYNAME) defined for attachment item (&ITEM) with entity (&ENTITY) is invalid.  Please verify spelling of Category Name in meta data or define the category in FND_DOCUMENT_CATEGORIES table."
+  DESCRIPTION = "OA Framework"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_RECALCULATE_BUTTON"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Recalculate"
+  DESCRIPTION = "Prompt used for table total row update button"
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SELECT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Select"
+  DESCRIPTION = "The heading for table selection column - BLAF standard."
+  TYPE = "TITLE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_LOV_AM_NEEDED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "You need to specify the AM in the listOfValues region."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRPH_STOCK_AGRFUNC_DEFINED"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Aggregate function should not be defined on Stock graphs."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_GRPH_STOCK_COLDFN_INCRCT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The columns that need to be defined on the stock graph are, one column mapped to \"groupLabels\" and three columns mapped to \"data\"."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_APPSNAV_NO_AVAIL_RESPS"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "There are no active responsibilities available for this user."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SEARCH_FOR_510"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Search for &SHORT_DESC"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_CLOSE_GLOBAL_BUTTON_MSG"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The web page you are viewing is trying to close the window. Do you want to close this window ?"
+  DESCRIPTION = "Popup message before closing the browser window"
+  TYPE = "NOTE"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_SELECTIVE_CRITERIA_MISSING"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Please fill in selective criteria in at least one of the following fields for performance reasons: &LIST"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_UNDO_INVALID_RETENTION_LVL"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "The root application module retention level value &RETENTION_LEVEL is invalid for the transaction undo operation.  The retention level value must be MANAGE_STATE for the undo operation."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_INCORRECT_EL_FORMAT"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Incorrect format of expression (&EXPRESSION) for attribute (&ATTR_NAME). The expression should be of the format ${oa.<viewUsage>.<viewAttribute>}"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_EL_TYPE_MISMATCH"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "Attribute (&ATTR_NAME) should be of type (&ATTR_TYPE). Instead, the VO attribute (&VIEW_ATTR_NAME) is defined to be of type (&VIEW_ATTR_TYPE)."
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_ATTACHMENT_TEXT"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Attachment Text"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_MESSAGE_TYPE_PROCESSING"
+  OWNER = "SEED"
+  MESSAGE_NUMBER = "0"
+  MESSAGE_TEXT = "Processing"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_PROCESS_PROGRESS"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "Process is in progress"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "FND_VIEW_ATTACH_PAGE_TITLE"
+  OWNER = "SEED"
+  MESSAGE_TEXT = "View Attachment"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+
+BEGIN FND_NEW_MESSAGES "FND" "OAFND_SUBTAB_CHILD_MISMATCH"
+  OWNER = "SEED"
+  MESSAGE_TEXT =
+ "There is a mis-match between the number of regions and links under subtablayout or region/link is missing."
+  DESCRIPTION =
+ "There is a mis-match between the children under Subtab and links or region/link is missing"
+  TYPE = "ERROR"
+END FND_NEW_MESSAGES
+

@@ -1,0 +1,8 @@
+/* Policy File for oc4j app client container, Set oracle.home to your
+ oc4j installation. */
+grant codeBase "file:${oracle.home}/j2ee/home/oc4jclient.jar" {
+    permission java.security.AllPermission;
+};
+
+
+

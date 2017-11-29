@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="SampleBrowserAMLocal">
+         <AppModuleJndiName>oracle.apps.fnd.framework.toolbox.samplelib.server.SampleBrowserAM</AppModuleJndiName>
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <ApplicationName>oracle.apps.fnd.framework.toolbox.samplelib.server.SampleBrowserAM</ApplicationName>
+         <jbo.project>SampleLibrary</jbo.project>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
