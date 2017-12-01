@@ -240,10 +240,6 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.tip.tools.ide.workflow.addin.RoutingSlipNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
                <docClassName>oracle.toplink.addin.node.MWProjectNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
@@ -252,7 +248,15 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
+               <docClassName>oracle.jdeveloper.model.JspSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
                <docClassName>oracle.jdeveloper.library.JDKNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.xml.xquery.XQueryNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -264,15 +268,11 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdevimpl.webapp.html.XHtmlSourceNode</docClassName>
+               <docClassName>oracle.tip.tools.ide.workflow.addin.RoutingSlipNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
                <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagFragmentSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -292,19 +292,19 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdevimpl.webapp.template.HtmlTemplateSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
                <docClassName>oracle.jdevimpl.webapp.html.HtmlSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.adf.dt.navigator.nodes.CpxNode</docClassName>
+               <docClassName>oracle.jdevimpl.webapp.template.HtmlTemplateSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</docClassName>
+               <docClassName>oracle.jdevimpl.help.HelpTopicDocument</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.adf.dt.navigator.nodes.CpxNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -316,19 +316,11 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdeveloper.model.JspSourceNode</docClassName>
+               <docClassName>oracle.jdevimpl.webapp.jsp.JspFragmentSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
                <docClassName>oracle.jdevimpl.webservices.ide.WSDLArtifactNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagXSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.help.HelpTopicDocument</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -344,15 +336,19 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdevimpl.webapp.css.addin.CSSSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
                <docClassName>oracle.tip.tools.ide.pm.addin.PMNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdevimpl.xml.xquery.XQueryNode</docClassName>
+               <docClassName>oracle.jdevimpl.webapp.html.XHtmlSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagXSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -360,7 +356,11 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.JspFragmentSourceNode</docClassName>
+               <docClassName>oracle.jdevimpl.webapp.css.addin.CSSSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
