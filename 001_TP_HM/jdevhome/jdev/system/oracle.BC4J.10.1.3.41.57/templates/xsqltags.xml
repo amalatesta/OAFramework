@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<XSQLTags xmlns:dt="foo">
+   <ElementType READONLY="YES" DATABOUND="NO" name="DML" SHOWATTRIBUTEDIALOG="No" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.DMLTagsTreeNode">
+      <description>Generates xsql:dml tag</description>
+      <AttributeType name="id" required="no" codegen_id="id"/>
+      <CodeSnippet>
+&lt;xsql:dml&gt;
+{%query%}
+&lt;/xsql:dml&gt;
+</CodeSnippet>
+   </ElementType>
+   <ElementType READONLY="YES" DATABOUND="NO" name="Include OWA" SHOWATTRIBUTEDIALOG="No" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.OWATagsTreeNode">
+      <description>Generates xsql:include-owa tag</description>
+      <AttributeType name="id" required="no" codegen_id="id"/>
+      <CodeSnippet>
+&lt;xsql:include-owa&gt;
+{%query%}
+&lt;/xsql:include-owa&gt;
+</CodeSnippet>
+   </ElementType>
+   <ElementType READONLY="YES" DATABOUND="NO" name="Include Param" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.SimpleTagsTreeNode">
+      <description>Generates xsql:include-param tag</description>
+      <AttributeType name="name" required="yes" codegen_id="name"/>
+      <CodeSnippet>
+&lt;xsql:include-param name="{%name%}"/&gt;
+</CodeSnippet>
+   </ElementType>
+   <ElementType READONLY="YES" DATABOUND="NO" name="Include Request Params" SHOWATTRIBUTEDIALOG="No" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.SimpleTagsTreeNode">
+      <description>Generates xsql:include-request-params tag</description>
+      <AttributeType name="href" required="no" codegen_id="id"/>
+      <CodeSnippet>
+&lt;xsql:include-request-params/&gt;
+</CodeSnippet>
+   </ElementType>
+   <ElementType READONLY="YES" DATABOUND="NO" name="Include XML" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.SimpleTagsTreeNode">
+      <description>Generates xsql:include-xml tag</description>
+      <AttributeType name="href" required="yes" codegen_id="href"/>
+      <CodeSnippet>
+&lt;xsql:include-xml href="{%href%}"/&gt;
+</CodeSnippet>
+   </ElementType>
+   <ElementType READONLY="YES" DATABOUND="NO" name="Include XSQL" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.SimpleTagsTreeNode">
+      <description>Generates xsql:include-xsql tag</description>
+      <AttributeType name="href" required="yes" codegen_id="href"/>
+      <AttributeType name="reparse" required="yes"  dt:type="enumeration" dt:values="yes no" default="no" codegen_id="reparse"/>
+      <CodeSnippet>
+&lt;xsql:include-xsql href="{%href%}"  reparse="{%reparse%}" /&gt;
+</CodeSnippet>
+   </ElementType>
+   <ElementType READONLY="YES" DATABOUND="NO" name="Query" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.QueryTagsTreeNode">
+      <description>Generates xsql:query tag</description>
+      <AttributeType name="fetch-size" required="no" codegen_id="fetch-size"/>
+      <AttributeType name="id-attribute" codegen_id="id-attribute"/>
+      <AttributeType name="id-attribute-column" codegen_id="id-attribute-column"/>
+      <AttributeType name="max-rows" codegen_id="max-rows" default="-1" />
+      <AttributeType name="null-indicator" dt:type="enumeration" dt:values="yes no" default="no" codegen_id="null_indicator"/>
+      <AttributeType name="row-element" codegen_id="row-element" />
+      <AttributeType name="rowset-element" codegen_id="rowset-element" />
+      <AttributeType name="skip-rows" codegen_id="skip-rows"/>
+      <AttributeType name="tag-case" codegen_id="tag-case" dt:type="enumeration" dt:values="lower upper" default="lower" />
+      <CodeSnippet>
+&lt;xsql:query {%EXPAND_PROPS%}&gt;
+{%query%}
+&lt;/xsql:query&gt;
+
+</CodeSnippet>
+   </ElementType>
+   <ElementType READONLY="YES" DATABOUND="NO" name="Insert Param" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.InsertTagsTreeNode">
+      <description>Generates xsql:insert-param tag</description>
+      <AttributeType name="name" required="yes" codegen_id="name"/>
+      <AttributeType name="table" required="yes" codegen_id="table"/>
+      <AttributeType name="date-format" required="no" codegen_id="date-format"/>
+      <AttributeType name="transform" required="no" codegen_id="transform"/>
+      <CodeSnippet>
+&lt;xsql:insert-param {%EXPAND_PROPS%}
+ /&gt;</CodeSnippet>
+   </ElementType>
+   <ElementType READONLY="YES" DATABOUND="NO" name="Insert Request" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.InsertTagsTreeNode">
+      <description>Generates xsql:insert-request tag</description>
+      <AttributeType name="table" required="yes" codegen_id="table"/>
+      <AttributeType name="columns" required="no" codegen_id="columns"/>
+      <AttributeType name="date-format" required="no" codegen_id="date-format"/>
+      <AttributeType name="transform" required="no" codegen_id="transform"/>
+      <CodeSnippet>
+&lt;xsql:insert-request {%EXPAND_PROPS%} /&gt;
+</CodeSnippet>
+   </ElementType>
+
+   <ElementType READONLY="YES" DATABOUND="NO" name="Update Request" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.InsertTagsTreeNode">
+      <description>Generates xsql:update-request tag</description>
+      <AttributeType name="table" required="yes" codegen_id="table"/>
+      <AttributeType name="columns" required="no" codegen_id="columns"/>
+      <AttributeType name="date-format" required="no" codegen_id="date-format"/>
+      <AttributeType name="transform" required="no" codegen_id="transform"/>
+      <AttributeType name="key-columns" required="yes" />
+      <CodeSnippet>
+&lt;xsql:update-request  {%EXPAND_PROPS%} /&gt;
+</CodeSnippet>
+   </ElementType>
+
+   <ElementType READONLY="YES" DATABOUND="NO" name="Delete Request" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.InsertTagsTreeNode">
+      <description>Generates xsql:delete-request tag</description>
+      <AttributeType name="table" required="yes" codegen_id="table"/>
+      <AttributeType name="transform" required="no" codegen_id="transform"/>
+      <AttributeType name="key-columns" required="yes" />
+      <CodeSnippet>
+&lt;xsql:delete-request {%EXPAND_PROPS%}/&gt;
+</CodeSnippet>
+   </ElementType>
+
+
+   <ElementType READONLY="YES" DATABOUND="NO" name="Ref Cursor Function" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.RefCursorTagsTreeNode">
+      <description>Generates ref-cursor-function tag</description>
+      <AttributeType name="id-attribute" required="no" codegen_id="id-attribute"/>
+      <AttributeType name="id-attribute-column" required="no" codegen_id="id-attribute-column"/>
+      <AttributeType name="max-rows" required="no" codegen_id="max-rows" default="-1" />
+      <AttributeType name="null-indicator" required="no" dt:type="enumeration" dt:values="yes no" default="no" codegen_id="null-indicator"/>
+      <AttributeType name="row-element" required="no"  codegen_id="row-element"/>
+      <AttributeType name="rowset-element" required="no" codegen_id="rowset-element"/>
+      <AttributeType name="skip-rows" required="no" codegen_id="skip-rows" />
+      <AttributeType name="tag-case" dt:type="enumeration" dt:values="lower upper" default="lower" required="no" codegen_id="tag-case"/>
+      <CodeSnippet>
+&lt;xsql:ref-cursor-function {%EXPAND_PROPS%}&gt;
+{%query%}
+&lt;/xsql:ref-cursor-function&gt;
+</CodeSnippet>
+   </ElementType>
+   <ElementType READONLY="YES" DATABOUND="NO" name="Set Cookie" SHOWATTRIBUTEDIALOG="No" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.SetTagsTreeNode">
+      <description>Generates xsql:set-cookie tag</description>
+      <AttributeType name="name" required="yes"/>
+      <AttributeType name="domain" required="no"/>
+      <AttributeType name="ignore-empty-value" required="no" dt:type="enumeration" dt:values="yes no" default="no"/>
+      <AttributeType name="max-age" required="no"/>
+      <AttributeType name="only-if-unset" required="no" dt:type="enumeration" dt:values="yes no" default="no"/>
+      <AttributeType name="path" required="no"/>
+      <CodeSnippet>
+&lt;xsql:set-cookie {%EXPAND_PROPS%} {%VALUE_AS_STRING%} &gt;
+{%VALUE_AS_SQL%}
+&lt;/xsql:set-cookie&gt;
+</CodeSnippet>
+
+   </ElementType>
+   <ElementType READONLY="YES" DATABOUND="NO" name="Set Page Param" SHOWATTRIBUTEDIALOG="No" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.SetTagsTreeNode">
+      <description>Generates xsql:set-page-param tag</description>
+      <AttributeType name="name" required="yes"/>
+      <AttributeType name="ignore-empty-value" required="no" dt:type="enumeration" dt:values="yes no" default="no"/>
+      <CodeSnippet>
+&lt;xsql:set-page-param {%EXPAND_PROPS%} {%VALUE_AS_STRING%} &gt;
+{%VALUE_AS_SQL%}
+&lt;/xsql:set-page-param&gt;
+</CodeSnippet>
+   </ElementType>
+
+   <ElementType READONLY="YES" DATABOUND="NO" name="Set Session Param" SHOWATTRIBUTEDIALOG="No" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.SetTagsTreeNode">
+      <description>Generates xsql:set-session-param tag</description>
+      <AttributeType name="name" required="yes"/>
+      <AttributeType name="ignore-empty-value" required="no" dt:type="enumeration" dt:values="yes no" default="no"/>
+      <CodeSnippet>
+&lt;xsql:set-session-param {%EXPAND_PROPS%} {%VALUE_AS_STRING%} &gt;
+{%VALUE_AS_SQL%}
+&lt;/xsql:set-session-param&gt;
+
+</CodeSnippet>
+   </ElementType>
+
+   <ElementType READONLY="YES" DATABOUND="NO" name="Set Stylesheet Param" SHOWATTRIBUTEDIALOG="No" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.SetTagsTreeNode">
+      <description>Generates xsql:set-stylesheet-param tag</description>
+      <AttributeType name="name" required="yes"/>
+      <AttributeType name="ignore-empty-value" required="no" dt:type="enumeration" dt:values="yes no" default="no"/>
+      <CodeSnippet>
+&lt;xsql:set-stylesheet-param {%EXPAND_PROPS%}  {%VALUE_AS_STRING%}&gt;
+       {%VALUE_AS_SQL%}
+&lt;/xsql:set-stylesheet-param&gt;
+</CodeSnippet>
+
+   </ElementType>
+   <ElementType READONLY="YES" name="ViewObject Show" DATABOUND="YES" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.BC4JTagsTreeNode">
+      <description>Generates xsql:view-object tag</description>
+      <AttributeType name="max-rows" required="no"   default="-1" codegen_id="max-rows"/>
+      <AttributeType name="max-levels" required="no" default="-1" codegen_id="max-levels"/>
+      <AttributeType name="skip-rows" required="no" default="0" codegen_id="skip-rows"/>
+      <CodeSnippet>
+&lt;xsql:action handler="oracle.jbo.xsql.ViewObject"  name="{%ViewName%}"  configname="{%ConfigName%}"  appmodule="{%AppModuleName%}" {%EXPAND_PROPS%}&gt;
+&lt;/xsql:action&gt;
+          </CodeSnippet>
+   </ElementType>
+   <ElementType READONLY="YES" name="ViewObject Update" DATABOUND="YES" SHOWATTRIBUTEDIALOG="Yes" NODECLASS="oracle.jbo.dt.ui.wizards.xsqlelem.node.BC4JTagsTreeNode">
+      <description>Generates xsql:insert-request-view-object tag</description>
+      <AttributeType name="transform" required="no"/>
+      <AttributeType name="max-levels" required="no" default="-1" codegen_id="max-levels"/>
+      <CodeSnippet>
+&lt;xsql:action  handler="oracle.jbo.xsql.UpdateViewObject" name="{%ViewName%}" configname="{%ConfigName%}" appmodule="{%AppModuleName%}" {%EXPAND_PROPS%}&gt;
+&lt;/xsql:action&gt;
+      </CodeSnippet>
+   </ElementType>
+</XSQLTags>

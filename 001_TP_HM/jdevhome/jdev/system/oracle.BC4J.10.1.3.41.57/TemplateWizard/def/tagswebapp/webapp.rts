@@ -1,0 +1,142 @@
+# Wizard Dialog title
+TITLE_WIZARD = Create Business Components JSP Application
+UIX_JSP_TITLE_WIZARD = Create Business Components UIX JSP Application
+TITLE_PROJECT_TYPE = Business Components JSP Application
+HELPURL = Help Url
+
+# welcome panel
+WELCOME_PAGE_TITLE=Welcome
+WELCOME_TITLE_TEXT = Welcome to the Create BC4J JSP Application Wizard.
+WELCOME_TEXT = This wizard will help you create a JSP web site bound to a BC4J application definition.\n\nYou can create query, browse, or browse and edit forms for each view object and a master/detail form for each view link in the BC4J application definition.\n\n You will be asked to specify the following information:\n- Client data model definition name\n- The type of form for each view object\n- The type of form for each view link
+
+DEFAULT_TEMPLATE_DIR = /templates/WebApp/
+WEBAPP_NAME = Web application name:
+DEF_WEBAPP_NAME = WebApplication
+PROMPT_HTML_ROOT = Project server root:
+PROMPT_APP_DESCRIPTION = Application description:
+PROMPT_APP_DIR_NAME = Document root:
+WEBINFO_TITLE = Web Site
+DEFAULT_APP_DIR = WebApp
+DEFAULT_APP_DESCRIPTION = This is a Business Components JSP Application
+PROMPT_GEN_PAGE = Generate Page
+ERROR_MISSING_WEBAPP = You must provide a value for the Web Application Name
+ERROR_MISSING_DIR = You must provide a value for the Web Application Directory
+RUNTIME_MESSAGE = Runtime Message
+ERROR_TEXT = errortext
+
+FIND_FORM_TITLE = Query Form
+TITLE_VIEW_FORM = View Object Forms
+TITLE_QUERY_FORM = Query Form
+TITLE_BROWSE_FORM = Browse Form
+TITLE_EDIT_FORM = Browse & Edit Form
+TITLE_NEW_FORM = New Record Form
+TITLE_VIEW_SELECTION = View Object Forms
+
+MSG_NO_RECORD = No record to display
+MSG_DISCONNECTED = You are now disconnected from the DbServlet Application
+MSG_NO_QRY_COLS = No Queriable columns found in master table
+MESSAGE_NO_PROJECT = No Project was found
+MESSAGE_NO_VIEWS = There aren't any View Usages in the selected application module. Exit the wizard and modify your application module.
+PROMPT_PRECENT = Percent Complete
+PROMPT_GENERATING = Generating JSP Application
+FINISH_TEXT =You have finished the Create BC4J JSP Application Wizard.
+FINISH_CLICK =Click Finish to insert the elements into your JSP document.
+PROMPT_APPMODULE = Application Module Name:
+PROMPT_NEW = New
+TTIP_CREATENEWAM = Create a new Application Module
+TITLE_AMINFO = Business Application
+ERR_SELAM = You must select an Application Module
+ERR_SELCONN = You must select a database connection
+MSG_REMEMBER_SAVE = Click on 'Save All' button prior to running your JSP Application. Run 'main.jsp' to startup your application.
+PROMPT_SEL_AM = Select Application Module:
+PB_NEW_AM = New...
+TTIP_NEW_PB = Invokes the Business Components  Wizard.
+DEPLOY_8I_TEXT = This Application Module is deployed to Oracle8i
+PROMPT_JDNI_PATH = JNDI path:
+DEF_JNDI_PATH = test
+SEL_BUS_PROJ = Select Business Project:
+ERR_TITLE = Application Error
+RINFO_TITLE = Connection
+APP_TMPL_TITLE = Application Template
+SEL_IIOP_PROMPT = The Application Module is deployed to Oracle8i as a CORBA server. Select an IIOP connection for your JSP Application to use in connecting to the Application Module.
+SEL_JDBC_PROMPT = Select a JDBC connection for the Application Module to use in connecting to the database.
+THEME_SEL_TITLE = Theme
+PROMPT_SELECT_THEME = What theme do you want to use?
+LABEL_THEME_PREVIEW = Theme preview
+NO_CSS_ERROR = Could not locate the theme CSS file under the project's HTML Root directory. \nMake sure you copy it to the following location:\n
+NO_IMAGEDIR_ERROR = Could not locate the theme image directory under the project's HTML Root directory. \nMake sure you copy your theme images to the following location:\n
+
+#ViewsPanel resources
+PROMPT_SELVIEW_OBJ = Select the JSP forms to generate for each view object:
+VIEWS_PANEL_DESCRIPTION=By default, JSP pages will be generated for each view object. In order to change this behavior, select a view object and modify Form Options.
+TITLE_VO = View Objects
+TITLE_STATELESS_APP = Generate a stateless application
+TITLE_FORM_OPTIONS = Form Options
+TITLE_SUGGESTION = Suggestion
+ERR_INVALID_ID =  is not a valid identifier
+SEL_APP_TMPL = Select the application template:
+FILE_EXISTS_MESSAGE_TITLE = Web Application
+FILE_EXISTS_MESSAGE = There is already a Web Application in this project. Do you want to overwrite ?
+ERR_WEBAPP_DIR_MISSING = The ''webapp'' directory is missing from your html root, \nextract the contents of [{0}] to [{1}].
+APPMODULE_CONFIG_PANEL_TITLE = AppModule Deployment
+APPMGR_GIF = appmgr.gif
+DEFAULT_ENCODING = Default
+
+WEBAPP_NAME_MNEMONIC=W
+PROMPT_HTML_ROOT_MNEMONIC=P
+PROMPT_APP_DESCRIPTION_MNEMONIC=d
+PROMPT_APP_DIR_NAME_MNEMONIC=r
+
+# ViewLinkPanel
+LABEL_GENERATE_WHAT = Generate JSP Master/Detail pages for: 
+ALL_VIEWLINKS = All view links
+NONE = No view links
+FOLLOWING_VIEW_LINKS = Only the following view links
+SELECT_VIEW_LINKS = Select view links:
+SELECT_ALL_TOOLTIP = This option generates a master-detail page for all View Links in the selected Application module
+SELECT_NONE_TOOLTIP = This option skips master-detail page generation
+SELECT_SUBSET_TOOLTIP = This option generates master-detail page, for only those View Links selected in the list below
+FINISH_SUMMARY = Your selections are:\n\nApplication Module: {0}\n\nClick Finish to generate JSP pages for the selections you made.
+NO_BC4J_PROJECT_ERROR_MSG = This Workspace has no Business Projects defined.\n\nExit this wizard, create a Business Project and\n then invoke the Business Components JSP Application wizard.
+
+#ViewLink Panel
+VIEWLINK_PANEL_TITLE=View Link Form
+VIEWLINK_PANEL_DESCRIPTION=By default, JSP pages will be generated for each view link. In order to change this behavior, select a view link and modify Form Options.
+TITLE_VIEWLINK=View Link
+
+#ViewLinkpanel mnemonics
+SELECT_ALL_MNEMONIC=v
+SELECT_NONE_MNEMONIC=o
+SELECT_SUBSET_MNEMONIC=t
+SELECT_SUBSET_TEXTAREA_MNEMONIC=S
+VIEW_LINK_PANEL_FILE_NAME=File Name:
+VIEW_LINK_PANEL_FILE_NAME_MNEMONIC=F
+
+
+
+#View object panel Mnemonics
+PROMPT_SELVIEW_OBJ_MNEMONIC=V
+GEN_PAGE_MNEMONIC=G
+QUERY_FORM_MNEMONIC=Q
+BROWSE_FORM_MNEMONIC=o
+EDIT_FORM_MNEMONIC=E
+VIEW_PANEL_FILE_NAME=File Name:
+VIEW_PANEL_FILE_NAME_MNEMONIC=F
+
+#Finish Page
+FINISH_PAGE_TITLE=Summary
+
+#ERRORS
+#WebInfoPanel
+ERR_ABSOLUTE_NOT_ALLOWED="Document root cannot be an absolute path."
+ERR_INCORRECT_DOC_ROOT="Document root has to be a child directory \nof Server root."
+ERR_INVALID_CHARS="{0} contains invalid characters."
+ERR_SPACES_NOT_ALLOWED=Name cannot include spaces.
+
+#DataDefinitionSelectionPanel
+DATADEF_PAGE_TITLE=Data Definition
+SELECT_DATADEFINITION_PROMPT=Select the &data model definition:
+NEW_DATADEFINITION = Ne&w ...
+SELECT_APPMODULE = Select an application &module:
+SELECT_DATADEF_INTRO=Select the data model definition that contains the view object and view object relationships you want your application to use. \nClick New if you have not yet defined a data model.
+SELECTED_MODEL = Application Module hierarchy (no selection necessary):

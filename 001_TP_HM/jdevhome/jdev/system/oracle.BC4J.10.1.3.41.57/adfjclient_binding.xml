@@ -1,0 +1,993 @@
+<!-- data binding definition for JClient -->
+<!-- Added the element properties for each controlDefinition (where required.)
+To set properties using CMT APIs.
+See Mike's Update in bug 4481632. Point 3 and 4.
+Now cmt properties will be used to create the code.
+@Aminur
+-->
+
+<dataBindingPanel>
+   <setup>
+      <configureproject configurer="oracle.adf.dt.configurers.AdfClientProject" />
+   </setup>
+   <dataControl>
+   </dataControl>
+   <collectionNode>
+	  <controlDefinition name="Edit Forms"
+                  className=""
+                  classPath=""
+                  shortLabel="Edit Forms"
+                  longLabel=""
+				  requiresControlSelectionDialog="true"
+				  controlSelectionHelperClass="oracle.adf.dt.dbpanel.jclient.JClientControlSelectorHelperImpl"
+			      bindingType="" 
+                  tooltipText="Edit Forms"
+				  icon="/oracle/jbo/dt/ui/wizards/palette/images/T_EdRcd.gif">
+         <useTemplate/>
+         <imports/>
+      </controlDefinition>
+      <controlDefinition name="Table"
+                  className="javax.swing.JTable"
+                  classPath=""
+                  shortLabel="JTable"
+                  longLabel="javax.swing.JTable"
+                  tooltipText="javax.swing.JTable"
+                  bindingType="DCTable" 
+                  icon="/oracle/ideimpl/icons/images/palette/JTable.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((TableModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.table.TableModel">
+				<propertyValue>
+					<![CDATA[(TableModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JTable;javax.swing.table.TableModel]]>
+         </imports>
+      </controlDefinition>
+
+      <controlDefinition name="Combo Box"
+                  className="javax.swing.JComboBox"
+                  classPath=""
+                  shortLabel="JComboBox"
+                  longLabel="javax.swing.JComboBox"
+                  tooltipText="javax.swing.JComboBox"
+                  bindingType="DCComboBox" 
+                  icon="/oracle/ideimpl/icons/images/palette/comboBox.png">
+         <useTemplate>            <![CDATA[${FieldName}.setToolTipText((panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip());${FieldName}.setModel((ComboBoxModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="toolTipText" name="setToolTipText" type="String">
+				<propertyValue>
+					<![CDATA[(panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip()]]>
+				</propertyValue>
+			</cmtProperty>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.ComboBoxModel">
+				<propertyValue>
+					<![CDATA[(ComboBoxModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+		<imports>
+				<![CDATA[javax.swing.JComboBox;javax.swing.ComboBoxModel]]>
+		</imports>
+	  </controlDefinition>
+          
+      <controlDefinition name="List"
+                  className="javax.swing.JList"
+                  classPath=""
+                  shortLabel="JList"
+                  longLabel="javax.swing.JList"
+                  tooltipText="javax.swing.JList"
+                  bindingType="DCListSingleSel" 
+                  icon="/oracle/ideimpl/icons/images/palette/listBox.png">
+         <useTemplate>            <![CDATA[${FieldName}.setToolTipText((panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip());${FieldName}.setModel((ListModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="toolTipText" name="setToolTipText" type="String">
+				<propertyValue>
+					<![CDATA[(panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip()]]>
+				</propertyValue>
+			</cmtProperty>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.ListModel">
+				<propertyValue>
+					<![CDATA[(ListModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+		 <imports>
+	          <![CDATA[javax.swing.JList;javax.swing.ListModel]]>
+         </imports>
+      </controlDefinition>
+
+      
+      <controlDefinition name="Tree"
+                  className="javax.swing.JTree"
+                  classPath=""
+                  shortLabel="JTree"
+                  longLabel="javax.swing.JTree"
+                  tooltipText="javax.swing.JTree"
+                  bindingType="DCTree" 
+                  icon="/oracle/ideimpl/icons/images/palette/tree.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((TreeModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.tree.TreeModel">
+				<propertyValue>
+					<![CDATA[(TreeModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JTree;javax.swing.tree.TreeModel]]>
+         </imports>
+      </controlDefinition>
+
+      <controlDefinition name="Graph"
+                  className="oracle.dss.graph.Graph"
+                  classPath=""
+				  library="Oracle BI Graph;Chart;Oracle JEWT"
+                  shortLabel="Graph"
+                  longLabel="oracle.dss.graph.Graph"
+                  tooltipText="oracle.dss.graph.Graph"
+                  bindingType="DCGraph" 
+                  icon="/oracle/jbo/dt/ui/wizards/palette/images/pie_chart.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setDataSource((oracle.dss.util.DataSource)panelBinding.bindUIControl("${BindingName}",${FieldName}))
+             ]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="dataSource" name="setDataSource" type="oracle.dss.util.DataSource">
+				<propertyValue>
+					<![CDATA[(oracle.dss.util.DataSource)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[oracle.dss.graph.Graph;oracle.dss.graph.Graph;oracle.dss.util.DataSource]]>
+         </imports>
+         <setup>
+               <configureproject configurer="oracle.jbo.dt.ui.wizards.common.chart.JCDragDropHandler" />
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="NavigationBar"
+                       className="oracle.jbo.uicli.controls.JUNavigationBar"
+                       classPath=""
+                       shortLabel="JUNavigationBar"
+                       longLabel="oracle.jbo.uicli.controls.JUNavigationBar"
+					   library="ADF Swing Runtime"
+                       tooltipText="NavigationBar Binding"
+                       bindingType="DCNavigationBar" 
+                       icon="/oracle/jbo/dt/ui/wizards/palette/images/JUNavigationBar.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel(JUNavigationBar.createViewBinding(panelBinding, ${FieldName}, "${CollectionName}", null, "${IteratorBinding.getId()}"))]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="oracle.jbo.uicli.binding.JUIteratorBinding">
+				<propertyValue>
+					<![CDATA[JUNavigationBar.createViewBinding(panelBinding, ${FieldName}, "${CollectionName}", null, "${IteratorBinding.getId()}"))]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+	 <imports>
+            <![CDATA[oracle.jbo.uicli.controls.JUNavigationBar;oracle.jbo.uicli.binding.JUIteratorBinding]]>
+         </imports>
+      </controlDefinition>
+
+      <controlDefinition name="StatusBar"
+                       className="oracle.jbo.uicli.controls.JUStatusBar"
+                       classPath=""
+                       shortLabel="JUStatusBar"
+                       longLabel="oracle.jbo.uicli.controls.JUStatusBar"
+					   library="ADF Swing Runtime"
+                       tooltipText="StatusBar Binding"
+                       bindingType="DCNavigationBar" 
+                       icon="/oracle/jbo/dt/ui/wizards/palette/images/JUStatusBar.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel(JUStatusBar.createPanelBinding(panelBinding, ${FieldName}))]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="oracle.jbo.uicli.binding.JUIteratorBinding">
+				<propertyValue>
+					<![CDATA[JUStatusBar.createPanelBinding(panelBinding, ${FieldName}))]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+	 <imports>
+            <![CDATA[oracle.jbo.uicli.controls.JUStatusBar;oracle.jbo.uicli.binding.JUIteratorBinding]]>
+         </imports>
+      </controlDefinition>
+
+	  <controlDefinition name="Slider"
+                       className="javax.swing.JSlider"
+                       classPath=""
+                       shortLabel="JSlider"
+                       longLabel="javax.swing.JSlider"
+                       tooltipText="Slider View Binding"
+                       bindingType="DCSlider" 
+                       icon="/oracle/ideimpl/icons/images/palette/slider.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((BoundedRangeModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.BoundedRangeModel">
+				<propertyValue>
+					<![CDATA[(BoundedRangeModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+	  <imports>
+            <![CDATA[javax.swing.JSlider;javax.swing.BoundedRangeModel]]>
+         </imports>
+      </controlDefinition>
+
+      <controlDefinition name="ScrollBar"
+                     className="javax.swing.JScrollBar"
+                     classPath=""
+                     shortLabel="JScrollBar"
+                     longLabel="javax.swing.JScrollBar"
+                     tooltipText="ScrollBar View Binding"
+                     bindingType="DCScrollBar" 
+                     icon="/oracle/ideimpl/icons/images/palette/scrollBar.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((BoundedRangeModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.BoundedRangeModel">
+				<propertyValue>
+					<![CDATA[(BoundedRangeModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JScrollBar;javax.swing.BoundedRangeModel]]>
+         </imports>
+      </controlDefinition>
+	        <controlDefinition name="Spinner"
+                  className="javax.swing.JSpinner"
+                  classPath=""
+                  shortLabel="JSpinner"
+                  longLabel="javax.swing.JSpinner"
+                  tooltipText="Create Spinner binding" 
+                  bindingType="DCSpinner" 
+                  icon="/oracle/ideimpl/icons/images/palette/spinner.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((SpinnerModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.SpinnerModel">
+				<propertyValue>
+					<![CDATA[(SpinnerModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JSpinner;javax.swing.SpinnerModel]]>
+         </imports>
+      </controlDefinition>
+	 <controlDefinition name="Radio ButtonGroup"
+                  className="oracle.jbo.uicli.controls.JURadioButtonGroupPanel"
+                  classPath=""
+				  library="ADF Swing Runtime"
+                  shortLabel="Radio ButtonGroup"
+                  longLabel="oracle.jbo.uicli.controls.JURadioButtonGroupPanel"
+                  tooltipText="Create Radio Button Group"
+                  bindingType="DCButtonGroup" 
+                  icon="/oracle/ideimpl/icons/images/palette/JRadioButton.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((JUButtonGroupBinding)panelBinding.bindUIControl("${BindingName}",${FieldName}))
+            ]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="oracle.jbo.uicli.jui.JUButtonGroupBinding">
+				<propertyValue>
+					<![CDATA[(JUButtonGroupBinding)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+
+	 <imports>
+            <![CDATA[oracle.jbo.uicli.jui.JUButtonGroupBinding;oracle.jbo.uicli.controls.JURadioButtonGroupPanel]]>
+         </imports>
+      </controlDefinition>
+
+   </collectionNode>
+   <beanAttribute>
+
+      <controlDefinition name="TextField"
+                  className="javax.swing.JTextField"
+                  classPath=""
+                  shortLabel="JTextField"
+                  longLabel="javax.swing.JTextField"
+                  tooltipText="javax.swing.JTextField"
+                  bindingType="DCTextField" 
+                  icon="/oracle/ideimpl/icons/images/palette/jcltxtf.gif">
+         <useTemplate>            <![CDATA[${FieldName}.setToolTipText((panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip());${FieldName}.setColumns(panelBinding.findCtrlValueBinding("${BindingName}").getDisplayWidth());${FieldName}.setDocument((Document)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="toolTipText" name="setToolTipText" type="String">
+				<propertyValue>
+					<![CDATA[(panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip()]]>
+				</propertyValue>
+			</cmtProperty>
+			<cmtProperty propertyState ="columns" name="setColumns" type="int">
+				<propertyValue>
+					<![CDATA[(panelBinding.findCtrlValueBinding("${BindingName}")).getDisplayWidth()]]>
+				</propertyValue>
+			</cmtProperty>
+			<cmtProperty propertyState ="document" name="setDocument" type="javax.swing.text.Document">
+				<propertyValue>
+					<![CDATA[(Document)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+	     </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JTextField;javax.swing.text.Document]]>
+         </imports>
+      </controlDefinition>
+
+      <controlDefinition name="Combo Box"
+                  className="javax.swing.JComboBox"
+                  classPath=""
+                  shortLabel="JComboBox"
+                  longLabel="javax.swing.JComboBox"
+                  tooltipText="javax.swing.JComboBox"
+                  bindingType="DCComboBox" 
+                  icon="/oracle/ideimpl/icons/images/palette/comboBox.png">
+         <useTemplate>            <![CDATA[${FieldName}.setToolTipText((panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip());${FieldName}.setModel((ComboBoxModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="toolTipText" name="setToolTipText" type="String">
+				<propertyValue>
+					<![CDATA[(panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip()]]>
+				</propertyValue>
+			</cmtProperty>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.ComboBoxModel">
+				<propertyValue>
+					<![CDATA[(ComboBoxModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+	 <imports>
+            <![CDATA[javax.swing.JComboBox;javax.swing.ComboBoxModel]]>
+         </imports>
+      </controlDefinition>
+          
+      <controlDefinition name="Button LOV"
+                  className="javax.swing.JButton"
+                  classPath=""
+                  shortLabel="JButton"
+                  longLabel="javax.swing.JButton"
+                  tooltipText="creates Button LOV"
+                  bindingType="DCLovButton" 
+                  icon="/oracle/ideimpl/icons/images/palette/JButton.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((ButtonModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.ButtonModel">
+				<propertyValue>
+					<![CDATA[(ButtonModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JButton;javax.swing.ButtonModel]]>
+         </imports>
+      </controlDefinition>
+          
+      <controlDefinition name="Check Box"
+                  className="javax.swing.JCheckBox"
+                  classPath=""
+                  shortLabel="JCheckBox"
+                  longLabel="javax.swing.JCheckBox"
+                  tooltipText="javax.swing.JCheckBox"
+                  bindingType="DCButton" 
+                  icon="/oracle/ideimpl/icons/images/palette/JCheckBox.gif">
+         <useTemplate>            <![CDATA[${FieldName}.setToolTipText((panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip());${FieldName}.setModel((ButtonModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="toolTipText" name="setToolTipText" type="String">
+				<propertyValue>
+					<![CDATA[(panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip()]]>
+				</propertyValue>
+			</cmtProperty>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.ButtonModel">
+				<propertyValue>
+					<![CDATA[(ButtonModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JCheckBox;javax.swing.ButtonModel]]>
+         </imports>
+      </controlDefinition>
+          
+
+      <controlDefinition name="Formatted Edit Field"
+                  className="javax.swing.JFormattedTextField"
+                  classPath="jfc\lib\swingall.jar"
+                  shortLabel="JFormattedTextField"
+                  longLabel="javax.swing.JFormattedTextField"
+                  tooltipText="javax.swing.JFormattedTextField"
+                  bindingType="DCFormattedTextField" 
+                  icon="/oracle/ideimpl/icons/images/palette/formattedTextField.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setDocument((Document)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="document" name="setDocument" type="javax.swing.text.Document">
+				<propertyValue>
+					<![CDATA[(Document)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+	     </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JFormattedTextField;javax.swing.text.Document]]>
+         </imports>
+
+      </controlDefinition>
+         
+
+      <controlDefinition name="Edit Pane"
+                  className="javax.swing.JEditorPane"
+                  classPath=""
+                  shortLabel="JTextField"
+                  longLabel="javax.swing.JEditorPane"
+                  tooltipText="javax.swing.JEditorPane"
+                  bindingType="DCTextField" 
+                  icon="/oracle/ideimpl/icons/images/palette/editorPane.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setDocument((Document)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="document" name="setDocument" type="javax.swing.text.Document">
+				<propertyValue>
+					<![CDATA[(Document)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+	     </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JEditorPane;javax.swing.text.Document]]>
+         </imports>
+      </controlDefinition>
+      
+      <controlDefinition name="JUArrayComboBox"
+                  className="oracle.jbo.uicli.controls.JUArrayComboBox"
+                  classPath=""
+				  library="ADF Swing Runtime"
+                  shortLabel="oracle.jbo.uicli.controls.JUArrayComboBox"
+                  longLabel="oracle.jbo.uicli.controls.JUArrayComboBox"
+                  tooltipText="oracle.jbo.uicli.controls.JUArrayComboBox"
+                  bindingType="DCDefaultControl" 
+                  icon="/oracle/jbo/dt/ui/wizards/palette/images/JUArrayComboBox.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setArrayBinding((JUDefaultControlBinding)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="arrayBinding" name="setArrayBinding" type="oracle.jbo.uicli.jui.JUDefaultControlBinding">
+				<propertyValue>
+					<![CDATA[(JUDefaultControlBinding)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+	     </cmtProperties>
+         <imports>
+            <![CDATA[oracle.jbo.uicli.jui.JUDefaultControlBinding;oracle.jbo.uicli.controls.JUArrayComboBox]]>
+         </imports>
+      </controlDefinition>
+      
+      <controlDefinition name="JUImageControl"
+                  className="oracle.jbo.uicli.controls.JUImageControl"
+                  classPath=""
+				  library="ADF Swing Runtime"
+                  shortLabel="oracle.jbo.uicli.controls.JUImageControl"
+                  longLabel="oracle.jbo.uicli.controls.JUImageControl"
+                  tooltipText="oracle.jbo.uicli.controls.JUImageControl"
+                  bindingType="DCDefaultControl" 
+                  icon="/oracle/jbo/dt/ui/wizards/palette/images/JUImageControl.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((JUDefaultControlBinding)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="oracle.jbo.uicli.jui.JUDefaultControlBinding">
+				<propertyValue>
+					<![CDATA[(JUDefaultControlBinding)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+	     </cmtProperties>
+         <imports>
+            <![CDATA[oracle.jbo.uicli.jui.JUDefaultControlBinding;oracle.jbo.uicli.controls.JUImageControl]]>
+         </imports>
+      </controlDefinition>
+      
+
+      <!--
+      <controlDefinition name="JClient OrdMediaControl"
+                  className="oracle.ord.controls.OrdMediaControl"
+                  classPath=""
+                  library="JClient;Oracle Intermedia JClient"
+                  shortLabel="oracle.ord.controls.OrdMediaControl"
+                  longLabel="oracle.ord.controls.OrdMediaControl"
+                  tooltipText="oracle.ord.controls.OrdMediaControl"
+                  bindingType="DCDefaultControl" 
+                  icon="/oracle/jbo/dt/ui/wizards/palette/images/OrdMediaControl.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((JUDefaultControlBinding)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+         <imports>
+            <![CDATA[oracle.jbo.uicli.jui.JUDefaultControlBinding;oracle.ord.controls.OrdMediaControl]]>
+         </imports>
+      </controlDefinition>
+      -->
+
+
+     <controlDefinition name="JULabel"
+                  className="oracle.jbo.uicli.controls.JULabel"
+                  classPath=""
+				  library="ADF Swing Runtime"
+                  shortLabel="oracle.jbo.uicli.controls.JULabel"
+                  longLabel="oracle.jbo.uicli.controls.JULabel"
+                  tooltipText="oracle.jbo.uicli.controls.JULabel"
+                  bindingType="DCLabel" 
+                  icon="/oracle/ideimpl/icons/images/palette/JLabel.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((JULabelBinding)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="oracle.jbo.uicli.jui.JULabelBinding">
+				<propertyValue>
+					<![CDATA[(JULabelBinding)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[oracle.jbo.uicli.jui.JULabelBinding;oracle.jbo.uicli.controls.JULabel]]>
+         </imports>
+      </controlDefinition>
+      
+     <controlDefinition name="Label For"
+                  className="oracle.jbo.uicli.controls.JULabel"
+                  classPath=""
+				  library="ADF Swing Runtime"
+                  shortLabel="oracle.jbo.uicli.controls.JULabel"
+                  longLabel="oracle.jbo.uicli.controls.JULabel"
+                  tooltipText="oracle.jbo.uicli.controls.JULabel"
+                  bindingType="DCLabel" 
+                  icon="/oracle/ideimpl/icons/images/palette/JLabel.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setText(panelBinding.findCtrlValueBinding("${BindingName}").getLabel())]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="text" name="setText" type="String">
+				<propertyValue>
+					<![CDATA[panelBinding.findCtrlValueBinding("${BindingName}").getLabel())]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[oracle.jbo.uicli.jui.JULabelBinding;oracle.jbo.uicli.controls.JULabel]]>
+         </imports>
+      </controlDefinition>
+
+      
+      <controlDefinition name="List"
+                  className="javax.swing.JList"
+                  classPath=""
+                  shortLabel="JList"
+                  longLabel="javax.swing.JList"
+                  tooltipText="javax.swing.JList"
+                  bindingType="DCListSingleSel" 
+                  icon="/oracle/ideimpl/icons/images/palette/listBox.png">
+         <useTemplate>
+           <![CDATA[${FieldName}.setToolTipText((panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip());${FieldName}.setModel((ListModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="toolTipText" name="setToolTipText" type="String">
+				<propertyValue>
+					<![CDATA[(panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip()]]>
+				</propertyValue>
+			</cmtProperty>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.ListModel">
+				<propertyValue>
+					<![CDATA[(ListModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+	     <imports>
+            <![CDATA[javax.swing.JList;javax.swing.ListModel]]>
+         </imports>
+      </controlDefinition>
+      
+      <controlDefinition name="Password Field"
+                  className="javax.swing.JPasswordField"
+                  classPath=""
+                  shortLabel="JPasswordField"
+                  longLabel="javax.swing.JPasswordField"
+                  tooltipText="javax.swing.JPasswordField"
+                  bindingType="DCTextField" 
+                  icon="/oracle/ideimpl/icons/images/palette/JPasswordField.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setDocument((Document)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="document" name="setDocument" type="javax.swing.text.Document">
+				<propertyValue>
+					<![CDATA[(Document)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+	     </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JPasswordField;javax.swing.text.Document]]>
+         </imports>
+      </controlDefinition>
+          
+
+      <controlDefinition name="ProgressBar"
+                  className="javax.swing.JProgressBar"
+                  classPath=""
+                  shortLabel="JProgressBar"
+                  longLabel="javax.swing.JProgressBar"
+                  tooltipText="Create ProgresBar Attribute Binding"
+                  bindingType="DCProgressBarAttr" 
+                  icon="/oracle/ideimpl/icons/images/palette/progressBar.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((BoundedRangeModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.BoundedRangeModel">
+				<propertyValue>
+					<![CDATA[(BoundedRangeModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+	 <imports>
+            <![CDATA[javax.swing.JProgressBar;javax.swing.BoundedRangeModel]]>
+         </imports>
+      </controlDefinition>
+      
+
+        <controlDefinition name="Radio ButtonGroup"
+                  className="oracle.jbo.uicli.controls.JURadioButtonGroupPanel"
+                  classPath=""
+				  library="ADF Swing Runtime"
+                  shortLabel="Radio ButtonGroup"
+                  longLabel="oracle.jbo.uicli.controls.JURadioButtonGroupPanel"
+                  tooltipText="Create Radio Button Group"
+                  bindingType="DCButtonGroup" 
+                  icon="/oracle/jbo/dt/ui/wizards/palette/images/JURadioButtonGroupControl.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((JUButtonGroupBinding)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="oracle.jbo.uicli.jui.JUButtonGroupBinding">
+				<propertyValue>
+					<![CDATA[(JUButtonGroupBinding)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+	 <imports>
+            <![CDATA[oracle.jbo.uicli.jui.JUButtonGroupBinding;oracle.jbo.uicli.controls.JURadioButtonGroupPanel]]>
+         </imports>
+      </controlDefinition>
+         
+
+      <controlDefinition name="ScrollBar"
+                  className="javax.swing.JScrollBar"
+                  classPath=""
+                  shortLabel="JScrollBar"
+                  longLabel="javax.swing.JScrollBar"
+                  tooltipText="Create ScrollBar Attribute Binding"
+                  bindingType="DCScrollBarAttr" 
+                  icon="/oracle/ideimpl/icons/images/palette/scrollBar.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((BoundedRangeModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.BoundedRangeModel">
+				<propertyValue>
+					<![CDATA[(BoundedRangeModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JScrollBar;javax.swing.BoundedRangeModel]]>
+         </imports>
+      </controlDefinition>
+
+      <controlDefinition name="Slider"
+                  className="javax.swing.JSlider"
+                  classPath=""
+                  shortLabel="JSlider"
+                  longLabel="javax.swing.JSlider"
+                  tooltipText="Create Slider Attribute Binding"
+                  bindingType="DCSliderAttr" 
+                  icon="/oracle/ideimpl/icons/images/palette/slider.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((BoundedRangeModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.BoundedRangeModel">
+				<propertyValue>
+					<![CDATA[(BoundedRangeModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JSlider;javax.swing.BoundedRangeModel]]>
+         </imports>
+      </controlDefinition>
+
+      <controlDefinition name="Spinner"
+                  className="javax.swing.JSpinner"
+                  classPath=""
+                  shortLabel="JSpinner"
+                  longLabel="javax.swing.JSpinner"
+                  tooltipText="Create Spinner binding" 
+                  bindingType="DCSpinner" 
+                  icon="/oracle/ideimpl/icons/images/palette/spinner.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((SpinnerModel)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+		 <cmtProperties>
+			<cmtProperty propertyState ="model" name="setModel" type="javax.swing.SpinnerModel">
+				<propertyValue>
+					<![CDATA[(SpinnerModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JSpinner;javax.swing.SpinnerModel]]>
+         </imports>
+      </controlDefinition>
+      
+      <controlDefinition name="TextArea"
+                  className="javax.swing.JTextArea"
+                  classPath=""
+                  shortLabel="JTextField"
+                  longLabel="javax.swing.JTextArea"
+                  tooltipText="javax.swing.JTextArea"
+                  bindingType="DCTextField" 
+                  icon="/oracle/ideimpl/icons/images/palette/textArea.png">
+         <useTemplate>            <![CDATA[${FieldName}.setToolTipText((panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip());${FieldName}.setDocument((Document)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="toolTipText" name="setToolTipText" type="String">
+				<propertyValue>
+					<![CDATA[(panelBinding.findCtrlValueBinding("${BindingName}")).getTooltip()]]>
+				</propertyValue>
+			</cmtProperty>
+			<cmtProperty propertyState ="document" name="setDocument" type="javax.swing.text.Document">
+				<propertyValue>
+					<![CDATA[(Document)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+	     </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JTextArea;javax.swing.text.Document]]>
+         </imports>
+      </controlDefinition>
+         
+        
+      <controlDefinition name="TextPane"
+                  className="javax.swing.JTextPane"
+                  classPath=""
+                  shortLabel="JTextPane"
+                  longLabel="javax.swing.JTextPane"
+                  tooltipText="javax.swing.JTextPane"
+                  bindingType="DCTextField" 
+                  icon="/oracle/ideimpl/icons/images/palette/textPane.png">
+         <useTemplate>
+            <![CDATA[${FieldName}.setDocument((Document)panelBinding.bindUIControl("${BindingName}",${FieldName}))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState ="document" name="setDocument" type="javax.swing.text.Document">
+				<propertyValue>
+					<![CDATA[(Document)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+	     </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JTextPane;javax.swing.text.Document]]>
+         </imports>
+      </controlDefinition>
+   </beanAttribute>
+   <beanMethod>
+      <controlDefinition name="Button"
+                      className="javax.swing.JButton"
+                      classPath=""
+                      shortLabel="JButton"
+                      longLabel="javax.swing.JButton"
+                      tooltipText="Button Action Binding"
+                      bindingType="DCAction" 
+                      icon="/oracle/jbo/dt/ui/wizards/palette/images/button.gif">
+         <useTemplate>
+            <![CDATA[${FieldName}.setModel((ButtonModel)panelBinding.bindUIControl("${BindingName}",${FieldName}));              ${FieldName}.setText("${ActionMethodName}")]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState="model" name="setModel" type="javax.swing.ButtonModel">
+				<propertyValue>
+					<![CDATA[(ButtonModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+				</propertyValue>
+			</cmtProperty>
+			<cmtProperty propertyState="text" name="setText" type="String">
+				<propertyValue>
+					<![CDATA["${ActionMethodName}"]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[javax.swing.JButton;javax.swing.ButtonModel]]>
+         </imports>
+      </controlDefinition>
+ 	  <controlDefinition name="Method"
+                  className="javax.swing.JPanel"
+                  classPath=""
+                  shortLabel="Method"
+                  longLabel="javax.swing.JPanel"
+				  isMethodControl="true"
+			      bindingType="" 
+                  tooltipText="Method"
+				  icon="/oracle/jbo/dt/ui/wizards/palette/images/T_EdRcd.gif">
+        <useTemplate>
+            <![CDATA[${FieldName}.setBorder(BorderFactory.createTitledBorder("Method Panel"))]]>
+         </useTemplate>
+	     <cmtProperties>
+			<cmtProperty propertyState="border" name="setBorder" type="javax.swing.border.BorderFactory">
+				<propertyValue>
+					<![CDATA[BorderFactory.createTitledBorder("Method Panel")]]>
+				</propertyValue>
+			</cmtProperty>
+        </cmtProperties>
+         <imports>
+            <![CDATA[com.jgoodies.forms.layout.FormLayout; javax.swing.BorderFactory; com.jgoodies.forms.layout.CellConstraints]]>
+         </imports>
+		 <childControlDefinitions>
+			<parameters>
+			     <childControlDefinition name="Parameter Label"
+                  className="javax.swing.JLabel"
+                  classPath=""
+                  shortLabel="javax.swing.JLabel"
+                  longLabel="javax.swing.JLabel"
+                  tooltipText="javax.swing.JLabel"
+                  bindingType="" 
+                  icon="/oracle/ideimpl/icons/images/palette/JLabel.gif">
+		         <useTemplate>
+				    <![CDATA[${FieldName}.setText("${paramName}")]]>
+				 </useTemplate>
+				 <cmtProperties>
+					<cmtProperty propertyState ="text" name="setText" type="String">
+						<propertyValue>
+							<![CDATA["${paramName}"]]>
+						</propertyValue>
+					</cmtProperty>
+				</cmtProperties>
+					 <imports>
+				        <![CDATA[javax.swing.JLabel]]>
+					 </imports>
+				</childControlDefinition>
+			     <childControlDefinition name="Parameter Text"
+                  className="javax.swing.JTextField"
+                  classPath=""
+                  shortLabel="javax.swing.JTextField"
+                  longLabel="javax.swing.JTextField"
+                  tooltipText="javax.swing.JTextField"
+                  bindingType="" 
+                  icon="/oracle/ideimpl/icons/images/palette/jcltxtf.gif">
+		         <useTemplate/>
+					 <imports>
+				        <![CDATA[javax.swing.JTextField]]>
+					 </imports>
+				</childControlDefinition>
+			</parameters>
+			<method>
+				<childControlDefinition name="Method Button"
+                      className="javax.swing.JButton"
+                      classPath=""
+                      shortLabel="JButton"
+                      longLabel="javax.swing.JButton"
+                      tooltipText="Button Action Binding"
+                      bindingType="DCAction" 
+                      icon="/oracle/jbo/dt/ui/wizards/palette/images/button.gif">
+					<useTemplate>
+						<![CDATA[${FieldName}.setModel((ButtonModel)panelBinding.bindUIControl("${BindingName}",${FieldName}));              ${FieldName}.setText("${ActionMethodName}")]]>
+					</useTemplate>
+			       <cmtProperties>
+					<cmtProperty propertyState ="model" name="setModel" type="javax.swing.ButtonModel">
+						<propertyValue>
+							<![CDATA[(ButtonModel)panelBinding.bindUIControl("${BindingName}",${FieldName})]]>
+						</propertyValue>
+					</cmtProperty>
+					<cmtProperty propertyState="text" name="setText" type="String">
+						<propertyValue>
+							<![CDATA["${ActionMethodName}"]]>
+						</propertyValue>
+					</cmtProperty>
+					</cmtProperties>
+					<imports>
+						<![CDATA[javax.swing.JButton;javax.swing.ButtonModel]]>
+					</imports>
+			</childControlDefinition>
+			</method>
+			<collectionResult>
+				<childControlDefinition name="Result Label"
+						className="javax.swing.JLabel"
+						classPath=""
+						shortLabel="javax.swing.JLabel"
+						longLabel="javax.swing.JLabel"
+						tooltipText="javax.swing.JLabel"
+						bindingType="" 
+						icon="/oracle/ideimpl/icons/images/palette/JLabel.gif">
+					 <useTemplate>
+						<![CDATA[${FieldName}.setText("Result")]]>
+					 </useTemplate>
+ 					<cmtProperties>
+						<cmtProperty propertyState ="text" name="setText" type="String">
+							<propertyValue>
+							<![CDATA[" Result: "]]>
+							</propertyValue>
+						</cmtProperty>
+					</cmtProperties>
+					 <imports>
+							<![CDATA[javax.swing.JLabel]]>
+						 </imports>
+				   </childControlDefinition>
+				   <childControlDefinition name="Result Table"
+					  className="javax.swing.JTextField"
+					  classPath=""
+					  shortLabel="javax.swing.JTable"
+					  longLabel="javax.swing.JTable"
+					  tooltipText="javax.swing.JTable"
+					  bindingType="" 
+					  icon="/oracle/ideimpl/icons/images/palette/JTable.gif">
+					 <useTemplate/>
+					 <imports>
+				        <![CDATA[javax.swing.JTable]]>
+					 </imports>
+				</childControlDefinition>
+			</collectionResult>
+			<attributeResult>
+				<childControlDefinition name="Result Label"
+						className="javax.swing.JLabel"
+						classPath=""
+						shortLabel="javax.swing.JLabel"
+						longLabel="javax.swing.JLabel"
+						tooltipText="javax.swing.JLabel"
+						bindingType="" 
+						icon="/oracle/ideimpl/icons/images/palette/JLabel.gif">
+					 <useTemplate>
+						<![CDATA[${FieldName}.setText("Result")]]>
+					 </useTemplate>
+ 					<cmtProperties>
+						<cmtProperty propertyState ="text" name="setText" type="String">
+							<propertyValue>
+							<![CDATA[" Result: "]]>
+							</propertyValue>
+						</cmtProperty>
+					</cmtProperties>
+						 <imports>
+							<![CDATA[javax.swing.JLabel]]>
+						 </imports>
+				   </childControlDefinition>
+				   <childControlDefinition name="Result Text"
+					  className="javax.swing.JTextField"
+					  classPath=""
+					  shortLabel="javax.swing.JTextField"
+					  longLabel="javax.swing.JTextField"
+					  tooltipText="javax.swing.JTextField"
+					  bindingType="" 
+					  icon="/oracle/ideimpl/icons/images/palette/jcltxtf.gif">
+					 <useTemplate/>
+					 <imports>
+				        <![CDATA[javax.swing.JTextField]]>
+					 </imports>
+				</childControlDefinition>
+			</attributeResult>
+		</childControlDefinitions>
+      </controlDefinition>
+   </beanMethod>
+</dataBindingPanel>

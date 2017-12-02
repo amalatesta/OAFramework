@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+
+<dataBindingPanel>
+
+  <setup>
+    <configureproject configurer="oracle.adf.dt.configurers.AdfClientProject"/>
+    <configureproject configurer="oracle.adfdtinternal.view.jsp.binding.DefaultJspProjectConfigurator"/>
+    <configureproject configurer="oracle.adf.dt.configurers.WebClientDataControlConfigurer"/>
+  </setup>
+  
+  <collectionNode>
+  
+      <controlDefinition name="Navigation Buttons" bindingsType="form"
+                         htmlkey="table"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_NavBar.gif"
+                         bindingType="DCTable"
+                         createBindingsForAttributes="false"
+                         requiresNavigationActions="true"
+                         requiresAttributeDefinitions="false">
+         <useTemplate>
+            <![CDATA[
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                 #foreach ( $binding in $ActionBindingSet)
+                  #set($prefixValue = "bindings")
+                  <td>
+                    <c:choose>
+                      <c:when test="${${prefixValue}.${binding.id}.enabled}">
+                        <input  type="submit" name="${EventPrefix}${binding.id}"  value="${binding.id}"/>
+                      </c:when>
+                      <c:otherwise>
+                        <input  type="submit" name="${EventPrefix}${binding.id}"  value="${binding.id}" disabled="disabled"/>
+                      </c:otherwise>
+                    </c:choose>
+                  </td>
+                 #end
+                </tr>
+              </table>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+  
+  </collectionNode>
+  
+  <beanMethod>
+   
+      <controlDefinition name="Button" bindingsType="operation" htmlkey="input"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/button.gif"
+                         bindingType="DCAction"
+                         requiresAttributeDefinitions="false">
+         <useTemplate>
+            <![CDATA[
+              <c:choose>
+                <c:when test="${${BindingName}.enabled}">
+                  <input type="submit" name="${EventPrefix}${Binding.id}" value="${Binding.id}" />
+                </c:when>
+                <c:otherwise>
+                  <input type="submit" name="${EventPrefix}${Binding.id}" value="${Binding.id}" disabled="disabled"/>
+                </c:otherwise>
+              </c:choose>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+      <controlDefinition name="Button with Form" bindingsType="operation"
+                         htmlkey="form"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/button.gif"
+                         requiresStrutsSupport="false" bindingType="DCAction"
+                         requiresAttributeDefinitions="false">
+         <useTemplate>
+            <![CDATA[
+              <form method="POST" action="${TargetDocument}" >
+                #set ($tokenid = "bindings.statetokenid")
+                #set ($statetoken = "bindings.statetoken")
+                 <input type="hidden" name="${${tokenid}}" value="${${statetoken}}" />
+                <c:choose>
+                  <c:when test="${${BindingName}.enabled}">
+                    <input type="submit" name="${EventPrefix}${Binding.id}" value="${Binding.id}" />
+                  </c:when>
+                  <c:otherwise>
+                    <input type="submit" name="${EventPrefix}${Binding.id}" value="${Binding.id}" disabled="disabled" />
+                  </c:otherwise>
+                </c:choose>
+              </form>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+  </beanMethod>
+  
+</dataBindingPanel>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:uml="http://xmlns.oracle.com/jdeveloper/905/modeler/html">
+
+
+   <!-- Header block, contains id for element, this is mandatory -->
+
+   <head>
+     <meta http-equiv="content-type" content="text/html; charset=UTF8" />
+     <meta name="generator" content="Oracle JDeveloper" />
+
+     <title>Template</title>
+
+     <uml:modelElement_id guid="0" />
+   </head>
+
+
+   <!-- Body block, contains the descriptions -->
+
+   <body>
+
+
+      <table class="UseCaseTable" width="100%" border="0">
+
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Specializes:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+
+            <!-- Specialization block, can contain a link to the actor that this
+                  one extends, this part is optional -->
+
+  
+            <uml:class_specializes>
+  
+              <p>...</p>
+              <p></p>
+  
+            </uml:class_specializes>
+          
+          
+          </td>
+          
+        </tr>
+        
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Scope:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+
+            <!-- The scope of the current usecase, this part of optional -->
+
+  
+            <uml:usecase_scope>
+  
+              <p>...</p>
+              <p></p>
+  
+            </uml:usecase_scope>
+          
+          
+          </td>
+          
+        </tr>
+        
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Responsibilities:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+
+            <!-- Responsibilities, this part is not used in the current release; but is
+            reserved for future expansion -->
+
+  
+            <uml:actor_responsibilities>
+  
+               <ul>
+                  <li>...</li>
+               </ul>
+  
+            </uml:actor_responsibilities>
+          
+          
+          </td>
+          
+        </tr>    
+        
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Background and Skills:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+
+            <!-- Background and skills block contains a summary of the actors
+            role, this part is not used in the current release; but is
+            reserved for future expansion -->
+
+  
+
+            <uml:actor_profile>
+      
+               <p>...</p>
+               <p></p>
+               <p></p>
+      
+      
+            </uml:actor_profile>
+
+          
+          
+          </td>
+          
+        </tr>        
+        
+        
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Referenced By:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+            <!-- This section is used by the tools to record which object
+                  uses which document. This section is mandatory; but not
+                  designed to be user edited so it may be wise to hide
+                  this block in the HTML -->
+      
+            <uml:backreferences>
+      
+               <ul>
+                 <li><uml:next /></li>
+               </ul>
+      
+            </uml:backreferences>
+
+         
+          </td>
+          
+        </tr>           
+        
+      </table>
+
+   </body>
+
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<orion-ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-ejb-jar-10_0.xsd" deployment-version="10.1.3.0.0" deployment-time="160150f1fbd" schema-major-version="10" schema-minor-version="0" >
+	<enterprise-beans>
+		<session-deployment name="MBeanServerEjb" call-timeout="0" location="MBeanServerEjb" local-location="admin_ejb_MBeanServerEjbLocal" timeout="0" passivate-count="0" persistence-filename="MBeanServerEjb">
+		</session-deployment>
+		<session-deployment name="MBeanServerUserEjb" call-timeout="0" location="MBeanServerUserEjb" local-location="admin_ejb_MBeanServerUserEjbLocal" timeout="0" passivate-count="0" persistence-filename="MBeanServerUserEjb">
+		</session-deployment>
+	</enterprise-beans>
+	<assembly-descriptor>
+		<security-role-mapping name="jmxAdministrator">
+			<group name="oc4j-administrators" />
+			<group name="ascontrol_admin" />
+		</security-role-mapping>
+		<security-role-mapping name="jmxusers">
+			<group name="oc4j-app-administrators" />
+			<group name="ascontrol_appadmin" />
+		</security-role-mapping>
+		<default-method-access>
+			<security-role-mapping name="&lt;default-ejb-caller-role&gt;" impliesAll="true" />
+		</default-method-access>
+	</assembly-descriptor>
+</orion-ejb-jar>

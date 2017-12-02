@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'iso-8859-1'?>
+<!-- Logging configuration file for OC4J.  The guidelines are based on the
+     java.util.logging package and the information in the 
+     Oracle Application Server Performance Guide and the
+     Oracle Application Server DMS API Reference.
+     see: http://iasdocs.us.oracle.com/iasdl/101300doc/index.htm
+-->
+<logging_configuration>
+   <log_handlers>
+      <log_handler name="console-handler" class="java.util.logging.ConsoleHandler" level="FINEST"/>
+      <log_handler name="oc4j-handler" class="oracle.core.ojdl.logging.ODLHandlerFactory">
+         <property name="path" value="../log/oc4j"/>
+         <property name="maxFileSize" value="10485760"/>
+         <property name="maxLogSize" value="104857600"/>
+         <property name="encoding" value="UTF-8"/>
+         <property name="supplementalAttributes" value="J2EE_APP.name,J2EE_MODULE.name,WEBSERVICE.name,WEBSERVICE_PORT.name"/>
+      </log_handler>
+      <!-- The log handler for the oracle.webservices.management.auditing logger. -->
+      <log_handler name="oracle-webservices-management-auditing-handler" class="oracle.core.ojdl.logging.ODLHandlerFactory">
+         <property name="path" value="../log/wsmgmt/auditing"/>
+         <property name="maxFileSize" value="10485760"/>
+         <property name="maxLogSize" value="104857600"/>
+         <property name="encoding" value="UTF-8"/>
+         <property name="supplementalAttributes" value="J2EE_APP.name,J2EE_MODULE.name,WEBSERVICE.name,WEBSERVICE_PORT.name"/>
+      </log_handler>
+      <!-- The log handler for the oracle.webservices.management.logging logger. -->
+      <log_handler name="oracle-webservices-management-logging-handler" class="oracle.core.ojdl.logging.ODLHandlerFactory">
+         <property name="path" value="../log/wsmgmt/logging"/>
+         <property name="maxFileSize" value="10485760"/>
+         <property name="maxLogSize" value="104857600"/>
+         <property name="encoding" value="UTF-8"/>
+         <property name="supplementalAttributes" value="J2EE_APP.name,J2EE_MODULE.name,WEBSERVICE.name,WEBSERVICE_PORT.name"/>
+      </log_handler>
+   </log_handlers>
+   <loggers>
+      <!-- Default Logger, useParentHandlers should be set to false because
+         the root Logger (named the empty string "") will log to console -->
+      <logger name="oracle" level="NOTIFICATION:1" useParentHandlers="false">
+         <handler name="oc4j-handler"/>
+         <handler name="console-handler"/>
+      </logger>
+      <!-- The logger used by the webservices management message auditing feature.  
+         The values of level and useParentHandlers should not typically be changed. -->
+      <logger name="oracle.webservices.management.auditing" level="NOTIFICATION:1" useParentHandlers="false">
+         <handler name="oracle-webservices-management-auditing-handler"/>
+      </logger>
+      <!-- The logger used by the webservices management message content logging feature.
+         The values of level and useParentHandlers should not typically be changed. -->
+      <logger name="oracle.webservices.management.logging" level="NOTIFICATION:1" useParentHandlers="false">
+         <handler name="oracle-webservices-management-logging-handler"/>
+      </logger>
+      <logger name="oracle.adf" level="INFO"/>
+      <logger name="oracle.adf.faces" level="INFO"/>
+      <logger name="oracle.adf.controller" level="INFO"/>
+      <logger name="oracle.bc4j" level="INFO"/>
+      <logger name="oracle.adf.portal" level="INFO"/>
+      <logger name="oracle.vcr" level="INFO"/>
+      <logger name="oracle.portlet" level="INFO"/>
+      <logger name="oracle.adfinternal" level="INFO"/>
+      <logger name="oracle.adfdt" level="INFO"/>
+      <logger name="oracle.adfdtinternal" level="INFO"/>
+   </loggers>
+</logging_configuration>

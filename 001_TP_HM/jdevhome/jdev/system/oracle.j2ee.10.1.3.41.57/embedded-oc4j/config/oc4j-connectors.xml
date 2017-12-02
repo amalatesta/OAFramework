@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone='yes'?>
+
+<oc4j-connectors 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/oc4j-connectors-10_0.xsd"
+  schema-major-version="10"
+  schema-minor-version="0"
+>
+
+ <!--
+ An example JCA resource adapter that stores its native shared library or dll
+ in the lib directory
+
+ <connector name="myExampleAdpater" path="myExampleAdapter.rar">
+   <native-library>lib</native-library>
+ </connector>
+ -->
+
+ <!-- 
+ Comment this if you don't want to deploy Oracle's JCA 1.5 
+ compliant jms resource adapter to talk to OracleAS JMS
+ -->
+
+ <connector name="datasources" path="datasources.rar" />
+
+</oc4j-connectors>
+

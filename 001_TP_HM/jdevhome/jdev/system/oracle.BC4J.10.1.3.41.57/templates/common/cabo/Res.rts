@@ -1,0 +1,54 @@
+#resource file for blaf cabo
+
+#common resources
+RES_GLOBAL_HELP=Main Help
+RES_HELP=Help
+RES_HOME=Home
+RES_STEP1=Step1
+RES_STEP2=Step2
+RES_GLOBALHEADER=This is a global header
+RES_COPYRIGHT=Copyright 2002 Oracle Corporation
+RES_COBRANDING=This is the Cobranding area
+RES_PAGEEND=Page End!
+RES_CONTENTS=Contents
+RES_UPDATE=Update
+RES_DELETE=Delete
+RES_CREATE=Create
+RES_BROWSE=Browse
+RES_NEW=New
+
+#resources for browsehideshow.jsp
+RES_BROWSEHODESHOW_TITLE=Browse with editing
+
+#resources for browseinserthideshow.jsp
+RES_BROWSEINSERTHIDESHOW_TITLE=Browse with Hide\Show
+
+#resources for browseselect.jsp
+RES_BROWSESELECT_TITLE=Browse with selection
+
+#resources for HelpPage.jsp
+RES_HELPPAGE_TITLE=Basic Uix Help 
+RES_HELPPAGE_HEADER=Welcome to the help page
+RES_HELPPAGE_HEADERTEXT=Help Text
+
+#resources for PageTemplate.jsp
+RES_PAGETEMPLATE_TITLE=Basic Uix Page 
+
+#resources for UixBrowseEdit.jsp
+RES_UIXBROWSEEDIT_TITLE=Browse with editing
+
+#resources for UixEdit.jsp
+RES_UIXEDIT_TITLE=Edit
+
+#resources for errorpage.jsp
+RES_ERRORPAGE_TITLE=Application Error
+RES_UIX_ERRORPAGE_DETAILS=Exception Details
+
+RES_SEL_ROW_BEFORE_UPDATE=You must select a row prior to clicking on the 'Update' button
+RES_SEL_ROW_BEFORE_DELETE=You must select a row prior to clicking on the 'Delete' button
+
+RES_RESET=Reset
+
+RES_FEEDBACK=Feedback
+RES_COMMIT=Commit
+RES_ROLLBACK=Rollback

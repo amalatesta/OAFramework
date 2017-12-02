@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TAGLIBRARIES>
+   <TAGLIB NAME="Themes" DESCRIPTION="XSQL/XSL Tags">
+     <CATEGORY NAME="ALLTHEMES" DESCRIPTION="XSQL Tags" NODEFACTORY="oracle.jbo.dt.ui.wizards.xsqlelem.cat.XSQLCategoryNodeHandler">
+	    </CATEGORY>
+   </TAGLIB>
+   <TAGLIB NAME="JSP"  DESCRIPTION="Categories">
+	  <CATEGORY NAME="ALLJSP" DESCRIPTION="Business Components XSQL Tags" NODEFACTORY="oracle.jbo.dt.ui.wizards.xsqlelem.cat.BC4JCategoryNodeHandler">
+	  </CATEGORY>
+   </TAGLIB>
+</TAGLIBRARIES>

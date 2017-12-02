@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="yes"?>
+<orb orb-provider-class="com.oracle.corba.ee.impl.orb.SunRIORBProviderImpl"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./orb.xsd"
+    schema-major-version="10"
+    schema-minor-version="0">
+</orb>

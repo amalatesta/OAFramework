@@ -1,0 +1,191 @@
+<LayoutInfo>
+   <knownDockableFactories>
+      <LogWindow/>
+      <ExplorerWindow/>
+      <RunManagerWindow/>
+      <SystemNavigatorWindow/>
+      <ApplicationNavigatorWindow/>
+      <ConnectionNavigatorWindow/>
+      <InspectorWindow/>
+      <ComponentPalette/>
+      <Debugger/>
+      <BrowseHierarchy/>
+      <HelpSystemAddin/>
+      <UIDebugger/>
+      <Profiler/>
+      <ToDoAddin/>
+      <ConstraintsWindow/>
+      <TCPPacketMonitor/>
+      <ThumbnailDockable/>
+      <adfdbPanel/>
+      <BPEL_VIEW_TYPE/>
+      <CVSNavigatorWindow/>
+      <CVS-PendingChangesWindow/>
+      <CVS-EditNotificationsWindow/>
+   </knownDockableFactories>
+   <dockingPositions>
+      <WEST floatSize="180" dockSize="280">
+         <box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="SystemNavigatorWindow.SystemNavigatorName">
+                     <properties expandData1.url="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAWorkspace.jws ; ;" flat-level="3" selectionRow="2" filter2.key="Applications" filter2.filterCls="oracle.ide.model.ContentFilter" expandData0.nodePath="Applications," sort-by-type="false" filter="3" show-libs="false" show-root-dirs="false" filter1.filterCls="oracle.ide.model.ContentFilter" filter1.key="ApplicationsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws" expandData1.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws," expandData.count="2" filter0.key="ApplicationsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jwsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr" filter0.filterCls="oracle.ide.model.ContentFilter"/>
+                  </dockable>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ApplicationNavigatorWindow.ApplicationNavigatorName">
+                     <properties expandData1.url="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAWorkspace.jws ; ;" flat-level="3" expandData3.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources," selectionRow="7" filter2.key="Applications" filter2.filterCls="oracle.ide.model.ContentFilter" expandData0.nodePath="Applications," sort-by-type="false" filter="3" show-libs="false" show-root-dirs="false" expandData5.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources,oracle.apps.ak,hello," filter1.filterCls="oracle.ide.model.ContentFilter" filter1.key="ApplicationsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws" expandData1.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws," expandData.count="7" expandData2.url="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAProject.jpr ; ;" expandData6.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources,oracle.apps.ak,hello,webui," expandData2.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr," expandData4.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources,oracle.apps.ak," filter0.key="ApplicationsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jwsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr" filter0.filterCls="oracle.ide.model.ContentFilter"/>
+                  </dockable>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ConnectionNavigatorWindow.Connections"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ExplorerWindow.SingletonExplorerWindow"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.ThreadsWindow"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.StackWindow"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="BrowseHierarchy"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ThumbnailDockable"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="RunManagerWindow"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="CVSNavigatorWindow.CVS"/>
+               </leafBox>
+            </box>
+         </box>
+      </WEST>
+      <EAST floatSize="180" dockSize="310">
+         <box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ComponentPalette"/>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="adfdbPanel"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="InspectorWindow.SingletonInspectorWindow">
+                     <properties InspectorWindow.SingletonInspectorWindow.showFind="false" InspectorWindow.SingletonInspectorWindow.showStatus="true" InspectorWindow.SingletonInspectorWindow.categorized="true" InspectorWindow="SingletonInspectorWindow" InspectorWindow.SingletonInspectorWindow.showReadOnly="true" InspectorWindow.SingletonInspectorWindow.union="false" InspectorWindow.SingletonInspectorWindow.showWriteOnly="false"/>
+                  </dockable>
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ConstraintsWindow"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.ClassesWindow"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="HelpSystemAddin.HelpWindow"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="UIDebugger.TREE"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="UIDebugger.OUTLINE"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="UIDebugger.LISTENERS"/>
+               </leafBox>
+            </box>
+            <box>
+               <leafBox width="400" height="300">
+                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="BPEL_VIEW_TYPE.BPEL_OVERVIEW_ID"/>
+               </leafBox>
+            </box>
+         </box>
+      </EAST>
+      <NORTH floatSize="180" dockSize="150"/>
+      <SOUTH floatSize="180" dockSize="150">
+         <box>
+            <leafBox width="400" height="300">
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="LogWindow.Log">
+                  <properties ClosedByUser="false"/>
+               </dockable>
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.BreakpointsWindow"/>
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ToDoAddin.ToDoWindow"/>
+            </leafBox>
+         </box>
+         <box>
+            <leafBox width="400" height="300">
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.SmartWindow"/>
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.LocalsWindow"/>
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.WatchWindow"/>
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.HeapWindow"/>
+            </leafBox>
+         </box>
+         <box>
+            <leafBox width="400" height="300">
+               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="TCPPacketMonitor"/>
+            </leafBox>
+         </box>
+      </SOUTH>
+      <panel width="408" height="208" position="float" visible="false" y="234" x="483">
+         <box>
+            <leafBox width="400" height="300">
+               <dockable floatHeight="0" dockWidth="400" dockHeight="300" floatWidth="0" ID="Debugger.MonitorsWindow"/>
+            </leafBox>
+         </box>
+      </panel>
+   </dockingPositions>
+   <editorPositions>
+      <box>
+         <leafBox width="400" height="300" selectedPage="0">
+            <state accelerator="-1" document="file ; ; -1 %2FC%3A%2Foracle%2FOA_Framework%2Fjdevbin%2Fjdev%2Fdoc%2Fwelcome%2Fwelcome.html.help ; ;">
+               <paneState currentEditor="oracle.jdevimpl.help.HelpSystemAddin">
+                  <editorState xScrollPos="0" yScrollMin="0" xScrollExtent="0" xScrollMax="0" addin="oracle.jdevimpl.help.HelpSystemAddin" xScrollMin="0" yScrollExtent="0" yScrollPos="0" yScrollMax="0"/>
+               </paneState>
+               <pane>
+                  <box>
+                     <leafBox pane="0" width="1000" height="1000"/>
+                  </box>
+               </pane>
+            </state>
+         </leafBox>
+      </box>
+   </editorPositions>
+   <visibilityLayouts>
+      <Editing displayName="Editing">
+         <UIDebugger.LISTENERS/>
+         <ThumbnailDockable/>
+         <LogWindow.Log visible="true" raised="true"/>
+         <Debugger.ClassesWindow/>
+         <Debugger.LocalsWindow/>
+         <UIDebugger.OUTLINE/>
+         <adfdbPanel/>
+         <ApplicationNavigatorWindow.ApplicationNavigatorName visible="true" raised="true"/>
+         <BrowseHierarchy/>
+         <HelpSystemAddin.HelpWindow/>
+         <UIDebugger.TREE/>
+         <Debugger.HeapWindow/>
+         <BPEL_VIEW_TYPE.BPEL_OVERVIEW_ID/>
+         <Debugger.WatchWindow/>
+         <ConnectionNavigatorWindow.Connections visible="true"/>
+         <SystemNavigatorWindow.SystemNavigatorName visible="true"/>
+         <Debugger.SmartWindow/>
+         <RunManagerWindow/>
+         <ToDoAddin.ToDoWindow/>
+         <ExplorerWindow.SingletonExplorerWindow visible="true" raised="true"/>
+         <TCPPacketMonitor/>
+         <CVSNavigatorWindow.CVS/>
+         <Debugger.BreakpointsWindow/>
+         <ComponentPalette/>
+         <ConstraintsWindow/>
+         <Debugger.StackWindow/>
+         <InspectorWindow.SingletonInspectorWindow visible="true" raised="true"/>
+         <Debugger.ThreadsWindow/>
+         <Debugger.MonitorsWindow/>
+      </Editing>
+   </visibilityLayouts>
+</LayoutInfo>

@@ -1,0 +1,13 @@
+#
+# Custom security settings for OracleAS JAAS provider 
+#
+
+#
+# Specifies OracleAS JAAS as the JAAS Policy provider
+#
+auth.policy.provider=oracle.security.jazn.spi.PolicyProvider
+
+#
+# Specifies OracleAS JAAS as the JAAS Login Configuration provider
+#
+login.configuration.provider=oracle.security.jazn.spi.LoginConfigProvider

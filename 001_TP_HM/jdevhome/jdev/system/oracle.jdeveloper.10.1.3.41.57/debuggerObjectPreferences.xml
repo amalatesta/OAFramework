@@ -1,0 +1,194 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<debugger-object-preferences class="[Ljava.util.TreeMap;" xmlns="http://xmlns.oracle.com/jdeveloper/101303/debugger-object-preferences">
+   <Item>
+      <Item>
+         <Key>oracle.ide.model.UpdateMessage</Key>
+         <Value>debuggerString()</Value>
+      </Item>
+   </Item>
+   <Item>
+      <Item>
+         <Key>java.awt.Button</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">label</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.awt.Checkbox</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">label</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.awt.Dimension</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">width + " * " + height</Item>
+            <Item class="java.lang.String">width + " X " + height</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.awt.Label</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">text</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.awt.MenuItem</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">label</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.awt.Point</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">x + ", " + y</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.awt.Rectangle</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">x + ", " + y + ", " + width + ", " + height</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.awt.TextField</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">text</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.io.File</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">path</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.Boolean</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">value</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.Byte</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">value</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.Character</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">value</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.Double</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">value</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.Float</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">value</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.Integer</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">value</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.Long</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">value</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.ref.Reference</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">referent</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.Short</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">value</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.Thread</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">name</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.ThreadGroup</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">name</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.lang.Throwable</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">detailMessage</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.util.Collection</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">size()</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.util.Map</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">size()</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>java.util.Map$Entry</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">getKey()</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>javax.swing.AbstractButton</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">text</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>javax.swing.JLabel</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">text</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>javax.swing.JTextField</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">text</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>javax.xml.namespace.QName</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">(prefix != null &amp;&amp; prefix.length() > 0) ? prefix + ":" + localPart : localPart</Item>
+            <Item class="java.lang.String">"{"+namespaceURI+"}"+localPart</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>oracle.ide.model.UpdateMessage</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">debuggerString()</Item>
+         </Value>
+      </Item>
+      <Item>
+         <Key>oracle.xml.parser.v2.XMLElement</Key>
+         <Value class="java.util.ArrayList">
+            <Item class="java.lang.String">data[(int)nodeId + ELEM_QXNAME]</Item>
+         </Value>
+      </Item>
+   </Item>
+   <Item class="java.util.TreeMap"/>
+</debugger-object-preferences>

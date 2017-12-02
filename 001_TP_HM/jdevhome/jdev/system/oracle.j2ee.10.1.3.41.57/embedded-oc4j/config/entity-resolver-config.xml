@@ -1,0 +1,632 @@
+<?xml version="1.0"?>
+<entity-resolver-config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://www.oracle.com/technology/oracleas/schema/entity-resolver-config-10_0.xsd"
+    schema-major-version="10"
+    schema-minor-version="0">
+
+    <entity>
+        <description>OC4J Schema Type library 10.0 </description>
+        <public-id>>-//Oracle//0C4J Schema Type library 10.0//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oc4j-10_0.xsd</system-id>
+        <location>META-INF/oc4j-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>Service-ref Schema Type library 10.0 </description>
+        <public-id>-//Oracle//Service-ref Schema Type library 10.0//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/service-ref-mapping-10_0.xsd</system-id>
+        <location>META-INF/service-ref-mapping-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>Application Server-10_1.xsd</description>
+        <public-id>//Oracle//OC4J Application-server Schema 10.1//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/application-server-10_1.xsd</system-id>
+        <location>META-INF/application-server-10_1.xsd</location>
+    </entity>
+    <entity>
+        <description>orion-application-10_0.xsd</description>
+        <public-id>-//Oracle//OC4J J2EE Application runtime Schema 10.0//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd</system-id>
+        <location>META-INF/orion-application-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>orion-application-client-10_0.xsd</description>
+        <public-id>-//Oracle//OC4J J2EE Application Client runtime Schema 10.0//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/orion-application-client-10_0.xsd</system-id>
+        <location>META-INF/orion-application-client-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>data-sources-10_0.xsd</description>
+        <public-id>>-//Oracle//OC4J Data Sources Schema 10.0//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/data-sources-10_0.xsd</system-id>
+        <location>META-INF/data-sources-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>data-sources-10_1.xsd</description>
+        <public-id>>-//Oracle//OC4J Data Sources Schema 10.1//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/data-sources-10_1.xsd</system-id>
+        <location>META-INF/data-sources-10_1.xsd</location>
+    </entity>
+    <entity>
+        <description>transaction-manager-10_0.xsd</description>
+        <public-id>>-//Oracle//OC4J Transaction Manager Schema 10.0//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/transaction-manager-10_0.xsd</system-id>
+        <location>META-INF/transaction-manager-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>web-site-10_0.xsd</description>
+        <public-id>-//Oracle//OC4J Web-site Schema 10.0//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/web-site-10_0.xsd</system-id>
+        <location>META-INF/web-site-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>orion-web-10_0.xsd</description>
+        <public-id>-//Oracle//OC4J web-application Schema 10.0//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/orion-web-10_0.xsd</system-id>
+        <location>META-INF/orion-web-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>orion-ejb-jar-10_0.xsd</description>
+        <public-id>-//Oracle//OC4J EJB Schema 10.0//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/orion-ejb-jar-10_0.xsd</system-id>
+        <location>META-INF/orion-ejb-jar-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>internal-settings-10_0.xsd</description>
+        <public-id>-//Oracle//OC4J Internal Settings Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/internal-settings-10_0.xsd</system-id>
+        <location>META-INF/internal-settings-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>jazn-data-10_0.xsd</description>
+        <public-id>JAZN-XML Data Schema</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/jazn-data-10_0.xsd</system-id>
+        <location>META-INF/jazn-data-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>jazn-10_0.xsd</description>
+        <public-id>JAZN Config Schema</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/jazn-10_0.xsd</system-id>
+        <location>META-INF/jazn-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>jms-server-10_0.xsd</description>
+        <public-id>>-//Oracle//OC4J JMS server Schema 10.0 //EN</public-id>
+        <system-id>http://www.oracle.com/technology/oracleas/schema/jms-server-10_0.xsd</system-id>
+        <location>META-INF/jms-server-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>jms-server-10_1.xsd</description>
+        <public-id>>-//Oracle//OC4J JMS server Schema 10.1 //EN</public-id>
+        <system-id>http://www.oracle.com/technology/oracleas/schema/jms-server-10_1.xsd</system-id>
+        <location>META-INF/jms-server-10_1.xsd</location>
+    </entity>
+    <entity>
+        <description>oc4j-connectors-10_0.xsd</description>
+        <public-id>-//Oracle//OC4J Connectors configuration Schema 10.0 //EN </public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oc4j-connectors-10_0.xsd</system-id>
+        <location>META-INF/oc4j-connectors-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oc4j-connector-factories</description>
+        <public-id>-//Oracle//OC4J Oracle Connector Factory Schema 10.0 //EN</public-id>
+        <system-id>http://www.oracle.com/technology/oracleas/schema/oc4j-connector-factories-10_0.xsd</system-id>
+        <location>META-INF/oc4j-connector-factories-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oracle-webservices</description>
+        <public-id>-//Oracle//OC4J Oracle webservices Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oracle-webservices-10_0.xsd</system-id>
+        <location>META-INF/oracle-webservices-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oracle-webservices-availability</description>
+        <public-id>-//Oracle//OC4J Oracle webservices availability Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oracle-webservices-availability-10_0.xsd</system-id>
+        <location>META-INF/oracle-webservices-availability-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oracle-webservices-auditing</description>
+        <public-id>-//Oracle//OC4J Oracle webservices auditing Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oracle-webservices-auditing-10_0.xsd</system-id>
+        <location>META-INF/oracle-webservices-auditing-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oracle-webservices-client</description>
+        <public-id>-//Oracle//OC4J Oracle webservices client Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oracle-webservices-client-10_0.xsd</system-id>
+        <location>META-INF/oracle-webservices-client-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oracle-webservices-logging</description>
+        <public-id>-//Oracle//OC4J Oracle webservices logging Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oracle-webservices-logging-10_0.xsd</system-id>
+        <location>META-INF/oracle-webservices-logging-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oracle-webservices-coresv</description>
+        <public-id>-//Oracle//OC4J Oracle webservices COERsv Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oracle-webservices-coresv-10_0.xsd</system-id>
+        <location>META-INF/oracle-webservices-coresv-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oracle-webservices-management</description>
+        <public-id>-//Oracle//OC4J Oracle webservices management Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oracle-webservices-management-10_0.xsd</system-id>
+        <location>META-INF/oracle-webservices-management-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oracle-webservices-reliability</description>
+        <public-id>-//Oracle//OC4J Oracle webservices reliability Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oracle-webservices-reliability-10_0.xsd</system-id>
+        <location>META-INF/oracle-webservices-reliability-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oracle-webservices-security</description>
+        <public-id>-//Oracle//OC4J Oracle webservices security Schema 10.0 //EN</public-id>
+        <system-id>http://www.oracle.com/technology/oracleas/schema/oracle-webservices-security-10_0.xsd</system-id>
+        <location>META-INF/oracle-webservices-security-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>oracle-webservices-types</description>
+        <public-id>-//Oracle//OC4J Oracle webservices types Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oracle-webservices-types-10_0.xsd</system-id>
+        <location>META-INF/oracle-webservices-types-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>service-ref-mapping</description>
+        <public-id>-//Oracle//OC4J Oracle webservices reference mapping Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/service-ref-mapping-10_0.xsd</system-id>
+        <location>META-INF/service-ref-mapping-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>principals-10_0.xsd</description>
+        <public-id>-//Oracle//OC4J Principals Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/principals-10_0.xsd</system-id>
+        <location>META-INF/principals-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>rmi-server-10_0.xsd</description>
+        <public-id>-//Oracle//OC4J RMI-server Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/rmi-server-10_0.xsd</system-id>
+        <location>META-INF/rmi-server-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>Entity Resolver Config</description>
+        <public-id>http://www.oracle.com/technology/oracleas/schema/entity-resolver-config-10_0.xsd</public-id>
+        <system-id>http://www.oracle.com/technology/oracleas/schema/entity-resolver-config-10_0.xsd</system-id>
+        <location>META-INF/entity-resolver-config-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>loadbalancer-10_0.xsd</description>
+        <public-id>-//Oracle//OC4J Load-Balancer Schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/load-balancer-10_0.xsd</system-id>
+        <location>META-INF/load-balancer-10_0.xsd</location>
+    </entity>
+    <entity>
+        <description>License</description>
+        <public-id>-//Oracle//OC4J Application Server License//EN</public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/license-10_0.xsd</system-id>
+        <location>META-INF/license-10_0.xsd</location>
+    </entity>
+
+    <!--****************************************************-->
+    <entity>
+        <description>XML DTD for a Connector 1.0 resource adapter (raa) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD Connector 1.0//EN</public-id>
+        <system-id>http://java.sun.com/dtd/connector_1_0.dtd</system-id>
+        <location>META-INF/connector_1_0.dtd</location>
+    </entity>
+    <entity>
+        <description>DTD defining the JavaServer PagesTM 1.2 Tag Library descriptor (.tld) (XML) file format/syntax</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN</public-id>
+        <system-id>http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd</system-id>
+        <location>META-INF/web-jsptaglibrary_1_2.dtd</location>
+    </entity>
+    <entity>
+        <description>DTD defining the JavaServer PagesTM 1.1 Tag Library descriptor (.tld) (XML) file format/syntax</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN</public-id>
+        <system-id>http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd</system-id>
+        <location>META-INF/web-jsptaglibrary_1_1.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for J2EETM 1.3 app-client (app-client.jar) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD J2EE Application Client 1.3//EN</public-id>
+        <system-id>http://java.sun.com/dtd/application-client_1_3.dtd</system-id>
+        <location>META-INF/application-client_1_3.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for J2EETM 1.3 app-client (app-client.jar) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD J2EE Application Client 1.3//EN</public-id>
+        <system-id>http://java.sun.com/j2ee/dtds/application-client_1_3.dtd</system-id>
+        <location>META-INF/application-client_1_3.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for J2EETM 1.2 app-client (app-client.jar) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD J2EE Application Client 1.2//EN</public-id>
+        <system-id>http://java.sun.com/j2ee/dtds/application-client_1_2.dtd</system-id>
+        <location>META-INF/application-client_1_2.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for a J2EE 1.3 application (ear) file</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN</public-id>
+        <system-id>http://java.sun.com/dtd/application_1_3.dtd</system-id>
+        <location>META-INF/application_1_3.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for a J2EE 1.3 application (ear) file</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN</public-id>
+        <system-id>http://java.sun.com/j2ee/dtds/application_1_3.dtd</system-id>
+        <location>META-INF/application_1_3.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for a J2EE 1.2 application (ear) file</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD J2EE Application 1.2//EN</public-id>
+        <system-id>http://java.sun.com/j2ee/dtds/application_1_2.dtd</system-id>
+        <location>META-INF/application_1_2.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for an EJBTM 2.0 (ejb.jar) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN</public-id>
+        <system-id>http://java.sun.com/dtd/ejb-jar_2_0.dtd</system-id>
+        <location>META-INF/ejb-jar_2_0.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for an EJBTM 2.0 (ejb.jar) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN</public-id>
+        <system-id>http://java.sun.com/j2ee/dtds/ejb-jar_2_0.dtd</system-id>
+        <location>META-INF/ejb-jar_2_0.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for an EJBTM 1.1 (ejb.jar) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 1.1//EN</public-id>
+        <system-id>http://java.sun.com/j2ee/dtds/ejb-jar_1_1.dtd</system-id>
+        <location>META-INF/ejb-jar_1_1.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for an EJBTM 1.1 (ejb.jar) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 1.2//EN</public-id>
+        <system-id>http://java.sun.com/j2ee/dtds/ejb-jar_1_2.dtd</system-id>
+        <location>META-INF/ejb-jar_1_1.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for a Servlet 2.3 web-app (war) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN</public-id>
+        <system-id>http://java.sun.com/dtd/web-app_2_3.dtd</system-id>
+        <location>META-INF/web-app_2_3.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for a Servlet 2.3 web-app (war) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN</public-id>
+        <system-id>http://java.sun.com/j2ee/dtds/web-app_2_3.dtd</system-id>
+        <location>META-INF/web-app_2_3.dtd</location>
+    </entity>
+    <entity>
+        <description>XML DTD for a Servlet 2.2 web application (war) module</description>
+        <public-id>-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN</public-id>
+        <system-id>http://java.sun.com/j2ee/dtds/web-app_2_2.dtd</system-id>
+        <location>META-INF/web-app_2_2.dtd</location>
+    </entity>
+
+
+    <!--Java 2 Platform, Enterprise Edition (J2EE ) : XML Schemas for J2EE Deployment Descriptors -->
+    <entity>
+        <description>JSP Taglibrary Deployment Descriptor Schema</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd</system-id>
+        <location>META-INF/web-jsptaglibrary_2_0.xsd</location>
+    </entity>
+    <entity>
+	<description>JSP Taglibrary Deployment Descriptor Schema</description>
+	<public-id></public-id>
+	<system-id>web-jsptaglibrary_2_0.xsd</system-id>
+        <location>META-INF/web-jsptaglibrary_2_0.xsd</location>
+    </entity>
+
+    <entity>
+        <description>Connector Deployment Descriptor Schema</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/j2ee/connector_1_5.xsd</system-id>
+        <location>META-INF/connector_1_5.xsd</location>
+    </entity>
+    <entity>
+        <description>Servlet Deployment Descriptor Schema</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd</system-id>
+        <location>META-INF/web-app_2_4.xsd</location>
+    </entity>
+    <entity>
+        <description>Servlet Deployment Descriptor Schema</description>
+        <public-id></public-id>
+        <system-id>web-app_2_4.xsd</system-id>
+        <location>META-INF/web-app_2_4.xsd</location> 
+    </entity>
+    <entity>
+        <description>>JavaServer Pages Deployment Descriptor Schema</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/j2ee/jsp_2_0.xsd</system-id>
+        <location>META-INF/jsp_2_0.xsd</location>
+    </entity>
+    <entity>
+        <description>>JavaServer Pages Deployment Descriptor Schema</description>
+        <public-id></public-id>
+        <system-id>jsp_2_0.xsd</system-id>
+        <location>META-INF/jsp_2_0.xsd</location>
+    </entity>
+    <entity>
+        <description>J2EE 1.4 definitions file that contains common schema components</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/j2ee/j2ee_1_4.xsd</system-id>
+        <location>META-INF/j2ee_1_4.xsd</location>
+    </entity>
+    <entity>
+        <description>JAVAEE 1.5 definitions file that contains common schema components</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/javaee/javaee_5.xsd</system-id>
+        <location>META-INF/javaee_5.xsd</location>
+    </entity>
+    <entity>
+        <description>Application Client schema</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/j2ee/application-client_1_4.xsd</system-id>
+        <location>META-INF/application-client_1_4.xsd</location>
+    </entity>
+    <entity>
+        <description>Application Client schema for javaee 5</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/javaee/application-client_5.xsd</system-id>
+        <location>META-INF/application-client_5.xsd</location>
+    </entity>
+    <entity>
+        <description>Application schema</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/j2ee/application_1_4.xsd</system-id>
+        <location>META-INF/application_1_4.xsd</location>
+    </entity>
+	<entity>
+        <description>Application schema for javaee 5</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/javaee/application_5.xsd</system-id>
+        <location>META-INF/application_5.xsd</location>
+    </entity>
+    <entity>
+        <description>J2EE 1.4 definitions file that contains common schema components</description>
+        <public-id></public-id>
+        <system-id>http://www.ibm.com/webservices/xsd/j2ee_1_4.xsd</system-id>
+        <location>META-INF/j2ee_1_4.xsd</location>
+    </entity>    
+    <entity>
+        <description>Web Services schema</description>
+        <public-id></public-id>
+        <system-id>http://www.ibm.com/webservices/xsd/j2ee_web_services_1_1.xsd</system-id>
+        <location>META-INF/j2ee_web_services_1_1.xsd</location>
+    </entity>
+    <entity>
+        <description>Web Services Client schema</description>
+        <public-id></public-id>
+        <system-id>http://www.ibm.com/webservices/xsd/j2ee_web_services_client_1_1.xsd</system-id>
+        <location>META-INF/j2ee_web_services_client_1_1.xsd</location>
+    </entity>
+    <entity>
+        <description>Web Services Client 1.2 schema</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/javaee/javaee_web_services_client_1_2.xsd</system-id>
+        <location>META-INF/javaee_web_services_client_1_2.xsd</location>
+    </entity>
+    <entity>
+        <description>XML Schema schema for XML Schemas: Part 1</description>
+        <public-id></public-id>
+        <system-id>http://www.w3.org/2001/XMLSchema.xsd</system-id>
+        <location>META-INF/XMLSchema.xsd</location>
+    </entity>
+    <entity>
+        <description>DTD for XML Schemas: Part 1: Structures</description>
+        <public-id>-//W3C//DTD XMLSCHEMA 200102//EN</public-id>
+        <system-id>XMLSchema.dtd</system-id>
+        <location>META-INF/XMLSchema.dtd</location>
+    </entity>
+    <entity>
+        <description>DTD for XML Schemas: Part 2: Datatypes</description>
+        <public-id>datatypes</public-id>
+        <system-id>datatypes.dtd</system-id>
+        <location>META-INF/datatypes.dtd</location>
+    </entity>
+    <entity>
+        <description>J2EE 1.4 definitions file that contains common schema components</description>
+        <public-id></public-id>
+        <system-id>j2ee_1_4.xsd</system-id>
+        <location>META-INF/j2ee_1_4.xsd</location>
+    </entity>
+    <entity>
+        <description>W3C schema for XML</description>
+        <public-id></public-id>
+        <system-id>http://www.w3.org/2001/xml.xsd</system-id>
+        <location>META-INF/xml.xsd</location>
+    </entity>
+
+
+    <!--End of Java 2 Platform, Enterprise Edition (J2EE) : XML Schemas for J2EE Deployment Descriptors -->
+
+
+
+    <entity>
+        <description>>-//Evermind//DTD J2EE Application runtime 1.2//EN</description>
+        <public-id>-//Evermind//DTD J2EE Application runtime 1.2//EN</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/orion-application.dtd</system-id>
+        <location>META-INF/orion-application.dtd</location>
+    </entity>
+    <entity>
+        <description>Orion data-sources</description>
+        <public-id>Orion data-sources</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/data-sources.dtd</system-id>
+        <location>META-INF/data-sources.dtd</location>
+    </entity>
+    <entity>
+        <description>Oracle9iAS XML Web-site</description>
+        <public-id>Oracle9iAS XML Web-site</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/web-site.dtd</system-id>
+        <location>META-INF/web-site.dtd</location>
+    </entity>
+    <entity>
+        <description>//Evermind//Orion web-application</description>
+        <public-id>>//Evermind//Orion web-application</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/orion-web.dtd</system-id>
+        <location>META-INF/orion-web.dtd</location>
+    </entity>
+    <entity>
+        <description>//Evermind//DTD Enterprise JavaBeans 1.1 runtime</description>
+        <public-id>-//Evermind//DTD Enterprise JavaBeans 1.1 runtime//EN</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/orion-ejb-jar.dtd</system-id>
+        <location>META-INF/orion-ejb-jar.dtd</location>
+    </entity>
+    <entity>
+        <description>-//Evermind//DTD J2EE Application-client runtime 1.2//EN</description>
+        <public-id>-//Evermind//DTD J2EE Application-client runtime 1.2//EN</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/orion-application-client.dtd</system-id>
+        <location>META-INF/orion-application-client.dtd</location>
+    </entity>
+    <entity>
+        <description></description>
+        <public-id></public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/internal-settings.dtd</system-id>
+        <location>META-INF/internal-settings.dtd</location>
+    </entity>
+    <entity>
+        <description></description>
+        <public-id>JAZN-XML Data</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/jazn-data.dtd</system-id>
+        <location>META-INF/jazn-data.dtd</location>
+    </entity>
+    <entity>
+        <description></description>
+        <public-id>JAZN Config</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/jazn.dtd</system-id>
+        <location>META-INF/jazn.dtd</location>
+    </entity>
+    <entity>
+        <description></description>
+        <public-id>Orion JMS server</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/jms-server.dtd</system-id>
+        <location>META-INF/jms-server.dtd</location>
+    </entity>
+    <entity>
+        <description></description>
+        <public-id>-//Oracle//DTD Connectors configuration//EN</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/oc4j-connectors.dtd</system-id>
+        <location>META-INF/oc4j-connectors.dtd</location>
+    </entity>
+    <entity>
+        <description></description>
+        <public-id>//Evermind - Orion Principals//</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/principals.dtd</system-id>
+        <location>META-INF/principals.dtd</location>
+    </entity>
+    <entity>
+        <description></description>
+        <public-id>Orion RMI-server</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/rmi-server.dtd</system-id>
+        <location>META-INF/rmi-server.dtd</location>
+    </entity>
+    <entity>
+        <description>Application Server dtd</description>
+        <public-id>-//Evermind//DTD Orion Application-server//EN</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/application-server.dtd</system-id>
+        <location>META-INF/application-server.dtd</location>
+    </entity>
+
+    <entity>
+        <description>-//Evermind//- Database schema</description>
+        <public-id>-//Oracle//OC4J Database schema 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/database-schema.dtd</system-id>
+        <location>META-INF/database-schema.dtd</location>
+    </entity>
+    <entity>
+        <description>oc4j-connector-factories</description>
+        <public-id>-//Oracle//OC4J Oracle Connector 10.0 //EN</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/oc4j-connector-factories.dtd</system-id>
+        <location>META-INF/oc4j-connector-factories.dtd</location>
+    </entity>
+    <entity>
+        <description>orion-web-app PUBLIC</description>
+        <public-id>//Oracle//OC4J web-application Schema 10.0//EN</public-id>
+        <system-id>http://www.orionserver.com/dtds/orion-web.dtd</system-id>
+        <location>META-INF/orion-web.dtd</location>
+    </entity>
+    <entity>
+        <description>rmi-server</description>
+        <public-id>Orion RMI-server</public-id>
+        <system-id>http://www.orionserver.com/dtds/rmi-server.dtd</system-id>
+        <location>META-INF/rmi-server.dtd</location>
+    </entity>
+    <entity>
+        <description>application-server</description>
+        <public-id>Orion Application Server Config</public-id>
+        <system-id>http://www.orionserver.com/dtds/application-server.dtd</system-id>
+        <location>META-INF/application-server.dtd</location>
+    </entity>
+    <entity>
+        <description>web-site</description>
+        <public-id>Orion Web-site</public-id>
+        <system-id>http://www.orionserver.com/dtds/web-site.dtd</system-id>
+        <location>META-INF/web-site.dtd</location>
+    </entity>
+    <entity>
+        <description>orion-application</description>
+        <public-id>-//Evermind//DTD J2EE Application runtime 1.2//EN</public-id>
+        <system-id>http://www.orionserver.com/dtds/orion-application.dtd</system-id>
+        <location>META-INF/orion-application.dtd</location>
+    </entity>
+    <entity>
+        <description>data-sources</description>
+        <public-id>Orion data-sources</public-id>
+        <system-id>http://www.orionserver.com/dtds/data-sources.dtd</system-id>
+        <location>META-INF/oc4j-connector-factories.dtd</location>
+    </entity>
+    <entity>
+        <description>jms-server</description>
+        <public-id>Orion JMS server</public-id>
+        <system-id>http://www.orionserver.com/dtds/jms-server.dtd</system-id>
+        <location>META-INF/jms-server.dtd</location>
+    </entity>
+    <entity>
+        <description>License</description>
+        <public-id>-//Evermind//DTD Orion Application Server License//EN</public-id>
+        <system-id>http://xmlns.oracle.com/ias/dtds/license.dtd</system-id>
+        <location>META-INF/license.dtd</location>
+    </entity>
+
+  <entity>
+        <description>OC4J JNDI Bindings</description>
+        <public-id></public-id>
+        <system-id>http://xmlns.oracle.com/oracleas/schema/oc4j-jndi-bindings-10_0.xsd</system-id>
+        <location>META-INF/oc4j-jndi-bindings-10_0.xsd</location>
+    </entity>
+
+  <entity>
+        <description>J2EE JAXRPC Mapping File</description>
+        <public-id></public-id>
+        <system-id>http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd</system-id>
+        <location>META-INF/j2ee_jaxrpc_mapping_1_1.xsd</location>
+    </entity>
+
+    <entity>
+        <description>XML Schema for EJB 2.1 module</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd</system-id>		           
+        <location>META-INF/ejb-jar_2_1.xsd</location>
+    </entity>
+
+    <entity>
+        <description>XML Schema for EJB 3.0 module</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd</system-id>	
+        <location>META-INF/ejb-jar_3_0.xsd</location>
+    </entity>
+
+	<entity>
+        <description>XML Schema for Java Persistence API</description>
+        <public-id></public-id>
+        <system-id>http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd</system-id>		           
+        <location>META-INF/persistence_1_0.xsd</location>
+    </entity>
+</entity-resolver-config>

@@ -1,0 +1,21 @@
+/* $Header: richTextEditor.css 120.41 2005/08/08 09:27:33 atgops1 noship $ */
+
+.buttonBar {width: 22px; height: 22px; text-align: center; padding: 2px; cursor: default;}
+
+.space
+{
+    background-color: buttonface;
+    width: 0px;
+    height: 24px;
+}
+
+.divider
+{
+    background-color: buttonface;
+    border-left: buttonshadow solid 1px;
+    border-top: buttonshadow solid 1px;
+    border-right: buttonhighlight solid 1px;
+    border-bottom: buttonhighlight solid 1px;
+    width: 2px;
+    height: 24px;
+}

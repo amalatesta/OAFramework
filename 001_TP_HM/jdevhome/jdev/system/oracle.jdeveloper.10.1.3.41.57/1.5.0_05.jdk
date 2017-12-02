@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<JDKNode nselem="JDKNode" class="oracle.jdeveloper.library.JDKNode" xmlns="http://xmlns.oracle.com/jdeveloper/101303/jdknode">
+   <SDKBinDir path="../../../../../../../OA_Framework/jdevbin/jdk/bin/"/>
+   <classPath>
+      <entries>
+         <Item path="../../../../../../../OA_Framework/jdevbin/jdk/jre/lib/rt.jar" jar-entry=""/>
+         <Item path="../../../../../../../OA_Framework/jdevbin/jdk/jre/lib/i18n.jar" jar-entry=""/>
+         <Item path="../../../../../../../OA_Framework/jdevbin/jdk/jre/lib/sunrsasign.jar" jar-entry=""/>
+         <Item path="../../../../../../../OA_Framework/jdevbin/jdk/jre/lib/jsse.jar" jar-entry=""/>
+         <Item path="../../../../../../../OA_Framework/jdevbin/jdk/jre/lib/jce.jar" jar-entry=""/>
+         <Item path="../../../../../../../OA_Framework/jdevbin/jdk/jre/lib/charsets.jar" jar-entry=""/>
+         <Item path="../../../../../../../OA_Framework/jdevbin/jdk/jre/classes/"/>
+      </entries>
+   </classPath>
+   <docPath>
+      <entries>
+         <Item protocol="http" host="java.sun.com" path="/j2se/1.5/docs/api/"/>
+      </entries>
+   </docPath>
+   <javaExecutable path="../../../../../../../OA_Framework/jdevbin/jdk/jre/bin/java.exe"/>
+   <javaVersion>1.5.0_05</javaVersion>
+   <locked>false</locked>
+   <name>1.5.0_05</name>
+   <sourcePath>
+      <entries>
+         <Item path="../../../../../../../OA_Framework/jdevbin/jdk/src.zip" jar-entry=""/>
+      </entries>
+   </sourcePath>
+</JDKNode>

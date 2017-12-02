@@ -1,0 +1,25 @@
+<?xml version = '1.0' standalone = 'yes'?>
+<!DOCTYPE internal-settings PUBLIC "Orion data-sources" "http://xmlns.oracle.com/ias/dtds/internal-settings.dtd">
+<internal-settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/internal-settings-10_0.xsd" schema-major-version="10" schema-minor-version="0">
+<!-- IIOP Server -->
+  <server-extension-provider name="IIOP" class="com.oracle.iiop.server.IIOPServerExtensionProvider">
+    <sep-property name="port" value="5655"/>
+    <sep-property name="host" value="localhost"/>
+    <sep-property name="ssl" value="false"/>
+    <sep-property name="ssl-port" value="5656"/>
+    <sep-property name="ssl-client-server-auth-port" value="5657"/>
+    <sep-property name="trusted-clients" value="*"/>
+  </server-extension-provider>
+    <server-extension-provider name="Oc4jNotifier" class="oracle.jdevimpl.runner.oc4j.Oc4jNotifier">
+        <sep-property name="port" value="42000"/>
+        <sep-property name="mesg" value="1601528b766"/>
+    </server-extension-provider>
+
+  <!-- New ORB config
+  <server-extension-provider name="ORB"
+    class="com.oracle.corba.ee.impl.orb.ORBServerExtensionProviderImpl">
+    <sep-property name="config-file-path" value="orb-config.xml" />
+  </server-extension-provider>
+  -->
+
+</internal-settings>

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<orion-web-app
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-web-10_0.xsd" 	deployment-version="10.0.3.0.0"
+	deployment-time="1512183484541"
+	development="true"
+	jsp-cache-directory="./persistence"
+	jsp-cache-tlds="false"
+	jsp-taglib-locations="C:\oracle\OA_Framework\jdevbin\j2ee\home\jsp\lib\taglib"
+	simple-jsp-mapping="false"
+	temporary-directory="./temp"
+	context-root="/"
+ schema-major-version="10" schema-minor-version="0" >
+	<classpath path="file:/C:/oracle/GitHub/OAFramework/001_TP_HM/jdevhome/jdev/myclasses/" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/jdbc/lib/ojdbc14dms.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/jdbc/lib/orai18n.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/jdbc/lib/ocrs12.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/diagnostics/lib/ojdl.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/lib/dms.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/jlib/jdev-cm.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/jlib/ojmisc.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/j2ee/home/lib/ejb.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/BC4J/jlib/bc4jhtml.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/BC4J/jlib/datatags.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/BC4J/jlib/bc4juixtags.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/BC4J/jlib/graphtags.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/j2ee/home/lib/ojsp.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/j2ee/home/jsp/lib/taglib/ojsputil.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/j2ee/home/lib/oc4j-internal.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/j2ee/home/lib/servlet.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/jdev/appslibrt/wsp.zip" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/jdev/appslibrt/diagnostics.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/jdev/appslibrt/patch_jars/" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/jdev/appslibrt/svctester.jar" />
+	<classpath path="file:/C:/oracle/OA_Framework/jdevbin/lib/xml.jar" />
+	<!-- Uncomment this element to control web application class loader behavior.
+		<web-app-class-loader search-local-classes-first="true"  include-war-manifest-class-path="true" />
+	-->
+	<web-app>
+		<servlet>
+			<servlet-name>JDevOJSP</servlet-name>
+			<display-name>JDevOJSP</display-name>
+			<servlet-class>oracle.jsp.runtimev2.JspServlet</servlet-class>
+			<init-param>
+				<param-name>page_repository_root</param-name>
+				<param-value>C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myclasses\.jsps</param-value>
+			</init-param>
+			<init-param>
+				<param-name>developer_mode</param-name>
+				<param-value>true</param-value>
+			</init-param>
+			<init-param>
+				<param-name>debug</param-name>
+				<param-value>class</param-value>
+			</init-param>
+			<init-param>
+				<param-name>debug_mode</param-name>
+				<param-value>true</param-value>
+			</init-param>
+			<init-param>
+				<param-name>tagfile_repository_root</param-name>
+				<param-value>C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myclasses\.tags</param-value>
+			</init-param>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>JDevOJSP</servlet-name>
+			<url-pattern>*.jsp</url-pattern>
+		</servlet-mapping>
+		<servlet-mapping>
+			<servlet-name>JDevOJSP</servlet-name>
+			<url-pattern>*.jspx</url-pattern>
+		</servlet-mapping>
+	</web-app>
+</orion-web-app>

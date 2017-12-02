@@ -1,0 +1,81 @@
+<?xml version = '1.0'?>
+<WebBeans xmlns:dt="foo">
+   <ElementType READONLY="YES" name="Navigator Bar" SHOWATTRIBUTEDIALOG="No" CLASS="oracle.jbo.html.databeans.NavigatorBar" DATABOUND="Yes" dtimage="/templates/images/NavBar.gif">
+      <description>Generates a toolbar for navigating through a RowSet</description>
+      <AttributeType name="id" required="yes"/>
+      <AttributeType name="datasource" gencode="no" required="yes"/>
+      <AttributeType name="ShowNavigationButtons" gencode="yes" dt:type="enumeration" dt:values="true false" default="true"/>
+   </ElementType>
+   <ElementType READONLY="YES" name="RowSet Browser" CLASS="oracle.jbo.html.databeans.RowSetBrowser" DATABOUND="Yes" dtimage="/templates/images/TableCtrl.gif">
+      <description>Generates an HTML representation of View data</description>
+      <AttributeType name="id" gencode="no" required="yes"/>
+      <AttributeType name="datasource" gencode="no" required="yes"/>
+      <AttributeType name="UseRoundedCorners" gencode="yes" dt:type="enumeration" dt:values="true false" default="true"/>
+      <AttributeType name="RowUrl" quote="yes" gencode="yes"/>
+      <AttributeType name="RowUrlTargetWindow" quote="yes" gencode="yes"/>
+      <AttributeType name="RowEditUrl" quote="yes" gencode="yes"/>
+      <AttributeType name="RowEditTargetWindow" quote="yes" gencode="yes"/>
+      <AttributeType name="ShowCurrentRow" gencode="yes" dt:type="enumeration" dt:values="true false" default="true"/>
+      <AttributeType name="VisibleRows" gencode="yes" default="10"/>
+      <AttributeType name="AlternateColors" gencode="yes" dt:type="enumeration" dt:values="true false" default="true"/>
+      <AttributeType name="ShowRecordNumbers" gencode="yes" dt:type="enumeration" dt:values="true false" default="true"/>
+   </ElementType>
+   <ElementType READONLY="YES" name="Edit Current Record" CLASS="oracle.jbo.html.databeans.EditCurrentRecord" NODECLASS="oracle.jbo.dt.ui.wizards.taginsert.tagtree.EditCurrentRecordHandler" DATABOUND="Yes" dtimage="/templates/images/EditCurrentRecord.gif">
+      <description>Generates an HTML FORM for editing the current row of a row set. Can also be used for entering new records.</description>
+      <AttributeType name="id" required="yes"/>
+      <AttributeType name="datasource" gencode="no" required="yes"/>
+      <AttributeType name="UseRoundedCorners" gencode="yes" dt:type="enumeration" dt:values="true false" default="true"/>
+      <AttributeType name="UseJS" gencode="yes" dt:type="enumeration" dt:values="true false" default="true"/>
+      <AttributeType name="TargetUrl" quote="yes" gencode="yes" required="yes"/>
+      <AttributeType name="SubmitText" quote="yes" gencode="yes" default="Save Changes"/>
+      <AttributeType name="DeleteText" quote="yes" gencode="yes" default="Delete Record"/>
+      <AttributeType name="ShowRecordNumbers" gencode="yes" dt:type="enumeration" dt:values="true false" default="true"/>
+      <AttributeType name="MaximumFieldWidth" gencode="yes" default="40"/>
+   </ElementType>
+   <ElementType READONLY="YES" name="View Current Record" CLASS="oracle.jbo.html.databeans.ViewCurrentRecord" DATABOUND="Yes" dtimage="/templates/images/ViewCurrentRecord.gif">
+      <description>Generates an HTML representation of a rowset's current row</description>
+      <AttributeType name="id" required="yes"/>
+      <AttributeType name="datasource" gencode="no" required="yes"/>
+      <AttributeType name="UseRoundedCorners" gencode="yes" dt:type="enumeration" dt:values="true false" default="true"/>
+      <AttributeType name="ShowRecordNumbers" gencode="yes" dt:type="enumeration" dt:values="true false" default="true"/>
+   </ElementType>
+   <ElementType READONLY="YES" name="Find Form" CLASS="oracle.jbo.html.databeans.FindForm" DATABOUND="Yes" dtimage="/templates/images/FindForm.gif">
+      <description>Generates an HTML Find Form into JSP document</description>
+      <AttributeType name="id" required="yes"/>
+      <AttributeType name="datasource" gencode="no" required="yes"/>
+      <AttributeType name="TargetUrl" quote="yes" gencode="yes" required="yes"/>
+      <AttributeType name="UrlTargetWindow" quote="yes" gencode="yes"/>
+      <AttributeType name="UseSimpleMode" quote="yes" gencode="yes"/>
+   </ElementType>
+   <ElementType READONLY="YES" name="XML Data Generator" CLASS="oracle.jbo.html.databeans.XmlData" DATABOUND="Yes" dtimage="/templates/images/XmlData.gif">
+      <description>Generates an XML Document from a View Object</description>
+      <AttributeType name="id" required="yes"/>
+      <AttributeType name="datasource" gencode="no" required="yes"/>
+      <AttributeType name="ResultElement" quote="yes" gencode="yes"/>
+      <AttributeType name="Stylesheet" quote="yes" gencode="yes"/>
+      <AttributeType name="MaxRows" gencode="yes"/>
+   </ElementType>
+   <ElementType READONLY="YES" name="Toolbar" CLASS="oracle.jdeveloper.jsp.wb.Toolbar" NODECLASS="oracle.jbo.dt.ui.wizards.taginsert.tagtree.ToolBarNode" DATABOUND="No" dtimage="/templates/images/ToolBar.gif">
+      <description>Generates a toolbar into JSP document</description>
+      <AttributeType name="id" required="yes"/>
+   </ElementType>
+   <ElementType READONLY="YES" name="Table Control" CLASS="oracle.jdeveloper.jsp.wb.TableControl" NODECLASS="oracle.jbo.dt.ui.wizards.taginsert.tagtree.HtmlTableNode" DATABOUND="No" dtimage="/templates/images/TableCtrl.gif">
+      <description>Generates an HTML table into JSP document</description>
+      <AttributeType name="id" required="yes"/>
+   </ElementType>
+   <ElementType READONLY="YES" name="Edit Form" CLASS="oracle.jdeveloper.jsp.wb.EditForm" NODECLASS="oracle.jbo.dt.ui.wizards.taginsert.tagtree.HtmlFormNode" DATABOUND="No" dtimage="/templates/images/EditForm.gif">
+      <description>Generates an HTML Form into JSP document</description>
+      <AttributeType name="id" required="yes"/>
+   </ElementType>
+   <ElementType READONLY="YES" name="RowSet Navigator" SHOWATTRIBUTEDIALOG="No" CLASS="oracle.jbo.html.databeans.RowsetNavigator" DATABOUND="Yes" dtimage="/templates/images/RowSetNavigator.gif">
+      <description>Looks for a Navigation parameter and sets the currency of it's data source</description>
+      <AttributeType name="id" required="yes"/>
+      <AttributeType name="datasource" gencode="no" required="yes"/>
+   </ElementType>
+   <ElementType READONLY="YES" name="Chart" CLASS="oracle.jbo.html.databeans.ChartRenderer" NODECLASS="oracle.jbo.dt.ui.wizards.taginsert.chart.ChartNodeHandler" DATABOUND="Yes" dtimage="/templates/images/Chart.gif">
+      <description>Generates a Chart </description>
+      <AttributeType name="id" required="yes"/>
+      <AttributeType name="datasource" gencode="no" required="yes"/>
+      <AttributeType name="CommonScriptName" quote="yes" gencode="yes" default="chart_common.jsp"/>
+   </ElementType>
+</WebBeans>

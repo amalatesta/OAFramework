@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Wizard>
+   
+   <WizardTask class="oracle.jbo.dt.ui.wizards.common.chart.ValidityCheckTask" />
+   
+   <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.input.StaticProperties">
+      <config/>
+      <wizdata>
+         <Property name="PROJECT_SRC_ROOT"/>
+         <Property name="JSP_TEMPLATE_ROOT">{%IdeUserHomeValue%}/system/templates/pagewiz/jsp</Property>
+         <Property name="charset"/>
+         <Property name="bc4j_xsql_std_libs"/>
+         <Property name="bc4j_jsp_std_libs"/>
+         <Property name="JSP_COMMON_TEMPLATE_ROOT">{%IdeUserHomeValue%}/system/templates/common</Property>
+      </wizdata>
+   </WizardTask>
+   <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.ui.JEWTWizard">
+      <config>
+         <!-- this is displayed as wizard image -->
+         <ImageFileName>/oracle/jbo/dt/ui/wizards/tagswebapp/appmgr.gif</ImageFileName>
+         <!-- Used as the title in the wizard dialog -->
+         <WizardDialogTitle translateable="true">CHART_DIALOG_TITLE</WizardDialogTitle>
+         <!-- resource retrieved from this bundle, more than one bundle can be specified -->
+         <UIResourceBundle name="res" properties="def/chart/Res.rts"/>
+      </config>
+      
+      <wizdata>
+         <PanelSettings>
+            
+            <PanelData name="SeriesType" panelclass="oracle.jbo.dt.ui.wizards.common.chart.SeriesTypePanel">
+               <PanelTitle translateable="true">CHART_SERIES_TYPE_PANEL_TITLE</PanelTitle>
+               <JDeveloperHelpUrl>f1_jclientgraphdata_html</JDeveloperHelpUrl>
+            </PanelData>
+            
+            <PanelData name="ColumnSelect" panelclass="oracle.jbo.dt.ui.wizards.common.chart.ColumnSelectPanel">
+               <PanelTitle translateable="true">CHART_COLUMN_SELECT_PANEL_TITLE</PanelTitle>
+               <JDeveloperHelpUrl>f1_jclientgraphcolumns_html</JDeveloperHelpUrl>
+            </PanelData>
+         </PanelSettings>
+         
+         <ShowPanels>
+
+            <show name="SeriesType"/>
+            <show name="ColumnSelect"/>
+
+         </ShowPanels>
+         
+      </wizdata>
+   </WizardTask>
+   
+  
+</Wizard>

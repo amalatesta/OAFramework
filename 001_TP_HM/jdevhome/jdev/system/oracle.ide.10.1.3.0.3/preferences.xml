@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<client-settings class="java.util.HashMap" xmlns="http://xmlns.oracle.com/jdeveloper/101303/client-preferences">
+   <Item>
+      <Key>DockingConfigOptions</Key>
+      <Value class="oracle.ideimpl.docking.DockingConfigOptions">
+         <style>13</style>
+      </Value>
+   </Item>
+   <Item>
+      <Key>editors-options</Key>
+      <Value class="oracle.ide.editor.EditorsOptions">
+         <editorsData/>
+         <lruFiles>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.jdevimpl.help.HelpSystemAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../../OA_Framework/jdevbin/jdev/doc/welcome/welcome.html.help"/>
+               <projectURL/>
+               <workspaceURL/>
+            </Item>
+         </lruFiles>
+         <recentFilesShowAll>false</recentFilesShowAll>
+      </Value>
+   </Item>
+   <Item>
+      <Key>HistoryOptions</Key>
+      <Value class="oracle.ideimpl.history.HistoryOptions">
+         <enabled>true</enabled>
+         <lifespan>7</lifespan>
+         <revisions>50</revisions>
+      </Value>
+   </Item>
+   <Item>
+      <Key>jsr198</Key>
+      <Value class="oracle.ideimpl.jsr198.prefs.JSR198Preferences">
+         <hashStructure class="oracle.javatools.data.HashStructure"/>
+      </Value>
+   </Item>
+   <Item>
+      <Key>proxy-options</Key>
+      <Value class="oracle.ide.webbrowser.ProxyOptions">
+         <proxyData class="java.lang.String"/>
+         <proxyExceptions>|746pin008952</proxyExceptions>
+         <proxyHost class="java.lang.String"/>
+         <proxyPort class="java.lang.String"/>
+         <proxyUserName class="java.lang.String"/>
+         <useProxy>false</useProxy>
+         <useProxyAuthentication/>
+      </Value>
+   </Item>
+   <Item>
+      <Key>WebBrowserOptions</Key>
+      <Value class="oracle.ideimpl.webbrowser.BrowserOptions">
+         <browserCmdLine class="java.lang.String"/>
+      </Value>
+   </Item>
+   <Item>
+      <Key>WizardSettings</Key>
+      <Value class="oracle.ide.wizard.WizardWelcomeSettings">
+         <map>
+            <Item>
+               <Key>oracle.jrad.design.ui.jide.oa.project.AppsProjectWizard</Key>
+               <Value class="java.lang.Boolean">true</Value>
+            </Item>
+         </map>
+      </Value>
+   </Item>
+</client-settings>

@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone='yes'?>
+
+<jms
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.oracle.com/technology/oracleas/schema/jms-server-10_1.xsd"
+  schema-major-version="10"
+  schema-minor-version="1"
+>
+
+  <jms-server port="9227">
+
+  </jms-server>
+
+</jms>

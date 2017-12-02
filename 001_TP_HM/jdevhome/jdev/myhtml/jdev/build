@@ -1,0 +1,1941 @@
+#!/bin/sh
+#set -x
+
+#######################################################
+####               T E S T   R O U T I N E S       ####
+#######################################################
+test1 () {
+  echo "/blah/extensions" | grep "extensions"  > /dev/null 2>&1
+
+  if [ $? -ne 0 ]
+  then
+    echo "delete"
+  else
+    echo "don't do anything"
+  fi
+
+  echo "/blah/patch_jars" | grep "extensions"  > /dev/null 2>&1
+
+  if [ $? -ne 0 ]
+  then
+    echo "delete"
+  else
+    echo "don't do anything"
+  fi
+}
+
+test2 () {
+  installFusionIde /jdevbin/NT/FWK/build/JDEVADF_MAIN_GENERIC_061214.0401.4320_for_developer_preview JDEVADF_MAIN_GENERIC_ jdev11 2 vcs-ade_bundle.zip junit-java_bundle.zip
+}
+
+#######################################################
+####               H E L P   R O U T I N E S       ####
+#######################################################
+#***           [private] help              Help Routine
+help () {
+  doc=echo
+  docEof=return
+
+  # convenience variables
+  ROUTINE=$1
+
+  if [ $# = 1 ] && [ "$ROUTINE" != "all" ]
+  then
+    $ROUTINE
+  else
+    echo                                                                                     > build_tmp_help_file
+    echo "build performs functions to aid in building the OA Framework and"                 >> build_tmp_help_file
+    echo "deploying Jdeveloper installations to the division. This batch file"              >> build_tmp_help_file
+    echo "supports the following build processes:"                                          >> build_tmp_help_file
+    echo                                                                                    >> build_tmp_help_file
+    echo "  * Joint APPS/TOOLS nightly build process. This includes installing"             >> build_tmp_help_file
+    echo "    the results of the nightly build onto the private FWK J: drive area."         >> build_tmp_help_file
+    echo                                                                                    >> build_tmp_help_file
+    echo "  * Install or Uninstalls a JDeveloper to the common development area"            >> build_tmp_help_file
+    echo "    (J: drive) for the division."                                                 >> build_tmp_help_file
+    echo                                                                                    >> build_tmp_help_file
+    echo "The following is a list of the common routines which a user can call."            >> build_tmp_help_file
+    echo "  napPush           Copies a jdeveloper installation from the 200 building"       >> build_tmp_help_file
+    echo "                    to FWK's private area on the J: drive."                       >> build_tmp_help_file
+    echo "  publicArea        Installs/Publishes or Uninstalls/Removes a Jdev"              >> build_tmp_help_file
+    echo "                    installation to the division."                                >> build_tmp_help_file
+    echo "  cleanupUtil       Cleans up old releases past a certain threshold."             >> build_tmp_help_file
+    echo                                                                                    >> build_tmp_help_file
+    echo                                                                                    >> build_tmp_help_file
+    echo "[public] routines:"                                                               >> build_tmp_help_file
+    awk '/#\*\*\*\*.*\[public\]/'  $BLD/build | sort | awk '{print "  " substr($0, 26)}'    >> build_tmp_help_file
+    echo                                                                                    >> build_tmp_help_file
+    echo "[private] routines:"                                                              >> build_tmp_help_file
+    awk '/#\*\*\*\*.*\[private\]/' $BLD/build | sort | awk '{print "  " substr($0, 26)}'    >> build_tmp_help_file
+    echo                                                                                    >> build_tmp_help_file
+    echo                                                                                    >> build_tmp_help_file
+    echo "To get help on any specific routine, enter build help <routine>."                 >> build_tmp_help_file
+    echo "  Examples:  build help cleanupUtil"                                              >> build_tmp_help_file
+    echo "             build help napPush"                                                  >> build_tmp_help_file
+    echo "             build help publicArea"                                               >> build_tmp_help_file
+    echo                                                                                    >> build_tmp_help_file
+    echo "To get help on ALL routines available, enter build help all."                     >> build_tmp_help_file
+    echo "  Examples:  build help all"                                                      >> build_tmp_help_file
+    echo                                                                                    >> build_tmp_help_file
+
+    if [ "$ROUTINE" = "all" ]
+    then
+      awk '/#\*\*\*\*.*\[public\]/' $BLD/build | sort | awk '{print "/nfs/group/jdevbin/NT/FWK/build/build help " $3}'  > build_tmp_execute_file
+      chmod 777 build_tmp_execute_file
+      build_tmp_execute_file                                                                >> build_tmp_help_file
+      rm build_tmp_execute_file
+    fi
+
+    cat build_tmp_help_file | more
+    rm -rf build_tmp_help_file
+  fi
+}
+
+#*** [private] docheader                   Help Utility: Prints routine name
+docheader () {
+  $doc
+  $doc "****** $ROUTINE ******"
+  $doc
+  $doc `grep "#\*\*\*\*.*\[.*\].* $ROUTINE " $BLD/build | awk '{print substr($0, 43)}'`
+}
+
+#*** [private] docparameters               Help Utility: Prints "Parameters passed to <routine>"
+docparameters () {
+  $doc
+  $doc "Parameter(s) passed to $ROUTINE:"
+
+  if [ "$1" = "none" ]
+  then
+    $doc "  NONE"
+  fi
+}
+
+#*** [private] docexample                  Help Utility: Prints "Example: <example of params to pass to routine>"
+docexample () {
+  $doc
+  $doc "Example: $0 $ROUTINE $*"
+  $doc
+}
+
+#######################################################
+####              B U I L D  R O U T I N E S       ####
+#######################################################
+
+
+#************* [public]  TestScriptUpgrade    Routine to launch the Service Bean testscript upgrade script
+TestScriptUpgrade() {
+  docheader
+  docparameters
+  $doc "  1 = Path of the testscript file. (Eg /home/$USER/jdevhome/jdev/myclasses/testscript.xml)"
+  $doc "  2 = Path of the file where upgraded testscript would be written to. (Eg /home/$USER/jdevhome/jdev/myclasses/out.xml)"
+  $doc ""
+  docexample /home/$USER/jdevhome/jdev/myclasses/testscript.xml /home/$USER/jdevhome/jdev/myclasses/out.xml
+  $docEof
+
+  # Setup convenience variable(s)
+  JDEV_IDE=`dirname $0`
+  APPSLIBRT=$JDEV_IDE/jdev/appslibrt
+  CLASSPATH=$APPSLIBRT/svctester.zip:$APPSLIBRT/xmlparserv2.jar:$JDEV_IDE/lib/xmlcomp.jar
+
+  $J/linux/j2sdk1.4.2_04/bin/java -classpath $CLASSPATH oracle.apps.fnd.framework.svctester.TestScriptUpgrade $1 $2
+}
+
+
+#************* [public]  blankDir             Insures integerity of directory
+blankDir () {
+  docheader
+  docparameters
+  $doc "1 = Directory Spec (Ex. $BLD/build_tmp_file)"
+  $doc "----- optional parameter(s) -----"
+  $doc "2 = Files to delete from the directory given in Parameter 1. Default is *"
+  $doc "    NOTE: Make sure to double quote this parameter if you pass in wild cards"
+  docexample $BLD/build_tmp_file
+  $docEof
+
+  if [ ! \( -d $1 \) ]
+  then
+    mkdir -p $1
+  else
+    rm -rf $1/${2:-*}
+  fi
+}
+
+#************* [private] getIdeVersion        Given a Jdev IDE location, determines if IDE is a 1013 or 903 IDE. Returns 1013, 903 or unknown
+getIdeVersion () {
+  docheader
+  docparameters
+  $doc "1 = Location of Jdev installation (ie $BLD/jdev, $J_NT/120_x3_4461237, etc.)"
+  docexample $BLD/jdev11510
+  $doc Returns 903
+  $doc
+  docexample $BLD/jdev1013
+  $doc Returns 1013
+  $doc
+  $docEof
+
+  IdeVersion=unknown
+  if test -d "$1/adfc";    then IdeVersion=1013; fi
+  if test -d "$1/forms90"; then IdeVersion=903;  fi
+
+  echo $IdeVersion
+}
+
+#************* [public]  clonePrivateArea     Properly clones an IDE tech stack in our private area
+clonePrivateArea () {
+  docheader
+  docparameters
+  $doc "1 = install or uninstall"
+  $doc "2 = SS Label (Eg 90391_1390)"
+  $doc "3 = New SS Branch (Eg jdevdrop6, jdev11510cu3, etc)"
+  $doc "----- These parameters are only required if p1=install -----"
+  $doc "4 = Old SS Branch (Eg jdev, jdev11510, etc)"
+
+  docexample
+  $docEof
+
+  # Define local working variables
+  NEW_IDE=$3_$2
+  NEW_HYBRID_IDE=$BLD/$NEW_IDE
+  NEW_OPT_IDE=$J_EXT/FWK/$NEW_IDE
+  NEW_ARCS_AREA=$BLD/ARCS/$3
+  NEW_DOC_AREA=$BLD/doc/$3
+  NEW_SYM_LNK_NAME=$3
+  # Parse xyz/123/abc and load the last directory spec ("abc") into NEW_HYBRID_IDE_BASENAME
+  NEW_HYBRID_IDE_BASENAME=`basename $NEW_HYBRID_IDE`
+  RSYNCH_AREA=$J_NT/RSYNCH/NT/FWK/build/$NEW_HYBRID_IDE_BASENAME
+
+  NEW_DBG_IDE=$3dbg_$2
+  NEW_DBG_IDE=$BLD/$NEW_DBG_IDE
+  NEW_DBG_SYM_LNK_NAME=$3dbg
+  NEW_DBG_IDE_BASENAME=`basename $NEW_DBG_IDE`
+  RSYNCH_DBG_AREA=$J_NT/RSYNCH/NT/FWK/build/$NEW_DBG_IDE_BASENAME
+
+  # Start cleanup process
+  echo $DASH Cleaning up NEW HYBRID ide $NEW_HYBRID_IDE
+  rm -rf $NEW_HYBRID_IDE
+  echo $DASH Cleaning up NEW DBG ide $NEW_DBG_IDE
+  rm -rf $NEW_DBG_IDE
+
+  echo $DASH Cleaning up NEW HYBRID symbolic link $BLD/$NEW_SYM_LNK_NAME
+  rm -rf $BLD/$NEW_SYM_LNK_NAME
+  echo $DASH Cleaning up NEW DBG symbolic link $BLD/$NEW_DBG_SYM_LNK_NAME
+  rm -rf $BLD/$NEW_DBG_SYM_LNK_NAME
+
+  echo $DASH Cleaning up NEW OPT ide $NEW_OPT_IDE
+  rm -rf $NEW_OPT_IDE
+
+  echo $DASH Cleaning up NEW OPT symbolic link $J_EXT/FWK/$NEW_SYM_LNK_NAME
+  rm -rf $J_EXT/FWK/$NEW_SYM_LNK_NAME
+
+  echo $DASH Cleaning up NEW ARCS area $NEW_ARCS_AREA
+  rm -rf $NEW_ARCS_AREA
+
+  echo $DASH Cleaning up NEW doc area $NEW_DOC_AREA
+  rm -rf $NEW_DOC_AREA
+
+  echo $DASH Cleaning up NEW HYBRID ide from RSYNCH area $RSYNCH_AREA
+  rm -rf $RSYNCH_AREA
+  echo $DASH Cleaning up NEW DBG ide from RSYNCH area $RSYNCH_DBG_AREA
+  rm -rf $RSYNCH_DBG_AREA
+
+  echo $DASH Cleaning up NEW HYBRID ide symbolic link from RSYNCH area $J_NT/RSYNCH/NT/FWK/build/$NEW_SYM_LNK_NAME
+  rm -rf $J_NT/RSYNCH/NT/FWK/build/$NEW_SYM_LNK_NAME
+  echo $DASH Cleaning up NEW DBG ide symbolic link from RSYNCH area $J_NT/RSYNCH/NT/FWK/build/$NEW_DBG_SYM_LNK_NAME
+  rm -rf $J_NT/RSYNCH/NT/FWK/build/$NEW_DBG_SYM_LNK_NAME
+
+  # Start creation process
+  if [ "$1" = "install" ]
+  then
+    OLD_IDE=$4_$2
+    OLD_HYBRID_IDE=$BLD/$OLD_IDE
+    OLD_DBG_IDE=$BLD/$4dbg_$2
+    OLD_OPT_IDE=$J_EXT/FWK/$OLD_IDE
+    OLD_ARCS_AREA=$BLD/ARCS/$4
+    OLD_DOC_AREA=$BLD/doc/$4
+
+    echo
+    echo $DASH Creating NEW HYBRID ide $NEW_HYBRID_IDE
+    cp -r $OLD_HYBRID_IDE $NEW_HYBRID_IDE
+    echo $DASH Creating NEW DBG ide $NEW_DBG_IDE
+    cp -r $OLD_DBG_IDE $NEW_DBG_IDE
+
+    echo $DASH Creating NEW OPT ide $NEW_OPT_IDE
+    cp -r $OLD_OPT_IDE $NEW_OPT_IDE
+
+    echo $DASH Creating NEW ARCS area $NEW_ARCS_AREA
+    cp -r $OLD_ARCS_AREA $NEW_ARCS_AREA
+
+    echo $DASH Creating NEW doc area $NEW_DOC_AREA
+    cp -r $OLD_DOC_AREA $NEW_DOC_AREA
+
+    original_dir=`pwd`
+      echo $DASH Creating NEW HYBRID symbolic link
+      cd $BLD
+      ln -s $NEW_HYBRID_IDE_BASENAME $NEW_SYM_LNK_NAME
+
+      echo $DASH Creating NEW DBG symbolic link
+      cd $BLD
+      ln -s $NEW_DBG_IDE_BASENAME $NEW_DBG_SYM_LNK_NAME
+
+      echo $DASH Creating NEW OPT symbolic link
+      cd $J_EXT/FWK
+      ln -s $NEW_HYBRID_IDE_BASENAME $NEW_SYM_LNK_NAME
+
+      echo $DASH Creating NEW HYBRID ide in RSYNCH area $RSYNCH_AREA
+      cd $J_NT/RSYNCH/NT/FWK/build
+      ln -s ../../../../FWK/build/$NEW_HYBRID_IDE_BASENAME
+
+      echo $DASH Creating NEW DBG ide in RSYNCH area $RSYNCH_DBG_AREA
+      cd $J_NT/RSYNCH/NT/FWK/build
+      ln -s ../../../../FWK/build/$NEW_DBG_IDE_BASENAME
+
+
+      echo $DASH Creating NEW HYBRID ide symbolic link in RSYNCH area $J_NT/RSYNCH/NT/FWK/build/$NEW_SYM_LNK_NAME
+      ln -s ../../../../FWK/build/$NEW_SYM_LNK_NAME
+      echo $DASH Creating NEW DBG ide symbolic link in RSYNCH area $J_NT/RSYNCH/NT/FWK/build/$NEW_DBG_SYM_LNK_NAME
+      ln -s ../../../../FWK/build/$NEW_DBG_SYM_LNK_NAME
+
+    cd $original_dir
+  fi
+}
+
+#************* [private] ValidateWithIrep     Validates xml files based on irep_parser script
+ValidateWithIrep () {
+  docheader
+  docparameters
+  $doc
+  $doc "  1 = Location of Xml Files (Eg: $BLD/IrepValidateXmlFilesTmp_jdev_90391_1340)"
+  $doc "----- optional parameter(s) -----"
+  $doc "  2 = Release (Eg 12.0.0, 11.5.10[CU#])"
+  docexample $BLD/IrepValidateXmlFilesTmp_jdev_90391_1340 12.0.0
+  $docEof
+
+
+  echo $DASH Validating XML files with irep_parser ...
+  echo
+
+  tmpMsg="Validating XML files with irep_parse succeeded."
+
+  # cd to $1 and loop through all directories and process all xml files w/ Irep_Parser
+  # Make sure to email a message to everyone if an error has been encountered
+  original_dir=`pwd`
+  cd $1
+    rm error_log.txt > /dev/null 2>&1
+    find . -name '*.xml' -print | xargs $BLD/irep_parser -d -a error_log.txt
+
+    # Check return status
+    if [ $? -ne 0 ]
+    then
+      echo "Subject: irep_parser errors encountered for "$1    > mailMsg
+      echo " "                                                >> mailMsg
+      echo "SUMMARY OF ERROR(S)"                              >> mailMsg
+      echo "==================="                              >> mailMsg
+      echo " "                                                >> mailMsg
+      cat error_log.txt >> mailMsg
+
+      mail -s "XML Irep Validation (irep_parser) FAILED" servicebean_us@oracle.com fwkrel_in@oracle.com <mailMsg
+      tmpMsg="Errors encountered in ValidateWithIrep."
+      rm mailMsg
+    fi
+
+  cd $original_dir
+
+  echo
+  echo $DASH $tmpMsg
+}
+
+#************* [public]  cleanupUtil          Generic cleanup utility
+cleanupUtil () {
+  docheader
+  docparameters
+  $doc
+  $doc "NOTE: This routine assumes that the naming convention of the Directory Spec"
+  $doc "      parameter will be sorted in reverse alpha order and then deleted."
+  $doc
+  $doc "  1 = Location to cleanup (ie $BLD/jdev_903 or $FWK/share/jdev57h_)"
+  $doc "  2 = Number of Directories to Keep (valid values: 0 through N)"
+  $doc "        NOTE: 0 means any directories which match parameter 2 will be deleted."
+  $doc "  3 to N = Repeat of parameters 1 and 2 as many times as you want"
+  docexample $BLD/jdev_903 5 $FWK/share/jdev57h_ 2
+  $docEof
+
+  echo $DASH Executing Cleanup Utility ...
+  while [ $# -gt 0 ]
+  do
+    count=0
+    for i in `ls -d -r $1*`
+    do
+      if [ $count -ge $2 ]
+      then
+        echo rm -rf $i
+        rm -rf $i
+      fi
+      count=`expr $count + 1`
+    done
+    shift 2
+  done
+}
+
+#************* [public]  quickApacheArea      Installs or uninstalls runtime files to quickapache area
+quickApacheArea () {
+  docheader
+  docparameters
+  $doc "1 = install or uninstall"
+  $doc "2 = Source directory, relative parameter 2 (Example: JDev_57f_m36)"
+  $doc "3 = Destination directory name in $J_NT/quickapache (Example: JDev_57f_m36)"
+  docexample install JDev_57h JDev_57h
+  $doc "  OR"
+  docexample install FWK/build/jdev private_daily
+  $doc "  OR"
+  docexample uninstall JDev_57h JDev_57h
+  $docEof
+
+  QA_Area=$J_NT/quickapache/$3
+  rm -rf $QA_Area
+
+  if [ "$1" = "install" ]
+  then
+    mkdir -p $QA_Area
+    cd $QA_Area
+
+    ##############
+    # APPS Files #
+    ##############
+    ln -s ../../$2/jdev/appslibrt/*.*       $QA_Area
+
+    ##############
+    # Java Files #
+    ##############
+    ln -s ../../$2/jdk/jre/lib/ext/jndi.jar $QA_Area
+
+    ##############
+    # BC4J Files #
+    ##############
+    ln -s ../../$2/BC4J/lib/bc4jdomorcl.jar $QA_Area
+    ln -s ../../$2/BC4J/lib/bc4jhtml.jar    $QA_Area
+    ln -s ../../$2/BC4J/lib/bc4jct.jar      $QA_Area
+    ln -s ../../$2/BC4J/lib/bc4jmt.jar      $QA_Area
+
+    ##############
+    # JRAD Files #
+    ##############
+    ln -s ../../$2/mds/lib/mdsrt.jar        $QA_Area
+    ln -s ../../$2/jdev/lib/mdsdt.jar       $QA_Area
+
+    #################
+    # BiBeans Files #
+    #################
+    ln -s ../../$2/bibeans/lib/*.*          $QA_Area
+
+    ####################
+    # Jakarta EL Files #
+    ####################
+    ln -s ../../$2/jakarta-commons-el/*.*   $QA_Area
+
+    ##############
+    # Wrap it up #
+    ##############
+    if test -f $QA_Area/jbojdbcpatch.zip
+    then
+      # Why are we about to do this?
+      #   The quick apache classpath is built by doing a simple ls in the $QA_Area.
+      #   Thus order of zips in the classpath is alphabetical.
+      #   Unfortunately, jbojdbcpatch.zip must be in the front of the classpath.
+      # This little hack is to work around this problem.
+      #
+      # I've asked Janaki (owner of Quick Apache) to do this in her script,
+      # but she was not agreeable to doing this.
+      mv $QA_Area/jbojdbcpatch.zip $QA_Area/a_jbojdbcpatch.zip
+    fi
+
+    rm $QA_Area/classes111.*
+
+    chmod -R 755 $QA_Area
+  fi
+}
+
+#************* [private] createJavadocDir     Creates the javadoc area
+createJavadocDir () {
+  docheader
+  docparameters
+  $doc "1 = Explicit javadoc dir to create"
+  $doc "2 = Jar/Zip to unzip into Parameter 1"
+  docexample $BLD/jdev_90384_794/javadoc/bc4j $BLD/jdev_90384_794/jdev/doc/ohj/bc4jjavadoc.jar
+  $docEof
+
+  echo $DASH Adding javadoc to $1 ...
+  DIR=$1
+  ZIPFILE=$2
+
+  blankDir $DIR
+  cd $DIR
+  unzip $ZIPFILE > /dev/null
+}
+
+#************* [public]  napPushSqlDeveloper  Push of SqlDeveloper installation to NAP drive
+napPushSqlDeveloper () {
+  docheader
+  docparameters
+  $doc "1 = Name of daily directory for SqlDeveloper (eg 2006_02_21_Tue_0415PM)"
+  docexample none
+  $docEof
+
+  cd $BLD
+  jdevsqldDir=jdevsqlddaily_$1
+
+  mkdir $jdevsqldDir
+  cd $jdevsqldDir
+    wget -q http://raptor.oraclecorp.com/builds/sqldeveloper-latest.zip
+    unzip sqldeveloper-latest.zip > /dev/null
+    mv sqldeveloper sqldeveloper_tmp
+    mv sqldeveloper_tmp/* .
+    rm -rf sqldeveloper_tmp
+  cd ..
+  chmod -R 755 $jdevsqldDir
+  rm jdevsqlddaily
+  ln -s $jdevsqldDir jdevsqlddaily
+
+  cleanupUtil $J_NT/FWK/build/jdevsqlddaily_ 2
+}
+
+#************* [public]  napPush              Push of Jdeveloper installation to NAP drive
+napPush () {
+  docheader
+  docparameters
+  $doc "1 = Current release (eg jdev_90363_388 or jdev57f_90362_921)"
+  $doc "2 = Symbolic Link Directory (eg jdev or jdev57f)"
+  $doc "3 = Jdeveloper Installation Zip File Name (eg jdev903_debug.zip)"
+  docexample jdev_90363_388 jdev jdev903_debug.zip
+  $docEof
+
+  ################
+  # Mail Message #
+  ################
+  echo $DASH Informing users that private area is about to be updated ...
+  echo "Subject: Replacing $BLD/"$2" with "$1  > mailMsg
+  echo " "                                    >> mailMsg
+  echo "Replacing $BLD/"$2" with"             >> mailMsg
+  echo "          $BLD/"$1                    >> mailMsg
+  mailRoutine mailMsg delete aditya.bansal@oracle.com subhalaxmi.anaparthi@oracle.com
+
+  #################################
+  # Create Jdev Installation Area #
+  #################################
+  echo $DASH Unzipping $BLD/$1/$3 ...
+  #The following statement assumes that the directory is already created by another script.
+  cd $BLD/$1
+  unzip $3 > /dev/null
+
+  # We need to redundantly do this.
+  cd $BLD
+  chmod -R 755 $1
+
+  cd $BLD/$1
+
+  if [ "$2" != "jdev11ix" ]
+  then
+    dos2unix build build
+    ########################################################################
+    # Setup sym link for Tutorial.zip and Myhtml.zip for 10.1.3 and 9.0.3  #
+    ########################################################################
+    IdeVersion=`getIdeVersion $BLD/$1`
+    if [ "$IdeVersion" = "1013" ]
+    then
+      ln -s oaext/tutorials/Tutorial.zip
+      ln -s oaext/Myhtml.zip
+    elif [ "$IdeVersion" = "903" ]
+    then
+      ln -s jdev/tutorials/oa_tutorials/Tutorial.zip
+      ln -s jdev/lib/ext/jrad/Myhtml.zip
+    elif [ "$IdeVersion" = "unknown" ]
+    then
+      echo $DASH SERIOUS PROBLEM $BLD/$1/adfc and $BLD/$1/forms90 does not exist. What type of IDE is $BLD/$1?
+    fi
+  fi
+
+  echo $DASH Creating Synchronization file [ready] ...
+  touch ready
+
+  #######################
+  # Update Javadoc Area #
+  #######################
+  if [ "$2" != "jdev11ix" ]
+  then
+    echo $DASH Updating javadoc directory ...
+    createJavadocDir $BLD/$1/javadoc/bc4j         $BLD/$1/jdev/doc/ohj/bc4jjavadoc.jar
+    if test -d "$BLD/$1/javadoc/bc4j/rt"
+    then
+      cd $BLD/$1/javadoc/bc4j
+      mv rt/* .
+      rm -rf rt
+    fi
+
+    if [ "$IdeVersion" = "1013" ]
+    then
+      createJavadocDir $BLD/$1/javadoc/uix          $BLD/$1/jdev/doc/ohj/uix2-javadoc.zip
+    else
+      createJavadocDir $BLD/$1/javadoc/uix          $BLD/$1/jdev/doc/ohj/uix2-javadoc.jar
+    fi
+
+    createJavadocDir $BLD/$1/javadoc/fwk/public   $BLD/$1/jdev/doc/ohj/oafjavadoc_public.jar
+    createJavadocDir $BLD/$1/javadoc/fwk/internal $BLD/$1/jdev/doc/ohj/oafjavadoc_internal.jar
+    createJavadocDir $BLD/$1/javadoc/fwk/private  $BLD/$1/jdev/doc/ohj/oafjavadoc_private.jar
+    createJavadocDir $BLD/$1/javadoc/aolj         $BLD/doc/$2/aolj/aoljDoc.zip
+    createJavadocDir $BLD/$1/javadoc/cacheFwk     $BLD/doc/$2/cacheFwk/cacheFwkDoc.zip
+
+    # These are the Design Time Javadoc
+    createJavadocDir $BLD/$1/javadoc/jdev_dt      $BLD/$1/jdev/doc/ohj/jdev-doc.jar
+
+    # To pick BC4J Design time Javadoc
+    createJavadocDir $BLD/$1/javadoc/bc4j_dt      $BLD/$1/jdev/doc/ohj/bc4jdtjavadoc.jar
+  fi
+
+  ##########################################
+  # Write Protect / Update latest sym link #
+  ##########################################
+  echo $DASH Chmod 755 and creating Unix symbolic links ...
+  cd $BLD
+  chmod -R 755 $1
+  rm -rf $2
+  ln -s $1 $2
+
+  #########################################
+  # Create a new big IDE zip file         #
+  #########################################
+# Can't do this for now because our unix build machine doesn't have zip on it.
+#  cd $BLD/$1
+#  zip -rq ide_$3
+
+  ######################
+  # Update Rsynch Area #
+  ######################
+  rm -rf $J_NT/RSYNCH/NT/FWK/build/$1
+  ln -s ../../../../FWK/build/$1 $J_NT/RSYNCH/NT/FWK/build
+
+  echo $DASH Purging up older releases ...
+  #cleanupUtil $BLD/jdev_20 2 $BLD/jdev11510_903 2 $J_NT/FWK/build/jdev1013_20 2 $BLD/jdev11ix_ 2 $BLD/jdev_903 2 $J_NT/RSYNCH/NT/FWK/build/jdev11510_903 2 $J_NT/RSYNCH/NT/FWK/build/jdev11ix_ 2 $J_NT/RSYNCH/NT/FWK/build/jdev_903 2 $J_NT/RSYNCH/NT/FWK/build/jdev1013_20 2
+  cleanupUtil $BLD/jdev_20 3 $BLD/jdevdbg_20 3 $BLD/jdev11510_903 2 $BLD/jdev11ix_ 2 $J_NT/RSYNCH/NT/FWK/build/jdev11510_903 2 $J_NT/RSYNCH/NT/FWK/build/jdev11ix_ 2 $J_NT/RSYNCH/NT/FWK/build/jdevdbg_20 3 $J_NT/RSYNCH/NT/FWK/build/jdev_20 3
+
+  #########################################
+  # Update QuickApache private_daily Area #
+  #########################################
+  if [ "$2" != "jdev11ix" ]
+  then
+    echo $DASH Creating private daily Quick Apache Area ...
+    quickApacheArea install FWK/build/jdev private_daily
+  fi
+}
+
+#************* [private] providerBldProcess   Starts the entire Provider Build process
+providerBldProcess () {
+  docheader
+  docparameters none
+  docexample
+  $docEof
+
+  # Example list of directories in J:\nt\provider:
+  #  120_a_4395004
+  #  120_drop2_4461237
+  #  120_drop3_4461237
+  #  120_drop4_4461237_4641677
+  #  120_drop6_4461237
+  #  120_x2_4461237
+  #  120_x3_4461237
+  #  510_cu1_4017300
+  #  510_cu2_4125550
+  #  510_fwkh_3262919
+  #  510_rup3_4334965
+  #  510_v0_3875569
+  #  57_v1_2800986
+  #  57_v2_3004797
+  #  57_v3_2974670
+  #  57_v4_3057828
+  #  57_v5_3162988
+  #  57_v6_3484474
+  #  57h_2771817
+  #
+  #  deploy_to_all_10131_releases
+  #  deploy_to_all_releases
+  #
+  #  test
+  #  test1013
+
+  for v in `ls -d $PROVIDER/*`
+  do
+    if test -d $v
+    then
+      # At this point $v IS a directory
+      baseName=`basename $v`
+      ###############
+      # Auto Deploy #
+      ###############
+      # Make sure to auto-deploy standard files like arcsaddin.zip
+      bldProviderArea=true
+
+      # Auto deploy only to directories that are NOT test and NOT deploy_to_all_releases
+      echo "$v" | grep -i "/test" >/dev/null
+      testDir=$?
+
+      if [ "$testDir" != "0" ]
+      then
+        # At this point you can assume $v is NOT a test dir (J:\NT\provider\test1013 or J:\NT\provider\test)
+        echo "$v" | grep -i "/deploy_to_all_" >/dev/null
+        deployDir=$?
+
+        # If $v is not deploy_to_all_ then Auto Deploy to $v
+        if [ "$deployDir" != "0" ]
+        then
+          # Implied: you dealing w/ a regular directory (eg: J:\NT\provider\57_v1_2800986)
+          if [ "`getIdeVersion $J_NT/$baseName`" = "1013" ]
+          then
+            AutoDeploy=$PROVIDER/deploy_to_all_10131_releases
+          else
+            AutoDeploy=$PROVIDER/deploy_to_all_releases
+          fi
+
+          cp $AutoDeploy/zip/*.*           $v/zip/  > /dev/null 2>&1
+          cp $AutoDeploy/aru/*_ARU_*readme $v/aru/  > /dev/null 2>&1
+        else
+          # DO NOT call buildProviderArea if you are dealing w/ a deploy_to_all_* directory.
+          bldProviderArea=false
+        fi
+      else
+        # DO NOT call buildProviderArea if you are dealing w/ a test directory.
+        bldProviderArea=false
+      fi
+
+      #######################
+      # Build Provider Area #
+      #######################
+      if [ "$bldProviderArea" = "true" ]
+      then
+        buildProviderArea "$v/aru/*_ARU_*readme" $v/aru `getIdeVersion $J_NT/$baseName`
+        buildProviderArea "$v/zip/*.*"           $v/zip `getIdeVersion $J_NT/$baseName`
+      fi
+    fi
+  done
+}
+
+#************* [private] buildProviderArea    Builds provider area for product teams
+buildProviderArea () {
+  docheader
+  docparameters
+  $doc "1 = Directory spec for files (Example: $PROVIDER/510_f_3311604/aru/*_ARU_*readme or $PROVIDER/510_f_3311604/zip/*.*)"
+  $doc "    NOTE: Make sure to double quote this parameter if it has wildcards in it."
+  $doc "2 = Specific provider area (Example: $PROVIDER/510_f_3311604/aru or $PROVIDER/510_f_3311604/zip)"
+  $doc "3 = IDE is a 1013 or 903 IDE."
+  docexample $PROVIDER/510_f_3311604/aru/*_ARU_*readme $PROVIDER/510_f_3311604/aru 903
+  docexample $PROVIDER/120_x9_4461237/aru/*_ARU_*readme $PROVIDER/120_x9_4461237/aru 1013
+  $docEof
+
+  dirSpec=$1
+  area=$2/$DATETIME
+
+  if test -f $dirSpec
+  then
+    mkdir $area
+
+    cp $dirSpec $area
+    chmod -R 755 $area
+
+    cleanupUtil $2/20 7
+
+    if echo "$area" | grep -i "/zip/" >/dev/null
+    then
+      # Get the latest provider area
+      providerArea=`getLatestDir "$2/20*"`
+
+      if [ "$providerArea" != "" ]
+      then
+        timeStamp=`echo $providerArea | awk -F/ '{print $9}'`
+        if echo "$2" | grep -i "/provider/test/zip" >/dev/null
+        then
+          # This is the TEST area
+          # Get the latest JDev Private Area
+          jdevArea=`getLatestDir "$BLD/jdev_9*`
+          public_or_private=PRIVATE
+        elif echo "$2" | grep -i "/provider/test1013/zip" >/dev/null
+        then
+          jdevArea=`getLatestDir "$BLD/jdev_20*"`
+          public_or_private=PRIVATE
+        else
+          # This branch is the PUBLIC Area
+          # Get the appropriate JDev Public Area (ex $2 = $PROVIDER/57_v3_2974670/zip)
+          jdevArea=$J_NT/`echo $2 | awk -F/ '{print $7}`
+          jdevVersion=`echo $2 | awk -F/ '{print $7}`
+          public_or_private=PUBLIC
+        fi
+
+        echo
+        echo $DASH Deploying [$providerArea] to $public_or_private [$jdevArea] ...
+        echo
+
+        if [ "$3" = "903" ]
+        then
+          if [ "$public_or_private" = "PRIVATE" ]
+          then
+            createProviderLinks $providerArea "*.zip"    $jdevArea/jdev/appslibrt/patch_jars ../../../../../../provider/test/zip/$timeStamp
+            createProviderLinks $providerArea "*Src.zip" $jdevArea/jdev/appslibrt/patch_srcs ../../../../../../provider/test/zip/$timeStamp
+            createProviderLinks $providerArea "*Ext.jar" $jdevArea/jdev/lib/ext/jrad/ext     ../../../../../../../../provider/test/zip/$timeStamp
+          else
+            createProviderLinks $providerArea "*.zip"    $jdevArea/jdev/appslibrt/patch_jars ../../../../provider/$jdevVersion/zip/$timeStamp
+            createProviderLinks $providerArea "*Src.zip" $jdevArea/jdev/appslibrt/patch_srcs ../../../../provider/$jdevVersion/zip/$timeStamp
+            createProviderLinks $providerArea "*Ext.jar" $jdevArea/jdev/lib/ext/jrad/ext     ../../../../../../provider/$jdevVersion/zip/$timeStamp
+          fi
+        else
+          createProviderLinks $providerArea "*.zip"    $jdevArea/jdev/appslibrt/patch_jars ../../../../provider/$jdevVersion/zip/$timeStamp
+          createProviderLinks $providerArea "*Src.zip" $jdevArea/jdev/appslibrt/patch_srcs ../../../../provider/$jdevVersion/zip/$timeStamp
+          createProviderLinks $providerArea "*.jar"    $jdevArea/jdev/extensions           ../../../provider/$jdevVersion/zip/$timeStamp
+        fi
+      fi
+    fi
+  fi
+}
+
+#************* [private] createProviderLinks  Create links for the provider area
+createProviderLinks () {
+  docheader
+  docparameters
+  $doc "1 = Explicit location of provider time stamp area"
+  $doc "2 = Wild card param (ie *.zip, *Src,zip, or *Ext.jar)"
+  $doc "3 = Explicit jdev location (ie patch_jars, patch_srcs, or ext)"
+  $doc "4 = Link location relative to Param3"
+  docexample /nfs/group/jdevbin/NT/provider/510_f_3311604/zip/2004_02_12_Thu_10_55_14_AM *.zip /nfs/group/jdevbin/NT/510_f_3311604/appslibrt/patch_jars ../../../../provider/510_f_3311604/zip/2004_02_12_Thu_10_55_14_AM
+  $docEof
+
+  echo "$3" | grep "extensions"  > /dev/null 2>&1
+  if [ $? -ne 0 ]
+  then
+    blankDir $3 "$2"
+  fi
+
+  chmod -R 755 $3
+
+  if test -f $1/$2
+  then
+    cd $3
+    rm -f org.oracle.arcs.10.1.3.jar
+    ln -sf $4/$2 $3/
+    ls -l $3
+    echo
+  fi
+}
+
+#************* [private] createHybridIde      Creates a Hybrid IDE (OPT IDE + some RT dbg classes)
+createHybridIde () {
+  docheader
+  docparameters
+  $doc "1 = Explicit Location of OPT Ide"
+  $doc "2 = Explicit Location of DBG Ide"
+  $doc "3 = Explicit Location of HYBRID Ide"
+  docexample /jdevbin/ext/FWK/jdev1013/jdevbin /jdevbin/NT/FWK/build/jdev1013 /jdevbin/NT/FWK/build/jdev1013hybrid
+  $docEof
+
+  OPT=$1
+  DBG=$2
+  HYBRID=$3
+
+  echo Cleaning up $HYBRID if necessary ...
+  rm    -rf $HYBRID
+  mkdir -p  $HYBRID
+
+  echo cp -r $OPT/jdevbin/* $HYBRID/
+  cp -r $OPT/jdevbin/*                    $HYBRID/
+
+  echo Applying BC4J DBG files ...
+  cp -r $DBG/BC4J/jlib/*                  $HYBRID/BC4J/jlib/
+  cp -r $DBG/BC4J/lib/*                   $HYBRID/BC4J/lib/
+  cp -r $DBG/BC4J/redist/*                $HYBRID/BC4J/redist/
+  cp -r $DBG/BC4J/src                     $HYBRID/BC4J/
+
+  echo Applying BiBeans DBG files ...
+  cp -r $DBG/bibeans/lib/*                $HYBRID/bibeans/lib
+  cp -r $DBG/bibeans/src                  $HYBRID/bibeans
+
+  echo Applying appslibrt DBG files ...
+  cp -r $DBG/jdev/appslibrt/*             $HYBRID/jdev/appslibrt
+  cp -r $DBG/jdev/src                     $HYBRID/jdev
+
+  echo Applying mds DBG files ...
+  cp    $DBG/mds/lib/mdsrt.jar            $HYBRID/mds/lib
+  cp    $DBG/mds/src/mdsrtSrc.zip         $HYBRID/mds/src/
+
+  echo Applying Tutorial and Misc DBG files ...
+  cp    $DBG/oaext/tutorials/Tutorial.zip        $HYBRID/oaext/tutorials/
+  cp    $DBG/oaext/tutorials/BSOLabSolutions.zip $HYBRID/oaext/tutorials/
+  cp    $DBG/oaext/tutorials/BSOReferenceApp.zip $HYBRID/oaext/tutorials/
+
+  cp    $DBG/oaext/fwk_deploy.zip         $HYBRID/oaext/
+  cp    $DBG/build.bat                    $HYBRID/
+  cp    $DBG/build                        $HYBRID/
+
+  echo Removing unused extensions ...
+  rm $HYBRID/jdev/extensions/oracle.adf.installer.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.adfm.dc-adapters.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.adfm.dt.faces.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.faces.dt.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.bibeans.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.bpm.mapper.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.bpm.modeler.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.bpm.workflow.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.jsfmod.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.jviews-registration.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.struts.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.struts.adf.10.1.3.jar
+  rm $HYBRID/jdev/extensions/oracle.webcache.10.1.3.jar
+#  rm $HYBRID/jdev/extensions/oracle.adfcmod.junit.j2ee.10.1.3.jar
+#  rm $HYBRID/jdev/extensions/oracle.regions.dt.10.1.3.jar
+}
+
+#************* [private] installFusionIde     Installs a fusion ide
+installFusionIde () {
+  docheader
+  docparameters
+  $doc "1 = Dir of jdevstudiobase1111.zip (Eg /jdevbin/NT/FWK/build/JDEVADF_MAIN.JM6_NT_060917.0010.4077)"
+  $doc "2 = Dir spec to purge (Eg JDEVADF_MAIN.JM6)"
+  $doc "3 = Symbolic link directory name (Eg jdev11m6)"
+  $doc "4 = Total directories to keep (Eg 2)"
+  $doc "5 through N = exntesions to install"
+  docexample JDEVADF_MAIN.JM6_NT_060917.0010.4077 JDEVADF_MAIN.JM6 jdev11m6 2 vcs-ade_bundle.zip junit-java_bundle.zip
+  $docEof
+
+  # setup local variables for this job
+  explicitWrkDir=$1
+  cd $explicitWrkDir
+  wrkDir=`basename $explicitWrkDir`
+  cd ..
+  oneLevelUp=`pwd`
+  purgableDirName=$2
+  symLinkDirName=$3
+  totDirToKeep=$4
+
+  cd $explicitWrkDir
+
+  echo $DASH unzip $explicitWrkDir/jdevstudiobase1111.zip
+  unzip -qq jdevstudiobase1111.zip
+
+  shift 4
+  while [ $# -gt 0 ]
+  do
+    if test -f $1
+    then
+      echo $DASH Installing extension [$1] ...
+      unzip -qqo $1 -d jdev/extensions
+    fi
+    shift
+  done
+
+  cleanupUtil  $oneLevelUp/$purgableDirName $totDirToKeep
+
+  cd $oneLevelUp
+
+  chmod -R 755 $wrkDir
+  rm $symLinkDirName > /dev/null 2>&1
+
+  echo $DASH ln -s $wrkDir $symLinkDirName
+  ln -s $wrkDir $symLinkDirName
+}
+
+#************* [private] getLatestDir         Gets the latest/highest directory
+getLatestDir () {
+  docheader
+  docparameters
+  $doc "1 = Directory spec (Example: $BLD/jdev_*)"
+  $doc "NOTE: This routine assumes that the naming convention of the Directory Spec"
+  $doc "      parameter will be sorted in reverse alpha order."
+  docexample $BLD/jdev_*
+  $docEof
+
+  if ls $1 > /dev/null  2>&1
+  then
+    for i in `ls -d -r $1`
+    do
+      echo $i
+      break
+    done
+  else
+    echo ""
+  fi
+}
+
+#************* [public]  publicExtArea        Installs or Uninstalls an Ext Jdeveloper to/from the public Ext area
+publicExtArea () {
+  docheader
+  docparameters
+  $doc "1 = install or uninstall"
+  $doc "2 = Unix location of ext area (Usually $J_EXT)"
+  $doc "3 = Destination directory, relative parameter 2 (Example: 510_i_3688697)"
+  $doc "4 = Symbolic Link Directory relative to parameter 2 (Example: jdev, jdev510, etc)"
+  $doc "----- optional parameter(s) -----"
+  $doc "5 = Unix location of jdevExt.zip (Example: $J_EXT/jdevExt.zip)"
+  $doc "    NOTE: This parameter is REQUIRED if parameter 1 is "install""
+  docexample install $J_EXT 510_i_3688697 $J_EXT/jdevExt.zip jdev
+  docexample uninstall $J_EXT 510_i_3688697
+  $docEof
+
+  cd $2
+
+  #######################
+  # JDeveloper EXT Area #
+  #######################
+  echo $DASH Updating canonical $2/$3 ...
+  echo $DASH Deleting $2/$3 ...
+  rm -rf $3
+
+  if [ "$1" = "install" ]
+  then
+    blankDir $3
+    cp $5 $3/
+    cd $3
+    echo $DASH Unzipping $5 ...
+    unzip $5 > /dev/null
+
+    echo $DASH Setting proper protection ...
+    chmod -R 755 $2/$3
+
+    #################################################
+    # To Create Symbolic Link to the latest version #
+    #################################################
+    echo $DASH Creating symbolic link ...
+    cd $2
+    rm -rf $4
+    ln -s $3 $4
+  fi
+}
+
+#************* [public]  publicArea           Installs or Uninstalls Jdeveloper to/from the public area
+publicArea () {
+  docheader
+  docparameters
+  $doc "1 = install or uninstall"
+  $doc "2 = Destination directory, relative to $J_NT (Example: 57_v3_2974670)"
+  $doc "----- optional parameter(s) -----"
+  $doc "3 = Source directory, relative to $BLD (Example: jdev_90363_389)"
+  $doc "4 = Javadoc area, relative [parameter 2]/javadoc (Example: 510)"
+  $doc "    NOTE: This parameter is REQUIRED if parameter 1 is "install""
+  docexample install JDev_57h FWK/build/jdev_90363_389 510
+  docexample uninstall JDev_57h
+
+  $docEof
+
+  cd $J_NT
+
+  ###################
+  # JDeveloper Area #
+  ###################
+  echo $DASH Updating canonical $J_NT [$2] ...
+  rm -rf $2
+
+  IDE_VERSION="`getIdeVersion $BLD/$3`"
+
+  if [ "$1" = "install" ]
+  then
+    cp -r $BLD/$3/ $2/
+    chmod -R 755 $2
+    rm    -rf $2/jdev/bin/apps/
+
+    # arcs plugin requires softlink to putty/plink.exe
+    # FUTURE PLANS: Make sure to remove this once we get the real SCM version out.
+    if echo "$J_NT/$2/jdev/bin/apps" | grep -i "opt" >/dev/null
+    then
+      echo $DASH Opt build does not require arcsaddin
+    else
+      mkdir -p $J_NT/$2/jdev/bin/apps
+      ln -s ../../../../FWK/build/dependencies/putty $J_NT/$2/jdev/bin/apps
+    fi
+  fi
+
+  ################
+  # Javadoc Area #
+  ################
+  if [ "$4" != "" ]
+  then
+    echo $DASH Updating javadoc area $J_NT/javadoc/$4
+    rm -rf $J_NT/javadoc/$4
+    mkdir -p $J_NT/javadoc/$4
+
+    cd $J_NT/javadoc/$4
+    for i in `ls -d ../../$2/javadoc/*`
+    do
+      ln -s $i $J_NT/javadoc/$4/
+    done
+    cd $J_NT
+  fi
+
+  ###################
+  # Tarantella Area #
+  ###################
+  echo $DASH Updating RSYNCH area ...
+  rm -rf RSYNCH/NT/$2
+
+  if [ "$1" = "install" ]
+  then
+    ln -s ../../$2 RSYNCH/NT
+  fi
+
+  #####################
+  # Quick Apache Area #
+  #####################
+  echo $DASH Updating QuickApache area ...
+  quickApacheArea $1 $2 $2
+
+  #################
+  # Provider Area #
+  #################
+  echo $DASH Updating Provider area ...
+  Provider_Area=$PROVIDER/$2
+  rm -rf $Provider_Area
+
+  if [ "$1" = "install" ]
+  then
+    mkdir -p $Provider_Area/aru
+    mkdir -p $Provider_Area/zip
+    chmod -R 777 $Provider_Area
+  fi
+
+  ##########################################
+  # AutoDeploy Provider Files IF Necessary #
+  ##########################################
+  if [ "$1" = "install" ]
+  then
+    echo $DASH Auto deploying Provider files ...
+
+    if [ "`getIdeVersion $J_NT/$2`" = "1013" ]
+    then
+      AutoDeploy=$PROVIDER/deploy_to_all_10131_releases
+    else
+      AutoDeploy=$PROVIDER/deploy_to_all_releases
+    fi
+
+    cp $AutoDeploy/zip/*.*           $Provider_Area/zip/  > /dev/null 2>&1
+    cp $AutoDeploy/aru/*_ARU_*readme $Provider_Area/aru/  > /dev/null 2>&1
+
+    # deploy contents of deploy_to_all_releases to new installation
+    buildProviderArea "$Provider_Area/aru/*_ARU_*readme" $Provider_Area/aru
+    buildProviderArea "$Provider_Area/zip/*.*"           $Provider_Area/zip
+  fi
+}
+
+#************* [public]  SynchSSToArcs        Synch up files from SS to ARCS and back to SS
+SynchSSToArcs () {
+  docheader
+  docparameters
+  $doc "1 = Path to sync area (Ex. $BLD/synchSsToArcs)"
+  $doc "2 = SS Label (Ex. 90380_554)"
+  $doc "3 = SS Branch (Ex. jdev, jdev57h)"
+  $doc "4 thru N = name of directories to process under fnd/java/* (Ex. framework or oalogviewer)"
+  docexample $BLD/synchSsToArcs 90380_554 jdev framework oalogviewer
+  $docEof
+
+  ssLabel=$2
+  ssBranch=$3
+  wrkDir=$1/${ssBranch}_${ssLabel}
+  htmlnewFiles=$wrkDir/htmlnewFiles
+  htmlchgFiles=$wrkDir/htmlchgFiles
+  htmlstubFiles=$wrkDir/htmlstubFiles
+  mdsnewFiles=$wrkDir/mdsnewFiles
+  mdschgFiles=$wrkDir/mdschgFiles
+  mdsstubFiles=$wrkDir/mdsstubFiles
+  newFiles=$wrkDir/javanewFiles
+  chgFiles=$wrkDir/javachgFiles
+  stubFiles=$wrkDir/javastubFiles
+  chkOutFile=$wrkDir/chkOutFile
+  applyLabel=$wrkDir/applyLabel
+  tmpMailMsg=$wrkDir/tmpMailMsg
+  txFile=$wrkDir/txFile
+
+  case $ssBranch in
+    jdev)       chenvCmd="fnd 12.0 fnddev" ;
+	        psaVal="/fnddev/fnd/12.0" ;;
+    jdevcu2)    chenvCmd="fnd FWK5.10 fnddev" ;
+                psaVal="/fnddev/fnd/11.5" ;;
+    jdev11510)  chenvCmd="fnd 11.5 fnddev" ;
+                psaVal="/fnddev/fnd/11.5" ;;
+    jdev57h)    chenvCmd="fnd FWK5.7 fnddev" ;
+                psaVal="/fnddev/fnd/11.5" ;;
+    jdev56)     chenvCmd="fnd FWK5.6 fnddev" ;
+                psaVal="/fnddev/fnd/11.5";;
+    jdev552)    chenvCmd="fnd FWK5.5.2 fnddev" ;
+                psaVal="/fnddev/fnd/11.5" ;;
+    *)          echo $DASH INCORRECT BRANCH NAME FOR SYNCH UP ;;
+  esac
+
+  # Build mail message
+  echo "Subject: SS / ARCS Synch Log for branch[$ssBranch] label[$ssLabel]"                              > $tmpMailMsg
+  echo "The following SS branch[$ssBranch] label[$ssLabel] have been applied to ARCS chenv[$chenvCmd]"  >> $tmpMailMsg
+  echo                                                                                                  >> $tmpMailMsg
+
+  if test -f $wrkDir/arcs
+  then
+    rm -rf $wrkDir/arcs
+  fi
+
+  mkdir -m 777 -p $wrkDir/arcs
+
+  shift 3
+  while [ $# -gt 0 ]
+  do
+    param="$param $1"
+    cd $wrkDir/arcs
+
+    echo
+    echo $DASH Performing arcs out java/$1 and mds/$1 ro ...
+    echo psa=$psaVal                                                       > $chkOutFile
+    echo export psa                                                       >> $chkOutFile
+    echo arcs_user_home=/appldev/scmrel/scm_access/atgops1                >> $chkOutFile
+    echo export arcs_user_home                                            >> $chkOutFile
+    echo access_list=atgops1                                              >> $chkOutFile
+    echo export access_list                                               >> $chkOutFile
+    echo cd $wrkDir/arcs                                                  >> $chkOutFile
+    echo arcs out java/$1 ro mkdir=Yes dve=.             >> $chkOutFile
+    echo arcs out mds/$1 ro mkdir=Yes dve=.              >> $chkOutFile
+    if [ "$1" = "framework" ]
+    then
+      echo arcs out html ro mkdir=Yes dve=.              >> $chkOutFile
+    fi
+
+    chmod 777 $chkOutFile
+    /appldev/bin/appsenv $chenvCmd $chkOutFile
+
+    echo
+    echo $DASH Moving all files in java and mds directories one level up ...
+    mv -f java/* .
+    cp -R mds/* .
+    rm -rf java mds
+    chmod -R 777 $wrkDir/ss
+    #rm *.log
+
+    echo
+    echo $DASH Removing all ARCS exception cases ...
+    rm -rf $wrkDir/arcs/framework/util/adalint
+#    rm -rf $wrkDir/arcs/framework/util/css
+#    rm -rf $wrkDir/arcs/framework/util/imageGen
+    rm -rf $wrkDir/arcs/framework/user
+    rm -rf $wrkDir/arcs/framework/webui/marlinbeans
+    rm -rf $wrkDir/arcs/framework/test/personalization
+    rm -rf $wrkDir/arcs/framework/test/inputscanner
+
+    if test -d "html"
+    then
+      mkdir htmltmp
+      rm -f $wrkDir/arcs/html/OAAKAdalint.*
+      rm -f $wrkDir/arcs/html/OAEmbedModeTest.jsp
+      rm -f $wrkDir/arcs/html/AppsChangePassword.jsp
+      rm -f $wrkDir/arcs/html/AppsLocalLogin.jsp
+      rm -f $wrkDir/arcs/html/AppsLocalLogout.jsp
+      rm -f $wrkDir/arcs/html/fndResetPwdLink.jsp
+      rm -f $wrkDir/arcs/html/fndvald.jsp
+      rm -f $wrkDir/arcs/html/OAL.jsp
+      rm -f $wrkDir/arcs/html/OA_old.jsp
+      rm -f $wrkDir/arcs/html/oafcore*.js
+      rm -f $wrkDir/arcs/html/richTextEditor.js
+      rm -f $wrkDir/arcs/html/OASvcTester.jsp
+      mv $wrkDir/arcs/html/OA* $wrkDir/arcs/htmltmp
+      mv $wrkDir/arcs/html/richTextEditor* $wrkDir/arcs/htmltmp
+      mv $wrkDir/arcs/html/custom.xss $wrkDir/arcs/htmltmp
+      mv $wrkDir/arcs/html/oa.xss $wrkDir/arcs/htmltmp
+
+      rm -rf $wrkDir/arcs/html
+      mkdir $wrkDir/arcs/html
+      mv $wrkDir/arcs/htmltmp/* $wrkDir/arcs/html
+      rm -rf $wrkDir/arcs/htmltmp
+    fi
+
+    rm -f $wrkDir/arcs/framework/server/OAFlexListenerImpl.java
+    rm -f $wrkDir/arcs/framework/server/OAPlsqlHelper.java
+    rm -f $wrkDir/arcs/framework/server/OAValidationDomain.java
+    rm -f $wrkDir/arcs/framework/webui/AboutPG.xml
+    rm -f $wrkDir/arcs/framework/webui/AboutVOPG.xml
+    rm -f $wrkDir/arcs/framework/webui/AboutPGCO.java
+    rm -f $wrkDir/arcs/framework/webui/AboutVOPGCO.java
+    rm -f $wrkDir/arcs/framework/webui/OAAttachmentImageStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OABodyStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OABoundValueFormRawText.java
+    rm -f $wrkDir/arcs/framework/webui/OABoundValueOnBlurValidator.java
+    rm -f $wrkDir/arcs/framework/webui/OABreadCrumbsStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAButtonStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAButtonSubmitStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OACellFormatStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OACheckBoxStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAChoiceStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAConnectionPoolMonitor.java
+    rm -f $wrkDir/arcs/framework/webui/OAContentContainerStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAContentFooterStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OADataBoundValueEncrypt.java
+    rm -f $wrkDir/arcs/framework/webui/OADataBoundValueTableLovURL.java
+    rm -f $wrkDir/arcs/framework/webui/OADataBoundValueTreeAction.java
+    rm -f $wrkDir/arcs/framework/webui/OADateFieldStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OADefaultStackLayoutStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OADefaultTableLayoutStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OADescriptiveFlexStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAFieldTableLayoutStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAFileUploadStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAFlexBase.java
+    rm -f $wrkDir/arcs/framework/webui/OAFlexStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAFlowLayoutStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAFooterStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAFormStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAHeaderStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAHiddenFieldStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAImageStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAJRADUserClassLoader.java
+    rm -f $wrkDir/arcs/framework/webui/OAKeyFlexStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OALabelStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OALovData.java
+    rm -f $wrkDir/arcs/framework/webui/OALovRelationData.java
+    rm -f $wrkDir/arcs/framework/webui/OALovStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OALovTextInputStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessageAttachmentLinkStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessageCheckBoxStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessageChoiceStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessageDateFieldStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessageFieldBeanImpl.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessageLovTextInputStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessagePickListBeanImpl.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessageRadioButtonStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessageRadioGroupStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessageTextInputStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAMessageTextStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OANavigationBarStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAPageLayoutStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAPickListBean.java
+    rm -f $wrkDir/arcs/framework/webui/OARadioButtonStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OARadioGroupStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OARawTextStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OARepeaterHelper.java
+    rm -f $wrkDir/arcs/framework/webui/OARowLayoutStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OASeparatorStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OASpacerStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAStackLayoutStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OATableLayoutStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OATableStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OATextInputStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OATextStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OATrainStepStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OATrainStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OATreeStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAWebBeanFieldImpl.java
+    rm -f $wrkDir/arcs/framework/webui/OAWebBeanFieldStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAWebBeanImpl.java
+    rm -f $wrkDir/arcs/framework/webui/OABiGraph.java
+    rm -f $wrkDir/arcs/framework/webui/OAWebBeanStyle.java
+    rm -f $wrkDir/arcs/framework/webui/OAWebBeanStyleFactory.java
+    rm -f $wrkDir/arcs/framework/webui/OAWebBeanStyleFactoryImpl.java
+    rm -f $wrkDir/arcs/framework/webui/OAWebBeanStyleImpl.java
+    rm -f $wrkDir/arcs/framework/webui/OAWebBeanURLStyle.java
+    rm -f $wrkDir/arcs/framework/webui/beans/OAFlexBean.java
+    rm -f $wrkDir/arcs/framework/webui/beans/OARepeaterBean.java
+    rm -f $wrkDir/arcs/framework/webui/perf/OAValidator.java
+    rm -f $wrkDir/arcs/framework/webui/OAFunctionSecuirtyBoundValue.java
+    rm -f $wrkDir/arcs/framework/webui/OADataBoundValueIcon.java
+    rm -f $wrkDir/arcs/framework/personalization/webui/CatalogContents.xml
+    rm -f $wrkDir/arcs/framework/webui/data/table/OATableNodeData.java
+    rm -f $wrkDir/arcs/framework/server/OATranslatedEntityImpl.java
+    rm -f $wrkDir/arcs/framework/service/ejb/ServiceRemoteStatelessCMT.java
+    rm -f $wrkDir/arcs/framework/service/ejb/ServiceRemoteStatelessCMTHome.java
+    rm -f $wrkDir/arcs/framework/service/server/ejb/ServiceRemoteStatelessCMTBean.java
+    rm -f $wrkDir/arcs/oalogviewer/webui/requiresRestartCO.java
+    rm -f $wrkDir/arcs/framework/mds/JspMDSContext.java
+    rm -f $wrkDir/arcs/framework/mds/OAMDSContext.java
+    rm -f $wrkDir/arcs/framework/toolbox/samplelib/webui/QuickSearchRN.xml
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/LessonAttributes.xml
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/OrderSummaryCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/PoSummaryL[567]PG.xml
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/PageAnatomyPG.xml
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/server/Lesson[1-8]AM.xml
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/server/Lesson[34678]AMImpl.java
+    rm -f $wrkDir/arcs/framework/toolbox/labsolutions/server/EmployeeCreateEOVORowImpl.java
+    rm -f $wrkDir/arcs/framework/toolbox/labsolutions/server/EmployeeCreateEOVO.xml
+    rm -f $wrkDir/arcs/framework/toolbox/labsolutions/server/EmployeeSummaryEOVO.xml
+    rm -f $wrkDir/arcs/framework/toolbox/labsolutions/server/EmployeeSummaryEOVOImpl.java
+    rm -f $wrkDir/arcs/framework/toolbox/labsolutions/server/EmployeeSummaryEOVORowImpl.java
+    rm -f $wrkDir/arcs/framework/toolbox/labsolutions/webui/EmployeeSearchCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/server/OrderSummaryAMImpl.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/server/OrderSummaryAM.xml
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson[1567]MainCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson[36]DetailsCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson[367]DetailsTermsCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson[34]ResultsCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson[34]SearchCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson4CreateCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson[67]DetailsItemsCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson7DetailsContextCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson7FooterCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson7LinesCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/Lesson7Page[234]CO.java
+    rm -f $wrkDir/arcs/framework/toolbox/tutorial/webui/PoLinesTableCO.java
+    rm -f $wrkDir/arcs/framework/toolbox/schema/server/PoToBuyer.xml
+    rm -f $wrkDir/arcs/framework/toolbox/schema/server/PoToSupplier.xml
+    rm -f $wrkDir/arcs/framework/toolbox/schema/server/PoToSupplierSite.xml
+    rm -f $wrkDir/arcs/framework/personalization/webui/ApplicationLovRN.xml
+    rm -f $wrkDir/arcs/framework/personalization/webui/AppInCatalogPG.xml
+    rm -f $wrkDir/arcs/framework/personalization/webui/AppInCatalogSearchCO.java
+
+    echo
+    echo $DASH Removing all SS exception cases ...
+    rm -f $wrkDir/ss/framework/personalization/webui/ApplicationLovRN.xml
+    rm -f $wrkDir/ss/framework/personalization/webui/AppInCatalogPG.xml
+    rm -f $wrkDir/ss/framework/personalization/webui/AppInCatalogSearchCO.java
+    rm -rf $wrkDir/ss/framework/webui/templates
+    rm -rf $wrkDir/ss/framework/test/currencyFormat
+    rm -rf $wrkDir/ss/framework/test/passivation
+    rm -rf $wrkDir/ss/framework/test/fileUpload
+    rm -rf $wrkDir/ss/framework/test/personalization
+    rm -rf $wrkDir/ss/framework/test/gantt
+    rm -rf $wrkDir/ss/framework/test/mls
+    rm -rf $wrkDir/ss/framework/test/inputscanner
+    rm -rf $wrkDir/ss/framework/user
+    rm -rf $wrkDir/ss/framework/provider/customize/server_useJdevFolder
+    rm -rf $wrkDir/ss/framework/adf
+    rm -rf $wrkDir/ss/framework/dt
+    rm -rf $wrkDir/ss/framework/messageservice
+    rm -f  $wrkDir/ss/framework/service/test/TestRequisitionServiceBean.html
+    mv $wrkDir/ss/framework/test/TestFwk.java $wrkDir/ss/framework/test/TestFwk.java.bak
+    rm -f $wrkDir/ss/framework/test/*.java
+    mv $wrkDir/ss/framework/test/TestFwk.java.bak $wrkDir/ss/framework/test/TestFwk.java
+
+    if test -d "html"
+    then
+      rm -rf $wrkDir/ss/html/WEB-INF
+      rm -rf $wrkDir/ss/html/secure
+      rm -f $wrkDir/ss/html/test*.jsp
+      rm -f $wrkDir/ss/html/*.save
+      rm -f $wrkDir/ss/html/cabo/oajsLibs/oafcore510*.js
+      rm -f $wrkDir/ss/html/cabo/oajsLibs/oafcore12*.js
+      rm -f $wrkDir/ss/html/navigate.jsp
+      rm -f $wrkDir/ss/html/OAEmbedModeTest.jsp
+      rm -f $wrkDir/ss/html/CustomizationTest.jsp
+      rm -f $wrkDir/ss/html/AppsChangePassword.jsp
+      rm -f $wrkDir/ss/html/AppsLocalLogin.jsp
+      rm -f $wrkDir/ss/html/AppsLocalLogout.jsp
+      rm -f $wrkDir/ss/html/fndResetPwdLink.jsp
+      rm -f $wrkDir/ss/html/fndvald.jsp
+      rm -f $wrkDir/ss/html/OASvcTester.jsp
+      rm -f $wrkDir/ss/html/cabo/base-desktop-metadata.xml
+      rm -f $wrkDir/ss/html/cabo/simple-desktop-metadata.xml
+      rm -rf $wrkDir/ss/html/cabo/jsps
+      cp $wrkDir/ss/html/cabo/styles/custom.xss $wrkDir/ss/html
+      cp $wrkDir/ss/html/cabo/styles/oa.xss $wrkDir/ss/html
+      rm -f $wrkDir/ss/html/cabo/styles/*
+    fi
+
+    # Find all "arcs mkpsa" files (files that exist only on the SS side)
+    # AND
+    # Find all "arcs in" files (files that exist in both SS and ARCS and are different)
+    #
+    # To do this, loop through each file on the SS side and use the diff -b command
+
+    # Important: To simplify the sed parse, make sure you in the $wrkDir
+    cd $wrkDir
+
+    echo "New file from SS branch[$ssBranch] label[$ssLabel]."    > $wrkDir/newfiletxt
+    echo "Update Arcs with SS branch[$ssBranch] label[$ssLabel]." > $wrkDir/updfiletxt
+
+    ##### Creation of temporary awk scripts #####
+    echo "/locks\: strict/ {"                    > $wrkDir/brnawk
+    echo "  getline x;"                         >> $wrkDir/brnawk
+    echo "  while (1) {"                        >> $wrkDir/brnawk
+    echo "    if (\$x != \"access list:\") {"   >> $wrkDir/brnawk
+    echo "       brnch = split(\$0, a, \".\");" >> $wrkDir/brnawk
+    echo "       if (brnch == 4)"               >> $wrkDir/brnawk
+    echo "          print a[3];"                >> $wrkDir/brnawk
+    echo "       else"                          >> $wrkDir/brnawk
+    echo "          print \"-1\";"              >> $wrkDir/brnawk
+    echo "    }"                                >> $wrkDir/brnawk
+    echo "    else {"                           >> $wrkDir/brnawk
+    echo "      exit"                           >> $wrkDir/brnawk
+    echo "    }"                                >> $wrkDir/brnawk
+    echo "    getline x;"                       >> $wrkDir/brnawk
+    echo "  }"                                  >> $wrkDir/brnawk
+    echo "}"                                    >> $wrkDir/brnawk
+
+    echo "/locks\: strict/ {"                    > $wrkDir/numlkawk
+    echo "  getline x;"                         >> $wrkDir/numlkawk
+    echo "  rec = 0;"                           >> $wrkDir/numlkawk
+    echo "  while (1) {"                        >> $wrkDir/numlkawk
+    echo "    if (\$x == \"access list:\") {"   >> $wrkDir/numlkawk
+    echo "       if(rec >= 1)"                  >> $wrkDir/numlkawk
+    echo "          print rec;"                 >> $wrkDir/numlkawk
+    echo "       exit;"                         >> $wrkDir/numlkawk
+    echo "    }"                                >> $wrkDir/numlkawk
+    echo "    else {"                           >> $wrkDir/numlkawk
+    echo "       getline x;"                    >> $wrkDir/numlkawk
+    echo "       rec += 1;"                     >> $wrkDir/numlkawk
+    echo "    }"                                >> $wrkDir/numlkawk
+    echo "  }"                                  >> $wrkDir/numlkawk
+    echo "}"                                    >> $wrkDir/numlkawk
+    ##### End of Creation of temporary awk scripts #####
+
+    echo
+    echo $DASH Performing diff on SS and ARCS files ...
+    if [ "$1" = "framework" ]
+    then
+       if test -d "ss/html"
+       then
+          proc="ss/$1 ss/html"
+       fi
+    else
+       proc="ss/$1"
+    fi
+    for v in `find $proc -name '*.*'`
+    do
+      arcs=`echo ~$v | sed -e "s%~ss/%arcs/%g"`
+      psa=`echo ~$v | sed -e "s%~ss/%%g"`
+
+      fileName=`basename $v`;
+      fileExt=`echo $fileName|cut -d"." -f2`;
+      if [ "$fileExt" = "java" -o "$fileExt" = "xml" ]
+      then
+        fileTyp="J";
+      else
+        fileTyp="H";
+      fi
+
+      if [ "$fileExt" = "xml" ]
+      then
+        if [ "/webui/" = "`echo $v|sed 's/.*\(\/webui\/\).*/\1/'`" -o "/attributesets/"  = "`echo $v|sed 's/.*\(\/attributesets\/\).*/\1/'`" ]
+        then
+          fileTyp="X"
+        fi
+      fi
+
+      if  test -f $wrkDir/$arcs
+      then
+        diff -b $wrkDir/$v $wrkDir/$arcs > /dev/null 2>&1
+        if [ $? = 1 ]
+        then
+          if [ "$fileTyp" = "J" ]
+          then
+            echo "$psa"  >> $chgFiles
+          elif [ "$fileTyp" = "X" ]
+          then
+            echo "$psa"  >> $mdschgFiles
+          else
+            echo "$psa"  >> $htmlchgFiles
+          fi
+        fi
+      else
+        if [ "$fileTyp" = "J" ]
+        then
+          echo "$psa"    >> $newFiles
+        elif [ "$fileTyp" = "X" ]
+        then
+          echo "$psa"    >> $mdsnewFiles
+        else
+          echo "$psa"    >> $htmlnewFiles
+        fi
+      fi
+    done
+
+    echo
+    echo $DASH Locating all potential stub files ...
+    # Find all potential stub files (files that exist only on the ARCS side)
+    # To do this, loop through each directory on the ARCS side and locate files that do not
+    # exist on the SS side.
+    if [ "$1" = "framework" ]
+    then
+       if test -d "arcs/html"
+       then
+          proc="arcs/$1 arcs/html"
+       fi
+    else
+       proc="arcs/$1"
+    fi
+    for v in `find $proc -name '*.*'`
+    do
+      ss=`echo ~$v | sed -e "s%~arcs/%ss/%g"`
+      psa=`echo ~$v | sed -e "s%~arcs/%%g"`
+
+      fileName=`basename $v`;
+      fileExt=`echo $fileName|cut -d"." -f2`;
+      if [ "$fileExt" = "java" -o "$fileExt" = "xml" ]
+      then
+        fileTyp="J";
+      else
+        fileTyp="H";
+      fi
+
+      if [ "$fileExt" = "xml" ]
+      then
+        if [ "/webui/" = "`echo $v|sed 's/.*\(\/webui\/\).*/\1/'`" -o "/attributesets/"  = "`echo $v|sed 's/.*\(\/attributesets\/\).*/\1/'`" ]
+        then
+          fileTyp="X"
+        fi
+      fi
+
+      if [ ! \( -f $ss \) ]
+      then
+        if [ "$fileTyp" = "J" ]
+        then
+          echo "$psa"    >> $stubFiles
+        elif [ "$fileTyp" = "X" ]
+        then
+          echo "$psa"    >> $mdsstubFiles
+        else
+          echo "$psa"    >> $htmlstubFiles
+        fi
+      fi
+    done
+    shift
+  done
+
+  echo
+  echo $DASH Adding list of mkpsa files to $txFile ...
+  echo set psa=$psaVal                                                                         > $txFile
+  echo PATH=/appldev/source/11.5.0/bin:$PATH                                                  >> $txFile
+  echo arcs_user_home=/appldev/scmrel/scm_access/atgops1                                      >> $txFile
+  echo export arcs_user_home                                                                     >> $txFile
+  echo access_list=atgops1                                                                    >> $txFile
+  echo export access_list                                                                     >> $txFile
+  # Build file to synch up Arcs
+  totproc="java mds html"
+  for i in $totproc
+  do
+    fileLoc="";
+    if [ "$i" != "html" ]
+    then
+      fileLoc="$i/";
+    fi
+    newFiles=$wrkDir/"$i"newFiles
+    chgFiles=$wrkDir/"$i"chgFiles
+    stubFiles=$wrkDir/"$i"stubFiles
+
+    if test -f $newFiles
+    then
+      while read v
+      do
+        fgrep -i '$header' $wrkDir/ss/$v > /dev/null 2>&1
+        if [ $? = 0 ]
+        then
+          # go ahead and mkpsa the file
+          echo "cd `dirname $wrkDir/ss/$v`"                                                   >> $txFile
+          echo "arcs mkpsa $fileLoc$v"                                       >> $txFile
+          echo "arcs in $fileLoc$v $wrkDir/newfiletxt"                       >> $txFile
+          echo "arcs out $fileLoc$v ro"                                      >> $txFile
+        fi
+      done < $newFiles
+    fi
+
+    echo
+    echo $DASH Adding all changed files to $txFile ...
+    if test -f $chgFiles
+    then
+      while read v
+      do
+        echo "cd `dirname $wrkDir/ss/$v`"                                                     >> $txFile
+
+        ###  Code by Nipun
+       # nolk=0`/appldev/bin/rlog $psaVal/$fileLoc$v | awk -f $wrkDir/numlkawk`
+       # while [ $nolk -gt 0 ]
+       # do
+       #    if [ $nolk -eq 1 ]; then
+       #       brnch=`/appldev/bin/rlog $psaVal/$fileLoc$v | awk -f $wrkDir/brnawk|sort -r|head -1`
+       #    else
+       #       brnch=`/appldev/bin/rlog $psaVal/$fileLoc$v | awk -f $wrkDir/brnawk|sort|head -1`
+       #    fi
+       #    echo "arcs unlock $fileLoc$v branch=$brnch $wrkDir/updfiletxt"    >> $txFile
+       #    nolk=`expr "$nolk" - 1`
+       # done
+        echo "arcs lock $fileLoc$v"                                          >> $txFile
+        ###  End of Code by Nipun
+
+        echo "arcs in $fileLoc$v $wrkDir/updfiletxt"                         >> $txFile
+        echo "arcs out $fileLoc$v ro"                                        >> $txFile
+      done < $chgFiles
+    fi
+  done
+
+  if test -d "html"
+  then
+    echo "cp $wrkDir/ss/html/custom.xss $wrkDir/ss/html/cabo/styles"                          >> $txFile
+    echo "cp $wrkDir/ss/html/oa.xss $wrkDir/ss/html/cabo/styles"                              >> $txFile
+  fi
+
+  echo
+  echo $DASH Starting execution of $txFile ...
+  chmod -R 777 $wrkDir/ss
+  chmod 777 $txFile
+  /appldev/bin/appsenv $chenvCmd $txFile
+
+  echo
+  echo $DASH Completed execution of $txFile
+
+#  echo
+#  echo $DASH Applying label $ssLabel to ARCS ...
+  # Undo all checkouts
+#  rm -f $applyLabel
+#  echo set psa=$psaVal                                                             > $applyLabel
+#  echo arcs_user_home=/appldev/scmrel/scm_access/atgops1                                    >> $applyLabel
+#  echo export arcs_user_home                                                                >> $applyLabel
+#  echo access_list=atgops1                                                                  >> $applyLabel
+#  echo export access_list                                                                   >> $applyLabel
+#  for v in $param
+#  do
+#    echo "/appldev/scm/bin/arcs unlock java/$v \"All done SS Synch for branch[$ssBranch] label[$ssLabel].\"" >> $applyLabel
+#    echo "/appldev/scm/bin/arcs unlock mds/$v  \"All done SS Synch for branch[$ssBranch] label[$ssLabel].\"" >> $applyLabel
+#    echo "/appldev/scm/bin/arcs unlock html    \"All done SS Synch for branch[$ssBranch] label[$ssLabel].\"" >> $applyLabel
+#    echo "/appldev/scm/bin/arcs freeze java/$v $ssLabel"                                    >> $applyLabel
+#    echo "/appldev/scm/bin/arcs freeze mds/$v  $ssLabel"                                    >> $applyLabel
+#    echo "/appldev/scm/bin/arcs freeze html    $ssLabel"                                    >> $applyLabel
+#  done
+#  chmod 777 $applyLabel
+
+#  mkdir -m 777 -p $wrkDir/tmp
+#  cd $wrkDir/tmp
+#  /appldev/bin/appsenv $chenvCmd $applyLabel
+#  chmod -R 777 $wrkDir/tmp
+#  cd $wrkDir
+#  rm -rf $wrkDir/tmp
+
+  echo
+  echo $DASH Building mail message ...
+  # Execute all ARCS transactions BEFORE creating this mail msg because
+  # you want to report the latest $header version numbers in the mail msg.
+  for i in $totproc
+  do
+    fileLoc="";
+    if [ "$i" != "html" ]
+    then
+      fileLoc="$i/";
+    fi
+    newFiles=$wrkDir/"$i"newFiles
+    if test -f $newFiles
+    then
+      echo "==== New $i files checked into ARCS ===="                                                              >> $tmpMailMsg
+      while read v
+      do
+        fgrep -i '$header' $wrkDir/ss/$v > /dev/null 2>&1
+        if [ $? = 0 ]
+        then
+          /appldev/bin/ident $wrkDir/ss/$v | awk '/\$Header:/ {print "  " file "  Version: " $3}' file=$fileLoc$v  >> $tmpMailMsg
+        else
+          # Missing header ... this is bad ... send email to fwkrel
+          echo "  ***** $v is missing header. Please fix this in ARCS and SS."                                     >> $tmpMailMsg
+        fi
+      done < $newFiles
+    else
+      echo "==== No new $i files detected ===="                                                                    >> $tmpMailMsg
+    fi
+    echo                                                                                                           >> $tmpMailMsg
+  done
+
+  for i in $totproc
+  do
+    fileLoc="";
+    if [ "$i" != "html" ]
+    then
+      fileLoc="$i/";
+    fi
+    chgFiles=$wrkDir/"$i"chgFiles
+    if test -f $chgFiles
+    then
+      echo "==== Changed $i files that were updated in ARCS ===="                                                  >> $tmpMailMsg
+      while read v
+      do
+        /appldev/bin/ident $wrkDir/ss/$v | awk '/\$Header:/ {print "  " file "  Version: " $3}' file=$fileLoc$v    >> $tmpMailMsg
+      done < $chgFiles
+    else
+      echo "==== No changed $i files detected ===="                                                                >> $tmpMailMsg
+    fi
+    echo                                                                                                           >> $tmpMailMsg
+  done
+
+  for i in $totproc
+  do
+    fileLoc="";
+    if [ "$i" != "html" ]
+    then
+      fileLoc="$i/";
+    fi
+    stubFiles=$wrkDir/"$i"stubFiles
+    if test -f $stubFiles
+    then
+      echo "==== Potential stub $i files ===="                                                                     >> $tmpMailMsg
+      while read v
+      do
+        echo "  $v"                                                                                                >> $tmpMailMsg
+      done < $stubFiles
+    else
+      echo "==== No new $i potential stub files detected ===="                                                     >> $tmpMailMsg
+    fi
+    echo                                                                                                           >> $tmpMailMsg
+  done
+
+  echo
+  echo $DASH Sending mail message ...
+  # Email list to fwkrel candidate
+  mailRoutine $tmpMailMsg nodelete mark.m.nakamura@oracle.com jay.vasudev@oracle.com pallavi.talra@oracle.com fwkrel_in@oracle.com liza.lyons@oracle.com fwkwpdev_us@oracle.com
+
+  echo
+  echo $DASH Cleaning up ...
+  \rm -f $wrkDir/newfiletxt $wrkDir/updfiletxt $wrkDir/brnawk $wrkDir/numlkawk
+
+  echo
+  echo $DASH All done!
+}
+
+#************* [public]  SymbolicLinkCleanup  Deletes all the Symbolic Links Recursively in a folder that have their corressponding folders missing
+SymbolicLinkCleanup () {
+  docheader
+  docparameters
+  $doc "1 = Full Path to Folder to cleanup recursively (Ex. /nfs/group/jdevbin/NT/RSYNCH)"
+  docexample /nfs/group/jdevbin/NT/RSYNCH
+  $docEof
+
+  checkFolder=$1
+  for i in `find $checkFolder -type l`
+  do
+    echo $i
+    if test ! -s $i
+    then
+      echo $DASH Corressponding folder of Symbolic Link: $i does not exist.
+      echo $DASH Deleting the Symbolic Link....
+      rm -rf $i
+    fi
+  done
+
+}
+
+#************* [public]  attributesets        Creates or Updates attribute set files
+attributesets () {
+  docheader
+  docparameters
+  $doc "1 = Username to database"
+  $doc "2 = Password to datatbase"
+  $doc "3 = Database hostname"
+  $doc "4 = Database port number"
+  $doc "5 = Database SID"
+  $doc "6 = Xml classpath. Location to where your XML files are located (Example: /home/[name]/jdevhome/myprojects)"
+  $doc "7 = Application Short Name (Example: PO)"
+  $doc "----- optional parameter(s) -----"
+  $doc "8 = Table Specification. Default is to generate attribute sets for all tables belonging to Application Short Name (parameter 7)."
+  $doc "      Example 1) PO_VENDORS - generates the attribute set PoVendors.xml"
+  $doc "      Example 2) PO_VENDOR% - generates the attribute sets for all tables that match the query PO_VENDOR%."
+  $doc "9 = Package (Example: /oracle/apps/po/attributesets)"
+  docexample APPS APPS ap618dbs.us.oracle.com 1521 dev115 /home/mmnakamu/jdevhome/jdev/myprojects PO
+  $doc "      The above example generates all attribute sets for PO"
+  $doc
+  docexample APPS APPS ap618dbs.us.oracle.com 1521 dev115 /home/mmnakamu/jdevhome/jdev/myprojects PO PO_VENDOR%
+  $doc "      The above example generates all attribute sets for all tables that match PO_VENDOR%"
+  $docEof
+
+  if [ $# -lt 7 ]
+  then
+    echo You must provide at least 7 parameters
+    help attributesets
+    return
+  fi
+
+  if [ $# -gt 9 ]
+  then
+    echo Only 9 parameters are allowed
+    help attributesets
+    return
+  fi
+
+  jdevLocation=`$J/pf trimDir $0`
+  username=$1
+  password=$2
+  host=$3
+  port=$4
+  sid=$5
+  xmlpath=$6
+  appShortName=$7
+  tableSpec=$8
+  pkgName=$9
+  classpath=\
+$jdevLocation/jdev/extensions/oracle.Service.10.1.3.jar:\
+$jdevLocation/jdev/lib/jdev-rt.jar:\
+$jdevLocation/jdev/lib/jdev.jar:\
+$jdevLocation/jdev/lib/xmleditor.jar:\
+$jdevLocation/jdev/lib/xmladdin.jar:\
+$jdevLocation/jlib/jewt4.jar:\
+$jdevLocation/jdbc/lib/classes12.jar:\
+$jdevLocation/jdbc/lib/nls_charset12.jar:\
+$jdevLocation/lib/xmlparserv2.jar:\
+$jdevLocation/lib/xmlcomp.jar:\
+$jdevLocation/jdev/lib/jdev.jar:\
+$jdevLocation/jdev/lib/bc4jdt.jar:\
+$jdevLocation/BC4J/lib/bc4jmt.jar:\
+$jdevLocation/mds/lib/mdsrt.jar:\
+$jdevLocation/jdev/lib/mdsdt.jar:\
+$jdevLocation/jdev/appslibrt/oamdsdt.jar:\
+$jdevLocation/jdev/lib/ext/jrad.jar:\
+$jdevLocation/jlib/uix2.jar:\
+$jdevLocation/jlib/share.jar
+  program=oracle.apps.fnd.framework.dt.AttributeSetGenerator
+  echo
+  echo Generating attribute sets in $xmlpath$pkgName ....
+  echo
+
+  $J/linux/j2sdk1.5.0_05/jre/bin/java -client -classpath $classpath $program $username $password $host $port $sid $xmlpath $appShortName $jdevLocation $tableSpec $pkgName
+}
+
+
+#######################################################
+####              M A I L    R O U T I N E S       ####
+#######################################################
+#************* [public]  mailRoutine          Mail a file to recepients
+mailRoutine () {
+  docheader
+  docparameters
+  $doc "1 = Fully qualified path to file (Ex. $BLD/build_tmp_file)"
+  $doc "2 = Delete the file as specified by Parameter 1. (Ex. delete nodelete)"
+  $doc "3 to N = Recepients (Ex. mark.m.nakamura@oracle.com eric.bing@oracle.com)"
+  docexample $BLD/build_tmp_file delete mark.m.nakamura@oracle.com eric.bing@oracle.com
+  $docEof
+
+  msgFile=$1
+  deleteFile=$2
+
+  shift 2
+  while [ $# -gt 0 ]
+  do
+    recipients="$recipients $1"
+    shift
+  done
+
+  if [ "$OSTYPE" = "solaris" ]
+  then
+    mail -t $recipients < $msgFile
+  else
+    subject="`grep Subject: $msgFile`"
+    subject2="`$J/pf stripTxt front "Subject: " "$subject"`"
+    mail -s "$subject2" $recipients < $msgFile
+  fi
+
+  if [ "$deleteFile" = "delete" ]
+  then
+    rm $msgFile
+  fi
+
+}
+
+#######################################################
+####              M A I N    R O U T I N E         ####
+#######################################################
+  doc=:
+  docEof=:
+
+  # Setup Global Variables
+  J=/nfs/group/jdevbin
+  J_NT=$J/NT
+  J_EXT=/nfs/group/jdevbin/ext
+  FWK=$J_NT/FWK
+  BLD=$FWK/build
+  PROVIDER=$J_NT/provider
+
+  DATETIME=`date +%Y_%m_%d_%a_%H_%M_%S_%p`
+  if [ "$OSTYPE" = "solaris" ]
+  then
+    DASH="+ + + + U N I X + + + +"
+  else
+    DASH="+ + + + L I N U X + + + +"
+  fi
+
+  if [ $# = 0 ]
+  then
+    help
+  else
+    ${@+"$@"}
+  fi

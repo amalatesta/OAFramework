@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE database-schemea PUBLIC "-//Evermind//- Database schema" "http://xmlns.oracle.com/ias/dtds/database-schemes.dtd">
+
+<database-schema name="Sybase" not-null="not null" null="null" primary-key="primary key" max-table-name-length="30">
+	<type-mapping type="java.lang.String" name="char (255)" />
+	<type-mapping type="int" name="integer" />
+	<type-mapping type="long" name="integer" />
+	<type-mapping type="float" name="float" />
+	<type-mapping type="double" name="double precision" />
+	<type-mapping type="byte" name="smallint" />
+	<type-mapping type="char" name="char" />
+	<type-mapping type="short" name="integer" />
+	<type-mapping type="boolean" name="bit" />
+	<type-mapping type="java.util.Date" name="datetime" />
+	
+	<disallowed-field name="parent" />
+	<disallowed-field name="password" />
+	<disallowed-field name="username" />
+	<disallowed-field name="date" />
+</database-schema>

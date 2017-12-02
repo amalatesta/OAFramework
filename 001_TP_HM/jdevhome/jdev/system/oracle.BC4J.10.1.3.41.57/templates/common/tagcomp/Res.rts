@@ -1,0 +1,50 @@
+#resource file 
+
+#translatable strings in EditView.jsp
+NLS_EDIT_FORM=Edit Form
+NLS_CANCEL_EDIT_FORM=Cancel Edit Form
+
+#translatable strings in BrowseView.jsp
+NLS_BROWSE_FORM=Browse Form
+
+#translatable strings in BrowseOnlyView.jsp
+NLS_BROWSEONLY_FORM=Browse Form
+
+#translatable strings in QueryView.jsp
+NLS_QUERY_FORM=Query Form
+NLS_QUERYDEFINITION=Query Definition
+
+#translatable strings in SubmitView.jsp
+NLS_SUBMITEDIT_FORM=Submit Edit Form
+NLS_SUBMITEDIT_UPDATE=Update Result
+NLS_SUBMITEDIT_CONTINUE=Continue
+NLS_SUBMITEDIT_BACK=Back to the Edit Form
+
+#translatable strings in errorpage.jsp
+NLS_ERROR_TITLE=Error page
+NLS_ERROR_APPERROR=Application Error
+NLS_ERROR_RETURN=Return
+NLS_ERROR_MESSAGE=Error Message:
+
+#translatable strings in DataNavigateComponent.jsp
+NLS_DATANAVIGATE_FIRST=First
+NLS_DATANAVIGATE_PREVIOUS=Previous
+NLS_DATANAVIGATE_NEXT=Next
+NLS_DATANAVIGATE_LAST=Last
+
+#translatable strings in DataQueryComponent.jsp
+NLS_DATAQUERY_OR=OR
+NLS_DATAQUERY_SEARCH=Search
+NLS_DATAQUERY_ADDCRITERIA=Add Criteria
+NLS_DATAQUERY_CLEARALL=Clear All
+
+#translatable strings in DataScrollerComponent.jsp
+NLS_DATASCROLLER_PREVIOUS=Previous
+NLS_DATASCROLLER_NEXT=Next
+NLS_DATASCROLLER_OF=of
+
+#translatable strings in DataTableComponent.jsp
+NLS_DATATABLE_NEW=New
+NLS_DATATABLE_DELETE=Delete
+NLS_DATATABLE_EDIT=Edit
+

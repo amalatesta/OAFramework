@@ -1,0 +1,309 @@
+<?xml version = '1.0' standalone = 'yes'?>
+<orion-web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-web-10_0.xsd" jsp-cache-directory="./persistence" servlet-webdir="/servlet" development="false" jsp-timeout="0" jsp-cache-tlds="false" schema-major-version="10" schema-minor-version="0" jsp-taglib-locations="C:\oracle\OA_Framework\jdevbin\j2ee\home\jsp\lib\taglib">
+
+  <!-- The mime-mappings for this server -->
+  <mime-mappings path="./mime.types"/>
+
+  <web-app>
+
+    <!--
+    <servlet>
+      <servlet-name>xsl</servlet-name>
+      <servlet-class>com.evermind.servlet.XSLServlet</servlet-class>
+      <init-param>
+        <param-name>defaultContentType</param-name>
+        <param-value>text/html</param-value>
+      </init-param>
+    </servlet>
+    -->
+  
+    <servlet>
+      <servlet-name>JDevOJSP</servlet-name>
+      <servlet-class>oracle.jsp.runtimev2.JspServlet</servlet-class>
+      <!-- you can set main_mode to "justrun" to speed up
+           JSP dispatching, if you don't need to recompile
+           your JSP anymore. You can always switch your
+           main_mode. Please see our doc for details -->
+      <!--
+      <init-param>
+        <param-name>main_mode</param-name>
+        <param-value>justrun</param-value>
+      </init-param>
+      -->
+      <load-on-startup>0</load-on-startup>
+    </servlet>
+  
+    <servlet>
+      <servlet-name>rmi-tunnel</servlet-name>
+      <servlet-class>oracle.oc4j.rmi.tunnelling.TunnelledRmiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>rmi-tunnel</servlet-name>
+      <url-pattern>/*.rmiTunnel</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>jms</servlet-name>
+      <servlet-class>com.evermind.server.jms.HTTPJMSRequestHandler</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>jms</servlet-name>
+      <url-pattern>/jms</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>ssi</servlet-name>
+      <servlet-class>com.evermind.server.http.SSIServlet</servlet-class>
+    </servlet>
+  
+    <servlet>
+      <servlet-name>cgi</servlet-name>
+      <servlet-class>com.evermind.server.http.CGIServlet</servlet-class>
+    </servlet>
+  
+    <servlet>
+      <servlet-name>perl</servlet-name>
+      <servlet-class>com.evermind.server.http.CGIServlet</servlet-class>
+      <init-param>
+        <param-name>interpreter</param-name>
+        <param-value>perl</param-value>
+      </init-param>
+    </servlet>
+  
+    <servlet>
+      <servlet-name>php</servlet-name>
+      <servlet-class>com.evermind.server.http.CGIServlet</servlet-class>
+      <init-param>
+        <param-name>interpreter</param-name>
+        <param-value>php</param-value>
+      </init-param>
+    </servlet>
+  
+    <servlet-mapping>
+      <servlet-name>JDevOJSP</servlet-name>
+      <url-pattern>/*.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>JDevOJSP</servlet-name>
+      <url-pattern>/*.JSP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>JDevOJSP</servlet-name>
+      <url-pattern>/*.jspx</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>JDevOJSP</servlet-name>
+      <url-pattern>/*.sqljsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>JDevOJSP</servlet-name>
+      <url-pattern>/*.SQLJSP</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>cgi</servlet-name>
+      <url-pattern>/*.cgi</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>perl</servlet-name>
+      <url-pattern>/*.pl</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>php</servlet-name>
+      <url-pattern>/*.php</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>php</servlet-name>
+      <url-pattern>/*.php3</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>php</servlet-name>
+      <url-pattern>/*.phtml</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>ssi</servlet-name>
+      <url-pattern>/*.shtml</url-pattern>
+    </servlet-mapping>
+  
+    <welcome-file-list>
+      <welcome-file>index.html</welcome-file>
+      <welcome-file>default.jsp</welcome-file>
+      <welcome-file>index.htm</welcome-file>
+      <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+  
+    <locale-encoding-mapping-list>
+      <locale-encoding-mapping>
+        <locale>ar</locale>
+        <encoding>ISO-8859-6</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>be</locale>
+        <encoding>ISO-8859-5</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>bg</locale>
+        <encoding>ISO-8859-5</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>ca</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>cs</locale>
+        <encoding>ISO-8859-2</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>da</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>de</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>el</locale>
+        <encoding>ISO-8859-7</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>en</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>es</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>et</locale>
+        <encoding>ISO-8859-4</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>fi</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>fr</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>hr</locale>
+        <encoding>ISO-8859-2</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>hu</locale>
+        <encoding>ISO-8859-2</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>is</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>it</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>iw</locale>
+        <encoding>ISO-8859-8</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>ja</locale>
+        <encoding>Shift_JIS</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>ko</locale>
+        <encoding>EUC-KR</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>lt</locale>
+        <encoding>ISO-8859-4</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>lv</locale>
+        <encoding>ISO-8859-4</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>mk</locale>
+        <encoding>ISO-8859-5</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>nl</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>no</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>pl</locale>
+        <encoding>ISO-8859-2</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>pt</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>ro</locale>
+        <encoding>ISO-8859-2</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>ru</locale>
+        <encoding>ISO-8859-5</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>sh</locale>
+        <encoding>ISO-8859-2</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>sk</locale>
+        <encoding>ISO-8859-2</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>sl</locale>
+        <encoding>ISO-8859-2</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>sq</locale>
+        <encoding>ISO-8859-2</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>sr</locale>
+        <encoding>ISO-8859-5</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>sv</locale>
+        <encoding>ISO-8859-1</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>th</locale>
+        <encoding>TIS-620</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>tr</locale>
+        <encoding>ISO-8859-9</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>uk</locale>
+        <encoding>ISO-8859-5</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>zh</locale>
+        <encoding>GB2312</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>zh_HK</locale>
+        <encoding>Big5</encoding>
+      </locale-encoding-mapping>
+      <locale-encoding-mapping>
+        <locale>zh_TW</locale>
+        <encoding>Big5</encoding>
+      </locale-encoding-mapping>
+    </locale-encoding-mapping-list>
+  
+  </web-app>
+
+</orion-web-app>

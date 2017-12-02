@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset={%encoding%}" />
+
+<TITLE>
+   {%title%}
+</TITLE>
+</HEAD>
+
+<BODY>
+<a href="{%href%}">Launch ADF Swing Project</a>
+<HR />
+<a href="http://java.sun.com/products/javawebstart">  Download Web Start </a>
+</BODY>
+</HTML>

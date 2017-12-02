@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE orion-application PUBLIC "-//Evermind//DTD J2EE Application runtime 1.2//EN" "http://xmlns.oracle.com/ias/dtds/orion-application.dtd">
+<orion-application>
+<web-module id="APPS_MEDIA" path="C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myhtml\OA_MEDIA"/>
+</orion-application>

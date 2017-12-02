@@ -1,0 +1,145 @@
+<!-- Ant build file for framework releases.
+     Run as "ant -logfile build.log".
+     Last updated on May 21st, 2002
+  -->
+<project name="Framework" default="dist" basedir=".">
+
+  <!-- set global properties for this build -->
+  <property name="build" value="build" />
+  <property name="src" value="myprojects" />
+  <property name="dist" value="dist" />
+  <property name="build.compiler" value="classic" />
+
+  <!-- These properties can be in a separate properties file as well
+       & then included here. This will make it easy to setup the
+       paths for say Unix vs. NT -->
+  <property name="jdev" value="N:/Nt/JDev_57_Jun21" />
+  <property name="oalib" value="${jdev}/jdev/appslibrt" />
+  <property name="userhome" value="W:/users/arun" />
+  <property name="uixlib" value="W:/users/fwk/uix215/lib" />
+
+  <!-- Define a common class path for all targets -->
+  <path id="project.class.path">
+    <pathelement location="${jdev}/jdbc/lib/classes12.jar" />
+    <pathelement location="${oalib}/sax2.jar" />
+    <pathelement location="${oalib}/xmlparserv2.zip" />
+    <pathelement location="${jdev}/lib/servlet.jar" />
+
+    <pathelement location="${jdev}/bc4j/applib/bc4jct.jar" />
+    <pathelement location="${jdev}/bc4j/applib/bc4jmt.jar" />
+    <pathelement location="${jdev}/bc4j/applib/bc4jdomorcl.jar" />
+    <pathelement location="${jdev}/bc4j/applib/bc4jhtml.jar" />
+    <pathelement location="${jdev}/j2ee/home/jndi.jar" />
+    <pathelement location="${jdev}/jdev/lib/jdev.jar" />
+
+    <pathelement location="${uixlib}/regexp.jar" />
+    <pathelement location="${uixlib}/share-dbg.jar" />
+    <pathelement location="${uixlib}/uix2-dbg.jar" />
+    <pathelement location="${uixlib}/dev/uixdev2-dbg.jar" />
+
+    <pathelement location="${jdev}/lib/dms.jar" />
+    <pathelement location="${jdev}/jdev/lib/jrad.jar" />
+
+    <pathelement location="${oalib}/collections.zip" />
+
+    <pathelement location="${userhome}/aolj/dist/aolj-dbg.jar" />
+    <pathelement location="${oalib}/ak.zip" />
+    <pathelement location="${oalib}/wf.zip" />
+  </path>
+
+  <target name="init"
+          description="Setup directory structure for build.">
+    <!-- Create the time stamp -->
+    <tstamp/>
+
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}/dbg" />
+    <mkdir dir="${build}/opt" />
+    <mkdir dir="${build}/doc" />
+    <mkdir dir="${dist}" />
+  </target>
+
+  <target name="fwk-dbg" depends="init"
+          description="Build debug versions of framework classes">
+    <javac srcdir="${src}" 
+           destdir="${build}/dbg" 
+           debug="on" 
+           deprecation="off"
+           optimize="off">
+      <classpath refid="project.class.path" />
+      <include name="oracle/apps/fnd/**" />
+      <include name="oracle/jbo/**" />
+    </javac>
+    <copy todir="${build}/dbg">
+      <fileset dir="${src}">
+        <include name="oracle/apps/fnd/**/*.xml" />
+        <include name="oracle/jbo/**/*.xml" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="fwk-opt" depends="init"
+          description="Build optimized versions of framework classes">
+    <javac srcdir="${src}" 
+           destdir="${build}/opt" 
+           debug="off" 
+           deprecation="off"
+           optimize="on">
+      <classpath refid="project.class.path" />
+      <include name="oracle/jbo/**" />
+      <include name="oracle/apps/fnd/**" />
+    </javac>
+    <copy todir="${build}/opt">
+      <fileset dir="${src}">
+        <include name="oracle/apps/fnd/**/*.xml" />
+        <include name="oracle/jbo/**/*.xml" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="dist-dbg" depends="fwk-dbg"
+          description="Create debug version of fwk.zip">
+    <jar jarfile="${dist}/fwk-dbg.zip" 
+         compress="false"
+         basedir="${build}/dbg" 
+         includes="oracle/apps/fnd/**, oracle/jbo/**" />
+  </target>
+
+  <target name="dist-opt" depends="fwk-opt"
+          description="Create optimized version of fwk.zip">
+    <jar jarfile="${dist}/fwk-opt.zip" 
+         compress="false"
+         basedir="${build}/opt" 
+         includes="oracle/apps/fnd/**, oracle/jbo/**" />
+  </target>
+
+  <target name="dist-src"
+          description="Create source distribution for fwk">
+    <jar jarfile="${dist}/fwk-src.zip" 
+         basedir="${src}" 
+         includes="oracle/apps/fnd/**, oracle/jbo/**" />
+  </target>
+
+  <target name="dist-doc"
+          description="Build JavaDoc for framework code">
+    <javadoc sourcepath="${src}"
+             destdir="${build}/doc"
+             use="yes"
+             author="yes"
+             packages=""
+             windowtitle="OA Framework Phase 5.7 Documentation"
+             doctitle="OA Framework Phase 5.7 Documentation"
+             footer="&lt;small&gt;Copyright (C) Oracle Corporation 2002. All Rights Reserved.&lt;/small&gt;">
+      <classpath refid="project.class.path" />
+    </javadoc>
+  </target>
+
+  <target name="dist" depends="dist-dbg, dist-opt, dist-src"
+          description="Create a complete distribution consisting of debug and optimized libraries, source files and Javadoc." />
+
+  <target name="clean"
+          description="Cleanup build and distribution directories">
+    <delete dir="${build}" />
+    <delete dir="${dist}" />
+  </target>
+</project>

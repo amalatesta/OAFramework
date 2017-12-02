@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+
+<dataBindingPanel>
+
+   <setup>
+      <configureproject configurer="oracle.adf.dt.configurers.AdfClientProject"/>
+      <configureproject configurer="oracle.adfdtinternal.view.jsp.binding.DefaultJspProjectConfigurator"/>
+      <configureproject configurer="oracle.adf.dt.configurers.WebClientDataControlConfigurer"/>
+   </setup>
+   
+   <dataControl/>
+   
+   <collectionNode>
+   
+      <controlDefinition name="Edit Form"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_EdRcd.gif"
+                         bindingsType="form" bindingType="DCTable"
+                         requiresEditingSupport="true"
+                         requiresNavigationActions="false"
+                         requiresControlSelectionDialog="true"
+                         controlSelectionHelperClass="oracle.adfdtinternal.view.jsp.binding.JspInputFormControlsSelectorImpl">
+         <useTemplate>
+            <![CDATA[
+              <html:form action="${ActionPath}" >
+                #set ($tokenid = "bindings.statetokenid")
+                #set ($statetoken = "bindings.statetoken") 
+                <html:hidden property="${${tokenid}}" value="${${statetoken}}" />
+                <table border="0" width="100%" cellpadding="2" cellspacing="0">
+                   $individualControlCodeSnippet
+                   #set($prefixValue = "bindings")
+                </table>
+                <br/ >
+                <c:if test="${${prefixValue}.${ItorBindingName}.findMode}">
+                  <c:out value="* Find Mode" />
+                  <br/ >
+                </c:if>
+                <input name="event_Submit" type="submit" value="Submit" />
+              </html:form>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+      <controlDefinition name="Navigation List"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/JUArrayComboBox.gif"
+                         bindingsType="form" bindingType="DCNavigationList"
+                         requiresStructuredCollection="true"
+                         requiresEditingSupport="true"
+                         requiresStrutsSupport="true">
+         <useTemplate>
+            <![CDATA[
+              #set($prefixValue = "bindings")
+              <html:select  property="${Binding.id}" disabled="${!${prefixValue}['${Binding.id}'].updateable}" >
+                  <html:optionsCollection label="prompt" value="index" property="${Binding.id}.displayData" />
+              </html:select>
+            ]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="Navigation Buttons" bindingsType="form"
+                         htmlkey="table"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_NavBar.gif"
+                         bindingType="DCTable"
+                         createBindingsForAttributes="false"
+                         requiresNavigationActions="true"
+                         requiresAttributeDefinitions="false">
+         <useTemplate>
+            <![CDATA[
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                 #foreach ( $binding in $ActionBindingSet)
+                  #set($prefixValue = "bindings")
+                  <td>
+                    <html:submit property="${EventPrefix}${binding.id}" value="${binding.id}" disabled="${!${prefixValue}.${binding.id}.enabled}"/>
+                  </td>
+                 #end
+                </tr>
+              </table>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+   </collectionNode>
+   
+   <beanAttribute>
+   
+      <controlDefinition name="Hidden Field"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpHidn.gif"
+                         bindingType="DCTextField" bindingsType="primitive"
+                         requiresEditingSupport="true"
+                         requiresStrutsSupport="true">
+         <useTemplate>
+            <![CDATA[<html:hidden  property="${Binding.id}" />]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="File Input Field"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_UploadFileForm.gif"
+                         bindingType="DCTextField" bindingsType="primitive"
+                         requiresEditingSupport="true"
+                         requiresStrutsSupport="true">
+         <useTemplate>
+            <![CDATA[
+              #set($prefixValue = "bindings")
+              <html:file  property="${Binding.id}" disabled="${!${prefixValue}['${Binding.id}'].updateable}" />
+            ]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="Password Field"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpPswd.gif"
+                         bindingType="DCTextField" bindingsType="primitive"
+                         requiresEditingSupport="true"
+                         requiresStrutsSupport="true">
+         <useTemplate>
+            <![CDATA[
+              #set($prefixValue = "bindings")
+              <html:password  property="${Binding.id}" readonly="${!${prefixValue}['${Binding.id}'].updateable}" />
+            ]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="Single Select List"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpSl.gif"
+                         bindingType="DCListSingleSel"
+                         requiresEditingSupport="true"
+                         requiresStrutsSupport="true">
+         <useTemplate>
+            <![CDATA[
+              #set($prefixValue = "bindings")
+              <html:select  property="${Binding.id}" disabled="${!${prefixValue}['${Binding.id}'].updateable}" >
+                  <html:optionsCollection label="prompt" value="index" property="${Binding.id}.displayData" />
+              </html:select>
+            ]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="List of Values"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpLOV.gif"
+                         bindingType="DCLOVList" requiresEditingSupport="true"
+                         requiresStrutsSupport="true">
+         <useTemplate>
+            <![CDATA[
+              #set($prefixValue = "bindings")
+              <html:select  property="${Binding.id}" disabled="${!${prefixValue}['${Binding.id}'].updateable}" >
+                  <html:optionsCollection label="prompt" value="index" property="${Binding.id}.displayData" />
+              </html:select>
+            ]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="Radio Button Group"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpSlGp.gif"
+                         bindingType="DCButtonGroup"
+                         requiresEditingSupport="true"
+                         requiresStrutsSupport="true">
+         <useTemplate>
+            <![CDATA[
+              #set($prefixValue = "bindings")
+              <br/>
+              <c:forEach var="rv" items="${${prefixValue}.${Binding.id}.displayData}">
+                <html:radio idName="rv" property="${Binding.id}" value="index" disabled="${!${prefixValue}['${Binding.id}'].updateable}" />
+                <c:out value="${rv.prompt}" />
+                <br/>
+              </c:forEach>
+            ]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="Text Area"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpTxAr.gif"
+                         bindingType="DCTextField" bindingsType="primitive"
+                         requiresEditingSupport="true"
+                         requiresStrutsSupport="true">
+         <useTemplate>
+            <![CDATA[
+              #set($prefixValue = "bindings")
+              <html:textarea cols="15" rows="5" property="${Binding.id}" readonly="${!${prefixValue}['${Binding.id}'].updateable}" />
+            ]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="Input Field"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpTxt.gif"
+                         bindingType="DCTextField" bindingsType="primitive"
+                         requiresStrutsSupport="true"
+                         requiresEditingSupport="true">
+         <useTemplate>
+            <![CDATA[
+              #set($prefixValue = "bindings")
+              <html:text  property="${Binding.id}" readonly="${!${prefixValue}['${Binding.id}'].updateable}" />
+            ]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+   </beanAttribute>
+   
+   <beanMethod>
+   
+      <controlDefinition name="Button" bindingsType="operation" htmlkey="input"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/button.gif"
+                         bindingType="DCAction"
+                         requiresAttributeDefinitions="false">
+         <useTemplate>
+            <![CDATA[
+              <html:submit property="${EventPrefix}${Binding.id}" value="${Binding.id}" disabled="${!${BindingName}.enabled}" />
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+   
+      <controlDefinition name="Button with Form"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/button.gif"
+                         requiresStrutsSupport="false" bindingsType="operation"
+                         bindingType="DCAction"
+                         requiresAttributeDefinitions="false">
+         <useTemplate>
+            <![CDATA[
+              <html:form action="${ActionPath}" >
+                #set ($tokenid = "bindings.statetokenid")
+                #set ($statetoken = "bindings.statetoken")
+                <html:hidden property="${${tokenid}}" value="${${statetoken}}" />
+                <html:submit property="${EventPrefix}${Binding.id}" value="${Binding.id}" disabled="${!${BindingName}.enabled}"/>
+              </html:form>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+      <controlDefinition name="Row Operation Link" bindingsType="operation"
+                         htmlkey="a"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_Row.gif"
+                         bindingType="DCAction" requiresStrutsSupport="false"
+                         applicableActions="96,98,99">
+         <useTemplate>
+            <![CDATA[
+              #set($prefixValue = "Row")
+              <html:link href="${TargetDocument}?event=${Binding.id}&rowKey=${${prefixValue}.rowKeyStr}">${BindingFullName}</a>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+   </beanMethod>
+   
+   <structuredNode>
+   
+      <controlDefinition name="Read-Only Form"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ShwRcd.gif"
+                         bindingType="DCTable" bindingsType="form"
+                         createBindingsForAttributes="true"
+                         attributeBindingType="DCTextField"
+                         requiresNavigationActions="false"
+                         requiresStrutsSupport="true">
+         <useTemplate>
+            <![CDATA[
+              <html:form action="${ActionPath}" >
+              #set ($tokenid = "bindings.statetokenid")
+              #set ($statetoken = "bindings.statetoken")
+              <html:hidden property="${${tokenid}}" value="${${statetoken}}" />
+              <table border="1" cellpadding="3" cellspacing="2" width="100%">
+                 #foreach ( $binding in $BindingSet)
+                <tr>
+                  #set($prefixValue = "bindings")
+                  <td><c:out value="${${prefixValue}['${binding.id}'].label}" /></td>
+                  <td><c:out value="${${prefixValue}['${binding.id}']}"/></td>
+                </tr>
+                 #end
+              </table>
+              </html:form>
+            ]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="Input Form"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_EdRcd.gif"
+                         bindingsType="form" bindingType="DCTable"
+                         createBindingsForAttributes="true"
+                         attributeBindingType="DCTextField"
+                         requiresEditingSupport="true"
+                         requiresStrutsSupport="true"
+                         requiresNavigationActions="false">
+         <useTemplate>
+            <![CDATA[
+              <html:form action="${ActionPath}" >
+                #set ($tokenid = "bindings.statetokenid")
+                #set ($statetoken = "bindings.statetoken")
+                <html:hidden property="${${tokenid}}" value="${${statetoken}}" />
+                <table border="0" width="100%" cellpadding="2" cellspacing="0">
+                   #foreach ( $binding in $BindingSet)
+                  <tr>
+                    #set($prefixValue = "bindings")
+                    <td><c:out value="${${prefixValue}['${binding.id}'].label}" /></td>
+                    <td><html:text property="${binding.id}" readonly="${!${prefixValue}['${binding.id}'].updateable}" /></td>
+                  </tr>
+                   #end
+                </table>
+                <br/ >
+                <c:if test="${${prefixValue}.${ItorBindingName}.findMode}">
+                  <c:out value="* Find Mode" />
+                  <br/ >
+                </c:if>
+                <input name="event_Submit" type="submit" value="Submit" />
+              </html:form>
+            ]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.dbpanel.xmllistener.StrutsFormBindingConfigurer"/>
+            <configureproject configurer="oracle.adf.dt.configurers.ADFStrutsProject"/>
+         </setup>
+      </controlDefinition>
+      
+   </structuredNode>
+   
+</dataBindingPanel>
+
+

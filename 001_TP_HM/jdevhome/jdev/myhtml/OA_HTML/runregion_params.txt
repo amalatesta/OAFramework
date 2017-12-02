@@ -1,0 +1,12 @@
+#This file contains data for the runregion.jsp
+#Sat Dec 02 02:57:57 GMT 2017
+JRAD_XML_PATH=C\:\\oracle\\GitHub\\OAFramework\\001_TP_HM\\jdevhome\\jdev\\myclasses\\JRADXML
+akUsername=amalatesta
+akAppShortName=AK
+akOpts1=OADeveloperMode
+akOpts0=OADiagnostic;OABackButtonTestMode;OAPassivationTestMode;OADumpUIXTree;OAConnectionTestMode
+JRADStartTime=1512183477492
+page=/oracle/apps/ak/hello/webui/HelloWorldPG
+akDbcFile=EBSD
+akPassword=123Despegar
+akRespKey=FWK_TBX_TUTORIAL

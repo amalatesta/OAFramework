@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<configurations xmlns="http://xmlns.oracle.com/uix/config">
+
+    <!-- Use the followinf setting to configure the base location for the cabo distributables -->
+    <!--default-configuration>
+      <base-directory>
+        <full-uri>http://localhost:7001</full-uri>
+        <full-path>C:\bea\user_projects\jdev\applications\DefaultWebApp</full-path>
+      </base-directory>
+    </default-configuration -->
+</configurations>
+
+

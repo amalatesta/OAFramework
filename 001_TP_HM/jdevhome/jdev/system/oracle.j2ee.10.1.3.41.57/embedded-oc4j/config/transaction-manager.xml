@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<transaction-manager
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/transaction-manager-10_0.xsd"
+  transaction-timeout="30"
+  max-concurrent-transactions="-1"
+>
+  <!-- transaction-timeout is in seconds and defaults to 30 -->
+  <!-- a max-concurrent-transactions of -1 indicates unlimited concurrent transactions -->
+  <commit-coordinator retry-count="4">
+    <middle-tier>
+      <!--
+        specify 'none' to turn off logging and increase performance, however,
+        note that recovery is impossible
+       -->
+       <log type="none"/>
+       <!-- specify 'file' to log to flat file (use the 'location' attribute to
+            override the default directory and file-logging-performance attributes to override default settings)
+       <log type="file">
+         <file-logging-performance min-pool-size="40" max-open-files="256" old-file-release-size="20" />
+       </log>
+       -->
+       <!-- specify 'database' to log to the native-data-source specified by the
+            'location' attribute (use database-logging-performance attributes to override default settings
+       <log type="database" location="jdbc/logging">
+         <identity user="system" password="manager"/>
+         <database-logging-performance batch-create-interval="10" batch-state-interval="10" batch-purge-interval="100" />
+       </log>
+       -->
+        <!-- recovery related admin -->
+        <!-- 'retry-interval' specifies the interval in seconds that the recovery manager will reattempt recovery
+                of transactions (subject to any abandonment rules specified)
+             'rlrc-purge-interval' specifies the interval in seconds that commit records from
+                recoverable last resource commit transactions will be purged
+             'rlrc-min-purge-size' specifies the minimum number of records to be purged as well as the actual purge size
+        <recovery retry-interval="300" rlrc-purge-interval="10" rlrc-min-purge-size="1000">
+        0 or more recovery abandonment rules where -1 indicates unlimited and "*" indicates all, eg
+        <abandonment type="*" participant="jdbc/OracleDS" time="300" count="-1" />
+        </recovery>
+       -->
+     </middle-tier>
+
+     <!-- specify the following database element instead of the middle-tier
+          when using the in-db coordinator
+     <database location="jdbc/OracleDS">
+       <identity user="system" password="manager"/>
+     </database>
+     -->
+  </commit-coordinator>
+</transaction-manager>

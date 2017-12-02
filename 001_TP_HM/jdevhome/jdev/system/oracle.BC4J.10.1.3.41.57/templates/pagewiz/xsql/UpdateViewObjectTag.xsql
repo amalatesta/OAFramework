@@ -1,0 +1,8 @@
+<page  xmlns:xsql="urn:oracle-xsql">
+  <xsql:action      handler="oracle.jbo.xsql.UpdateViewObject"
+                    configname="{%ConfigName%}"
+                    name="{%ViewName%}"
+                    transform="{%transform%}">
+  </xsql:action>
+
+</page>
