@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone='yes'?>
+
+<jazn-data 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/jazn-data-10_0.xsd"
+  schema-major-version="10"
+  schema-minor-version="0"
+>
+
+  <!-- The contents of this file has been moved to ./system-jazn-data.xml. This file is currently not used and may be removed in the future. -->
+</jazn-data>

@@ -1,0 +1,1871 @@
+<?xml version = '1.0'?>
+<creatorConfiguration xmlns="http://xmlns.oracle.com/adfdt/view/creatorConfiguration">
+
+  <prefixMappings>
+    <prefixMapping prefix="af" namespace="http://xmlns.oracle.com/adf/faces" />
+    <prefixMapping prefix="afh" namespace="http://xmlns.oracle.com/adf/faces/html" />
+    <prefixMapping prefix="h" namespace="http://java.sun.com/jsf/html" />
+    <prefixMapping prefix="f" namespace="http://java.sun.com/jsf/core" />
+  </prefixMappings>
+
+  <creatorInfos 
+    creatorMappings="oracle.adfdtinternal.view.faces.binding.creator.FacesCreatorMappings"
+    resourceBundle="oracle.adfdtinternal.view.faces.binding.creator.resource.FacesCreatorBundle">
+
+    <!--
+    ## PRIMITIVE DATE CREATORS #############################
+    -->
+  
+    <creator
+      name="outputtext_jsf_spec"
+      bindingsTypes="primitiveText returnPrimitiveText"
+      rank=".4f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="outputText"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.PrimitiveTextBinder"
+      properties="jsf readOnly rebindOnly primitive:addConversion">
+      <![CDATA[
+        <h:outputText 
+          #if ($properties.get("primitive:baseExpression"))
+            value="${model.createCurrentExpression($properties.get("primitive:baseExpression"))}"
+          #else
+            value="${model.getCurrentExpression()}"
+          #end
+        >
+          #if ($properties.get("primitive:addConversion") && $model.getFormat() && $model.isDate())
+            <f:convertDateTime pattern="${model.getFormat()}" />
+          #end
+          #if ($properties.get("primitive:addConversion") && $model.getFormat() && $model.isNumber())
+            <f:convertNumber groupingUsed="false" pattern="${model.getFormat()}" />
+          #end     
+        </h:outputText>
+      ]]>
+    </creator>
+    
+    <creator
+      name="outputtext_adf_faces"
+      bindingsTypes="primitiveText returnPrimitiveText"
+      rank=".8f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="outputText"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.PrimitiveTextBinder"
+      properties="readOnly rebindOnly primitive:addConversion">
+      <![CDATA[
+        <af:outputText 
+          #if ($properties.get("primitive:baseExpression"))
+            value="${model.createCurrentExpression($properties.get("primitive:baseExpression"))}"
+          #else
+            value="${model.getCurrentExpression()}"
+          #end
+        >
+          #if ($properties.get("primitive:addConversion") && $model.getFormat() && $model.isDate())
+            <f:convertDateTime pattern="${model.getFormat()}" />
+          #end
+          #if ($properties.get("primitive:addConversion") && $model.getFormat() && $model.isNumber())
+            <f:convertNumber groupingUsed="false" pattern="${model.getFormat()}" />
+          #end
+        </af:outputText>
+      ]]>
+    </creator>
+    
+    <creator
+      name="outputlabel_jsf_spec"
+      bindingsTypes="primitiveText"
+      rank=".05f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="outputLabel"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.LabelBinder"
+      properties="jsf readOnly rebindOnly">
+      <![CDATA[
+        <h:outputLabel 
+          #if ($properties.get("primitive:suggestedLabel"))
+            value="${properties.get("primitive:suggestedLabel")}" 
+          #else
+            value="${model.getLabelExpression()}" 
+          #end 
+        />
+      ]]>
+    </creator>
+    
+    <creator
+      name="outputlabel_adf_faces"
+      bindingsTypes="primitiveText"
+      rank=".45f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="outputLabel"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.LabelBinder"
+      properties="readOnly rebindOnly">
+      <![CDATA[
+        <af:outputLabel 
+          #if ($properties.get("primitive:suggestedLabel"))
+            value="${properties.get("primitive:suggestedLabel")}" 
+          #else
+            value="${model.getLabelExpression()}" 
+          #end 
+        />
+      ]]>
+    </creator>
+    
+    <creator
+      name="outputtext_with_label_jsf_spec"
+      bindingsTypes="primitiveText"
+      rank=".5f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf readOnly">
+      <![CDATA[
+        <h:panelGrid columns="2">
+          <h:outputLabel 
+            #if ($properties.get("primitive:suggestedLabel"))
+              value="${properties.get("primitive:suggestedLabel")}" 
+            #else
+              value="${model.getLabelExpression()}" 
+            #end 
+          />
+          $dispatch.forwardToCreator("outputtext_jsf_spec", $model, $ctx, $properties)
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="outputtext_with_label_adf_faces"
+      bindingsTypes="primitiveText"
+      rank=".9f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      localName="panelLabelAndMessage"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      representativeLocalName="panelGrid"
+      properties="readOnly">
+      <![CDATA[
+        <af:panelLabelAndMessage
+          #if ($properties.get("primitive:suggestedLabel"))
+            label="${properties.get("primitive:suggestedLabel")}" 
+          #else
+            label="${model.getLabelExpression()}" 
+          #end
+        >
+          $dispatch.forwardToCreator("outputtext_adf_faces", $model, $ctx, $properties)
+        </af:panelLabelAndMessage>
+      ]]>
+    </creator>
+    
+    <creator
+      name="readonly_inputtext_with_label_adf_faces"
+      description="Read-Only Input Text (Not Visible To Users)"
+      bindingsTypes="unsupportedByUser"
+      rank=".9f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      localName="inputText"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      representativeLocalName="inputText"
+      properties="readOnly primitive:addConversion">
+      <![CDATA[
+        <af:inputText 
+          #if ($properties.get("primitive:baseExpression"))
+            value="${model.createCurrentExpression($properties.get("primitive:baseExpression"))}"
+          #else
+            value="${model.getCurrentExpression()}"
+          #end
+          #if ($properties.get("primitive:suggestedLabel"))
+            label="${properties.get("primitive:suggestedLabel")}" 
+          #else
+            label="${model.getLabelExpression()}" 
+          #end
+          readOnly="true" 
+        />
+      ]]>
+    </creator>
+    
+    <creator
+      name="inputtext_jsf_spec"
+      bindingsTypes="primitiveText"
+      rank=".3f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="inputText"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.PrimitiveTextBinder"
+      properties="jsf rebindOnly primitive:addValidation primitive:addRequired primitive:addConversion">
+      <![CDATA[
+        <h:inputText 
+          #if ($properties.get("primitive:baseExpression"))
+            value="${model.createCurrentExpression($properties.get("primitive:baseExpression"))}"
+          #else
+            value="${model.getCurrentExpression()}"
+            readonly="${model.getDisabledExpression()}"
+          #end
+          #if ($properties.get("primitive:addRequired") && $model.getRequiredExpression())
+            required="${model.getRequiredExpression()}"
+          #end
+          #if ($model.getColumnsExpression())
+            size="${model.getColumnsExpression()}"
+          #end
+        >
+        #if ($properties.get("primitive:addValidation") && $model.getValidatorBindingExpression())
+          <af:validator binding="${model.getValidatorBindingExpression()}"/>
+        #end
+        #if ($properties.get("primitive:addConversion") && $model.getFormat() && $model.isDate())
+          <f:convertDateTime pattern="${model.getFormat()}" />
+        #end
+        #if ($properties.get("primitive:addConversion") && $model.getFormat() && $model.isNumber())
+          <f:convertNumber groupingUsed="false" pattern="${model.getFormat()}" />
+        #end
+        </h:inputText>
+      ]]>
+    </creator>
+    
+    <creator
+      name="inputtext_adf_faces"
+      bindingsTypes="primitiveText"
+      rank=".7f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="inputText"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.PrimitiveTextBinder"
+      properties="rebindOnly primitive:addValidation primitive:addRequired primitive:addConversion">
+      <![CDATA[
+        <af:inputText 
+          #if ($properties.get("primitive:baseExpression"))
+            value="${model.createCurrentExpression($properties.get("primitive:baseExpression"))}"
+          #else
+            value="${model.getCurrentExpression()}"
+          #end
+          #if ($properties.get("primitive:label"))
+            label="${properties.get("primitive:label")}"
+          #elseif (!$model.isDate() && !$model.isNumber())
+            simple="true"
+          #end
+          #if ($properties.get("primitive:addRequired") && $model.getRequiredExpression())
+            required="${model.getRequiredExpression()}"
+          #end
+          #if ($model.getColumnsExpression())
+            columns="${model.getColumnsExpression()}"
+          #end
+        >
+        #if ($properties.get("primitive:addValidation") && $model.getValidatorBindingExpression())
+          <af:validator binding="${model.getValidatorBindingExpression()}"/>
+        #end
+        #if ($properties.get("primitive:addConversion") && $model.getFormat() && $model.isDate())
+          <f:convertDateTime pattern="${model.getFormat()}" />
+        #end
+        #if ($properties.get("primitive:addConversion") && $model.getFormat() && $model.isNumber())
+          <f:convertNumber groupingUsed="false" pattern="${model.getFormat()}" />
+        #end
+        </af:inputText>
+      ]]>
+    </creator>
+    
+    <creator
+      name="inputtext_with_label_jsf_spec"
+      bindingsTypes="primitiveText"
+      rank=".35f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf">
+      <![CDATA[
+        <h:panelGrid columns="2">
+          <h:outputLabel 
+            #if ($properties.get("primitive:suggestedLabel"))
+              value="${properties.get("primitive:suggestedLabel")}" 
+            #else
+              value="${model.getLabelExpression()}" 
+            #end    
+          />
+          $dispatch.forwardToCreator("inputtext_jsf_spec", $model, $ctx, $properties)
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="inputtext_with_label_adf_faces"
+      bindingsTypes="primitiveText"
+      rank=".75f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="inputText">
+      <![CDATA[
+        #if ($properties.get("primitive:suggestedLabel"))
+          $dispatch.forwardToCreator("inputtext_adf_faces", $model, $ctx, $properties, "primitive:label", $properties.get("primitive:suggestedLabel"))
+        #else
+          $dispatch.forwardToCreator("inputtext_adf_faces", $model, $ctx, $properties, "primitive:label", $model.getLabelExpression())
+        #end
+      ]]>
+    </creator>
+    
+    <!--
+    ## PRIMITIVE DATE CREATORS #############################
+    -->
+      
+    <creator
+      name="inputdate_adf_faces"
+      bindingsTypes="primitiveDate"
+      rank=".95f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="selectInputDate"
+      representativeLocalName="inputText"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.PrimitiveDateBinder"
+      properties="rebindOnly primitive:addValidation primitive:addRequired">
+      <![CDATA[
+        <af:selectInputDate  
+          #if ($properties.get("primitive:baseExpression"))
+            value="${model.createCurrentExpression($properties.get("primitive:baseExpression"))}"
+          #else
+            value="${model.getCurrentExpression()}"
+          #end
+          #if ($properties.get("primitive:label"))
+            label="${properties.get("primitive:label")}"
+          #elseif (!$model.isDate() && !$model.isNumber())
+            simple="true"
+          #end
+          #if ($properties.get("primitive:addRequired") && $model.getRequiredExpression())
+            required="${model.getRequiredExpression()}"
+          #end
+        >
+        #if ($properties.get("primitive:addValidation") && $model.getValidatorBindingExpression())
+          <af:validator binding="${model.getValidatorBindingExpression()}"/>
+        #end
+        #if ($model.getFormat())
+          <f:convertDateTime pattern="${model.getFormat()}" />
+        #else
+          <af:convertDateTime pattern="yyyy-MM-dd"/> 
+        #end
+        </af:selectInputDate>
+      ]]>
+    </creator>
+    
+    <creator
+      name="inputdate_with_label_adf_faces"
+      bindingsTypes="primitiveDate"
+      rank=".9f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="selectInputDate"
+      representativeLocalName="inputText">
+      <![CDATA[
+        #if ($properties.get("primitive:suggestedLabel"))
+          $dispatch.forwardToCreator("inputdate_adf_faces", $model, $ctx, $properties, "primitive:label", $properties.get("primitive:suggestedLabel"))
+        #else
+          $dispatch.forwardToCreator("inputdate_adf_faces", $model, $ctx, $properties, "primitive:label", $model.getLabelExpression())
+        #end
+      ]]>
+    </creator>
+    
+    <!--
+    ## COMMAND CREATORS #############################
+    -->
+    
+    <creator
+      name="commandbutton_jsf_spec"
+      bindingsTypes="operation methodWithOutcome"
+      rank=".5f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="commandButton"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.OperationBinder"
+      properties="jsf rebindOnly readOnly">
+      <![CDATA[
+        <h:commandButton
+          actionListener=${model.getActionListenerExpression()}
+          action="${model.getOutcome()}"
+          #if ($model.getOperationDisplayValueExpression())
+            value="${model.getOperationDisplayValueExpression()}"
+          #else
+            value="${model.getOperationName()}"
+          #end
+          #if ($model.getOperationDisabledExpression())
+            disabled="${model.getOperationDisabledExpression()}"
+          #end
+          #if ($model.requiresImmediateProcessing())
+            immediate="true"
+          #end
+        >
+          #if ($model.requiresResetActionListener())
+            <af:resetActionListener />
+          #end
+        </h:commandButton> 
+      ]]>
+    </creator>
+    
+    <creator
+      name="commandbutton_with_action_jsf_spec"
+      bindingsTypes="method"
+      rank=".5f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="commandButton"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.OperationBinder"
+      properties="jsf rebindOnly readOnly operation:useActionAsOutcome">
+      <![CDATA[
+        <h:commandButton
+          action=${model.getActionExpression()}
+          #if ($model.getOperationDisplayValueExpression())
+            value="${model.getOperationDisplayValueExpression()}"
+          #else
+            value="${model.getOperationName()}"
+          #end
+          #if ($model.getOperationDisabledExpression())
+            disabled="${model.getOperationDisabledExpression()}"
+          #end
+          #if ($model.requiresImmediateProcessing())
+            immediate="true"
+          #end
+        >
+          #if ($model.requiresResetActionListener())
+            <af:resetActionListener />
+          #end
+        </h:commandButton> 
+      ]]>
+    </creator>
+    
+    <creator
+      name="commandlink_jsf_spec"
+      bindingsTypes="operation methodWithOutcome"
+      rank=".5f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="commandLink"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.OperationBinder"
+      properties="jsf rebindOnly readOnly">
+      <![CDATA[
+        <h:commandLink
+          actionListener=${model.getActionListenerExpression()}
+          action="${model.getOutcome()}"
+          #if ($model.getOperationDisplayValueExpression())
+            value="${model.getOperationDisplayValueExpression()}"
+          #else
+            value="${model.getOperationName()}"
+          #end
+          #if ($model.getOperationDisabledExpression())
+            rendered="${model.getOperationEnabledExpression()}"
+          #end
+          #if ($model.requiresImmediateProcessing())
+            immediate="true"
+          #end
+        >
+          #if ($model.requiresResetActionListener())
+            <af:resetActionListener />
+          #end
+        </h:commandLink>    
+      ]]>
+    </creator>
+    
+    <creator
+      name="commandlink_with_action_jsf_spec"
+      bindingsTypes="method"
+      rank=".5f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="commandLink"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.OperationBinder"
+      properties="jsf rebindOnly readOnly operation:useActionAsOutcome">
+      <![CDATA[
+        <h:commandLink
+          action=${model.getActionExpression()}
+          #if ($model.getOperationDisplayValueExpression())
+            value="${model.getOperationDisplayValueExpression()}"
+          #else
+            value="${model.getOperationName()}"
+          #end
+          #if ($model.getOperationDisabledExpression())
+            rendered="${model.getOperationEnabledExpression()}"
+          #end
+          #if ($model.requiresImmediateProcessing())
+            immediate="true"
+          #end
+        >
+          #if ($model.requiresResetActionListener())
+            <af:resetActionListener />
+          #end
+        </h:commandLink>    
+      ]]>
+    </creator>
+    
+    <creator
+      name="commandbutton_adf_faces"
+      bindingsTypes="operation methodWithOutcome"
+      rank=".9f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="commandButton"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.OperationBinder"
+      properties="rebindOnly readOnly">
+      <![CDATA[
+        <af:commandButton
+          actionListener=${model.getActionListenerExpression()}
+          #if ($model.getOperationDisplayValueExpression())
+            text="${model.getOperationDisplayValueExpression()}"
+          #else
+            text="${model.getOperationName()}"
+          #end
+          #if ($model.getOperationDisabledExpression())
+            disabled="${model.getOperationDisabledExpression()}"
+          #end
+          #if ($model.requiresImmediateProcessing())
+            immediate="true"
+          #end
+        >
+          #if ($model.requiresResetActionListener())
+            <af:resetActionListener />
+          #end
+        </af:commandButton>
+      ]]>
+    </creator>
+      
+    <creator
+      name="commandbutton_with_action_adf_faces"
+      bindingsTypes="method"
+      rank=".9f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="commandButton"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.OperationBinder"
+      properties="rebindOnly readOnly operation:useActionAsOutcome">
+      <![CDATA[
+        <af:commandButton
+          action=${model.getActionExpression()}
+          #if ($model.getOperationDisplayValueExpression())
+            text="${model.getOperationDisplayValueExpression()}"
+          #else
+            text="${model.getOperationName()}"
+          #end
+          #if ($model.getOperationDisabledExpression())
+            disabled="${model.getOperationDisabledExpression()}"
+          #end
+          #if ($model.requiresImmediateProcessing())
+            immediate="true"
+          #end
+        >
+          #if ($model.requiresResetActionListener())
+            <af:resetActionListener />
+          #end
+        </af:commandButton>
+      ]]>
+    </creator>
+    
+    <creator
+      name="commandlink_adf_faces"
+      bindingsTypes="operation methodWithOutcome"
+      rank=".9f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="commandLink"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.OperationBinder"
+      properties="rebindOnly readOnly">
+      <![CDATA[
+        <af:commandLink
+          actionListener=${model.getActionListenerExpression()}
+          action="${model.getOutcome()}"
+          #if ($model.getOperationDisplayValueExpression())
+            text="${model.getOperationDisplayValueExpression()}"
+          #else
+            text="${model.getOperationName()}"
+          #end
+          #if ($model.getOperationDisabledExpression())
+            disabled="${model.getOperationDisabledExpression()}"
+          #end
+          #if ($model.requiresImmediateProcessing())
+            immediate="true"
+          #end
+        >
+          #if ($model.requiresResetActionListener())
+            <af:resetActionListener />
+          #end
+        </af:commandLink>
+      ]]>
+    </creator>
+    
+    <creator
+      name="commandlink_with_action_adf_faces"
+      bindingsTypes="method"
+      rank=".9f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="commandLink"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.OperationBinder"
+      properties="rebindOnly readOnly operation:useActionAsOutcome">
+      <![CDATA[
+        <af:commandLink
+          action=${model.getActionExpression()}
+          #if ($model.getOperationDisplayValueExpression())
+            text="${model.getOperationDisplayValueExpression()}"
+          #else
+            text="${model.getOperationName()}"
+          #end
+          #if ($model.getOperationDisabledExpression())
+            disabled="${model.getOperationDisabledExpression()}"
+          #end
+          #if ($model.requiresImmediateProcessing())
+            immediate="true"
+          #end
+        >
+          #if ($model.requiresResetActionListener())
+            <af:resetActionListener />
+          #end
+        </af:commandLink>
+      ]]>
+    </creator>
+    
+    <!--
+    ## FORM CREATORS #############################
+    -->
+    
+    <creator
+      name="read_only_form_jsf_spec"
+      bindingsTypes="form"
+      rank=".2f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf readOnly ignore">
+      <![CDATA[
+        <h:panelGrid>
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties)
+          #end
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="read_only_form_with_navigation_jsf_spec"
+      bindingsTypes="navigationForm"
+      rank=".3f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf readOnly form:navigation ignore">
+      <![CDATA[
+        <h:panelGrid>
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties)
+          #end
+          <h:panelGroup>
+            #foreach ($operationModel in $model.getOperationModelBindings())
+              $dispatch.forwardToCreator("commandbutton_jsf_spec", $operationModel, $ctx, $properties)
+            #end
+          </h:panelGroup>
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="form_jsf_spec"
+      bindingsTypes="form"
+      rank=".4f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf form:showFooterWithUpdate ignore">
+      <![CDATA[
+        <h:panelGrid>
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties)
+          #end
+          #if ($properties.get("form:showFooterWithUpdate"))
+            <h:commandButton value="Submit" />
+          #end
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="creation_form_jsf_spec"
+      bindingsTypes="adfCreationForm adfConstructorCreationForm"
+      rank=".4f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf form:showFooterWithUpdate ignore">
+      <![CDATA[
+        $dispatch.forwardToCreator("form_jsf_spec", $model, $ctx, $properties)
+      ]]>
+    </creator>
+    
+    <creator
+      name="creation_custom_form_jsf_spec"
+      bindingsTypes="adfCustomCreationForm adfCustomConstructorCreationForm"
+      rank=".4f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf form:showFooterWithUpdate ignore">
+      <![CDATA[
+        $dispatch.forwardToCreator("custom_form_jsf_spec", $model, $ctx, $properties)
+      ]]>
+    </creator>
+    
+    <creator
+      name="parameter_form_jsf_spec"
+      bindingsTypes="adfParameter"
+      rank=".4f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf ignore">
+      <![CDATA[
+        <h:panelGrid>
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties)
+          #end
+          $dispatch.forwardToCreator("commandbutton_jsf_spec", $model.getOperationModel(), $ctx, $properties)
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="parameter_custom_form_jsf_spec"
+      bindingsTypes="adfCustomParameter"
+      rank=".4f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ADFParameterFormBinder"
+      properties="jsf">
+      <![CDATA[
+        $dispatch.forwardToCreator("custom_form_jsf_spec", $model, $ctx, $properties)
+      ]]>
+    </creator>
+    
+    <creator
+      name="form_with_navigation_jsf_spec"
+      bindingsTypes="navigationForm"
+      rank=".5f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf form:navigation ignore">
+      <![CDATA[
+        <h:panelGrid>
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties)
+          #end
+          <h:panelGroup>
+            #foreach ($operationModel in $model.getOperationModelBindings())
+              $dispatch.forwardToCreator("commandbutton_jsf_spec", $operationModel, $ctx, $properties)
+            #end
+          </h:panelGroup>
+          <h:commandButton value="Submit" />
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="navigation_controls_jsf_spec"
+      bindingsTypes="navigationControl"
+      rank=".1f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGroup"
+      properties="jsf form:navigation">
+      <![CDATA[
+        <h:panelGroup>
+          #foreach ($operationModel in $model.getOperationModelBindings())
+            $dispatch.forwardToCreator("commandbutton_jsf_spec", $operationModel, $ctx, $properties)
+          #end
+        </h:panelGroup>
+      ]]>
+    </creator>
+    
+    <creator
+      name="search_form_jsf_spec"
+      bindingsTypes="adfSearchForm"
+      rank=".39f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf">
+      <![CDATA[
+        <h:panelGrid>
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties, "primitive:addValidation", "false", "primitive:addRequired", "false", "primitive:addConversion", "false")
+          #end
+          <h:outputText value="#{bindings.${model.getIteratorId()}.findMode ? '* Find Mode' : ''}" />
+          #set ($findOperationBinding = $model.getNamedOperationModelBinding("Find"))
+          #if ($findOperationBinding)
+            $dispatch.forwardToCreator("commandbutton_jsf_spec", $findOperationBinding, $ctx, $properties)
+          #end
+          #set ($executeOperationBinding = $model.getNamedOperationModelBinding("Execute"))
+          #if ($executeOperationBinding)
+            $dispatch.forwardToCreator("commandbutton_jsf_spec", $executeOperationBinding, $ctx, $properties)
+          #end
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="custom_form_jsf_spec"
+      bindingsTypes="adfCustomForm adfCustomFormNav"
+      rank=".52f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ADFCustomFormBinder"
+      properties="jsf">
+      <![CDATA[
+        <h:panelGrid />
+      ]]>
+    </creator>
+    
+    <creator
+      name="custom_read_only_form_jsf_spec"
+      bindingsTypes="adfCustomForm adfCustomFormNav"
+      rank=".51f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ADFCustomFormBinder"
+      properties="jsf readOnly">
+      <![CDATA[
+        <h:panelGrid />
+      ]]>
+    </creator>
+    
+    <creator
+      name="read_only_form_adf_faces"
+      bindingsTypes="form"
+      rank=".6f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      representativeLocalName="panelGrid"
+      properties="readOnly primitive:preferReadOnlyInputs ignore">
+      <![CDATA[
+        <af:panelForm
+          #if ($properties.get("detail:masterId"))
+            partialTriggers="${properties.get("detail:masterId")}"
+          #end
+        >
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties)
+          #end
+        </af:panelForm>
+      ]]>
+    </creator>
+    
+    <creator
+      name="read_only_form_with_navigation_adf_faces"
+      bindingsTypes="navigationForm"
+      rank=".7f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      representativeLocalName="panelGrid"
+      properties="readOnly form:navigation primitive:preferReadOnlyInputs ignore">
+      <![CDATA[
+        <af:panelForm 
+          #if ($properties.get("detail:masterId"))
+            partialTriggers="${properties.get("detail:masterId")}"
+          #end
+        >
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties)
+          #end
+          <f:facet name="footer">
+            <af:panelButtonBar>
+              #foreach ($operationModel in $model.getOperationModelBindings())
+                $dispatch.forwardToCreator("commandbutton_adf_faces", $operationModel, $ctx, $properties)
+              #end
+            </af:panelButtonBar>
+          </f:facet>
+        </af:panelForm>
+      ]]>
+    </creator>
+    
+    <creator
+      name="form_adf_faces"
+      bindingsTypes="form"
+      rank=".8f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      representativeLocalName="panelGrid"
+      properties="form:showFooterWithUpdate ignore">
+      <![CDATA[
+        <af:panelForm>
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties)
+          #end
+          #if ($properties.get("form:showFooterWithUpdate"))
+            <f:facet name="footer">
+              <af:commandButton text="Submit" />
+            </f:facet>
+          #end
+        </af:panelForm>
+      ]]>
+    </creator>
+    
+    <creator
+      name="creation_form_adf_faces"
+      bindingsTypes="adfCreationForm adfConstructorCreationForm"
+      rank=".58f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      representativeLocalName="panelGrid"
+      properties="form:showFooterWithUpdate ignore">
+      <![CDATA[
+        $dispatch.forwardToCreator("form_adf_faces", $model, $ctx, $properties)
+      ]]>
+    </creator>
+    
+    <creator
+      name="creation_custom_form_adf_faces"
+      bindingsTypes="adfCustomCreationForm adfCustomConstructorCreationForm"
+      rank=".58f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      representativeLocalName="panelGrid"
+      properties="form:showFooterWithUpdate">
+      <![CDATA[
+        $dispatch.forwardToCreator("custom_form_adf_faces", $model, $ctx, $properties)
+      ]]>
+    </creator>
+    
+    <creator
+      name="parameter_form_adf_faces"
+      bindingsTypes="adfParameter"
+      rank=".8f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      representativeLocalName="panelGrid"
+      properties="ignore">
+      <![CDATA[
+        <af:panelForm>
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties)
+          #end
+          $dispatch.forwardToCreator("commandbutton_adf_faces", $model.getOperationModel(), $ctx, $properties)
+        </af:panelForm>
+      ]]>
+    </creator>
+    
+    <creator
+      name="parameter_custom_form_adf_faces"
+      bindingsTypes="adfCustomParameter"
+      rank=".8f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ADFParameterFormBinder"
+      representativeLocalName="panelGrid">
+      <![CDATA[
+        <af:panelForm />
+      ]]>
+    </creator>
+    
+    <creator
+      name="form_with_navigation_adf_faces"
+      bindingsTypes="navigationForm"
+      rank=".9f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      representativeLocalName="panelGrid"
+      properties="form:navigation ignore">
+      <![CDATA[
+        <af:panelForm>
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties)
+          #end
+          <f:facet name="footer">
+            <af:panelGroup layout="vertical">
+              <af:panelButtonBar>
+                #foreach ($operationModel in $model.getOperationModelBindings())
+                  $dispatch.forwardToCreator("commandbutton_adf_faces", $operationModel, $ctx, $properties)
+                #end
+              </af:panelButtonBar>
+              <af:commandButton text="Submit" />
+            </af:panelGroup>
+          </f:facet>
+        </af:panelForm>
+      ]]>
+    </creator>
+    
+    <creator
+      name="navigation_controls_adf_faces"
+      bindingsTypes="navigationControl"
+      rank=".53f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelButtonBar"
+      representativeLocalName="panelGroup"
+      properties="form:navigation">
+      <![CDATA[
+        <af:panelButtonBar>
+          #foreach ($operationModel in $model.getOperationModelBindings())
+            $dispatch.forwardToCreator("commandbutton_adf_faces", $operationModel, $ctx, $properties)
+          #end
+        </af:panelButtonBar>
+      ]]>
+    </creator>
+    
+    <creator
+      name="search_form_adf_faces"
+      bindingsTypes="adfSearchForm"
+      rank=".59f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      representativeLocalName="panelGrid">
+      <![CDATA[
+        <af:panelForm>
+          #foreach ($primitiveModel in $model.getPrimitiveModelBindings())
+            $dispatch.forwardToCreator("jsf_primitiveWithLabel", $primitiveModel, $ctx, $properties, "primitive:addValidation", "false", "primitive:addRequired", "false", "primitive:addConversion", "false")
+          #end
+          <f:facet name="footer">
+            <af:panelGroup layout="vertical">
+              <af:outputText value="#{bindings.${model.getIteratorId()}.findMode ? '* Find Mode' : ''}" />
+              <af:panelButtonBar>
+                #set ($findOperationBinding = $model.getNamedOperationModelBinding("Find"))
+                #if ($findOperationBinding)
+                  $dispatch.forwardToCreator("commandbutton_adf_faces", $findOperationBinding, $ctx, $properties)
+                #end
+                #set ($executeOperationBinding = $model.getNamedOperationModelBinding("Execute"))
+                #if ($executeOperationBinding)
+                  $dispatch.forwardToCreator("commandbutton_adf_faces", $executeOperationBinding, $ctx, $properties)
+                #end
+              </af:panelButtonBar>
+            </af:panelGroup>
+          </f:facet>
+        </af:panelForm>
+      ]]>
+    </creator>
+    
+    <creator
+      name="custom_form_adf_faces"
+      bindingsTypes="adfCustomForm adfCustomFormNav"
+      rank=".99f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ADFCustomFormBinder"
+      representativeLocalName="panelGrid">
+      <![CDATA[
+        <af:panelForm />
+      ]]>
+    </creator>
+    
+    <creator
+      name="custom_read_only_form_adf_faces"
+      bindingsTypes="adfCustomForm adfCustomFormNav"
+      rank=".98f"
+      namespace="http://xmlns.oracle.com/adf/faces"  
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelForm"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ADFCustomFormBinder"
+      representativeLocalName="panelGrid"
+      properties="readOnly">
+      <![CDATA[
+        <af:panelForm />
+      ]]>
+    </creator>
+    
+    <!--
+    ## COLUMN CREATORS #############################
+    -->
+    
+    <creator
+      name="column_jsf_spec"
+      bindingsTypes="column"
+      rank=".5f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="column"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ColumnBinder"
+      insertionValidatorClass="oracle.adfdtinternal.view.faces.binding.creator.ColumnInsertionValidator"
+      properties="rebindOnly jsf">
+      <![CDATA[
+        <h:column>
+          <f:facet name="header">
+            <h:outputText value="${model.getColumnHeaderExpression()}" />
+          </f:facet>
+          #if ($properties.get("column:itorVar"))
+            $dispatch.forwardToCreator("jsf_primitive", $model.getPrimitiveModelBinding(), $ctx, $properties, "primitive:baseExpression", $properties.get("column:itorVar")) 
+          #else
+            $dispatch.forwardToCreator("jsf_primitive", $model.getPrimitiveModelBinding(), $ctx, $properties, "primitive:baseExpression", "row")        
+          #end
+        </h:column>
+      ]]>
+    </creator>
+  
+    <creator
+      name="column_adf_faces"
+      bindingsTypes="column"
+      rank=".8f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      localName="column"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ColumnBinder"
+      insertionValidatorClass="oracle.adfdtinternal.view.faces.binding.creator.ColumnInsertionValidator"
+      properties="rebindOnly">
+      <![CDATA[
+        <af:column 
+          headerText="${model.getColumnHeaderExpression()}"
+          #if ($properties.get("column:sortable"))
+            sortable="false" sortProperty="${model.getSortProperty()}"
+          #end
+        >
+          #if ($properties.get("column:itorVar"))
+            $dispatch.forwardToCreator("jsf_primitive", $model.getPrimitiveModelBinding(), $ctx, $properties, "primitive:baseExpression", $properties.get("column:itorVar")) 
+          #else
+            $dispatch.forwardToCreator("jsf_primitive", $model.getPrimitiveModelBinding(), $ctx, $properties, "primitive:baseExpression", "row")        
+          #end
+        </af:column>
+      ]]>
+    </creator>
+    
+    <creator
+      name="read_only_column_jsf_spec"
+      bindingsTypes="column"
+      rank=".5f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="column"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ColumnBinder"
+      insertionValidatorClass="oracle.adfdtinternal.view.faces.binding.creator.ColumnInsertionValidator"
+      properties="rebindOnly jsf readOnly">
+      <![CDATA[
+        <h:column>
+          <f:facet name="header">
+            <h:outputText value="${model.getColumnHeaderExpression()}" />
+          </f:facet>
+          #if ($properties.get("column:itorVar"))
+            $dispatch.forwardToCreator("jsf_primitive", $model.getPrimitiveModelBinding(), $ctx, $properties, "primitive:baseExpression", $properties.get("column:itorVar")) 
+          #else
+            $dispatch.forwardToCreator("jsf_primitive", $model.getPrimitiveModelBinding(), $ctx, $properties, "primitive:baseExpression", "row")        
+          #end
+        </h:column>
+      ]]>
+    </creator>
+  
+    <creator
+      name="read_only_column_adf_faces"
+      bindingsTypes="column"
+      rank=".8f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      localName="column"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ColumnBinder"
+      insertionValidatorClass="oracle.adfdtinternal.view.faces.binding.creator.ColumnInsertionValidator"
+      properties="rebindOnly readOnly">
+      <![CDATA[
+        <af:column 
+          headerText="${model.getColumnHeaderExpression()}"
+          #if ($properties.get("column:sortable"))
+            sortable="false" sortProperty="${model.getSortProperty()}"
+          #end
+        >
+          #if ($properties.get("column:itorVar"))
+            $dispatch.forwardToCreator("jsf_primitive", $model.getPrimitiveModelBinding(), $ctx, $properties, "primitive:baseExpression", $properties.get("column:itorVar")) 
+          #else
+            $dispatch.forwardToCreator("jsf_primitive", $model.getPrimitiveModelBinding(), $ctx, $properties, "primitive:baseExpression", "row")        
+          #end
+        </af:column>
+      ]]>
+    </creator>
+    
+    <!--
+    ## TABLE CREATORS #############################
+    -->
+    
+    <creator
+      name="read_only_table_jsf_spec"
+      bindingsTypes="table"
+      rank=".3f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="dataTable"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.TableBinder"
+      properties="jsf readOnly rebindOnly ignore">
+      <![CDATA[
+        <h:panelGrid>
+          <h:dataTable 
+            rows="${model.getRowSizeExpression()}"
+            first="${model.getRowStartIndexExpression()}"
+            var="row" 
+            value="${model.getIteratorBindingExpression()}" >
+            <h:column>
+              <h:outputText value="${model.getCurrencySelectionExpression()}" />
+            </h:column>
+            #foreach ($colProvider in $model.getColumnModelBindings())
+              $dispatch.forwardToCreator("read_only_column_jsf_spec", $colProvider, $ctx, $properties, "column:itorVar", "row")
+            #end
+          </h:dataTable>
+          #set ($nextSetOperationBinding = $model.getNamedOperationModelBinding("NextSet"))
+          #if ($nextSetOperationBinding)
+            $dispatch.forwardToCreator("commandbutton_jsf_spec", $nextSetOperationBinding, $ctx, $properties)
+          #end
+          #set ($prevSetOperationBinding = $model.getNamedOperationModelBinding("PreviousSet"))
+          #if ($prevSetOperationBinding)
+            $dispatch.forwardToCreator("commandbutton_jsf_spec", $prevSetOperationBinding, $ctx, $properties)
+          #end
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="editable_table_jsf_spec"
+      bindingsTypes="table"
+      rank=".4f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="dataTable"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.TableBinder"
+      properties="jsf rebindOnly ignore">
+      <![CDATA[
+        <h:panelGrid>
+          <h:dataTable 
+            rows="${model.getRowSizeExpression()}"
+            first="${model.getRowStartIndexExpression()}"
+            var="row" 
+            value="${model.getIteratorBindingExpression()}" >
+            <h:column>
+              <h:outputText value="${model.getCurrencySelectionExpression()}" />
+            </h:column>
+            #foreach ($colProvider in $model.getColumnModelBindings())
+              $dispatch.forwardToCreator("column_jsf_spec", $colProvider, $ctx, $properties, "column:itorVar", "row", "primitive:addValidation", "false")
+            #end
+          </h:dataTable>
+          #set ($nextSetOperationBinding = $model.getNamedOperationModelBinding("NextSet"))
+          #if ($nextSetOperationBinding)
+            $dispatch.forwardToCreator("commandbutton_jsf_spec", $nextSetOperationBinding, $ctx, $properties)
+          #end
+          #set ($prevSetOperationBinding = $model.getNamedOperationModelBinding("PreviousSet"))
+          #if ($prevSetOperationBinding)
+            $dispatch.forwardToCreator("commandbutton_jsf_spec", $prevSetOperationBinding, $ctx, $properties)
+          #end
+        </h:panelGrid>
+      ]]>
+    </creator>
+  
+    <creator
+      name="custom_table_jsf_spec"
+      bindingsTypes="adfCustomTable"
+      rank=".5f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="dataTable"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ADFCustomTableBinder"
+      properties="jsf primitive:restrictNonTextWidgets">
+      <![CDATA[
+        <h:dataTable />
+      ]]>
+    </creator>
+    
+    <creator
+      name="custom_readonly_table_jsf_spec"
+      bindingsTypes="adfCustomTable"
+      rank=".49f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="dataTable"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ADFCustomTableBinder"
+      properties="jsf readOnly primitive:restrictNonTextWidgets customTable:forceCreatorUsage">
+      <![CDATA[
+        <h:dataTable />
+      ]]>
+    </creator>
+  
+    <creator
+      name="read_only_table_adf_faces"
+      bindingsTypes="table"
+      rank=".7f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="table"
+      representativeLocalName="dataTable"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.TableBinder"
+      properties="readOnly rebindOnly column:sortable ignore">
+      <![CDATA[
+        <af:table 
+          #if ($properties.get("master:id"))
+            id="${properties.get("master:id")}"
+          #end
+          #if ($properties.get("detail:masterId"))
+            partialTriggers="${properties.get("detail:masterId")}"
+          #end
+          rows="${model.getRowSizeExpression()}"
+          first="${model.getRowStartIndexExpression()}"
+          emptyText="${model.getEmptyTextDescriptionExpression()}" 
+          var="row" 
+          value="${model.getIteratorBindingExpression()}" 
+          #if ($model.getSelectionStateExpression())
+            selectionState="${model.getSelectionStateExpression()}"
+          #end
+          #if ($model.getSelectionListenerExpression())
+            selectionListener="${model.getSelectionListenerExpression()}"
+          #end
+        >
+          <f:facet name="selection">
+            <af:tableSelectOne 
+              #if ($properties.get("master:id"))
+                autoSubmit="true"
+              #end
+              text="Select and ">
+              <af:commandButton text="Submit" />
+            </af:tableSelectOne>
+          </f:facet>
+          #foreach ($colProvider in $model.getColumnModelBindings())
+            $dispatch.forwardToCreator("read_only_column_adf_faces", $colProvider, $ctx, $properties, "column:itorVar", "row")
+          #end
+        </af:table>
+      ]]>
+    </creator>
+    
+    <creator
+      name="editable_table_adf_faces"
+      bindingsTypes="table"
+      rank=".8f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="table"
+      representativeLocalName="dataTable"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.TableBinder"
+      properties="rebindOnly column:sortable primitive:restrictNonTextWidgets ignore">
+      <![CDATA[
+        <af:table 
+          rows="${model.getRowSizeExpression()}"
+          first="${model.getRowStartIndexExpression()}"
+          emptyText="${model.getEmptyTextDescriptionExpression()}" 
+          var="row"
+          value="${model.getIteratorBindingExpression()}" 
+          #if ($model.getSelectionStateExpression())
+            selectionState="${model.getSelectionStateExpression()}"
+          #end
+          #if ($model.getSelectionListenerExpression())
+            selectionListener="${model.getSelectionListenerExpression()}"
+          #end
+        >
+          <f:facet name="selection">
+            <af:tableSelectOne text="Select and ">
+              <af:commandButton text="Submit" />
+            </af:tableSelectOne>
+          </f:facet>
+          #foreach ($colProvider in $model.getColumnModelBindings())
+            $dispatch.forwardToCreator("column_adf_faces", $colProvider, $ctx, $properties, "column:itorVar", "row", "primitive:addValidation", "false")
+          #end
+        </af:table>
+      ]]>
+    </creator>
+    
+    <creator
+      name="dynamic_table_adf_faces"
+      bindingsTypes="dynamicTable"
+      rank=".69f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="table"
+      representativeLocalName="dataTable">
+      <![CDATA[
+        <af:table 
+          rows="${model.getRowSizeExpression()}"
+          first="${model.getRowStartIndexExpression()}"
+          emptyText="${model.getEmptyTextDescriptionExpression()}" 
+          var="row"
+          value="${model.getIteratorBindingExpression()}" 
+          #if ($model.getSelectionStateExpression())
+            selectionState="${model.getSelectionStateExpression()}"
+          #end
+          #if ($model.getSelectionListenerExpression())
+            selectionListener="${model.getSelectionListenerExpression()}"
+          #end
+        >
+          <f:facet name="selection">
+            <af:tableSelectOne text="Select and ">
+              <af:commandButton text="Submit" />
+            </af:tableSelectOne>
+          </f:facet>
+          <af:forEach 
+            items="${model.getColumnIteratorBindingExpression()}" 
+            var="def">     
+            <af:column 
+              headerText="${model.createLabelExpressionForPrimitive("def.name")}"
+              sortable="true" 
+              sortProperty="#{def.name}"
+            >
+              <af:outputText value="#{row[def.name]}"/>
+            </af:column>
+          </af:forEach>
+        </af:table>
+      ]]>
+    </creator>
+    
+    <creator
+      name="custom_table_adf_faces"
+      bindingsTypes="adfCustomTable"
+      rank=".9f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="table"
+      representativeLocalName="dataTable"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ADFCustomTableBinder"
+      properties="primitive:restrictNonTextWidgets">
+      <![CDATA[
+        <af:table />
+      ]]>
+    </creator>
+    
+    <creator
+      name="custom_readonly_table_adf_faces"
+      bindingsTypes="adfCustomTable"
+      rank=".89f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="table"
+      representativeLocalName="dataTable"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.ADFCustomTableBinder"
+      properties="readOnly primitive:restrictNonTextWidgets customTable:forceCreatorUsage">
+      <![CDATA[
+        <af:table />
+      ]]>
+    </creator>
+    
+    <!--
+    ## MASTER-DETAIL (MASTER-DRIVEN) #############################
+    -->
+    
+    <creator
+      name="navigation_list_adf_faces"
+      bindingsTypes="navigationList"
+      rank=".6f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelGroup"
+      representativeLocalName="panelGrid">
+      <![CDATA[
+        <af:panelGroup>
+          #set ($uniqueId = $dt.generateUniqueIdForView("navList"))
+          <af:selectOneChoice
+            id="${uniqueId}"
+            autoSubmit="true"
+            value="${model.getSelectionExpression()}"
+            label="${model.getLabelExpression()}">
+            <f:selectItems value="${model.getChildIteratorExpression()}" />
+          </af:selectOneChoice>
+          <af:panelHeader text="Details" partialTriggers="${uniqueId}"/> 
+        </af:panelGroup>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_table_adf_faces"
+      bindingsTypes="adfMasterDetailTable"
+      rank=".61f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="table"
+      representativeLocalName="dataTable"
+      properties="readOnly column:sortable">
+      <![CDATA[
+        <af:table 
+          rows="${model.getRowSizeExpression()}"
+          emptyText="${model.getMasterEmptyTextDescriptionExpression()}" 
+          var="${model.getMasterRowVar()}" 
+          value="${model.getMasterIteratorBindingExpression()}" 
+        >
+          #foreach ($colProvider in $model.getMasterColumnModelBindings())
+            $dispatch.forwardToCreator("read_only_column_adf_faces", $colProvider, $ctx, $properties, "column:itorVar", $model.getMasterRowVar())
+          #end
+          <f:facet name="detailStamp">
+            <af:table 
+              rows="${model.getRowSizeExpression()}" 
+              emptyText="No rows yet."
+              var="detailRow" 
+              value="${model.getDetailIteratorBindingExpression()}"
+            >
+              #foreach ($colProvider in $model.getDetailColumnModelBindings())
+                $dispatch.forwardToCreator("read_only_column_adf_faces", $colProvider, $ctx, $properties, "column:itorVar", "detailRow")
+              #end
+            </af:table>
+          </f:facet>
+        </af:table>
+      ]]>
+    </creator>
+    
+    <!--
+    ## MASTER DETAIL CREATORS #############################
+    -->
+    
+    <creator
+      name="master_detail_many_many_jsf_spec"
+      bindingsTypes="masterDetail"
+      rank=".1f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf">
+      <![CDATA[
+        <h:panelGrid>
+          $dispatch.forwardToCreator("read_only_table_jsf_spec", $model.getMasterIteratorBinding(), $ctx, $properties)
+          $dispatch.forwardToCreator("read_only_table_jsf_spec", $model.getDetailIteratorBinding(), $ctx, $properties)
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_many_1_jsf_spec"
+      bindingsTypes="masterDetail"
+      rank=".4f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf">
+      <![CDATA[
+        <h:panelGrid>
+          $dispatch.forwardToCreator("read_only_table_jsf_spec", $model.getMasterIteratorBinding(), $ctx, $properties)
+          $dispatch.forwardToCreator("read_only_form_with_navigation_jsf_spec", $model.getDetailIteratorBinding(), $ctx, $properties)
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_struct_many_1_jsf_spec"
+      bindingsTypes="masterDetailStructure"
+      rank=".4f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf">
+      <![CDATA[
+        <h:panelGrid>
+          $dispatch.forwardToCreator("read_only_table_jsf_spec", $model.getMasterIteratorBinding(), $ctx, $properties)
+          $dispatch.forwardToCreator("read_only_form_jsf_spec", $model.getDetailIteratorBinding(), $ctx, $properties)
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_1_many_jsf_spec"
+      bindingsTypes="masterDetail"
+      rank=".3f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf">
+      <![CDATA[
+        <h:panelGrid>
+          $dispatch.forwardToCreator("read_only_form_with_navigation_jsf_spec", $model.getMasterIteratorBinding(), $ctx, $properties)
+          $dispatch.forwardToCreator("read_only_table_jsf_spec", $model.getDetailIteratorBinding(), $ctx, $properties)
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_1_1_jsf_spec"
+      bindingsTypes="masterDetail"
+      rank=".2f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf">
+      <![CDATA[
+        <h:panelGrid>
+          $dispatch.forwardToCreator("read_only_form_with_navigation_jsf_spec", $model.getMasterIteratorBinding(), $ctx, $properties)
+          $dispatch.forwardToCreator("read_only_form_with_navigation_jsf_spec", $model.getDetailIteratorBinding(), $ctx, $properties)
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_struct_1_1_jsf_spec"
+      bindingsTypes="masterDetailStructure"
+      rank=".2f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="panelGrid"
+      properties="jsf">
+      <![CDATA[
+        <h:panelGrid>
+          $dispatch.forwardToCreator("read_only_form_with_navigation_jsf_spec", $model.getMasterIteratorBinding(), $ctx, $properties)
+          $dispatch.forwardToCreator("read_only_form_jsf_spec", $model.getDetailIteratorBinding(), $ctx, $properties)
+        </h:panelGrid>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_many_many_adf_faces"
+      bindingsTypes="masterDetail"
+      rank=".68f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelGroup"
+      representativeLocalName="panelGrid">
+      <![CDATA[
+        <af:panelGroup>
+          #set ($uniqueId = $dt.generateUniqueIdForView("masterDetail"))
+          <af:panelHeader text="${model.getMasterIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_table_adf_faces", $model.getMasterIteratorBinding(), $ctx, $properties, "master:id", $uniqueId)
+          </af:panelHeader>
+          <af:panelHeader text="${model.getDetailIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_table_adf_faces", $model.getDetailIteratorBinding(), $ctx, $properties, "detail:masterId", $uniqueId)
+          </af:panelHeader>
+        </af:panelGroup>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_many_1_adf_faces"
+      bindingsTypes="masterDetail"
+      rank=".8f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelGroup"
+      representativeLocalName="panelGrid">
+      <![CDATA[
+        <af:panelGroup layout="vertical">
+          #set ($uniqueId = $dt.generateUniqueIdForView("masterDetail"))
+          <af:panelHeader text="${model.getMasterIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_table_adf_faces", $model.getMasterIteratorBinding(), $ctx, $properties, "master:id", $uniqueId)
+          </af:panelHeader>
+          <af:panelHeader text="${model.getDetailIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_form_with_navigation_adf_faces", $model.getDetailIteratorBinding(), $ctx, $properties, "detail:masterId", $uniqueId)
+          </af:panelHeader>
+        </af:panelGroup>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_struct_many_1_adf_faces"
+      bindingsTypes="masterDetailStructure"
+      rank=".8f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelGroup"
+      representativeLocalName="panelGrid">
+      <![CDATA[
+        <af:panelGroup layout="vertical">
+          #set ($uniqueId = $dt.generateUniqueIdForView("masterDetail"))
+          <af:panelHeader text="${model.getMasterIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_table_adf_faces", $model.getMasterIteratorBinding(), $ctx, $properties, "master:id", $uniqueId)
+          </af:panelHeader>
+          <af:panelHeader text="${model.getDetailIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_form_adf_faces", $model.getDetailIteratorBinding(), $ctx, $properties, "detail:masterId", $uniqueId)
+          </af:panelHeader>
+        </af:panelGroup>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_1_many_adf_faces"
+      bindingsTypes="masterDetail"
+      rank=".7f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelGroup"
+      representativeLocalName="panelGrid">
+      <![CDATA[
+        <af:panelGroup layout="vertical">
+          <af:panelHeader text="${model.getMasterIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_form_with_navigation_adf_faces", $model.getMasterIteratorBinding(), $ctx, $properties)
+          </af:panelHeader>
+          <af:panelHeader text="${model.getDetailIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_table_adf_faces", $model.getDetailIteratorBinding(), $ctx, $properties)
+          </af:panelHeader>
+        </af:panelGroup>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_1_1_adf_faces"
+      bindingsTypes="masterDetail"
+      rank=".69f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelGroup"
+      representativeLocalName="panelGrid">
+      <![CDATA[
+        <af:panelGroup layout="vertical">
+          <af:panelHeader text="${model.getMasterIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_form_with_navigation_adf_faces", $model.getMasterIteratorBinding(), $ctx, $properties)
+          </af:panelHeader>
+          <af:panelHeader text="${model.getDetailIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_form_with_navigation_adf_faces", $model.getDetailIteratorBinding(), $ctx, $properties)
+          </af:panelHeader>
+        </af:panelGroup>
+      ]]>
+    </creator>
+    
+    <creator
+      name="master_detail_struct_1_1_adf_faces"
+      bindingsTypes="masterDetailStructure"
+      rank=".69f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="panelGroup"
+      representativeLocalName="panelGrid">
+      <![CDATA[
+        <af:panelGroup layout="vertical">
+          <af:panelHeader text="${model.getMasterIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_form_with_navigation_adf_faces", $model.getMasterIteratorBinding(), $ctx, $properties)
+          </af:panelHeader>
+          <af:panelHeader text="${model.getDetailIteratorBinding().getDisplayName()}">
+            $dispatch.forwardToCreator("read_only_form_adf_faces", $model.getDetailIteratorBinding(), $ctx, $properties)
+          </af:panelHeader>
+        </af:panelGroup>
+      ]]>
+    </creator>
+    
+    <!--
+    ## TREE CREATORS #############################
+    -->
+    
+    <creator
+      name="tree_table_adf_faces"
+      bindingsTypes="tree"
+      rank=".63f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="treeTable"
+      representativeLocalName="dataTable"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.TreeBinder"
+      properties="tree:hgrid readOnly">
+      <![CDATA[
+        <af:treeTable />
+      ]]>
+    </creator>
+    
+    <creator
+      name="tree_adf_faces"
+      bindingsTypes="tree"
+      rank=".6f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="tree"
+      representativeLocalName="dataTable"
+      properties="readOnly"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.TreeBinder">
+      <![CDATA[
+        <af:tree />
+      ]]>
+    </creator>
+    
+    <!--
+    ## SELECT ONE CREATORS #############################
+    -->
+    
+    <creator
+      name="select_one_menu_jsf_spec"
+      bindingsTypes="selectOne"
+      rank=".2f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="selectOneMenu"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.SingleSelectionBinder"
+      properties="jsf rebindOnly">
+      <![CDATA[
+        <h:selectOneMenu value="${model.getSelectionExpression()}">
+          <f:selectItems value="${model.getChildIteratorExpression()}" />
+        </h:selectOneMenu>
+      ]]>
+    </creator>
+    
+    <creator
+        name="select_one_listbox_jsf_spec"
+      bindingsTypes="selectOne"
+      rank=".3f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="selectOneListbox"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.SingleSelectionBinder"
+      properties="jsf rebindOnly">
+      <![CDATA[
+        <h:selectOneListbox value="${model.getSelectionExpression()}">
+          <f:selectItems value="${model.getChildIteratorExpression()}" />
+        </h:selectOneListbox>
+      ]]>
+    </creator>
+    
+    <creator
+      name="select_one_radio_jsf_spec"
+      bindingsTypes="selectOne"
+      rank=".4f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="selectOneRadio"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.SingleSelectionBinder"
+      properties="jsf rebindOnly">
+      <![CDATA[
+        <h:selectOneRadio value="${model.getSelectionExpression()}">
+          <f:selectItems value="${model.getChildIteratorExpression()}" />
+        </h:selectOneRadio>
+      ]]>
+    </creator>
+    
+    <creator
+      name="select_one_menu_adf_faces"
+      bindingsTypes="selectOne"
+      rank=".6f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="selectOneChoice"
+      representativeLocalName="selectOneMenu"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.SingleSelectionBinder"
+      properties="rebindOnly">
+      <![CDATA[
+        <af:selectOneChoice 
+          value="${model.getSelectionExpression()}"
+          label="${model.getLabelExpression()}">
+          <f:selectItems value="${model.getChildIteratorExpression()}" />
+        </af:selectOneChoice>
+      ]]>
+    </creator>
+    
+    <creator
+      name="select_one_listbox_adf_faces"
+      bindingsTypes="selectOne"
+      rank=".7f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="selectOneListbox"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.SingleSelectionBinder"
+      properties="rebindOnly">
+      <![CDATA[
+        <af:selectOneListbox 
+          value="${model.getSelectionExpression()}"
+          label="${model.getLabelExpression()}">
+          <f:selectItems value="${model.getChildIteratorExpression()}" />
+        </af:selectOneListbox>
+      ]]>
+    </creator>
+    
+    <creator
+      name="select_one_radio_adf_faces"
+      bindingsTypes="selectOne"
+      rank=".8f"
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="selectOneRadio"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.SingleSelectionBinder"
+      properties="rebindOnly">
+      <![CDATA[
+        <af:selectOneRadio
+          value="${model.getSelectionExpression()}"
+          label="${model.getLabelExpression()}">
+          <f:selectItems value="${model.getChildIteratorExpression()}" />
+        </af:selectOneRadio>
+      ]]>
+    </creator>
+    
+    <!--
+    ## SELECT BOOLEAN CREATORS #############################
+    -->
+    
+    <creator
+      name="select_boolean_checkbox_jsf_spec"
+      bindingsTypes="selectBoolean"
+      rank=".1f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="selectBooleanCheckbox"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.BooleanSelectionBinder"
+      properties="jsf rebindOnly">
+      <![CDATA[
+          <h:selectBooleanCheckbox value="${model.getSelectionExpression()}" />
+      ]]>
+    </creator>
+    
+    <creator
+      name="select_boolean_checkbox_adf_faces"
+      bindingsTypes="selectBoolean"
+      rank=".5f"  
+      namespace="http://xmlns.oracle.com/adf/faces"
+      representativeNamespace="http://java.sun.com/jsf/html"
+      localName="selectBooleanCheckbox"
+      binderClass="oracle.adfdtinternal.view.faces.binding.binder.BooleanSelectionBinder"
+      properties="rebindOnly">
+      <![CDATA[
+        <af:selectBooleanCheckbox
+          value="${model.getSelectionExpression()}"
+          label="${model.getLabelExpression()}" />
+      ]]>
+    </creator>
+    
+    <!--
+    ## UNIT TEST CREATORS #############################
+    -->
+    
+    <creator
+      name="test_component"
+      description="Test Component"
+      bindingsTypes="test"
+      rank=".2f"
+      namespace="http://java.sun.com/jsf/html"
+      localName="outputText"
+      properties="jsf">
+      <![CDATA[
+        <h:outputText value="${model.getValue()}" />
+      ]]>
+    </creator>
+  
+  </creatorInfos>
+
+</creatorConfiguration>

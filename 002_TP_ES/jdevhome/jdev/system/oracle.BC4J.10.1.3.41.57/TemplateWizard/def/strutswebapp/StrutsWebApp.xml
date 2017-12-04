@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<Wizard>
+   <!-- Definition file for Tag based JSP Web application -->
+   <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.input.StaticProperties">
+      <config/>
+      <wizdata>
+         <Property name="HTML_ROOT_DIR"/>
+         <Property name="HTML_SRC_DIR"/>
+         <Property name="PROJECT_SRC_ROOT"/>
+         <Property name="charset"/>
+      </wizdata>
+   </WizardTask>
+   <WizardTask class="oracle.jbo.dt.ui.wizards.tagswebapp.CheckForBC4JProjectsTask" />
+   <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.ui.UIWizardSequencer">
+      <config>
+         <!-- this is displayed as wizard image -->
+         <ImageFileName>/oracle/jbo/dt/ui/wizards/tagswebapp/appmgr.gif</ImageFileName>
+         <!-- Used as the title in the wizard dialog -->
+         <WizardDialogTitle translateable="true">TITLE_WIZARD</WizardDialogTitle>
+         <!-- resource retrieved from this bundle, more than one bundle can be specified -->
+         <UIResourceBundle name="res" properties="def/strutswebapp/strutswebapp.rts"/>
+      </config>
+      <wizdata>
+         <WelcomePanel>
+            <PanelTitle translateable="true">WELCOME_PAGE_TITLE</PanelTitle>
+            <BoldText translateable="true">WELCOME_TITLE_TEXT</BoldText>
+            <description translateable="true">WELCOME_TEXT</description>
+            <JDeveloperHelpUrl>f1_jspstrutsappwelcome_html</JDeveloperHelpUrl>
+            <WelcomePageId>StrutsWebApp</WelcomePageId>
+         </WelcomePanel>
+
+         <UIPanel class="oracle.jbo.dt.common.wizard.DataDefinitionSelectionPanel"/>
+         <UIPanel class="oracle.jbo.dt.ui.wizards.tagswebapp.ViewsPanel"/>
+         <UIPanel class="oracle.jbo.dt.ui.wizards.tagswebapp.ViewLinkPanel"/>
+         <UIPanel class="oracle.jbo.dt.ui.wizards.tagswebapp.FinishPanel"/>
+
+         <PanelSettings>
+            <PanelData panelclass="oracle.jbo.dt.common.wizard.DataDefinitionSelectionPanel">
+               <PanelTitle translateable="true">DATADEF_PAGE_TITLE</PanelTitle>
+               <SELECT_DATADEFINITION translateable="true">SELECT_DATADEFINITION_PROMPT</SELECT_DATADEFINITION>
+               <NEW_DATADEFINITION translateable="true">NEW_DATADEFINITION</NEW_DATADEFINITION>
+               <SELECT_APPMODULE translateable="true">SELECT_APPMODULE</SELECT_APPMODULE>
+               <SELECT_DATADEF_INTRO translateable="true">SELECT_DATADEF_INTRO</SELECT_DATADEF_INTRO>
+               <SELECTED_MODEL translateable="true">SELECTED_MODEL</SELECTED_MODEL>
+               <JDeveloperHelpUrl>f1_jspstrutsappdatamodel_html</JDeveloperHelpUrl>
+            </PanelData>
+            <PanelData panelclass="oracle.jbo.dt.ui.wizards.tagswebapp.ViewsPanel">
+               <PanelTitle translateable="true">TITLE_VIEW_SELECTION</PanelTitle>
+               <JDeveloperHelpUrl>f1_jspstrutsappviewform_html</JDeveloperHelpUrl>
+               <PROMPT_GEN_PAGE translateable="true">PROMPT_GEN_PAGE</PROMPT_GEN_PAGE>
+               <TITLE_VO translateable="true">TITLE_VO</TITLE_VO>
+               <VIEWS_PANEL_DESCRIPTION translateable="true" >VIEWS_PANEL_DESCRIPTION</VIEWS_PANEL_DESCRIPTION>
+               <TITLE_FORM_OPTIONS translateable="true">TITLE_FORM_OPTIONS</TITLE_FORM_OPTIONS>
+               <TITLE_QUERY_FORM translateable="true">TITLE_QUERY_FORM</TITLE_QUERY_FORM>
+               <TITLE_BROWSE_FORM translateable="true">TITLE_BROWSE_FORM</TITLE_BROWSE_FORM>
+               <TITLE_EDIT_FORM translateable="true">TITLE_EDIT_FORM</TITLE_EDIT_FORM>
+               <TITLE_VIEW_SELECTION translateable="true">TITLE_VIEW_SELECTION</TITLE_VIEW_SELECTION>
+               <VIEW_PANEL_FILE_NAME translateable="true">VIEW_PANEL_FILE_NAME</VIEW_PANEL_FILE_NAME>
+            </PanelData>
+            <PanelData panelclass="oracle.jbo.dt.ui.wizards.tagswebapp.ViewLinkPanel">
+               <PanelTitle translateable="true">VIEWLINK_PANEL_TITLE</PanelTitle>
+               <JDeveloperHelpUrl>f1_jspstrutsappviewlinks_html</JDeveloperHelpUrl>
+               <VIEWLINK_PANEL_TITLE translateable="true">VIEWLINK_PANEL_TITLE</VIEWLINK_PANEL_TITLE>
+            </PanelData>
+            <PanelData panelclass="oracle.jbo.dt.ui.wizards.tagswebapp.FinishPanel">
+               <PanelTitle translateable="true">FINISH_PAGE_TITLE</PanelTitle>
+               <JDeveloperHelpUrl>f1_jspstrutsappfinish_html</JDeveloperHelpUrl>
+               <FINISH_PAGE_TITLE translateable="true">FINISH_PAGE_TITLE</FINISH_PAGE_TITLE>
+               <FINISH_SUMMARY translateable="true">FINISH_SUMMARY</FINISH_SUMMARY>
+               <FINISH_TEXT translateable="true">FINISH_TEXT</FINISH_TEXT>
+            </PanelData>
+         </PanelSettings>
+      </wizdata>
+   </WizardTask>
+
+   <WizardTask class="oracle.jbo.dt.ui.wizards.tagswebapp.WebAppWizardCodeGenerationTask">
+   </WizardTask>
+
+   <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.codegen.FileCodeGenerator">
+      <config/>
+      <wizdata>
+         <selection id="Common">
+            <file in="tagswebapp/ViewObject.gif" action="bcopy" addToProject="true" out="{%HTML_SRC_DIR%}/ViewObject.gif" overwrite="yes"/>
+            <file in="common/struts/errorpage.jsp" action="xpath" out="{%HTML_SRC_DIR%}/errorpage.jsp" overwrite="prompt"/>
+            <file in="strutswebapp/main.html" action="substitute" out="{%HTML_SRC_DIR%}/main.html" overwrite="prompt" runnableTarget="true" openInEditor="true"/>
+            <file in="strutswebapp/contents.html" action="substitute" out="{%HTML_SRC_DIR%}/contents.html" overwrite="prompt"/>
+            <file in="strutswebapp/title.html" action="substitute" out="{%HTML_SRC_DIR%}/title.html" overwrite="prompt"/>
+            <file in="strutswebapp/description.html" action="substitute" out="{%HTML_SRC_DIR%}/description.html" overwrite="prompt"/>
+            <file in="common/misc/bc4j.css" action="copy" out="{%HTML_SRC_DIR%}/bc4j.css" overwrite="prompt"/>
+            <file in="common/misc/globalinclude.html" action="substitute" out="{%HTML_SRC_DIR%}/globalinclude.html" overwrite="prompt"/>
+            <file in="common/misc/ojsp-global-include.xml" action="substitute" out="{%HTML_SRC_DIR%}/WEB-INF/ojsp-global-include.xml" overwrite="prompt"/>
+            <configureproject configurer="oracle.jbo.dt.jsp.configurers.StrutsProject" />
+         </selection>
+         <selection id="Association">
+            <file in="common/struts/DataNavigateComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataNavigateComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataRecordComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataRecordComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataScrollerComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataScrollerComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataTableComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataTableComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataTransactionComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataTransactionComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataEditComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataEditComponent.jsp" overwrite="yes"/>
+            <file in="strutswebapp/LinkView.jsp" action="substitute" out="{%HTML_SRC_DIR%}/{%AssociationFileBaseName%}.jsp" overwrite="prompt"/>
+            <file in="strutswebapp/LinkEditView.jsp" action="substitute" out="{%HTML_SRC_DIR%}/{%AssociationFileBaseName%}_Edit.jsp" overwrite="prompt"/>
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddActionMapping" type="Assoc" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddGlobalForward" type="Assoc" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddFormBean" type="Assoc" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.GenerateStrutsForm" type="Assoc" />
+         </selection>
+         <selection id="BrowseOnlyForm">
+            <file in="common/struts/DataTableComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataTableComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataScrollerComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataScrollerComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataTransactionComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataTransactionComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/actions_browse.jsp" action="substitute" out="varname:PageActions" />
+            <file in="common/struts/BrowseOnlyView.jsp" action="substitute" out="{%HTML_SRC_DIR%}/{%ViewFileBaseName%}_Browse.jsp" overwrite="prompt"/>
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddGlobalForward" type="Browse" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddActionMapping" type="Browse" />
+         </selection>
+         <!-- this is now actually Browse & Edit form., JDev 9.0.3 -->
+         <selection id="EditForm">
+            <file in="common/struts/DataTableComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataTableComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataScrollerComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataScrollerComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataTransactionComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataTransactionComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/BrowseView.jsp" action="substitute" out="{%HTML_SRC_DIR%}/{%ViewFileBaseName%}_Browse.jsp" overwrite="prompt"/>
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddActionMapping" type="Browse" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddGlobalForward" type="Browse" />
+            <!-- edit specific components -->
+            <file in="common/struts/DataEditComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataEditComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/EditView.jsp" action="substitute" out="{%HTML_SRC_DIR%}/{%ViewFileBaseName%}_Edit.jsp" overwrite="prompt"/>
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddActionMapping" type="Edit" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddGlobalForward" type="Edit" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddFormBean" type="Edit" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.GenerateStrutsForm" />
+         </selection>
+         <selection id="QueryForm">
+            <file in="common/struts/DataQueryComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataQueryComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataTableComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataTableComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataScrollerComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataScrollerComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/QueryView.jsp" action="substitute" out="{%HTML_SRC_DIR%}/{%ViewFileBaseName%}_Query.jsp" overwrite="prompt"/>
+            <file in="tagswebapp/help.html" action="copy" out="{%HTML_SRC_DIR%}/help.html" overwrite="yes"  />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddActionMapping" type="Query" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.AddGlobalForward" type="Query" />
+         </selection>
+         <selection id="LastStep">
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.SaveStrutsConfigCommand" />
+         </selection>
+      </wizdata>
+   </WizardTask>
+</Wizard>

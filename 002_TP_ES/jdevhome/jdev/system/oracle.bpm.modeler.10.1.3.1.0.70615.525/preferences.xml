@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<client-settings class="java.util.HashMap" xmlns="http://xmlns.oracle.com/jdeveloper/101303/client-preferences">
+   <Item>
+      <Key>Key to reference this class</Key>
+      <Value class="oracle.tip.tools.ide.pm.addin.BPELOptions"/>
+   </Item>
+</client-settings>

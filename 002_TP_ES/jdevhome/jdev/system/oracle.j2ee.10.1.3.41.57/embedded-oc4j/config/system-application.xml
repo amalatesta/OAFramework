@@ -1,0 +1,85 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- The global application config that is the parent of all the other
+        applications in this server. -->
+
+<orion-application 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd"
+  autocreate-tables="true"
+  schema-major-version="10"
+  schema-minor-version="0"
+>
+
+  <ejb-module id="admin_ejb" path="../applications/admin_ejb.jar"/>
+<!--
+  <web-module id="admin_web" path="../applications/admin_web.war"/>
+  <web-module id="JMXSoapAdapter-web" path="../applications/JMXSoapAdapter-web.war" />
+-->
+  <web-module id="dms0" path="../applications/dms.war"/>
+
+  <persistence path="../persistence"/>
+
+  <!-- The default set of application shared libraries. -->
+  <imported-shared-libraries>
+    <import-shared-library name="oracle.dms"/>
+    <import-shared-library name="oracle.jdbc"/>
+    <import-shared-library name="oracle.gdk"/>
+    <import-shared-library name="oracle.xml"/>
+    <import-shared-library name="oracle.xml.security"/>
+    <import-shared-library name="oracle.toplink"/>
+    <import-shared-library name="oracle.persistence"/>
+    <import-shared-library name="oracle.ws.client"/>
+    <import-shared-library name="oracle.cache"/>
+    <import-shared-library name="soap"/>
+    <import-shared-library name="oracle.sqlj"/>
+    <import-shared-library name="oracle.jwsdl"/>
+    <import-shared-library name="global.libraries"/>
+    <import-shared-library name="global.tag.libraries" />
+    <import-shared-library name="oracle.http.client" />  
+    <import-shared-library name="org.jgroups" /> 
+  </imported-shared-libraries>
+
+  <!-- JMX Soap Adapter supporting classes
+  <library path="${oracle.home}/webservices/lib/JMXSoapAdapterShared.jar" />
+  -->
+  <!-- DMS AgreeMBean and supporting classes -->
+  <library path="${oracle.home}/lib/dmsapp.jar" />
+
+  <principals path="./principals.xml"/>
+  <log>
+    <file path="../log/system-application.log"/>
+    <!-- Uncomment this if you want to use ODL logging capabilities
+    <odl path="../log/global-application/" max-file-size="1000" max-directory-size="10000"/>
+    -->
+  </log>
+
+  <jazn provider="XML" location="system-jazn-data.xml" default-realm="jazn.com"/>
+
+  <jmx-mbean objectname=":type=AggreMBean" class="oracle.dms.jmx.AggreMBean">
+    <description>DMS AggreMBean</description>
+  </jmx-mbean>
+
+  <namespace-access>
+    <read-access>
+      <namespace-resource root="">
+        <security-role-mapping>
+          <group name="administrators" />
+          <group name="oc4j-administrators"/>
+          <group name="ascontrol_admin"/>
+        </security-role-mapping>
+      </namespace-resource>
+    </read-access>
+    <write-access>
+      <namespace-resource root="">
+        <security-role-mapping>
+          <group name="administrators" />
+          <group name="oc4j-administrators"/>
+          <group name="ascontrol_admin"/>
+        </security-role-mapping>
+      </namespace-resource>
+    </write-access>
+  </namespace-access>
+
+</orion-application>
+

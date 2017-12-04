@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+
+<dataBindingPanel>
+
+   <setup>
+      <configureproject configurer="oracle.adf.dt.configurers.AdfClientProject"/>
+      <configureproject configurer="oracle.adfdtinternal.view.jsp.binding.DefaultJspProjectConfigurator"/>
+      <configureproject configurer="oracle.adf.dt.configurers.WebClientDataControlConfigurer"/>
+   </setup>
+   
+   <dataControl/>
+   
+   <collectionNode>
+   
+      <controlDefinition name="Edit Form" htmlkey="form" bindingsType="form"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_EdRcd.gif"
+                         bindingType="DCTable" requiresEditingSupport="true"
+                         requiresNavigationActions="false"
+                         requiresControlSelectionDialog="true"
+                         controlSelectionHelperClass="oracle.adfdtinternal.view.jsp.binding.JspInputFormControlsSelectorImpl">
+         <useTemplate>
+            <![CDATA[
+              <form method="POST" action="${TargetDocument}" >
+              #set ($tokenid = "bindings.statetokenid")
+              #set ($statetoken = "bindings.statetoken")
+              <input type="hidden" name="${${tokenid}}" value="${${statetoken}}" />
+              <table border="0" width="100%" cellpadding="2" cellspacing="0">
+                 $individualControlCodeSnippet
+                 #set($prefixValue = "bindings")
+              </table>
+              <br/ >
+              <c:if test="${${prefixValue}.${ItorBindingName}.findMode}">
+                <c:out value="* Find Mode" />
+                <br/ >
+              </c:if>
+              <input name="event_Submit" type="submit" value="Submit" />
+              </form>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+      <controlDefinition name="Read-Only Table" htmlkey="table"
+                         bindingsType="table"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DaGrid.gif"
+                         createBindingsForAttributes="false"
+                         bindingType="DCTable">
+         <useTemplate>
+            <![CDATA[
+              <table border="1" width="100%">
+              <tr>
+                 <th><br/></th>
+                 #foreach ( $fieldValue in $Binding.AttrNames )
+                  #set ($prefix = "${BindingName}.labels['")
+                  <th><c:out value="${${prefix}${fieldValue}']}" /></th>
+                 #end
+              </tr>
+              <c:forEach var="Row" items="${${BindingName}.rangeSet}" >
+                 <tr>
+                  <td><c:out value="${Row.currencyString}" /></td>
+                 #foreach ( $fieldValue in $Binding.AttrNames )
+                  #set ($prefix = "Row['")
+                  <td><c:out value="${${prefix}${fieldValue}']}" /><br/></td>
+                 #end
+                 </tr>
+              </c:forEach>
+              </table>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+      <controlDefinition name="Navigation Buttons" bindingsType="form"
+                         htmlkey="table"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_NavBar.gif"
+                         bindingType="DCTable"
+                         createBindingsForAttributes="false"
+                         requiresNavigationActions="true"
+                         requiresAttributeDefinitions="false">
+         <useTemplate>
+            <![CDATA[
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                 #foreach ( $binding in $ActionBindingSet)
+                  #set($prefixValue = "bindings")
+                  <td>
+                    <input type="submit" name="${EventPrefix}${binding.id}" value="${binding.id}" ${!${prefixValue}.${binding.id}.enabled ? "disabled" : ""} />
+                  </td>
+                 #end
+                </tr>
+              </table>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+      <controlDefinition name="Graph" bindingsType="table"
+                         requiresStructuredCollection="true"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/pie_chart.gif"
+                         bindingType="DCGraph">
+         <useTemplate>
+            <![CDATA[<graph:Graph data="${${BindingName}}" />]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.jbo.dt.ui.wizards.common.chart.JSPDragDropHandler"/>
+         </setup>
+      </controlDefinition>
+
+   </collectionNode>
+   
+   <dynamicCollectionNode>
+   
+      <controlDefinition name="Read-Only Dynamic Table" bindingsType="table"
+                         htmlkey="table"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DaGrid.gif"
+                         bindingType="DCDynamicTable"
+                         saveAttributeSelections="false"
+                         requiresAttributeDefinitions="false"
+                         applicableForUndeterminedAttributes="true">
+         <useTemplate>
+            <![CDATA[
+              <table border="1" width="100%">
+              <tr>
+                <th><br/></th>
+                <c:forEach var="attributeLabel" items="${${BindingName}.labelSet}" >
+                  <th><c:out value="${attributeLabel}" /></th>
+                </c:forEach>
+              </tr>
+                <c:forEach var="Row" items="${${BindingName}.rangeSet}" >
+                   <tr>
+                     <td><c:out value="${Row.currencyString}" /></td>
+                     <c:forEach var="attrValue" items="${Row.attributeValues}" >
+                       <td><c:out value="${attrValue}" /><br/></td>
+                     </c:forEach>
+                   </tr>
+                </c:forEach>
+              </table>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+   </dynamicCollectionNode>
+   
+   <beanAttribute>
+      
+      <controlDefinition name="Input Render" bindingsType="primitive"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpRd.gif"
+                         bindingType="DCTextField" requiresEditingSupport="true"
+                         requiresStrutsSupport="false">
+         <useTemplate>
+            <![CDATA[<adf:inputrender  model="bindings.${Binding.id}" />]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.configurers.AdfTagsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="Render Value" bindingsType="primitive"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_RdrVal.gif"
+                         bindingType="DCTextField">
+         <useTemplate>
+            <![CDATA[<adf:render model="bindings.${Binding.id}" />]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.configurers.AdfTagsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="Label" bindingsType="primitive"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ShwHint.gif"
+                         bindingType="DCTextField">
+         <useTemplate>
+            <![CDATA[<c:out value="${${BindingName}.label}" />]]>
+         </useTemplate>
+      </controlDefinition>
+      
+      <controlDefinition name="Value" bindingsType="primitive"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/TextField.gif"
+                         bindingType="DCTextField">
+         <useTemplate>
+            <![CDATA[<c:out value="${${BindingName}}" />]]>
+         </useTemplate>
+      </controlDefinition>
+      
+   </beanAttribute>
+   
+   <beanMethod>
+   
+      <controlDefinition name="Button" bindingsType="operation" htmlkey="input"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/button.gif"
+                         bindingType="DCAction"
+                         requiresAttributeDefinitions="false">
+         <useTemplate>
+            <![CDATA[
+              <input type="submit" name="${EventPrefix}${Binding.id}" value="${Binding.id}" ${!${BindingName}.enabled ? "disabled" : ""} />
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+      <controlDefinition name="Button with Form" bindingsType="operation"
+                         htmlkey="form"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/button.gif"
+                         requiresStrutsSupport="false" bindingType="DCAction"
+                         requiresAttributeDefinitions="false">
+         <useTemplate>
+            <![CDATA[
+              <form method="POST" action="${TargetDocument}" >
+                #set ($tokenid = "bindings.statetokenid")
+                #set ($statetoken = "bindings.statetoken")
+                <input type="hidden" name="${${tokenid}}" value="${${statetoken}}" >
+                <input type="submit" name="${EventPrefix}${Binding.id}" value="${Binding.id}" ${!${BindingName}.enabled ? "disabled" : ""} />
+              </form>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+      <controlDefinition name="Row Operation Link" bindingsType="operation"
+                         htmlkey="a"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_Row.gif"
+                         bindingType="DCAction" requiresStrutsSupport="false"
+                         applicableActions="96,98,99">
+         <useTemplate>
+            <![CDATA[
+              #set($prefixValue = "Row")
+              <a href="${TargetDocument}?event=${Binding.id}&rowKey=${${prefixValue}.rowKeyStr}">${BindingFullName}</a>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+   </beanMethod>
+   
+   <structuredNode>
+   
+      <controlDefinition name="Read-Only Form" htmlkey="form"
+                         bindingsType="form"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ShwRcd.gif"
+                         bindingType="DCTable"
+                         createBindingsForAttributes="true"
+                         attributeBindingType="DCTextField"
+                         requiresNavigationActions="false"
+                         requiresStrutsSupport="false">
+         <useTemplate>
+            <![CDATA[
+              <form method="POST" action="${TargetDocument}" >
+                #set ($tokenid = "bindings.statetokenid")
+                #set ($statetoken = "bindings.statetoken")
+                <input type="hidden" name="${${tokenid}}" value="${${statetoken}}" />
+                <table border="1" cellpadding="3" cellspacing="2" width="100%">
+                   #foreach ( $binding in $BindingSet)
+                  <tr>
+                    #set($prefixValue = "bindings")
+                    <td><c:out value="${${prefixValue}['${binding.id}'].label}" /></td>
+                    <td><c:out value="${${prefixValue}.${binding.id}}"/></td>
+                  </tr>
+                   #end
+                </table>
+              </form>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+      <controlDefinition name="Input Form" htmlkey="form" bindingsType="form"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_EdRcd.gif"
+                         bindingType="DCTable"
+                         createBindingsForAttributes="true"
+                         attributeBindingType="DCTextField"
+                         requiresEditingSupport="true"
+                         requiresNavigationActions="false">
+         <useTemplate>
+            <![CDATA[
+              <form method="POST" action="${TargetDocument}" >
+                #set ($tokenid = "bindings.statetokenid")
+                #set ($statetoken = "bindings.statetoken")
+                <input type="hidden" name="${${tokenid}}" value="${${statetoken}}" />
+                <table border="0" width="100%" cellpadding="2" cellspacing="0">
+                   #foreach ( $binding in $BindingSet)
+                  <tr>
+                    #set($prefixValue = "bindings")
+                    <td><c:out value="${${prefixValue}['${binding.id}'].label}" /></td>
+                    <td><input type="text" name="${${prefixValue}.${binding.id}.path}" value="${${prefixValue}.${binding.id}}" /></td>
+                  </tr>
+                   #end
+                </table>
+                <br/ >
+                <c:if test="${${prefixValue}.${ItorBindingName}.findMode}">
+                  <c:out value="* Find Mode" />
+                  <br/ >
+                </c:if>
+                <input name="event_Submit" type="submit" value="Submit" />
+              </form>
+            ]]>
+         </useTemplate>
+      </controlDefinition>
+      
+   </structuredNode>
+   
+   <structuredOnlyNode>
+   
+      <controlDefinition name="Render Value" bindingsType="primitive"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_RdrVal.gif"
+                         bindingType="DCTextField" useMasterIterator="true"
+                         saveAttributeSelections="false">
+         <useTemplate>
+            <![CDATA[<adf:render model="bindings.${Binding.id}" />]]>
+         </useTemplate>
+         <setup>
+            <configureproject configurer="oracle.adf.dt.configurers.AdfTagsProject"/>
+         </setup>
+      </controlDefinition>
+      
+      <controlDefinition name="Label" bindingsType="primitive"
+                         icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ShwHint.gif"
+                         bindingType="DCTextField">
+         <useTemplate>
+            <![CDATA[<c:out value="${${BindingName}.label}" />]]>
+         </useTemplate>
+      </controlDefinition>
+      
+   </structuredOnlyNode>
+   
+</dataBindingPanel>
+
+

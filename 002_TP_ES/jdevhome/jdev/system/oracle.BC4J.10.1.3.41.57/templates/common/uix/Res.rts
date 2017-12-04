@@ -1,0 +1,21 @@
+#resource file for uix templates
+
+#common resources
+RES_UPDATE=Update
+RES_CREATE=Create
+RES_CANCEL=Cancel
+
+#view page resources
+RES_VIEW=View
+RES_SEARCH=Search
+RES_SEARCH_COLUMN=Search Column
+RES_GO=Go
+RES_RESULTS=Results
+RES_NO_ROWS_FOUND=No rows found
+RES_SELECT_ROW=Select Row
+RES_DELETE=Delete
+
+
+#update page resources
+RES_KEY_MISSING=Required page property 'key' missing.  Cannot display page.
+#create page resources

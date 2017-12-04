@@ -1,0 +1,67 @@
+<?xml version = "1.0" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"        "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib xmlns = "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+   <tlibversion>5.0</tlibversion>
+   <jspversion>1.1</jspversion>
+   <shortname>adf</shortname>
+   <uri>http://xmlns.oracle.com/adf/ui/jsp/adftags</uri>
+   <info>The ADF DataTag library</info>   
+   <!-- name="META-INF/taglib.tld" location="@oracle.home@/BC4J/jlib/adftags.jar" -->   
+   <tag>
+      <name>render</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.RenderValueTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Displays an attribute using a field renderer.</info>
+      <!-- page="ADF Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_RdrVal.gif" -->
+      <attribute>
+         <name>model</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+   </tag>   
+   <tag>
+      <name>inputrender</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.InputRenderTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Inserts an Input field with a field render into a page.</info>      
+      <!-- page="ADF Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpRd.gif" -->
+      <attribute>
+         <name>model</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>formname</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>uimodelreference</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.UseBindingContainerTag</tagclass>    
+      <bodycontent>empty</bodycontent>
+      <info>Adds a pageContext variable as a reference to a UI Model. If the variable is already set, it will not override the value</info>    
+      <!-- page="ADF Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DSRef.gif" -->
+      <attribute>
+         <name>model</name>
+         <required>true</required>
+         <rtexprvalue>false</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>lifecycle</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>pagedefinition</name>
+      <tagclass>oracle.adf.controller.jsp.taglib.PageDefinitionTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To be filled</info>    
+      <!-- page="ADF Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DSRef.gif" -->
+   </tag>
+</taglib>

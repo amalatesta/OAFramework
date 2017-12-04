@@ -1,0 +1,34 @@
+<?xml version = '1.0' standalone = 'yes'?>
+<!-- The global application config that is the parent of all the other
+     applications in this server. 
+-->
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd" autocreate-tables="true" default-data-source="jdbc/OracleDS" schema-major-version="10" schema-minor-version="0">
+   <web-module id="defaultWebApp" path="../default-web-app"/>
+   <!--
+  <web-module id="jmsrouter_web" path="../applications/jmsrouter.war" />
+  <ejb-module id="jmsrouter_ejb" path="../applications/jmsrouter-ejb.jar" />
+  -->
+   <connectors path="./oc4j-connectors.xml"/>
+   <persistence path="../persistence"/>
+   <!-- Scheduler supporting classes -->
+   <library path="${oracle.home}/j2ee/home/lib/scheduler.jar"/>
+   <jazn provider="XML"/>
+   <log>
+      <file path="../log/global-application.log"/>
+      <!-- Uncomment this if you want to use ODL logging capabilities
+    <odl path="../log/global-application/" max-file-size="1000" 
+      max-directory-size="10000"/>
+    -->
+   </log>
+   <data-sources path="data-sources.xml"/>
+   <!-- Comment this if you don't want to access OracleAS JMS via 
+       the JCA framework
+  -->
+   <resource-provider class="com.evermind.server.jms.Oc4jResourceProvider" name="oc4jjms">
+      <description>oc4j-jms loop back resource provider</description>
+      <property name="dummy" value="dummy"/>
+   </resource-provider>
+   <imported-shared-libraries>
+      <import-shared-library name="adf.oracle.domain"/>
+   </imported-shared-libraries>
+</orion-application>

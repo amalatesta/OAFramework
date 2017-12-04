@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TAGLIBRARIES>
+   <TAGLIB NAME="JSP"  DESCRIPTION="Categories">
+	  <CATEGORY NAME="ALLJSP" DESCRIPTION="JSP Tags" NODEFACTORY="oracle.jbo.dt.ui.wizards.taginsert.tagtree.JspNodeHandler">
+	  </CATEGORY>
+	  <CATEGORY NAME="ALLWB"  DESCRIPTION="Web Beans" NODEFACTORY="oracle.jbo.dt.ui.wizards.taginsert.tagtree.WebBeansNodeHandler">
+	  </CATEGORY>
+	  <CATEGORY NAME="ALLDWB" DESCRIPTION="Data Web Beans" NODEFACTORY="oracle.jbo.dt.ui.wizards.taginsert.tagtree.DataWebBeansNodeHandler">
+	  </CATEGORY>
+   </TAGLIB>
+   <TAGLIB NAME="Themes" DESCRIPTION="JSP Application Themes">
+     <CATEGORY NAME="ALLTHEMES" DESCRIPTION="Themes" NODEFACTORY="oracle.jbo.dt.ui.wizards.taginsert.tagtree.ThemeNodeHandler">
+	    </CATEGORY>
+   </TAGLIB>
+</TAGLIBRARIES>

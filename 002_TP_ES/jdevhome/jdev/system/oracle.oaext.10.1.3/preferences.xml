@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<client-settings class="java.util.HashMap" xmlns="http://xmlns.oracle.com/jdeveloper/101303/client-preferences">
+   <Item>
+      <Key>oracle.jrad.design.ui.jide.oa.preferences.CompManagerData</Key>
+      <Value class="oracle.jrad.design.ui.jide.oa.preferences.CompManagerData">
+         <compList class="java.util.ArrayList"/>
+      </Value>
+   </Item>
+   <Item>
+      <Key>oracle.jrad.design.ui.jide.oa.preferences.OACServerData</Key>
+      <Value class="oracle.jrad.design.ui.jide.oa.preferences.OACServerData">
+         <hostName class="java.lang.String"/>
+         <portNo>0</portNo>
+      </Value>
+   </Item>
+</client-settings>

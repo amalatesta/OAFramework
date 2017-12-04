@@ -1,0 +1,1696 @@
+<?xml version = "1.0" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"        "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib xmlns = "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+   <tlibversion>5.0</tlibversion>
+   <jspversion>1.1</jspversion>
+   <shortname>jbo</shortname>
+   <uri>/webapp/DataTags.tld</uri>
+   <info>The Business Components DataTag library</info>   
+   <!-- name="META-INF/taglib.tld" location="@oracle.home@/BC4J/jlib/datatags.jar" pageScopes="ADFbcJSP" -->   
+   <tag>
+      <name>ApplicationModule</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.ApplicationModuleTag</tagclass>
+      <teiclass>oracle.jbo.html.jsp.datatags.ApplicationModuleTEI</teiclass>
+      <bodycontent>empty</bodycontent>
+      <info>Creates an application module instance to service HTTP requests.</info>    
+      <!-- page="Business Components Connections" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_AppMod.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>id</name>
+         <required>true</required>
+      </attribute>
+      <attribute>
+         <name>appid</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>definition</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>configname</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>username</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>password</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>iiop_username</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>iiop_password</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>lock</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>waittimeout</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>releasemode</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>DataSource</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.DataSourceTag</tagclass>    
+      <teiclass>oracle.jbo.html.jsp.datatags.DataSourceTEI</teiclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Creates a JSP page datasource based on a view object.</info>   
+      <!-- page="Business Components Connections" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DaSu.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->   
+      <attribute>
+         <name>id</name>
+         <required>true</required>
+      </attribute>
+      <attribute>
+         <name>appid</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>viewobject</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>whereclause</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>orderbyclause</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>rangesize</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>forwardonly</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>itermode</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>DataSourceRef</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.DataSourceRefTag</tagclass>    
+      <teiclass>oracle.jbo.html.jsp.datatags.DataSourceRefTEI</teiclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Creates a datasource variable based on a datasource.</info>    
+      <!-- page="Business Components Connections" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DSRef.gif" -->
+      <attribute>
+         <name>id</name>
+         <required>true</required>
+      </attribute>
+      <attribute>
+         <name>reference</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>CreateViewObject</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.CreateViewObjectTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Creates a dynamic view object from a business components application module.</info>
+      <!-- page="Business Components Connections" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_CViObj.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>appid</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>name</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>rangesize</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>ViewObject</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.ViewObjectTag</tagclass>    
+      <teiclass>oracle.jbo.html.jsp.datatags.ViewObjectTEI</teiclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Creates a Tag pointing to a view object.</info>   
+      <!-- page="Business Components Connections" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DaSu.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->   
+      <attribute>
+         <name>id</name>
+         <required>true</required>
+      </attribute>
+      <attribute>
+         <name>name</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>rangesize</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>itermode</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>CreateRowSet</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.CreateRowSetTag</tagclass>    
+      <teiclass>oracle.jbo.html.jsp.datatags.CreateRowSetTEI</teiclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Creates a Tag pointing to a secondary Row Set.</info>   
+      <!-- page="Business Components Connections" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DaSu.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->   
+      <attribute>
+         <name>id</name>
+         <required>true</required>
+      </attribute>
+      <attribute>
+         <name>name</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>viewobject</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>masterrowset</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>SetWhereClauseParam</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.SetWhereClauseParamTag</tagclass>
+      <bodycontent>Empty</bodycontent>
+      <info>Set bind variable value on the where clause of a RowSet.</info>
+      <!-- page="Business Components Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_Row.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>index</name>
+         <required>true</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>value</name>
+         <required>true</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>Row</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.RowTag</tagclass>      
+      <teiclass>oracle.jbo.html.jsp.datatags.RowTagTEI</teiclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Retrieves a row instance and performs an operation on the row.</info>    
+      <!-- page="Business Components Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_Row.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>id</name>
+         <required>true</required>
+      </attribute>
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>action</name>
+         <required>true</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>rowkeyparam</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>rowkey</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+   </tag>  
+   <tag>
+      <name>RowsetNavigate</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.RowsetNavigateTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>Moves the currency or the viewing range of a datasource.</info>
+      <!-- page="Business Components Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_RwstNg.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>action</name>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>RowsetIterate</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.RowsetIterateTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Iterates through the rows of the specified datasource.</info>
+      <!-- page="Business Components Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_RwstIt.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>changecurrentrow</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>userange</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>AttributeIterate</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.AttributeIterateTag</tagclass>
+      <teiclass>oracle.jbo.html.jsp.datatags.AttributeIterateTEI</teiclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Iterates through the datasource attribute definition.</info>
+      <!-- page="Business Components Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DefIt.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>id</name>
+         <required>true</required>
+      </attribute>
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>displayattributes</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>hideattributes</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>queriableonly</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>  
+   <tag>
+      <name>RefreshDataSource</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.RefreshDataSourceTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>Reexecutes a datasource's data from the database.</info>
+      <!-- page="Business Components Connections" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_RfDaSu.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>ShowValue</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.ShowValueTag</tagclass>
+      <bodycontent>tagdependent</bodycontent>
+      <info>Displays an attribute value without using a field renderer.</info>      
+      <!-- page="Business Components Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ShwVal.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>ShowDefinition</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.ShowDefinitionTag</tagclass>
+      <bodycontent>tagdependent</bodycontent>
+      <info>Displays the metadata of an attribute.</info>      
+      <!-- page="Business Components Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ShwDef.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>definition</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>ShowHint</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.ShowHintTag</tagclass>
+      <bodycontent>tagdependent</bodycontent>
+      <info>Displays available UI hints of an attribute.</info>
+      <!-- page="Business Components Data Access" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ShwHint.gif" -->
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>hintname</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>RenderValue</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.RenderValueTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Displays an attribute using a field renderer.</info>
+      <!-- page="Business Components Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_RdrVal.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->        
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>SetAttribute</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.SetAttributeTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>Updates an attribute in a row.</info>      
+      <!-- page="Business Components Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_StAtt.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>value</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+        <attribute>
+         <name>usemultipartformat</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>InputText</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.InputTextTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Inserts an Input field into a page.</info>      
+      <!-- page="Business Components Forms" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpTxt.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>cols</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>maxlength</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>readonly</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>InputRender</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.InputRenderTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Inserts an Input field with a field render into a page.</info>      
+      <!-- page="Business Components Forms" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpRd.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>formname</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>InputSelect</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.InputSelectTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Inserts an Input field that supports single or multiple selections into a page.</info>      
+      <!-- page="Business Components Forms" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpSl.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>multiple</name>
+         <required>false</required>         
+         <rtexprvalue>false</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>displaydatasource</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>displaydataitem</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>displayvaluedataitem</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>shownone</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+   </tag>   
+   <tag>
+      <name>InputSelectLOV</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.InputSelectLOVTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Inserts an List Of Values Input field into a page.</info>
+      <!-- page="Business Components Forms" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpLOV.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->        
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>displaydatasource</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>displaydataitem</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>displayvaluedataitem</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>formname</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>lovurl</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+   </tag>   
+   <tag>
+      <name>InputSelectGroup</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.InputSelectGroupTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Inserts an Input field group (radio button or checkbox) into a page.</info>      
+      <!-- page="Business Components Forms" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpSlGp.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>multiple</name>
+         <required>false</required>         
+         <rtexprvalue>false</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>displaydatasource</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>displaydataitem</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>displayvaluedataitem</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>shownone</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+   </tag>  
+   <tag>
+      <name>InputDate</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.InputDateTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Inserts an Input date field into a page.</info>      
+      <!-- page="Business Components Forms" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpDa.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>formname</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>readonly</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>  
+   <tag>
+      <name>InputPassword</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.InputPasswordTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Inserts a password Input field into a page.</info>      
+      <!-- page="Business Components Forms" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpPswd.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>cols</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>maxlength</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>InputHidden</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.InputHiddenTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Inserts a hidden Input field into a page.</info>      
+      <!-- page="Business Components Forms" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpHidn.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>InputTextArea</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.InputTextAreaTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Inserts a multi-line Input field into a page.</info>     
+      <!-- page="Business Components Forms" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_IpTxAr.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->   
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>rows</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>      
+      </attribute>      
+      <attribute>
+         <name>cols</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>readonly</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>      
+      <name>SetHtmlAttribute</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.SetHtmlAttributeTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>Adds HTML attributes to a Business Components Input tag.</info>      
+      <!-- page="Business Components Forms" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ShwCrta.gif" -->
+      <attribute>
+         <name>name</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>value</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag> 
+      <name>SetFieldRenderer</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.SetFieldRendererTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>Overwrites the field renderer defined for a dataitem.</info>
+      <!-- page="Business Components Forms" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_SFRend.gif" -->
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>fieldtype</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>classname</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag> 
+      <name>SetDomainRenderer</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.SetDomainRendererTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>Overwrites the field renderer for attributes of the same domain.</info>
+      <!-- page="Business Components Forms" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_SDRend.gif" -->
+      <attribute>
+         <name>domain</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>classname</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>fieldtype</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>scope</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>Commit</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.CommitTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>Applies changes made on a datasource to the database.</info>
+      <!-- page="Business Components Connections" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_Commit.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>appid</name>
+         <required>true</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>RollBack</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.RollbackTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>Prevents current datasource changes from entering into the database.</info>
+      <!-- page="Business Components Connections" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_RlBk.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>appid</name>
+         <required>true</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>PostChanges</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.PostChangesTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>Posts changes made on a datasource to the database.</info>
+      <!-- page="Business Components Connections" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_PtChg.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>appid</name>
+         <required>true</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>ExecuteSQL</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.ExecuteSQLTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Executes a SQL statement using the application's database connection.</info>
+      <!-- page="Business Components Data Access" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ExSQL.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>appid</name>
+         <required>true</required>
+      </attribute>
+   </tag>   
+   <tag>      
+      <name>ReleasePageResources</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.ReleasePageResourcesTag</tagclass>            
+      <bodycontent>empty</bodycontent>      
+      <info>Provides a marker for the JSP page that triggers the release of the application module instance.</info>      
+      <!-- page="Business Components Connections" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_RelPgR.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>         
+         <name>releasemode</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>appid</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>DataTable</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.DataGridTag</tagclass>            
+      <bodycontent>empty</bodycontent>
+      <info>A component tag that displays a table bound to a datasource.</info>
+      <!-- page="Business Components Component Tags" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DaGrid.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>edittarget</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>relativeUrlPath</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>DataRecord</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.ShowRecordTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>A component tag that displays a single record bound to a datasource.</info>
+      <!-- page="Business Components Component Tags" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ShwRcd.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>relativeUrlPath</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>DataNavigate</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.NavBarTag</tagclass>            
+      <bodycontent>empty</bodycontent>
+      <info>A component tag that displays a navigation bar bound to a datasource.</info>
+      <!-- page="Business Components Component Tags" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_NavBar.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->        
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>targetURL</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>relativeUrlPath</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>DataScroller</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.ScrollBarTag</tagclass>            
+      <bodycontent>empty</bodycontent>
+      <info>A component tag that displays a record scroller bound to a datasource.</info>      
+      <!-- page="Business Components Component Tags" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_SclBar.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>targetURL</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>relativeUrlPath</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>DataEdit</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.EditRecordTag</tagclass>            
+      <bodycontent>empty</bodycontent>
+      <info>A component tag that displays a form to edit a record bound to a datasource.</info>
+      <!-- page="Business Components Component Tags" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_EdRcd.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>targetURL</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>relativeUrlPath</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>enctype</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>DataQuery</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.SearchTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>A component tag that performs a search on a datasource.</info>
+      <!-- page="Business Components Component Tags" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_PtChg.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>targetURL</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>relativeUrlPath</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>DataHandler</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.DataHandlerTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>A component tag that handles JSP business component events.</info>
+      <!-- page="Business Components Component Tags" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DaHdr.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>appid</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>relativeUrlPath</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>DataTransaction</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.DataTransactionTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>A component tag that renders database transaction operations.</info>
+      <!-- page="Business Components Component Tags" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DaTrans.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>appid</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>targetURL</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>         
+         <name>relativeUrlPath</name>         
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>DataWebBean</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.DataWebBeanTag</tagclass>            
+      <teiclass>oracle.jbo.html.jsp.datatags.DataWebBeanTEI</teiclass>
+      <bodycontent>JSP</bodycontent>
+      <info>A tag to use a data web bean in your JSP.</info>      
+      <!-- page="Business Components Web Beans" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_DaWB.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>id</name>
+         <required>true</required>
+      </attribute>
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>wbclass</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+   </tag>
+   <tag>      
+      <name>WebBean</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.WebBeanTag</tagclass>            
+      <teiclass>oracle.jbo.html.jsp.datatags.WebBeanTEI</teiclass>
+      <bodycontent>JSP</bodycontent>
+      <info>A tag to use a web bean in your JSP.</info>      
+      <!-- page="Business Components Web Beans" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/Web_bean.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>id</name>
+         <required>true</required>
+      </attribute>
+      <attribute>
+         <name>wbclass</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+   </tag>
+   <tag>      
+      <name>OnEvent</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.OnEventTag</tagclass>            
+      <bodycontent>JSP</bodycontent>
+      <info>Handles a specific JSP business component event submitted by the UrlEvent or FormEvent tag.</info>      
+      <!-- page="Business Components Events" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_OnEvt.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>name</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>list</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>viewobject</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>FormEvent</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.FormEventTag</tagclass>            
+      <bodycontent>empty</bodycontent>
+      <info>Add a specific JSP business component event to the form parameters.</info>
+      <!-- page="Business Components Events" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_FiEvt.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>event</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>viewobject</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>addrowkey</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>UrlEvent</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.UrlEventTag</tagclass>            
+      <bodycontent>empty</bodycontent>
+      <info>A convenience tag that constructs a URL to submit a JSP business component event.</info>      
+      <!-- page="Business Components Events" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_UrlEvt.gif" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->  
+      <attribute>
+         <name>targeturl</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>targeturlparam</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>event</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>datasource</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>viewobject</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>addrowkey</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>extraparameters</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>ViewCriteria</name>      
+      <tagclass>oracle.jbo.html.jsp.datatags.ViewCriteriaTag</tagclass>
+      <teiclass>oracle.jbo.html.jsp.datatags.ViewCriteriaTagTEI</teiclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Sets a search view criteria on a datasource.</info>      
+      <!-- page="Business Components Data Access" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ViCrta.gif" -->
+      <attribute>
+         <name>id</name>
+         <required>true</required>
+      </attribute>
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>action</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+   </tag>
+   <tag>      
+      <name>CriteriaRow</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.CriteriaRowTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Sets a WHERE-clause defining criteria row on a view criteria.</info>     
+      <!-- page="Business Components Data Access" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_CrtaRw.gif" -->
+      <attribute>
+         <name>id</name>
+         <required>true</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>index</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>uppercolumns</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>clearall</name>
+         <required>false</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+   </tag>
+   <tag>      
+      <name>Criteria</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.CriteriaTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>Sets a WHERE-clause value defining criteria on a criteria row.</info>     
+      <!-- page="Business Components Data Access" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_Crta.gif" -->   
+      <attribute>
+         <name>dataitem</name>
+         <required>true</required>      
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>    
+      <attribute>
+         <name>value</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>ViewCriteriaIterate</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.ViewCriteriaIterateTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>Iterates through all the criteria rows of a view criteria.</info>      
+      <!-- page="Business Components Data Access" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_VCIt.gif" -->
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>      
+      <name>ShowCriteria</name>
+      <tagclass>oracle.jbo.html.jsp.datatags.ShowCriteriaTag</tagclass>
+      <bodycontent>tagdependent</bodycontent>
+      <info>Displays the criteria of a dataitem in a criteria row.</info>      
+      <!-- page="Business Components Data Access" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_ShwCrta.gif" -->
+      <attribute>
+         <name>dataitem</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>
+   <tag>
+      <name>AnchorMedia</name>
+      <tagclass>oracle.ord.html.jsp.datatags.ShowOrdValueBaseTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>A Tag to insert a HTML Anchor tag for an interMedia object to a page.</info>      
+      <!-- page="Business Components Intermedia" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_AnchorMedia.gif" -->
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>mediaattr</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>rowkey</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>whereclause</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>retrievepath</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>MediaUrl</name>
+      <tagclass>oracle.ord.html.jsp.datatags.MediaUrlTag</tagclass>
+      <teiclass>oracle.ord.html.jsp.datatags.MediaUrlTEI</teiclass>
+      <bodycontent>JSP</bodycontent>
+      <info>A Tag to insert a URL string for an interMedia object to a page.</info>      
+      <!-- page="Business Components Intermedia" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_MediaUrl.gif" -->
+      <attribute>
+         <name>id</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>mediaattr</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>rowkey</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>whereclause</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>retrievepath</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>EmbedImage</name>
+      <tagclass>oracle.ord.html.jsp.datatags.ShowEmbedImageTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>A Tag to insert a HTML IMAGE tag for an interMedia ORDIMAGE object to a page.</info>      
+      <!-- page="Business Components Intermedia" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_EmbedImage.gif" -->
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>mediaattr</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>rowkey</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>whereclause</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>retrievepath</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>width</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>height</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>border</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>align</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>alt</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>altattr</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>longdesc</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>EmbedAudio</name>
+      <tagclass>oracle.ord.html.jsp.datatags.ShowEmbedAudioTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>A Tag to insert a HTML OBJECT tag for an interMedia ORDAUDIO object to a page.</info>      
+      <!-- page="Business Components Intermedia" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_EmbedAudio.gif" -->
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>mediaattr</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>rowkey</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>whereclause</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>retrievepath</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>width</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>height</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>alt</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>altattr</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>title</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>helperapp</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>showcontrols</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>autoplay</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>loop</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>standby</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>EmbedVideo</name>
+      <tagclass>oracle.ord.html.jsp.datatags.ShowEmbedVideoTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>A Tag to insert a HTML OBJECT tag for an interMedia ORDVideo object to a page.</info>      
+      <!-- page="Business Components Intermedia" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_EmbedVideo.gif" -->
+      <attribute>
+         <name>datasource</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+      <attribute>
+         <name>mediaattr</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>rowkey</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>whereclause</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>retrievepath</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>width</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>height</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>alt</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>altattr</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>title</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>helperapp</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>showcontrols</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>autoplay</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>loop</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+         <name>standby</name>
+         <required>false</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>
+   </tag>   
+   <tag>
+      <name>FileUploadForm</name>
+      <tagclass>oracle.ord.html.jsp.datatags.FileUploadFormTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>A Tag to insert a HTML FORM tag for file upload.</info>      
+      <!-- page="Business Components Intermedia" -->
+      <!-- editor="oracle.jbo.dt.ui.wizards.palette.JspWizardInvoker" -->
+      <!-- icon="/oracle/jbo/dt/ui/wizards/palette/images/T_UploadFileForm.gif" -->
+      <attribute>
+         <name>action</name>
+         <required>true</required>         
+         <rtexprvalue>true</rtexprvalue>
+      </attribute>      
+   </tag>
+</taglib>

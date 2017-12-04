@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Wizard>
+   <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.input.StaticProperties">
+      <config/>
+      <wizdata>
+         <Property name="HTML_SRC_DIR"/>
+         <Property name="charset"/>
+         <Property name="ViewId">vo</Property>
+      </wizdata>
+   </WizardTask>
+   <WizardTask class="oracle.jbo.dt.ui.wizards.wiztemplate.codegen.FileCodeGenerator">
+      <config/>
+      <wizdata>
+         <!-- Start of Tag based code generation -->
+         <selection id="default">
+            <file in="common/misc/bc4j.css" action="substitute" out="{%HTML_SRC_DIR%}/bc4j.css" overwrite="yes"/>
+            <file in="common/struts/DataTableComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataTableComponent.jsp" overwrite="yes"/>
+            <file in="common/struts/DataScrollerComponent.jsp" action="copy" out="{%HTML_SRC_DIR%}/DataScrollerComponent.jsp" overwrite="yes"/>
+            <configureproject configurer="oracle.jbo.dt.jsp.configurers.StrutsProject" />
+            <RunCommand class="oracle.jbo.dt.jsp.struts.commands.SaveStrutsConfigCommand" />
+         </selection>
+      </wizdata>
+   </WizardTask>
+</Wizard>

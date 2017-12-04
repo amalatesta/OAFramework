@@ -1,0 +1,157 @@
+<document>
+  <preset name="Brief">
+    <context name="oracle.jdevimpl.runner.run.JRunnerGlobalKeys">
+      <map action="RunProjectCommand" scope="global">
+        <accel>F11</accel>
+      </map>
+    </context>
+    <context name="oracle.jdevimpl.runner.debug.JDebuggerGlobalKeys">
+      <map action="DebugProjectCommand" scope="global">
+        <accel>shift F9</accel>
+      </map>
+      <map action="DebugResumeCommand" scope="global">
+        <accel>F9</accel>
+      </map>
+      <map action="DebugResetCommand" scope="global">
+        <accel>control F2</accel>
+      </map>
+      <map action="DebugStepOverCommand" scope="global">
+        <accel>F8</accel>
+      </map>
+      <map action="DebugStepIntoCommand" scope="global">
+        <accel>F7</accel>
+      </map>
+      <map action="DebugStepOutCommand" scope="global">
+        <accel>shift F7</accel>
+      </map>
+      <map action="DebugContinueStepCommand" scope="global">
+        <accel>shift F8</accel>
+      </map>
+      <map action="DebugRunToCursorCommand" scope="global">
+        <accel>F4</accel>
+      </map>
+      <map action="DebugCodeEditorToggleBreakpointCommand" scope="global">
+        <accel>F5</accel>
+      </map>
+    </context>
+    <context name="Constraints">
+      <map action="ConstraintsWindow" scope="global">
+        <accel>shift control C</accel>
+      </map>
+    </context>
+    <context name="SqlEditor">
+    </context>
+    <context name="oracle.jdevimpl.java.imports.ImportController$KeyContext">
+      <map action="ojji.ImportAssistance" scope="global">
+        <accel>alt ENTER</accel>
+      </map>
+    </context>
+    <context name="oracle.jdevimpl.uieditor.uicanvas.ComponentFactory">
+      <map action="LayoutConstants.ALIGN_LEFT_CMD_ID" scope="local">
+        <accel>shift LEFT</accel>
+      </map>
+      <map action="LayoutConstants.ALIGN_CENTER_CMD_ID" scope="local">
+        <accel>alt shift LEFT</accel>
+       
+        <accel>alt shift RIGHT</accel>
+      </map>
+      <map action="LayoutConstants.ALIGN_RIGHT_CMD_ID" scope="local">
+        <accel>shift RIGHT</accel>
+      </map>
+      <map action="LayoutConstants.ALIGN_TOP_CMD_ID" scope="local">
+        <accel>shift UP</accel>
+      </map>
+      <map action="LayoutConstants.ALIGN_MIDDLE_CMD_ID" scope="local">
+        <accel>alt shift UP</accel>
+       
+        <accel>alt shift DOWN</accel>
+      </map>
+      <map action="LayoutConstants.ALIGN_BOTTOM_CMD_ID" scope="local">
+        <accel>shift DOWN</accel>
+      </map>
+      <map action="LayoutConstants.BIG_INCREASE_HEIGHT_CMD_ID" scope="local">
+        <accel>control alt DOWN</accel>
+      </map>
+      <map action="LayoutConstants.INCREASE_HEIGHT_CMD_ID" scope="local">
+        <accel>control alt shift DOWN</accel>
+      </map>
+      <map action="LayoutConstants.BIG_DECREASE_HEIGHT_CMD_ID" scope="local">
+        <accel>control alt UP</accel>
+      </map>
+      <map action="LayoutConstants.DECREASE_HEIGHT_CMD_ID" scope="local">
+        <accel>control alt shift UP</accel>
+      </map>
+      <map action="LayoutConstants.BIG_INCREASE_WIDTH_CMD_ID" scope="local">
+        <accel>control alt RIGHT</accel>
+      </map>
+      <map action="LayoutConstants.INCREASE_WIDTH_CMD_ID" scope="local">
+        <accel>control alt shift RIGHT</accel>
+      </map>
+      <map action="LayoutConstants.BIG_DECREASE_WIDTH_CMD_ID" scope="local">
+        <accel>control alt LEFT</accel>
+      </map>
+      <map action="LayoutConstants.DECREASE_WIDTH_CMD_ID" scope="local">
+        <accel>control alt shift LEFT</accel>
+      </map>
+      <map action="LayoutConstants.BIG_MOVE_UP_CMD_ID" scope="local">
+        <accel>control UP</accel>
+      </map>
+      <map action="LayoutConstants.MOVE_UP_CMD_ID" scope="local">
+        <accel>control shift UP</accel>
+      </map>
+      <map action="LayoutConstants.BIG_MOVE_DOWN_CMD_ID" scope="local">
+        <accel>control DOWN</accel>
+      </map>
+      <map action="LayoutConstants.MOVE_DOWN_CMD_ID" scope="local">
+        <accel>control shift DOWN</accel>
+      </map>
+      <map action="LayoutConstants.BIG_MOVE_LEFT_CMD_ID" scope="local">
+        <accel>control LEFT</accel>
+      </map>
+      <map action="LayoutConstants.MOVE_LEFT_CMD_ID" scope="local">
+        <accel>control shift LEFT</accel>
+      </map>
+      <map action="LayoutConstants.BIG_MOVE_RIGHT_CMD_ID" scope="local">
+        <accel>control RIGHT</accel>
+      </map>
+      <map action="LayoutConstants.MOVE_RIGHT_CMD_ID" scope="local">
+        <accel>control shift RIGHT</accel>
+      </map>
+      <map action="LayoutConstants.NEXT_CMD_ID" scope="local">
+        <accel>TAB</accel>
+      </map>
+      <map action="LayoutConstants.PREV_CMD_ID" scope="local">
+        <accel>shift TAB</accel>
+      </map>
+    </context>
+    <context name="JSP and HTML Visual Editor">
+      <map action="ToolbarIdeCommands.REFRESH_CMD_ID" scope="local">
+        <accel>F5</accel>
+      </map>          
+      <map action="ToolbarIdeCommands.BOLD_CMD_ID" scope="local">
+        <accel>control B</accel>
+      </map>
+      <map action="ToolbarIdeCommands.ITALIC_CMD_ID" scope="local">
+        <accel>control I</accel>
+      </map>
+      <map action="ToolbarIdeCommands.UNDERLINE_CMD_ID" scope="local">
+        <accel>control U</accel>
+      </map>
+      <map action="ToolbarIdeCommands.ALIGN_LEFT_CMD_ID" scope="local">
+        <accel>control alt shift L</accel>
+      </map>      
+      <map action="ToolbarIdeCommands.ALIGN_CENTER_CMD_ID" scope="local">
+        <accel>control alt shift C</accel>
+      </map>      
+      <map action="ToolbarIdeCommands.ALIGN_RIGHT_CMD_ID" scope="local">
+        <accel>control alt shift R</accel>
+      </map>      
+      <map action="ToolbarIdeCommands.UNINDENT_CMD_ID" scope="local">
+        <accel>control alt [91]</accel>
+      </map>            
+      <map action="ToolbarIdeCommands.INDENT_CMD_ID" scope="local">
+        <accel>control alt [93]</accel>
+      </map>             
+    </context>    
+  </preset>
+</document>

@@ -1,0 +1,553 @@
+/*
+ * Standard policy file for oc4j
+ *
+ * When this file is in use the System property ${oracle.home} must
+ *    be set to $ORACLE_HOME or to the value of $ORACLE_HOME.
+ *
+ * When this file is in use via OPMN the System property ${oracle.oc4j.instancename}
+ *    is used to identify the instance-level connector jars.
+ * 
+ * This file grants AllPermission to "oc4j code"
+ *    oc4j code is code used either directly or indirectly by the app server
+ *    itself.Including code generated for ejb wrappers.
+ *     See oc4j.jar!boot.xml for a complete list. Currently this file
+ *    only lists jar's that believed to need permissions. Others may be
+ *    added if neccessary.
+ *
+ *    In a future release the grants will be refined so that
+ *    only the Permissions actually needed by oc4j code will be granted.  
+ *
+ * Calls to accessController.doPrivileged have been added to oc4j
+ *    with the intention that application code only needs to be
+ *    granted the Permissions needed by actions it performs directly.
+ *    It should not need to be granted Permissions required by J2EE 
+ *    operations.
+ *    
+ *    For example if a Servlet (or jsp) forwards to a .jsp it does not
+ *    need Permission to read and compile the .jsp.  Similarly the
+ *    application code associated with an ejb that specifies container
+ *    managed persistence does not need Permission to create a socket
+ *    talking to the database holding the underlying data. But an EJB
+ *    using bean managed persistence does need such Permission.
+ */
+
+
+grant codebase "file:${oracle.home}/j2ee/home/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/oc4j.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/oc4j-api.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/admin.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/oc4jclient.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/admin_client.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/iiop.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/iiop_rmic.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/rmic.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/oc4j_interop.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/jazncore.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/jazn.jar" {
+    permission java.security.AllPermission;
+};
+
+
+grant codebase "file:${oracle.home}/j2ee/home/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/lib/pcl.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/lib/oc4jadmin.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/lib/scheduler.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/lib/jmxri.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/lib/oc4j-internal.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/lib/adminclient.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/lib/oc4j-unsupported-api.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/lib/ojsp.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${oracle.home}/j2ee/home/lib/servlet.jar" {
+    permission java.security.AllPermission;
+};
+
+
+grant codebase "file:${oracle.home}/jlib/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/jlib/ldapjclnt10.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/jlib/oraclepki.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/bc4j/jlib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${oracle.home}/toplink/jlib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/dms/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/dms/lib/dmsapp.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/diagnostics/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/diagnostics/lib/ojdl.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/jdbc/lib/ojdbc14dms.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/dbjava/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/sqlj/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/javacache/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/uddi/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/xdk/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/opmn/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/opmn/lib/optic.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/opmn/lib/opmnconfig.jar" {
+    permission java.security.AllPermission;
+};
+
+
+grant codebase "file:${oracle.home}/webservices/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/webservices/lib/wsclient.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${oracle.home}/webservices/lib/wssecurity.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${oracle.home}/webservices/lib/orawsdl.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${oracle.home}/webservices/lib/wssecurity.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${oracle.home}/webservices/lib/wssecurity.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/webservices/lib/saaj-api.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/webservices/lib/orasaaj.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/webservices/lib/JMXSoapAdapterShared.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/webservices/lib/mdds.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${oracle.home}/javavm/lib/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/jsp/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/lib/dms.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/lib/dmsapp.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/lib/xml.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/lib/xmlparserv2.jar" {
+    permission java.security.AllPermission;
+};
+
+
+/** EJB skeleton/tie & BCEL proxy support **/
+
+grant codeBase "file:generated/by/proxy" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file://generated/by/oracle.j2ee.connector.proxy.BCELProxyClassLoader" {
+    permission java.security.AllPermission;
+};
+
+
+
+
+/**
+ * Miscellaneous grants to jars distributed as part of oc4j that may be used
+ * in various ways
+ */
+
+grant codebase "file:../connectors/OracleASjms/OracleASjms/gjra.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/connectors/OracleASjms/OracleASjms/gjra.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:../connectors/datasources/datasources/datasources.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/connectors/datasources/datasources/datasources.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/jsp/lib/*" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/jsp/lib/taglib/ojsputil.jar" {
+    permission java.security.AllPermission;
+};
+
+
+
+/* GRANTS TO DEFAULT APPLICATIONS */
+
+grant codebase "file:${oracle.home}/j2ee/home/application-deployments/ascontrol/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/application-deployments/ascontrol/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:../applications/ascontrol/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/applications/ascontrol/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/application-deployments/default/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/application-deployments/default/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:../applications/default/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/applications/default/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/application-deployments/javasso/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/application-deployments/javasso/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:../applications/javasso/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/applications/javasso/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/application-deployments/usermbean/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/application-deployments/usermbean/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:../applications/usermbean/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/applications/usermbean/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/application-deployments/admin_ejb/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/application-deployments/admin_ejb/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:../applications/admin_ejb.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:../applications/admin_ejb/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/applications/admin_ejb/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:../applications/jmsrouter-ejb.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:../applications/jmsrouter" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/home/application-deployments/JMXSoapAdapter-web/-" {
+    permission java.security.AllPermission;
+};
+
+grant codebase "file:${oracle.home}/j2ee/${oracle.oc4j.instancename}/application-deployments/JMXSoapAdapter-web/-" {
+    permission java.security.AllPermission;
+}; 
+
+
+grant { permission java.util.PropertyPermission "j2ee.home", "read"; } ;
+grant { permission java.util.PropertyPermission "java.home", "read"; } ;
+grant { permission java.util.PropertyPermission "javax.xml.soap.SOAPFactory", "read"; } ;
+grant { permission java.util.PropertyPermission "javax.activation.debug" , "read"; } ;
+grant { permission java.util.PropertyPermission "javax.xml.parsers.DocumentBuilderFactory" , "read"; } ;
+grant { permission java.util.PropertyPermission "javax.xml.soap.MessageFactory" , "read"; } ;
+grant { permission java.util.PropertyPermission "jdbc.nontx.autocommit" , "read"; } ;
+grant { permission java.util.PropertyPermission "mail.URLName.dontencode" , "read"; } ;
+grant { permission java.util.PropertyPermission "oc4j.jmx.event.interval" , "read"; } ;
+grant { permission java.util.PropertyPermission "oc4j.jmx.heartbeat.interval" , "read"; } ;
+grant { permission java.util.PropertyPermission "oracle.jdbc.defaultNChar" , "read"; } ;
+grant { permission java.util.PropertyPermission "oracle.jdbc.DMSStatementMetrics" , "read"; } ;
+grant { permission java.util.PropertyPermission "oracle.jdbc.J2EE13Compliant" , "read"; } ;
+grant { permission java.util.PropertyPermission "oracle.jdbc.TcpNoDelay" , "read"; } ;
+grant { permission java.util.PropertyPermission "oracle.jdbc.useFetchSizeWithLongColumn" , "read"; } ;
+grant { permission java.util.PropertyPermission "oracle.jdbc.V8Compatible" , "read"; } ;
+grant { permission java.util.PropertyPermission "oracle.jserver.version" , "read"; } ;
+grant { permission java.util.PropertyPermission "oracle.xml.parser.debugmode" , "read"; } ;
+grant { permission java.util.PropertyPermission "oracle.xml.parser.default.character.set" , "read"; } ;
+grant { permission java.util.PropertyPermission "oracle.xml.xslt.jdwp", "read"; };
+grant { permission java.util.PropertyPermission "orasaaj.soapversion" , "read"; } ;
+grant { permission java.util.PropertyPermission "org.apache.commons.logging.Log" , "read"; } ;
+grant { permission java.util.PropertyPermission "org.apache.commons.logging.LogFactory" , "read"; } ;
+grant { permission java.util.PropertyPermission "PersistenceManagerDebug" , "read"; } ;
+grant { permission java.util.PropertyPermission "pro.debug" , "read"; } ;
+grant { permission java.util.PropertyPermission "sqlj.runtime" , "read"; } ;
+grant { permission java.util.PropertyPermission "transaction.debug" , "read"; } ;
+grant { permission java.util.PropertyPermission "user.home" , "read"; } ;
+grant { permission java.util.PropertyPermission "user.name" , "read"; } ;
+grant { permission java.util.PropertyPermission "rmi.verbose" , "read"; } ;
+grant { permission java.util.PropertyPermission "AssociateUserToThread", "read"; };
+grant { permission java.util.PropertyPermission "toplink.cts.collection.checkParameters", "read"; };
+grant { permission java.util.PropertyPermission "AllowZeroInPK", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.Modules", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.Nagle", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.cookies.hosts.accept", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.cookies.hosts.reject", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.cookies.save", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.deferStreamed", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.disableKeepAlives", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.disable_pipelining", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.dontChunkRequests", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.dontTimeoutRespBody", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.forceHTTP_1.0", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.log.level", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.nonProxyHosts", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.socket.idleTimeout", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.socksHost", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.socksPort", "read"; };
+grant { permission java.util.PropertyPermission "HTTPClient.socksVersion", "read"; };
+grant { permission java.util.PropertyPermission "JavaClass.debug", "read"; };
+grant { permission java.util.PropertyPermission "LoadBalanceOnLookup", "read"; };
+grant { permission java.util.PropertyPermission "SQLLog", "read"; };
+grant { permission java.util.PropertyPermission "USE_JAAS", "read"; };
+grant { permission java.util.PropertyPermission "com.sun.enterprise.home", "read"; };
+grant { permission java.util.PropertyPermission "customFinderMethod.noLazyLoading", "read"; };
+grant { permission java.util.PropertyPermission "debug", "read"; };
+grant { permission java.util.PropertyPermission "default.cmp.pm", "read"; };
+grant { permission java.util.PropertyPermission "ejb.debug.verbose", "read"; };
+grant { permission java.util.PropertyPermission "findByPrimaryKey.noLazyLoading", "read"; };
+grant { permission java.util.PropertyPermission "http.nonProxyHosts", "read"; };
+grant { permission java.util.PropertyPermission "http.proxyHost", "read"; };
+grant { permission java.util.PropertyPermission "http.proxyPort", "read"; };
+grant { permission java.util.PropertyPermission "java.ext.dirs", "read"; };
+grant { permission java.util.PropertyPermission "java.class.path", "read"; };
+grant { permission java.util.PropertyPermission "javax.xml.parsers.SAXParserFactory", "read"; };
+grant { permission java.util.PropertyPermission "jca.connection.debug", "read"; };
+grant { permission java.util.PropertyPermission "log4j.configDebug", "read"; };
+grant { permission java.util.PropertyPermission "log4j.configuration", "read"; };
+grant { permission java.util.PropertyPermission "log4j.debug", "read"; };
+grant { permission java.util.PropertyPermission "log4j.defaultInitOverride", "read"; };
+grant { permission java.util.PropertyPermission "log4j.disable", "read"; };
+grant { permission java.util.PropertyPermission "log4j.disableOverride", "read"; };
+grant { permission java.util.PropertyPermission "oneToOneJoin", "read"; };
+grant { permission java.util.PropertyPermission "sun.boot.class.path", "read"; };
+grant { permission java.util.PropertyPermission "toplink.changePolicy", "read"; };
+grant { permission java.util.PropertyPermission "toplink.cts.collection.checkParameters", "read"; };
+grant { permission java.util.PropertyPermission "toplink.cts.collection.checkTransaction", "read"; };
+grant { permission java.util.PropertyPermission "toplink.defaultmapping.dbTableGenSetting", "read"; };
+grant { permission java.util.PropertyPermission "toplink.defaultmapping.useExtendedTableNames", "read"; };
+grant { permission java.util.PropertyPermission "toplink.log.destination", "read"; };
+grant { permission java.util.PropertyPermission "toplink.log.level", "read"; };
+grant { permission java.util.PropertyPermission "toplink.xml.platform", "read"; };
+grant { permission java.util.PropertyPermission "upload.buflen", "read"; };
+grant { permission java.util.PropertyPermission "user.dir", "read"; };
+grant { permission java.util.PropertyPermission "javax.xml.soap.SOAPConnectionFactory", "read";};
+grant { permission java.util.PropertyPermission "HTTPClient.socket.idleTimeout", "write";};
+
+
+/* JDK  */
+
+grant codebase "file:${java.home}/../lib/tools.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${java.home}/lib/ext/*" {
+	permission java.security.AllPermission;
+};
+
+/* Default Grants copied from the JDK default system policy. */
+
+grant {
+	// "standard" properies that can be read by anyone.
+
+	permission java.util.PropertyPermission "java.version", "read";
+	permission java.util.PropertyPermission "java.vendor", "read";
+	permission java.util.PropertyPermission "java.vendor.url", "read";
+	permission java.util.PropertyPermission "java.class.version", "read";
+	permission java.util.PropertyPermission "os.name", "read";
+	permission java.util.PropertyPermission "os.version", "read";
+	permission java.util.PropertyPermission "os.arch", "read";
+	permission java.util.PropertyPermission "file.separator", "read";
+	permission java.util.PropertyPermission "path.separator", "read";
+	permission java.util.PropertyPermission "line.separator", "read";
+
+	permission java.util.PropertyPermission "java.specification.version", "read";
+	permission java.util.PropertyPermission "java.specification.vendor", "read";
+	permission java.util.PropertyPermission "java.specification.name", "read";
+
+	permission java.util.PropertyPermission "java.vm.specification.version", "read";
+	permission java.util.PropertyPermission "java.vm.specification.vendor", "read";
+	permission java.util.PropertyPermission "java.vm.specification.name", "read";
+	permission java.util.PropertyPermission "java.vm.version", "read";
+	permission java.util.PropertyPermission "java.vm.vendor", "read";
+	permission java.util.PropertyPermission "java.vm.name", "read";
+
+
+    /* The following are granted by the default jdk policy but are considered
+     * unsafe and are omitted by this policy file */
+
+	//permission java.lang.RuntimePermission "stopThread";
+    //permission java.net.SocketPermission "localhost:1024-", "listen";
+};
+
+
+
+
+/**
+ ** Add Custom Application Permission Grants Below
+ **/

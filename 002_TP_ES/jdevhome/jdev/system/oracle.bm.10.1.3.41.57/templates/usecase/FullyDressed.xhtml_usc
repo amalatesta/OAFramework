@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:uml="http://xmlns.oracle.com/jdeveloper/905/modeler/html">
+
+
+   <!-- Header block, contains id for element, this is mandatory -->
+
+   <head>
+     <meta http-equiv="content-type" content="text/html; charset=UTF8" />
+     <meta name="generator" content="Oracle JDeveloper" />
+     <title>Template</title>
+
+     <uml:modelElement_id guid="0" />
+   </head>
+
+
+   <!-- Body block, contains the descriptions -->
+
+   <body>
+
+
+
+      <table class="UseCaseTable" width="100%" border="0">
+
+
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Extends:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+            <!-- Extends block, can contain a link to the usecase that this
+                one extends, this part is optional -->
+
+  
+            <uml:usecase_extends>
+  
+              <p>...</p>
+              <p></p>
+  
+            </uml:usecase_extends>
+          
+          
+          </td>
+          
+        </tr>
+
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Specialization:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+            <!-- Specialization block, can contain a link to the usecase that this
+                one extends, this part is optional -->
+
+  
+            <uml:class_specializes>
+  
+              <p>...</p>
+              <p></p>
+  
+            </uml:class_specializes>
+          
+          
+          </td>
+          
+        </tr>
+
+
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Scope:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+            <uml:usecase_scope>
+  
+              <p>...</p>
+              <p></p>
+  
+            </uml:usecase_scope>
+          
+          
+          </td>
+          
+        </tr>
+
+
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Stakeholder(s):</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+            <uml:usecase_communicates>
+  
+              <ul>
+                <li> </li>
+                <li><uml:next /></li>
+              </ul>
+  
+            </uml:usecase_communicates>
+          
+          </td>
+          
+        </tr>
+
+
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Goal of Primary Actor:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+  
+            <p>...</p>
+            <p></p>
+  
+          
+          </td>
+          
+        </tr>
+
+
+
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Level:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+            <uml:usecase_level>
+            
+              <p>Summary</p>
+              <p></p>
+            
+            </uml:usecase_level>
+          
+          </td>
+          
+        </tr>
+
+
+
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Conditions:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+            <!-- Conditions, contain information that may be used
+              in later versions of the tool as constraints_ It is included
+              as a placeholder in this release so is optional -->  
+  
+            <uml:usecase_conditions>
+  
+              <h4 class="UseCaseSubHeader">Precondition:</h4>
+              
+              <p>...</p>
+              <p> </p>
+              
+              
+              <h4 class="UseCaseSubHeader">Minimal Guarantee(s):</h4>
+              
+              <p>...</p>
+              <p> </p>
+              
+              <h4 class="UseCaseSubHeader">Success Guarantee(s):</h4>
+              
+              <p>...</p>
+              <p> </p>
+              
+              <h4 class="UseCaseSubHeader">Trigger:</h4>
+              
+              <p>...</p>
+              <p> </p>
+  
+            </uml:usecase_conditions>          
+          </td>
+          
+        </tr>
+        
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Scenario:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+            <!-- The main story of the usecase -->
+
+  
+            <uml:usecase_includes>
+        
+
+              <ol>
+                <li> </li>
+                <li><uml:next /></li>
+              </ol>
+              
+              <h3>Extension(s):</h3>
+              
+              <ol>
+                <li> ... </li>
+              </ol>
+            
+            </uml:usecase_includes>
+          
+          </td>
+          
+        </tr>        
+
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Open Issues:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+            
+            <ul>
+              <li>...</li>
+            </ul>
+         
+          </td>
+          
+        </tr>   
+
+
+        <tr>
+  
+          <td width="30%" class="UseCaseTableCellTitle"   align="right" valign="top">
+  
+            <h3>Referenced By:</h3>
+            
+          </td>
+          
+          <td width="70%" class="UseCaseTableCellContents"   valign="top">
+  
+            <!-- This section is used by the tools to record which object
+                  uses which document. This section is mandatory; but not
+                  designed to be user edited so it may be wise to hide
+                  this block in the HTML -->
+      
+            <uml:backreferences>
+      
+               <ul>
+                  <li><uml:next /></li>
+               </ul>
+      
+      
+            </uml:backreferences>
+
+         
+          </td>
+          
+        </tr>   
+
+      </table>
+
+   </body>
+
+</html>

@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<client-settings class="java.util.HashMap" xmlns="http://xmlns.oracle.com/jdeveloper/101303/client-preferences">
+   <Item>
+      <Key>cvs_command_options</Key>
+      <Value class="oracle.jdeveloper.vcs.spi.VCSPropertyMap">
+         <map class="java.util.HashMap">
+            <Item>
+               <Key>automatically_add_on_commit</Key>
+               <Value class="java.lang.Boolean">true</Value>
+            </Item>
+            <Item>
+               <Key>property_use_comment_templates</Key>
+               <Value class="java.lang.Boolean">true</Value>
+            </Item>
+            <Item>
+               <Key>rename_on_remove</Key>
+               <Value class="java.lang.Boolean">false</Value>
+            </Item>
+         </map>
+      </Value>
+   </Item>
+   <Item>
+      <Key>cvs_label_decorations</Key>
+      <Value class="oracle.jdeveloper.vcs.spi.VCSPropertyMap">
+         <map class="java.util.HashMap">
+            <Item>
+               <Key>decoration_file_format</Key>
+               <Value>${revision} ${tag} ${content}</Value>
+            </Item>
+            <Item>
+               <Key>decoration_folder_format</Key>
+               <Value>${tag}</Value>
+            </Item>
+            <Item>
+               <Key>decoration_project_format</Key>
+               <Value>${tag} [${host}]</Value>
+            </Item>
+            <Item>
+               <Key>decoration_tooltip_format</Key>
+               <Value>CVS: ${revision} - ${status}</Value>
+            </Item>
+         </map>
+      </Value>
+   </Item>
+   <Item>
+      <Key>cvs_system_properties</Key>
+      <Value class="oracle.jdeveloper.vcs.spi.VCSPropertyMap">
+         <map class="java.util.HashMap">
+            <Item>
+               <Key>cvs_external_client</Key>
+               <Value class="java.lang.Boolean">false</Value>
+            </Item>
+            <Item>
+               <Key>cvs_path</Key>
+               <Value>cvs</Value>
+            </Item>
+            <Item>
+               <Key>overlay_scheme</Key>
+               <Value>JDEVELOPER</Value>
+            </Item>
+            <Item>
+               <Key>run_in_edit_mode</Key>
+               <Value class="java.lang.Boolean">false</Value>
+            </Item>
+         </map>
+      </Value>
+   </Item>
+   <Item>
+      <Key>cvs_version_tool_properties</Key>
+      <Value class="oracle.jdeveloper.vcs.spi.VCSPropertyMap">
+         <map class="java.util.HashMap"/>
+      </Value>
+   </Item>
+   <Item>
+      <Key>cvs_versioning_properties</Key>
+      <Value class="oracle.jdeveloper.vcs.spi.VCSPropertyMap">
+         <map class="java.util.HashMap">
+            <Item>
+               <Key>autoCheckouts</Key>
+               <Value class="java.lang.Boolean">true</Value>
+            </Item>
+            <Item>
+               <Key>property_operation_timeout</Key>
+               <Value class="java.lang.Integer">60</Value>
+            </Item>
+            <Item>
+               <Key>useLabelDecorations</Key>
+               <Value class="java.lang.Boolean">true</Value>
+            </Item>
+            <Item>
+               <Key>useOverlays</Key>
+               <Value class="java.lang.Boolean">true</Value>
+            </Item>
+         </map>
+      </Value>
+   </Item>
+</client-settings>
