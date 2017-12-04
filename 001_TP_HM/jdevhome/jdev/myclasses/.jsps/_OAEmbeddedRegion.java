@@ -118,21 +118,21 @@ public class _OAEmbeddedRegion extends com.orionserver.http.OrionHttpJspPage {
   static {
     try {
     __oracle_jsp_text[0] = 
-    "\r\n".toCharArray();
+    "\n".toCharArray();
     __oracle_jsp_text[1] = 
-    "\r\n\r\n".toCharArray();
+    "\n\n".toCharArray();
     __oracle_jsp_text[2] = 
-    "\r\n\r\n".toCharArray();
+    "\n\n".toCharArray();
     __oracle_jsp_text[3] = 
-    "\r\n".toCharArray();
+    "\n".toCharArray();
     __oracle_jsp_text[4] = 
-    "\r\n\r\n".toCharArray();
+    "\n\n".toCharArray();
     __oracle_jsp_text[5] = 
-    "\r\n        ".toCharArray();
+    "\n        ".toCharArray();
     __oracle_jsp_text[6] = 
-    "\r\n".toCharArray();
+    "\n".toCharArray();
     __oracle_jsp_text[7] = 
-    "\r\n".toCharArray();
+    "\n".toCharArray();
     }
     catch (Throwable th) {
       System.err.println(th);

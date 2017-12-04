@@ -6,7 +6,7 @@
             <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
          </ui:corporateBranding>
          <ui:contents>
-            <oa:messageComponentLayout id="MainRN">
+            <oa:messageComponentLayout id="MainRN" controllerClass="oracle.apps.ak.hello.webui.HelloWorldMainCO">
                <ui:contents>
                   <oa:messageTextInput id="HelloName" prompt="Name" columns="20" maximumLength="50"/>
                   <oa:messageLayout id="ButtonLayout">

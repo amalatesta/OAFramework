@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'windows-1252'?>
 <data-sources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/data-sources-10_1.xsd" xmlns="http://xmlns.oracle.com/oracleas/schema">
     <connection-pool name="jdev-connection-pool-fwk12dev">
-        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="apps_read_only" password="->DataBase_User_CnH5mrvkLpLa1iKyiVs_IvCSdwmkQDcw" url="jdbc:oracle:thin:@ap664sdb.us.oracle.com:4120:fwk12dev"/>
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="apps_read_only" password="->DataBase_User_7caMAntodVwqYdEGIeLP9jgqRb0Uhlnn" url="jdbc:oracle:thin:@ap664sdb.us.oracle.com:4120:fwk12dev"/>
     </connection-pool>
     <managed-data-source name="jdev-connection-managed-fwk12dev" jndi-name="jdbc/fwk12devDS" connection-pool-name="jdev-connection-pool-fwk12dev"/>
-    <native-data-source name="jdev-connection-native-fwk12dev" jndi-name="jdbc/fwk12devCoreDS" url="jdbc:oracle:thin:@ap664sdb.us.oracle.com:4120:fwk12dev" user="apps_read_only" password="->DataBase_User_nnTr1wCLTEQg8M70eaVaqtLR9_7TIEJ5" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <native-data-source name="jdev-connection-native-fwk12dev" jndi-name="jdbc/fwk12devCoreDS" url="jdbc:oracle:thin:@ap664sdb.us.oracle.com:4120:fwk12dev" user="apps_read_only" password="->DataBase_User_PR7_N6Uyj3wwKghxcd88PUqMLhh-l308" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
 </data-sources>

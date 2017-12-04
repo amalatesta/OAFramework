@@ -236,45 +236,45 @@ public class _OAErrorPage extends com.orionserver.http.OrionHttpJspPage {
   static {
     try {
     __oracle_jsp_text[0] = 
-    "\r\n".toCharArray();
+    "\n".toCharArray();
     __oracle_jsp_text[1] = 
-    "\r\n\r\n".toCharArray();
+    "\n\n".toCharArray();
     __oracle_jsp_text[2] = 
-    "\r\n\r\n<html lang=\"en-US\">\r\n<head>\r\n<script>\r\nfunction ignoreWarnAboutChanges(url)\r\n{\r\n  document.location.href = url;\r\n}\r\n</script>  \r\n\r\n<style type=\"text/css\">\r\n\r\n.globalHeader {\r\nbackground: url(/OA_HTML/cabo/images/swan/headerBg.jpg);\r\nbackground-repeat:repeat-x;background-color:#1963a9\r\n}\r\n\r\n.globalLink  {white-space:nowrap;font-size:9pt;font-family:Arial;color:#ffffff;text-decoration:none}\r\n\r\n.pageLink A:link {color:#2b7c92}\r\n\r\n.copyright {white-space:nowrap;font-family:Arial;font-size:7.5pt;color:#ffffff;text-decoration:none}\r\n\r\n.errorHeader {\r\ncolor:#ed1c24;\r\nfont-family:Arial;\r\nfont-weight:bold;\r\nfont-size:9pt;\r\nvertical-align:middle;\r\nborder-bottom-width:1px;\r\nborder-bottom-style:solid;\r\nborder-bottom-color:#3a5a87;\r\nmargin-bottom:0px;\r\n}\r\n\r\n.errorText {\r\nfont-family:Tahoma,Arial,Helvetica,Geneva,sans-serif;\r\nfont-size:9pt;\r\n}\r\n\r\n</style>\r\n\r\n\r\n  <title>Error Page</title>\r\n  <META name=\"fwk-error\" content=\"Error occured while processing the request\">\r\n\r\n".toCharArray();
+    "\n\n<html lang=\"en-US\">\n<head>\n<script>\nfunction ignoreWarnAboutChanges(url)\n{\n  document.location.href = url;\n}\n</script>  \n\n<style type=\"text/css\">\n\n.globalHeader {\nbackground: url(/OA_HTML/cabo/images/swan/headerBg.jpg);\nbackground-repeat:repeat-x;background-color:#1963a9\n}\n\n.globalLink  {white-space:nowrap;font-size:9pt;font-family:Arial;color:#ffffff;text-decoration:none}\n\n.pageLink A:link {color:#2b7c92}\n\n.copyright {white-space:nowrap;font-family:Arial;font-size:7.5pt;color:#ffffff;text-decoration:none}\n\n.errorHeader {\ncolor:#ed1c24;\nfont-family:Arial;\nfont-weight:bold;\nfont-size:9pt;\nvertical-align:middle;\nborder-bottom-width:1px;\nborder-bottom-style:solid;\nborder-bottom-color:#3a5a87;\nmargin-bottom:0px;\n}\n\n.errorText {\nfont-family:Tahoma,Arial,Helvetica,Geneva,sans-serif;\nfont-size:9pt;\n}\n\n</style>\n\n\n  <title>Error Page</title>\n  <META name=\"fwk-error\" content=\"Error occured while processing the request\">\n\n".toCharArray();
     __oracle_jsp_text[3] = 
-    "\r\n     <META name=\"fwk-error-detail\" content=\"".toCharArray();
+    "\n     <META name=\"fwk-error-detail\" content=\"".toCharArray();
     __oracle_jsp_text[4] = 
-    "\">\r\n".toCharArray();
+    "\">\n".toCharArray();
     __oracle_jsp_text[5] = 
-    "\r\n\r\n</head>\r\n\r\n<body> \r\n\r\n".toCharArray();
+    "\n\n</head>\n\n<body> \n\n".toCharArray();
     __oracle_jsp_text[6] = 
-    "  \r\n\r\n<table   class=\"globalheader\" width=\"100%\" border=\"0\" cellspacing=\"0\"  cellpadding=\"0\">\r\n  <tr> <td style=\"padding-left:5px; padding-top:10px;\"><img src=\"/OA_MEDIA/FNDSSCORP.gif\" alt=\"\"> </td></tr>\r\n  <tr>\r\n      ".toCharArray();
+    "  \n\n<table   class=\"globalheader\" width=\"100%\" border=\"0\" cellspacing=\"0\"  cellpadding=\"0\">\n  <tr> <td style=\"padding-left:5px; padding-top:10px;\"><img src=\"/OA_MEDIA/FNDSSCORP.gif\" alt=\"\"> </td></tr>\n  <tr>\n      ".toCharArray();
     __oracle_jsp_text[7] = 
-    "\r\n       <td align=\"right\"; style=\"padding-right:5px;padding-bottom:5px\"> <a href= ".toCharArray();
+    "\n       <td align=\"right\"; style=\"padding-right:5px;padding-bottom:5px\"> <a href= ".toCharArray();
     __oracle_jsp_text[8] = 
-    " class=\"globalLink\"> Logout </a></td>\r\n      ".toCharArray();
+    " class=\"globalLink\"> Logout </a></td>\n      ".toCharArray();
     __oracle_jsp_text[9] = 
-    "\r\n  </tr>  \r\n  \r\n</table>\r\n\r\n<p>\r\n".toCharArray();
+    "\n  </tr>  \n  \n</table>\n\n<p>\n".toCharArray();
     __oracle_jsp_text[10] = 
-    "\r\n\r\n\r\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-left:5px;margin-right:5px\">\r\n".toCharArray();
+    "\n\n\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-left:5px;margin-right:5px\">\n".toCharArray();
     __oracle_jsp_text[11] = 
-    " \r\n      <tr> <td> <h1 class=\"errorHeader\"> Error Page </h1> </td> </tr>\r\n      <tr valign=\"top\"> <td class=\"errorText\" >You have encountered an unexpected error.  Please contact the System Administrator for assistance. </td> </tr>      \r\n".toCharArray();
+    " \n      <tr> <td> <h1 class=\"errorHeader\"> Error Page </h1> </td> </tr>\n      <tr valign=\"top\"> <td class=\"errorText\" >You have encountered an unexpected error.  Please contact the System Administrator for assistance. </td> </tr>      \n".toCharArray();
     __oracle_jsp_text[12] = 
-    "\r\n      <tr> \r\n      <td> <h1 class=\"errorHeader\"> Error Page </h1> </td> \r\n      </tr>\r\n      \r\n      <tr valign=\"top\"> \r\n      <td class=\"errorText\" >You have encountered an unexpected error.  Please contact the System Administrator for assistance. </td> \r\n      </tr>      \r\n".toCharArray();
+    "\n      <tr> \n      <td> <h1 class=\"errorHeader\"> Error Page </h1> </td> \n      </tr>\n      \n      <tr valign=\"top\"> \n      <td class=\"errorText\" >You have encountered an unexpected error.  Please contact the System Administrator for assistance. </td> \n      </tr>      \n".toCharArray();
     __oracle_jsp_text[13] = 
-    "\r\n       <tr> \r\n       <td style=\"padding-bottom:15px\" class=\"errorText\"> Click <span class=\"pageLink\"> <a  href=\"/OA_HTML/OAErrorDetailPage.jsp\"> here </a></span> for exception details. </td>\r\n       </tr>\r\n".toCharArray();
+    "\n       <tr> \n       <td style=\"padding-bottom:15px\" class=\"errorText\"> Click <span class=\"pageLink\"> <a  href=\"/OA_HTML/OAErrorDetailPage.jsp\"> here </a></span> for exception details. </td>\n       </tr>\n".toCharArray();
     __oracle_jsp_text[14] = 
-    "   \r\n        <tr> \r\n        <td  style=\"padding-bottom:15px\" class=\"errorText\"> Click <span class=\"pageLink\"><a href=javascript:ignoreWarnAboutChanges(\"/OA_HTML/OAErrorDetailPage.jsp\")> here </a></span> for exception details. </td>\r\n        </tr>\r\n".toCharArray();
+    "   \n        <tr> \n        <td  style=\"padding-bottom:15px\" class=\"errorText\"> Click <span class=\"pageLink\"><a href=javascript:ignoreWarnAboutChanges(\"/OA_HTML/OAErrorDetailPage.jsp\")> here </a></span> for exception details. </td>\n        </tr>\n".toCharArray();
     __oracle_jsp_text[15] = 
-    "\r\n        <tr>\r\n        <td style=\"padding-bottom:25px\" class=\"errorText\">\r\n\r\n".toCharArray();
+    "\n        <tr>\n        <td style=\"padding-bottom:25px\" class=\"errorText\">\n\n".toCharArray();
     __oracle_jsp_text[16] = 
-    "\r\n        <span class=\"pageLink\"> <a href=\"".toCharArray();
+    "\n        <span class=\"pageLink\"> <a href=\"".toCharArray();
     __oracle_jsp_text[17] = 
-    "\">About Previous Page</a></span>\r\n".toCharArray();
+    "\">About Previous Page</a></span>\n".toCharArray();
     __oracle_jsp_text[18] = 
-    "\r\n        &nbsp; \r\n".toCharArray();
+    "\n        &nbsp; \n".toCharArray();
     __oracle_jsp_text[19] = 
-    "       \r\n        </td>\r\n        </tr>\r\n\r\n</table>\r\n\r\n<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\"\r\n      style=\"background-image:url(/OA_HTML/cabo/images/swan/footerBg.gif);\">\r\n<tr>\r\n   <td nowrap align=\"center\">\r\n     <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\">\r\n       <tr>\r\n         <td><a href=\"/OA_HTML/OALogout.jsp?menu=Y\" class=\"globalLink\">Logout</a></td>\r\n       </tr>\r\n     </table>\r\n    </td>\r\n</tr>\r\n\r\n<tr>\r\n<td>\r\n  <table cellpadding=\"2\" cellspacing=\"2\" border=\"0\" width=\"100%\">\r\n    <tr>\r\n      <td align=\"right\" nowrap width=\"100%\" class=\"copyright\">\r\n         Copyright (c) 2006, Oracle. All rights reserved.\r\n      </td>\r\n    </tr>\r\n   </table>\r\n</td>\r\n</tr>\r\n</table>\r\n<script>document.body.style.marginLeft=\"0px\";document.body.style.marginRight=\"0px\";document.body.style.marginTop=\"0px\";</script>\r\n\r\n</body>\r\n</html>\r\n".toCharArray();
+    "       \n        </td>\n        </tr>\n\n</table>\n\n<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\"\n      style=\"background-image:url(/OA_HTML/cabo/images/swan/footerBg.gif);\">\n<tr>\n   <td nowrap align=\"center\">\n     <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\">\n       <tr>\n         <td><a href=\"/OA_HTML/OALogout.jsp?menu=Y\" class=\"globalLink\">Logout</a></td>\n       </tr>\n     </table>\n    </td>\n</tr>\n\n<tr>\n<td>\n  <table cellpadding=\"2\" cellspacing=\"2\" border=\"0\" width=\"100%\">\n    <tr>\n      <td align=\"right\" nowrap width=\"100%\" class=\"copyright\">\n         Copyright (c) 2006, Oracle. All rights reserved.\n      </td>\n    </tr>\n   </table>\n</td>\n</tr>\n</table>\n<script>document.body.style.marginLeft=\"0px\";document.body.style.marginRight=\"0px\";document.body.style.marginTop=\"0px\";</script>\n\n</body>\n</html>\n".toCharArray();
     }
     catch (Throwable th) {
       System.err.println(th);

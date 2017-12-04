@@ -250,13 +250,13 @@ public class _OAFrame extends com.orionserver.http.OrionHttpJspPage {
   static {
     try {
     __oracle_jsp_text[0] = 
-    "<!-- $Header: OAFrame.jsp 120.14 2005/07/02 04:58:17 atgops1 noship $ -->\r\n<!-- Author : Kandasamy P Athimoolam -->\r\n<!-- Created : 09/24/2003 -->\r\n".toCharArray();
+    "<!-- $Header: OAFrame.jsp 120.14 2005/07/02 04:58:17 atgops1 noship $ -->\n<!-- Author : Kandasamy P Athimoolam -->\n<!-- Created : 09/24/2003 -->\n".toCharArray();
     __oracle_jsp_text[1] = 
-    "\r\n\r\n<html>\r\n<head>\r\n".toCharArray();
+    "\n\n<html>\n<head>\n".toCharArray();
     __oracle_jsp_text[2] = 
-    "\r\n\r\n</head>\r\n\r\n".toCharArray();
+    "\n\n</head>\n\n".toCharArray();
     __oracle_jsp_text[3] = 
-    "\r\n</html>".toCharArray();
+    "\n</html>".toCharArray();
     }
     catch (Throwable th) {
       System.err.println(th);

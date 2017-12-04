@@ -161,25 +161,25 @@ public class _OAPerf extends com.orionserver.http.OrionHttpJspPage {
   static {
     try {
     __oracle_jsp_text[0] = 
-    "\r\n\r\n".toCharArray();
+    "\n\n".toCharArray();
     __oracle_jsp_text[1] = 
-    "\r\n\r\n".toCharArray();
+    "\n\n".toCharArray();
     __oracle_jsp_text[2] = 
-    "\r\n\r\n".toCharArray();
+    "\n\n".toCharArray();
     __oracle_jsp_text[3] = 
-    "\r\n".toCharArray();
+    "\n".toCharArray();
     __oracle_jsp_text[4] = 
-    "\r\n\r\n".toCharArray();
+    "\n\n".toCharArray();
     __oracle_jsp_text[5] = 
-    "\r\n        ".toCharArray();
+    "\n        ".toCharArray();
     __oracle_jsp_text[6] = 
-    "\r\n".toCharArray();
+    "\n".toCharArray();
     __oracle_jsp_text[7] = 
-    "\r\n\r\n<html>\r\n".toCharArray();
+    "\n\n<html>\n".toCharArray();
     __oracle_jsp_text[8] = 
-    "\r\n\r\n</html>\r\n\r\n".toCharArray();
+    "\n\n</html>\n\n".toCharArray();
     __oracle_jsp_text[9] = 
-    "\r\n".toCharArray();
+    "\n".toCharArray();
     }
     catch (Throwable th) {
       System.err.println(th);
