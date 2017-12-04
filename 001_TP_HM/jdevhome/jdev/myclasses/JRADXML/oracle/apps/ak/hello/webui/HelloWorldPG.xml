@@ -9,6 +9,11 @@
             <oa:messageComponentLayout id="MainRN">
                <ui:contents>
                   <oa:messageTextInput id="HelloName" prompt="Name" columns="20" maximumLength="50"/>
+                  <oa:messageLayout id="ButtonLayout">
+                     <ui:contents>
+                        <oa:submitButton id="Go" use="/oracle/apps/fnd/attributesets/Buttons/Go"/>
+                     </ui:contents>
+                  </oa:messageLayout>
                </ui:contents>
             </oa:messageComponentLayout>
          </ui:contents>

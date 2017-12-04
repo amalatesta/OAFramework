@@ -4,16 +4,6 @@
 -->
 <orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd" autocreate-tables="true" default-data-source="jdbc/OracleDS" schema-major-version="10" schema-minor-version="0">
    <web-module id="defaultWebApp" path="../default-web-app"/>
-    <library path="C:\oracle\OA_Framework\jdevbin\j2ee\home\lib\scheduler.jar">jdev-generated</library>
-    <library path="C:\oracle\OA_Framework\jdevbin\jdev\lib\jdev-rt.jar">jdev-generated</library>
-    <library path="C:\oracle\OA_Framework\jdevbin\vbroker4\lib\vbjorb.jar">jdev-generated</library>
-    <library path="C:\oracle\OA_Framework\jdevbin\jdev\lib\ojc.jar">jdev-generated</library>
-   <!--
-  <web-module id="jmsrouter_web" path="../applications/jmsrouter.war" />
-  <ejb-module id="jmsrouter_ejb" path="../applications/jmsrouter-ejb.jar" />
-  -->
-   <connectors path="./oc4j-connectors.xml"/>
-   <persistence path="../persistence"/>
     <library path="C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myglobalclasses">oaext-generated</library>
     <library path="C:\oracle\OA_Framework\jdevbin\jdev\appslibrt\global_patch_jars">oaext-generated</library>
     <library path="C:\oracle\OA_Framework\jdevbin\BC4J\lib\bc4jdomorcl.jar">oaext-generated</library>
@@ -65,6 +55,16 @@
     <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\bidata-nls.zip">oaext-generated</library>
     <library path="C:\oracle\OA_Framework\jdevbin\bibeans\lib\olap_api.jar">oaext-generated</library>
     <library path="C:\oracle\OA_Framework\jdevbin\oaext\config\oac\oacfilter.jar">oaext-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\j2ee\home\lib\scheduler.jar">jdev-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\lib\jdev-rt.jar">jdev-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\vbroker4\lib\vbjorb.jar">jdev-generated</library>
+    <library path="C:\oracle\OA_Framework\jdevbin\jdev\lib\ojc.jar">jdev-generated</library>
+   <!--
+  <web-module id="jmsrouter_web" path="../applications/jmsrouter.war" />
+  <ejb-module id="jmsrouter_ejb" path="../applications/jmsrouter-ejb.jar" />
+  -->
+   <connectors path="./oc4j-connectors.xml"/>
+   <persistence path="../persistence"/>
    <!-- Scheduler supporting classes -->
    <library path="${oracle.home}/j2ee/home/lib/scheduler.jar"/>
    <jazn provider="XML"/>

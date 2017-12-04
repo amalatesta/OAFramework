@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath_~PROD_~PATH_~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath_~PROD_mds_directory  -->
+<package xmlns="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" xmlns:jrad="http://xmlns.oracle.com/jrad" version="9.0.3.9.1_1343" xml:lang="en-US" file-version="$Header: Buttons.xml 115.13 2004/12/05 04:22:57 nigoel noship $">
+   <jrad:attributeSet docName="AddAnotherRow" comment="UI Standards 'Add Another Row' button as of 10/08/02" prompt="Add Another Row"/>
+   <jrad:attributeSet docName="AddTwoRows" comment="UI Standards 'Add 2 Rows' button as of 10/04/02" prompt="Add 2 Rows"/>
+   <jrad:attributeSet docName="AddThreeRows" comment="UI Standards 'Add 3 Rows' button as of 10/04/02" prompt="Add 3 Rows"/>
+   <jrad:attributeSet docName="AddFiveRows" comment="UI Standards 'Add 5 Rows' button as of 10/04/02" prompt="Add 5 Rows"/>
+   <jrad:attributeSet docName="AddTenRows" comment="UI Standards 'Add 10 Rows' button as of 10/04/02" prompt="Add 10 Rows"/>
+   <jrad:attributeSet docName="AddAttachments" comment="UI Standards 'Add Attachments' button as of 8/28/02" prompt="Add Attachments"/>
+   <jrad:attributeSet docName="Create" comment="UI Standards 'Create' button as of 12/02/02" prompt="Create"/>
+   <jrad:attributeSet docName="Insert" comment="UI Standards 'Insert' button as of 8/28/02" prompt="Insert"/>
+   <jrad:attributeSet docName="Update" comment="UI Standards 'Update' button as of 8/28/02" prompt="Update"/>
+   <jrad:attributeSet docName="Edit" comment="UI Standards 'Edit' button as of 8/28/02" prompt="Edit"/>
+   <jrad:attributeSet docName="Delete" comment="UI Standards 'Delete' button as of 8/28/02" prompt="Delete"/>
+   <jrad:attributeSet docName="Remove" comment="UI Standards 'Remove' button as of 8/28/02" prompt="Remove"/>
+   <jrad:attributeSet docName="Cut" comment="UI Standards 'Cut' button as of 8/28/02" prompt="Cut"/>
+   <jrad:attributeSet docName="Copy" comment="UI Standards 'Copy' button as of 8/28/02" prompt="Copy"/>
+   <jrad:attributeSet docName="Duplicate" comment="UI Standards 'Duplicate' button as of 8/28/02" prompt="Duplicate"/>
+   <jrad:attributeSet docName="SaveAs" comment="UI Standards 'Save As' button as of 8/28/02" prompt="Save As"/>
+   <jrad:attributeSet docName="Save" comment="UI Standards 'Save' button as of 12/3/03" prompt="Save" shortDesc="Save: Alt + S"/>
+   <jrad:attributeSet docName="Apply" comment="UI Standards 'Apply' button as of 8/28/02" prompt="A&amp;pply" shortDesc="Apply: Alt + p"/>
+   <jrad:attributeSet docName="OK" comment="UI Standards 'OK' button as of 8/28/02" prompt="OK"/>
+   <jrad:attributeSet docName="Submit" comment="UI Standards 'Submit' button as of 8/28/02" prompt="Sub&amp;mit" shortDesc="Submit: Alt + m"/>
+   <jrad:attributeSet docName="Cancel" comment="UI Standards 'Cancel' button as of 8/28/02" prompt="Cance&amp;l" warnAboutChanges="false" shortDesc="Cancel: Alt + l"/>
+   <jrad:attributeSet docName="ClearAll" comment="UI Standards 'Clear All' button as of 8/28/02" prompt="Clear All"/>
+   <jrad:attributeSet docName="Reset to Default" comment="UI Standards 'Reset to Default' button as of 8/28/02" prompt="Reset to Default"/>
+   <jrad:attributeSet docName="Revert" comment="UI Standards 'Revert' button as of 8/28/02" prompt="Revert"/>
+   <jrad:attributeSet docName="Restore" comment="UI Standards 'Restore' button as of 8/28/02" prompt="Restore"/>
+   <jrad:attributeSet docName="RefreshData" comment="UI Standards 'Refresh Data' button as of 8/28/02" prompt="Refresh Data"/>
+   <jrad:attributeSet docName="Next" comment="UI Standards 'Next' button as of 8/28/02" prompt="Ne&amp;xt" shortDesc="Next: Alt + x"/>
+   <jrad:attributeSet docName="Back" comment="UI Standards 'Back' button as of 8/28/02" prompt="Bac&amp;k" shortDesc="Back: Alt + k"/>
+   <jrad:attributeSet docName="Skip" comment="UI Standards 'Skip' button as of 8/28/02" prompt="Skip"/>
+   <jrad:attributeSet docName="SelectAll" comment="UI Standards 'Select All' button as of 8/28/02" prompt="Select All"/>
+   <jrad:attributeSet docName="SelectNone" comment="UI Standards 'Select None' button as of 8/28/02" prompt="Select None"/>
+   <jrad:attributeSet docName="InvertSelection" comment="UI Standards 'Invert Selection' button as of 8/28/02" prompt="Invert Selection"/>
+   <jrad:attributeSet docName="ExpandAll" comment="UI Standards 'Expand All' button as of 8/28/02" prompt="Expand All"/>
+   <jrad:attributeSet docName="CollapseAll" comment="UI Standards 'Collapse All' button as of 8/28/02" prompt="Collapse All"/>
+   <jrad:attributeSet docName="Search" comment="UI Standards 'Search' button as of 8/28/02" prompt="Sea&amp;rch" shortDesc="Search: Alt + r"/>
+   <jrad:attributeSet docName="AdvancedSearch" comment="UI Standards 'Advanced Search' button as of 8/28/02" prompt="Advanced Search"/>
+   <jrad:attributeSet docName="Go" comment="UI Standards 'Go' button as of 8/28/02" prompt="Go"/>
+   <jrad:attributeSet docName="Views" comment="UI Standards 'Views' button as of 8/28/02" prompt="Views"/>
+   <jrad:attributeSet docName="ImportExport" comment="UI Standards 'Import/Export' button as of 8/28/02" prompt="Import/Export"/>
+   <jrad:attributeSet docName="UploadDownload" comment="UI Standards 'Upload/Download' button as of 8/28/02" prompt="Upload/Download"/>
+   <jrad:attributeSet docName="Download" comment="UI Standards 'Upload/Download' button as of 9/3/04" prompt="Download"/>
+   <jrad:attributeSet docName="Personalize" comment="UI Standards 'Personalize' button as of 8/28/02" prompt="Personalize"/>
+   <jrad:attributeSet docName="Login" comment="UI Standards 'Login' button as of 8/28/02" prompt="Login"/>
+   <jrad:attributeSet docName="Logout" comment="UI Standards 'Logout' button as of 8/28/02" prompt="Logout"/>
+   <jrad:attributeSet docName="ReturnToPortal" comment="UI Standards 'Return to Portal' button as of 8/28/02" prompt="Return to Portal"/>
+   <jrad:attributeSet docName="FullList" comment="UI Standards 'Full List' button as of 12/3/02" prompt="Full List"/>
+   <jrad:attributeSet docName="Close" comment="UI Standards 'Close' button as of 8/28/02" prompt="Close"/>
+   <jrad:attributeSet docName="Continue" comment="UI Standards 'Continue' button as of 8/28/02" prompt="Continue" shortDesc="Continue: Alt + C"/>
+   <jrad:attributeSet docName="Finish" comment="UI Standards 'Finish' button as of 8/28/02" prompt="Fin&amp;ish" shortDesc="Finish: Alt + i"/>
+   <jrad:attributeSet docName="Yes" comment="UI Standards 'Yes' button" prompt="&amp;Yes" shortDesc="Yes: Alt + Y"/>
+   <jrad:attributeSet docName="No" comment="UI Standards 'No' button" prompt="&amp;No" shortDesc="No: Alt + N"/>
+   <jrad:attributeSet docName="Select" comment="UI Standards 'Select' button" prompt="Select"/>
+   <jrad:attributeSet docName="Import" comment="UI Standards 'Import' button" prompt="Import"/>
+   <jrad:attributeSet docName="Export" comment="UI Standards 'Export' button" text="Export"/>
+   <jrad:attributeSet docName="PrintablePage" comment="UI Standards 'Printable Page' button as of 12/09/02" prompt="Printable Page"/>
+</package>

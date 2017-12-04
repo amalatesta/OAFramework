@@ -112,17 +112,17 @@ public class _OALogout extends com.orionserver.http.OrionHttpJspPage {
   static {
     try {
     __oracle_jsp_text[0] = 
-    "\n\n".toCharArray();
+    "\r\n\r\n".toCharArray();
     __oracle_jsp_text[1] = 
-    "\n\n".toCharArray();
+    "\r\n\r\n".toCharArray();
     __oracle_jsp_text[2] = 
-    "\n\n<html>\n".toCharArray();
+    "\r\n\r\n<html>\r\n".toCharArray();
     __oracle_jsp_text[3] = 
-    "\n  <head>\n    <title>Logout</title>\n    <script TYPE=\"text/javascript\">\n      if (navigator.userAgent.indexOf(\"MSIE\") != -1)\n      {     \n         window.close();\n         history.back();\n      }\n      else\n      {\n        if(confirm(\"".toCharArray();
+    "\r\n  <head>\r\n    <title>Logout</title>\r\n    <script TYPE=\"text/javascript\">\r\n      if (navigator.userAgent.indexOf(\"MSIE\") != -1)\r\n      {     \r\n         window.close();\r\n         history.back();\r\n      }\r\n      else\r\n      {\r\n        if(confirm(\"".toCharArray();
     __oracle_jsp_text[4] = 
-    "\"))\n          window.close();\n        else\n          history.back();  \n      }\n    </script>\n    <noscript> \n    <p>This product requires use of a browser that supports JavaScript \n       1.2, and the scripting should be enabled in the browser\n    </noscript> \n\n  </head>\n  <body></body>\n".toCharArray();
+    "\"))\r\n          window.close();\r\n        else\r\n          history.back();  \r\n      }\r\n    </script>\r\n    <noscript> \r\n    <p>This product requires use of a browser that supports JavaScript \r\n       1.2, and the scripting should be enabled in the browser\r\n    </noscript> \r\n\r\n  </head>\r\n  <body></body>\r\n".toCharArray();
     __oracle_jsp_text[5] = 
-    "\n</html>\n".toCharArray();
+    "\r\n</html>\r\n".toCharArray();
     }
     catch (Throwable th) {
       System.err.println(th);

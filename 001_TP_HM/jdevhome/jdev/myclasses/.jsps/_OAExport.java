@@ -206,13 +206,13 @@ public class _OAExport extends com.orionserver.http.OrionHttpJspPage {
   static {
     try {
     __oracle_jsp_text[0] = 
-    "\n\n".toCharArray();
+    "\r\n\r\n".toCharArray();
     __oracle_jsp_text[1] = 
-    "\n\n".toCharArray();
+    "\r\n\r\n".toCharArray();
     __oracle_jsp_text[2] = 
-    "\n\n".toCharArray();
+    "\r\n\r\n".toCharArray();
     __oracle_jsp_text[3] = 
-    "\n".toCharArray();
+    "\r\n".toCharArray();
     }
     catch (Throwable th) {
       System.err.println(th);

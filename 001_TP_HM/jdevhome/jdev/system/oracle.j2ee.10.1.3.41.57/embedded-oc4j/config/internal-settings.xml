@@ -12,7 +12,7 @@
   </server-extension-provider>
     <server-extension-provider name="Oc4jNotifier" class="oracle.jdevimpl.runner.oc4j.Oc4jNotifier">
         <sep-property name="port" value="42000"/>
-        <sep-property name="mesg" value="1601528b766"/>
+        <sep-property name="mesg" value="1601f62b8db"/>
     </server-extension-provider>
 
   <!-- New ORB config

@@ -125,11 +125,11 @@ public class _OA extends com.orionserver.http.OrionHttpJspPage {
   static {
     try {
     __oracle_jsp_text[0] = 
-    "\n        ".toCharArray();
+    "\r\n        ".toCharArray();
     __oracle_jsp_text[1] = 
-    "\n".toCharArray();
+    "\r\n".toCharArray();
     __oracle_jsp_text[2] = 
-    "\n".toCharArray();
+    "\r\n".toCharArray();
     }
     catch (Throwable th) {
       System.err.println(th);

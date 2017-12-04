@@ -142,7 +142,7 @@
    <editorPositions>
       <box>
          <leafBox width="400" height="300" selectedPage="0">
-            <state accelerator="-1" document="file ; ; -1 %2FC%3A%2Foracle%2FOA_Framework%2Fjdevbin%2Fjdev%2Fdoc%2Fwelcome%2Fwelcome.html.help ; ;">
+            <state accelerator="-1" document="file ; ; -1 %2FC%3A%2Foracle%2FOA_Framework%2Fjdevbin%2Fjdev%2Fdoc%2Fwelcome%2Fwelcome.html.help ; ;" project="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAProject.jpr ; ;" workspace="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAWorkspace.jws ; ;">
                <paneState currentEditor="oracle.jdevimpl.help.HelpSystemAddin">
                   <editorState xScrollPos="0" yScrollMin="0" xScrollExtent="0" xScrollMax="0" addin="oracle.jdevimpl.help.HelpSystemAddin" xScrollMin="0" yScrollExtent="0" yScrollPos="0" yScrollMax="0"/>
                </paneState>

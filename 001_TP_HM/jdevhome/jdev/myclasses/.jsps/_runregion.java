@@ -203,13 +203,13 @@ public class _runregion extends com.orionserver.http.OrionHttpJspPage {
   static {
     try {
     __oracle_jsp_text[0] = 
-    "\n\n".toCharArray();
+    "\r\n\r\n".toCharArray();
     __oracle_jsp_text[1] = 
-    "\n".toCharArray();
+    "\r\n".toCharArray();
     __oracle_jsp_text[2] = 
-    "\n\n".toCharArray();
+    "\r\n\r\n".toCharArray();
     __oracle_jsp_text[3] = 
-    "\n\n<HTML>\n<HEAD>\n<title>Test Page</title>\n</HEAD>\n\n<P>Please wait ...</P>\n\n</HTML>\n\n".toCharArray();
+    "\r\n\r\n<HTML>\r\n<HEAD>\r\n<title>Test Page</title>\r\n</HEAD>\r\n\r\n<P>Please wait ...</P>\r\n\r\n</HTML>\r\n\r\n".toCharArray();
     }
     catch (Throwable th) {
       System.err.println(th);
