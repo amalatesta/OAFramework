@@ -123,3 +123,24 @@
 17/12/04 03:20:22.677 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationExpansion, element messageStyledText, namespace http://xmlns.oracle.com/oa. Returning null for value none.
 17/12/04 03:20:22.682 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationMaxLength, element messageTextInput, namespace http://xmlns.oracle.com/oa. Returning null for value 10.
 17/12/04 03:20:22.683 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationExpansion, element messageTextInput, namespace http://xmlns.oracle.com/oa. Returning null for value none.
+17/12/04 03:35:18.229 10.1.3.3.0 Started
+17/12/04 03:35:27.338 APPS_HTML: 10.1.3.3.0 Started
+17/12/04 03:36:21.677 APPS_HTML:  Accessing File System for /oracle/apps/ak/hello/webui/HelloWorldPG
+17/12/04 03:36:57.975 APPS_HTML:  Accessing File System for /oracle/apps/fnd/attributesets/Buttons/Go
+17/12/04 03:37:01.371 APPS_HTML:  Accessing File System for /oracle/apps/fnd/regionMap/FND_AUTOFOOTER_REGION
+17/12/04 03:37:02.257 APPS_HTML:  Accessing File System for /oracle/apps/fnd/framework/webui/OAAutoFooter
+17/12/04 03:37:04.318 APPS_HTML: Warning: Document "/oracle/apps/fnd/regionMap/FND_AUTOFOOTER_REGION" is not allowed to reference component "/oracle/apps/fnd/framework/webui/OAAutoFooter" as its scope "." is too restrictive.
+17/12/04 03:37:04.333 APPS_HTML:  Accessing File System for /oracle/apps/fnd/framework/webui/OAFooter
+17/12/04 03:37:04.338 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationMaxLength, element messageStyledText, namespace http://xmlns.oracle.com/oa. Returning null for value 58.
+17/12/04 03:37:04.340 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationExpansion, element messageStyledText, namespace http://xmlns.oracle.com/oa. Returning null for value none.
+17/12/04 03:37:04.342 APPS_HTML: WARNING: No XSD definition found for attribute prompt, element link, namespace http://xmlns.oracle.com/oa. Returning null for value Privacy Statement.
+17/12/04 03:37:04.343 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationMaxLength, element link, namespace http://xmlns.oracle.com/oa. Returning null for value 17.
+17/12/04 03:37:04.343 APPS_HTML: WARNING: No XSD definition found for attribute maximumLength, element link, namespace http://xmlns.oracle.com/oa. Returning null for value 1.
+17/12/04 03:37:04.345 APPS_HTML: WARNING: No XSD definition found for attribute dataType, element link, namespace http://xmlns.oracle.com/oa. Returning null for value URL.
+17/12/04 03:37:04.346 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationExpansion, element link, namespace http://xmlns.oracle.com/oa. Returning null for value none.
+17/12/04 03:37:04.347 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationMaxLength, element messageStyledText, namespace http://xmlns.oracle.com/oa. Returning null for value 16.
+17/12/04 03:37:04.347 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationExpansion, element messageStyledText, namespace http://xmlns.oracle.com/oa. Returning null for value none.
+17/12/04 03:37:04.348 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationMaxLength, element messageStyledText, namespace http://xmlns.oracle.com/oa. Returning null for value 19.
+17/12/04 03:37:04.348 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationExpansion, element messageStyledText, namespace http://xmlns.oracle.com/oa. Returning null for value none.
+17/12/04 03:37:04.358 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationMaxLength, element messageTextInput, namespace http://xmlns.oracle.com/oa. Returning null for value 10.
+17/12/04 03:37:04.358 APPS_HTML: WARNING: No XSD definition found for attribute promptTranslationExpansion, element messageTextInput, namespace http://xmlns.oracle.com/oa. Returning null for value none.

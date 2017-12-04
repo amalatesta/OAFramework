@@ -93,4 +93,35 @@
       <type>3</type>
       <uncaught>false</uncaught>
    </Item>
+   <Item class="oracle.jdevimpl.runner.debug.BreakpointSettings">
+      <URL/>
+      <access>false</access>
+      <actionBeep>false</actionBeep>
+      <actionDisableOther class="java.lang.String"/>
+      <actionEnableOther class="java.lang.String"/>
+      <actionHalt>true</actionHalt>
+      <actionLog>true</actionLog>
+      <actionLogExpr class="java.lang.String"/>
+      <actionLogStack>false</actionLogStack>
+      <actionLogTag class="java.lang.String"/>
+      <caught>false</caught>
+      <className/>
+      <condition class="java.lang.String"/>
+      <enabled>true</enabled>
+      <exception/>
+      <fieldName/>
+      <file>HelloWorldMainCO.java</file>
+      <groupName class="java.lang.String"/>
+      <line>43</line>
+      <method/>
+      <modify>false</modify>
+      <ownerURL path="../../myprojects/HelloWorldOAWorkspace.jws"/>
+      <passCount>1</passCount>
+      <persistent>false</persistent>
+      <pkg>oracle.apps.ak.hello.webui</pkg>
+      <threadName class="java.lang.String"/>
+      <threadNameNot class="java.lang.String"/>
+      <type>0</type>
+      <uncaught>false</uncaught>
+   </Item>
 </breakpoints>

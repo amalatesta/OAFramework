@@ -1386,14 +1386,6 @@
                   </second>
                </Item>
                <Item class="oracle.ide.util.Pair">
-                  <first class="java.lang.String">JDevGotoPageDefController.PAGEDEF_SHOW_ID</first>
-                  <second class="oracle.ide.keyboard.KeyStrokes">
-                     <data>
-                        <Item class="javax.swing.KeyStroke">shift control T</Item>
-                     </data>
-                  </second>
-               </Item>
-               <Item class="oracle.ide.util.Pair">
                   <first class="java.lang.String">Dgr.Edit</first>
                   <second class="oracle.ide.keyboard.KeyStrokes">
                      <data>
@@ -1454,6 +1446,14 @@
                   <second class="oracle.ide.keyboard.KeyStrokes">
                      <data>
                         <Item class="javax.swing.KeyStroke">shift control D</Item>
+                     </data>
+                  </second>
+               </Item>
+               <Item class="oracle.ide.util.Pair">
+                  <first class="java.lang.String">JDevGotoPageDefController.PAGEDEF_SHOW_ID</first>
+                  <second class="oracle.ide.keyboard.KeyStrokes">
+                     <data>
+                        <Item class="javax.swing.KeyStroke">shift control T</Item>
                      </data>
                   </second>
                </Item>

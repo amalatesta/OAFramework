@@ -32,7 +32,7 @@
                      <properties expandData1.url="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAWorkspace.jws ; ;" flat-level="3" selectionRow="2" filter2.key="Applications" filter2.filterCls="oracle.ide.model.ContentFilter" expandData0.nodePath="Applications," sort-by-type="false" filter="3" show-libs="false" show-root-dirs="false" filter1.filterCls="oracle.ide.model.ContentFilter" filter1.key="ApplicationsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws" expandData1.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws," expandData.count="2" filter0.key="ApplicationsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jwsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr" filter0.filterCls="oracle.ide.model.ContentFilter"/>
                   </dockable>
                   <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ApplicationNavigatorWindow.ApplicationNavigatorName">
-                     <properties expandData1.url="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAWorkspace.jws ; ;" flat-level="3" expandData3.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources," selectionRow="2" filter2.key="Applications" filter2.filterCls="oracle.ide.model.ContentFilter" expandData0.nodePath="Applications," sort-by-type="false" filter="3" show-libs="false" show-root-dirs="false" expandData5.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources,oracle.apps.ak,hello," filter1.filterCls="oracle.ide.model.ContentFilter" filter1.key="ApplicationsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws" expandData1.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws," expandData.count="7" expandData2.url="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAProject.jpr ; ;" expandData6.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources,oracle.apps.ak,hello,webui," expandData2.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr," expandData4.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources,oracle.apps.ak," filter0.key="ApplicationsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jwsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr" filter0.filterCls="oracle.ide.model.ContentFilter"/>
+                     <properties expandData1.url="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAWorkspace.jws ; ;" flat-level="3" expandData3.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources," selectionRow="8" filter2.key="Applications" filter2.filterCls="oracle.ide.model.ContentFilter" expandData0.nodePath="Applications," sort-by-type="false" filter="3" show-libs="false" show-root-dirs="false" expandData5.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources,oracle.apps.ak,hello," filter1.filterCls="oracle.ide.model.ContentFilter" filter1.key="ApplicationsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws" expandData1.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws," expandData.count="7" expandData2.url="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAProject.jpr ; ;" expandData6.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources,oracle.apps.ak,hello,webui," expandData2.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr," expandData4.nodePath="Applications,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jws,C:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr,Application Sources,oracle.apps.ak," filter0.key="ApplicationsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAWorkspace.jwsC:\oracle\GitHub\OAFramework\001_TP_HM\jdevhome\jdev\myprojects\HelloWorldOAProject.jpr" filter0.filterCls="oracle.ide.model.ContentFilter"/>
                   </dockable>
                   <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ConnectionNavigatorWindow.Connections"/>
                </leafBox>
@@ -40,8 +40,8 @@
             <box>
                <leafBox width="400" height="300">
                   <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ExplorerWindow.SingletonExplorerWindow"/>
-                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.ThreadsWindow"/>
-                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.StackWindow"/>
+                  <dockable floatHeight="137" dockWidth="400" dockHeight="300" floatWidth="225" ID="Debugger.ThreadsWindow"/>
+                  <dockable floatHeight="131" dockWidth="400" dockHeight="300" floatWidth="150" ID="Debugger.StackWindow"/>
                   <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="BrowseHierarchy"/>
                   <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ThumbnailDockable"/>
                </leafBox>
@@ -76,7 +76,7 @@
             </box>
             <box>
                <leafBox width="400" height="300">
-                  <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.ClassesWindow"/>
+                  <dockable floatHeight="205" dockWidth="400" dockHeight="300" floatWidth="75" ID="Debugger.ClassesWindow"/>
                </leafBox>
             </box>
             <box>
@@ -113,15 +113,15 @@
                <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="LogWindow.Log">
                   <properties ClosedByUser="false"/>
                </dockable>
-               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.BreakpointsWindow"/>
+               <dockable floatHeight="137" dockWidth="400" dockHeight="300" floatWidth="150" ID="Debugger.BreakpointsWindow"/>
                <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="ToDoAddin.ToDoWindow"/>
             </leafBox>
          </box>
          <box>
             <leafBox width="400" height="300">
-               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.SmartWindow"/>
-               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.LocalsWindow"/>
-               <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.WatchWindow"/>
+               <dockable floatHeight="137" dockWidth="400" dockHeight="300" floatWidth="375" ID="Debugger.SmartWindow"/>
+               <dockable floatHeight="137" dockWidth="400" dockHeight="300" floatWidth="375" ID="Debugger.LocalsWindow"/>
+               <dockable floatHeight="137" dockWidth="400" dockHeight="300" floatWidth="375" ID="Debugger.WatchWindow"/>
                <dockable floatHeight="300" dockWidth="400" dockHeight="300" floatWidth="400" ID="Debugger.HeapWindow"/>
             </leafBox>
          </box>
@@ -154,7 +154,7 @@
             </state>
             <state accelerator="-1" document="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2Foracle%2Fapps%2Fak%2Fhello%2Fwebui%2FHelloWorldMainCO.java ; ;" project="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAProject.jpr ; ;" workspace="file ; ; -1 %2FC%3A%2Foracle%2FGitHub%2FOAFramework%2F001_TP_HM%2Fjdevhome%2Fjdev%2Fmyprojects%2FHelloWorldOAWorkspace.jws ; ;">
                <paneState currentEditor="oracle.ide.ceditor.CodeEditorAddin">
-                  <editorState xScrollPos="0" tabsize="8" yScrollMin="0" xScrollExtent="0" xScrollMax="0" addin="oracle.ide.ceditor.CodeEditorAddin" xScrollMin="0" yScrollExtent="0" offset="1949" yScrollPos="0" yScrollMax="0"/>
+                  <editorState xScrollPos="0" tabsize="8" yScrollMin="0" xScrollExtent="0" xScrollMax="0" addin="oracle.ide.ceditor.CodeEditorAddin" xScrollMin="0" yScrollExtent="0" offset="1876" yScrollPos="0" yScrollMax="0"/>
                </paneState>
                <pane>
                   <box>
@@ -166,6 +166,37 @@
       </box>
    </editorPositions>
    <visibilityLayouts>
+      <Debugging displayName="Debugging">
+         <UIDebugger.LISTENERS/>
+         <ThumbnailDockable/>
+         <LogWindow.Log visible="true" raised="true"/>
+         <Debugger.ClassesWindow visible="true" raised="true" minimized="true"/>
+         <Debugger.LocalsWindow visible="true"/>
+         <UIDebugger.OUTLINE/>
+         <adfdbPanel/>
+         <ApplicationNavigatorWindow.ApplicationNavigatorName visible="true" raised="true"/>
+         <BrowseHierarchy/>
+         <HelpSystemAddin.HelpWindow/>
+         <UIDebugger.TREE/>
+         <Debugger.HeapWindow/>
+         <BPEL_VIEW_TYPE.BPEL_OVERVIEW_ID/>
+         <Debugger.WatchWindow visible="true"/>
+         <ConnectionNavigatorWindow.Connections visible="true"/>
+         <SystemNavigatorWindow.SystemNavigatorName visible="true"/>
+         <Debugger.SmartWindow visible="true" raised="true"/>
+         <RunManagerWindow/>
+         <ToDoAddin.ToDoWindow/>
+         <ExplorerWindow.SingletonExplorerWindow visible="true"/>
+         <TCPPacketMonitor/>
+         <CVSNavigatorWindow.CVS/>
+         <Debugger.BreakpointsWindow visible="true"/>
+         <ComponentPalette/>
+         <ConstraintsWindow/>
+         <Debugger.StackWindow visible="true" raised="true"/>
+         <InspectorWindow.SingletonInspectorWindow/>
+         <Debugger.ThreadsWindow/>
+         <Debugger.MonitorsWindow/>
+      </Debugging>
       <Editing displayName="Editing">
          <UIDebugger.LISTENERS/>
          <ThumbnailDockable/>

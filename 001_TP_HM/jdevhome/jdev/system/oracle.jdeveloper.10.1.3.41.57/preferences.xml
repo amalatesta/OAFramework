@@ -44,7 +44,7 @@
       <Key>BreakpointsWindowOptions</Key>
       <Value class="oracle.jdevimpl.runner.debug.BreakpointsWindowSettings">
          <breakpointScope>workspace</breakpointScope>
-         <columnOrder/>
+         <columnOrder>Description,Type,</columnOrder>
          <columnVisible>
             <Item>true</Item>
             <Item>true</Item>
@@ -58,16 +58,16 @@
             <Item>false</Item>
          </columnVisible>
          <columnWidth>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
+            <Item>75</Item>
+            <Item>75</Item>
+            <Item>75</Item>
+            <Item>75</Item>
+            <Item>75</Item>
+            <Item>75</Item>
+            <Item>75</Item>
+            <Item>75</Item>
+            <Item>75</Item>
+            <Item>75</Item>
          </columnWidth>
          <defaultActionBeep>false</defaultActionBeep>
          <defaultActionDisableOther class="java.lang.String"/>
@@ -93,7 +93,7 @@
    <Item>
       <Key>ClassesWindowOptions</Key>
       <Value class="oracle.jdevimpl.runner.debug.ClassesWindowSettings">
-         <columnOrder/>
+         <columnOrder>Name,</columnOrder>
          <columnVisible>
             <Item>true</Item>
             <Item>false</Item>
@@ -101,10 +101,10 @@
             <Item>false</Item>
          </columnVisible>
          <columnWidth>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
+            <Item>173</Item>
+            <Item>75</Item>
+            <Item>75</Item>
+            <Item>75</Item>
          </columnWidth>
          <showClassLoaders>false</showClassLoaders>
          <showClassLoadersAsTree>true</showClassLoadersAsTree>
@@ -178,7 +178,7 @@
          <sharedIconColumn>true</sharedIconColumn>
          <showCodeFoldingHighlight>true</showCodeFoldingHighlight>
          <showCodeFoldingMargin>true</showCodeFoldingMargin>
-         <showLineNumbers>false</showLineNumbers>
+         <showLineNumbers>true</showLineNumbers>
          <showRightMargin>true</showRightMargin>
          <useAAText>false</useAAText>
       </Value>
@@ -232,83 +232,7 @@
          </extensionToContentTypeMap>
          <userExtensionList>
             <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagFragmentSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webservices.ide.WSDLArtifactNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdeveloper.model.JavaSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdeveloper.model.JavaClassNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.tip.tools.ide.workflow.addin.RoutingSlipNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.adf.dt.navigator.nodes.CpxNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdeveloper.vcs.patch.PatchNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.tip.tools.ide.pm.addin.PMNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.ide.model.Workspace</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.adf.dt.navigator.nodes.DataControlConfigurationNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.xsql.XsqlSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.JspFragmentSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.xml.xquery.XQueryNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.ide.model.ImageNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.xsql.XSLSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.bali.xml.addin.XMLSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.ide.model.Project</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.css.addin.CSSSourceNode</docClassName>
-               <userExtensions class="java.util.ArrayList"/>
-            </Item>
-            <Item>
-               <docClassName>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</docClassName>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagXSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -316,15 +240,31 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdeveloper.library.JDKNode</docClassName>
+               <docClassName>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdeveloper.webservices.model.WebServiceProxyNode</docClassName>
+               <docClassName>oracle.jdevimpl.jar.JarFolder</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdevimpl.webapp.html.XHtmlSourceNode</docClassName>
+               <docClassName>oracle.tip.tools.ide.pm.addin.PMNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.toplink.addin.node.MWProjectNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.xsql.XSLSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.DeployableTextNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.css.addin.CSSSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -332,11 +272,23 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
+               <docClassName>oracle.jdevimpl.webapp.html.XHtmlSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
                <docClassName>oracle.jdeveloper.model.JspSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagXSourceNode</docClassName>
+               <docClassName>oracle.jdeveloper.library.JDKNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.ImageNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.webservices.model.WebServiceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -348,11 +300,55 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.Workspace</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.xml.xquery.XQueryNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.jsp.tag.JspTagFragmentSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.model.JavaSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdevimpl.webapp.xsql.XsqlSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.webservices.model.WebServiceProxyNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.ide.model.Project</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
                <docClassName>oracle.jdevimpl.webapp.template.HtmlTemplateSourceNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdevimpl.jar.JarFolder</docClassName>
+               <docClassName>oracle.jdevimpl.webapp.jsp.JspFragmentSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.bali.xml.addin.XMLSourceNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.adf.dt.navigator.nodes.CpxNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.jdeveloper.vcs.patch.PatchNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
@@ -360,15 +356,19 @@
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.jdeveloper.webservices.model.WebServiceNode</docClassName>
+               <docClassName>oracle.jdeveloper.model.JavaClassNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.ide.model.DeployableTextNode</docClassName>
+               <docClassName>oracle.jdevimpl.webservices.ide.WSDLArtifactNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
             <Item>
-               <docClassName>oracle.toplink.addin.node.MWProjectNode</docClassName>
+               <docClassName>oracle.tip.tools.ide.workflow.addin.RoutingSlipNode</docClassName>
+               <userExtensions class="java.util.ArrayList"/>
+            </Item>
+            <Item>
+               <docClassName>oracle.adf.dt.navigator.nodes.DataControlConfigurationNode</docClassName>
                <userExtensions class="java.util.ArrayList"/>
             </Item>
          </userExtensionList>
@@ -754,7 +754,7 @@
       <Key>LocalsWindowOptions</Key>
       <Value class="oracle.jdevimpl.runner.debug.LocalsWindowSettings">
          <dataPanelSettings>
-            <columnOrder/>
+            <columnOrder>Name,Value,Type,</columnOrder>
             <columnVisible>
                <Item>true</Item>
                <Item>true</Item>
@@ -765,13 +765,13 @@
                <Item>false</Item>
             </columnVisible>
             <columnWidth>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
+               <Item>231</Item>
+               <Item>190</Item>
+               <Item>116</Item>
+               <Item>75</Item>
+               <Item>75</Item>
+               <Item>75</Item>
+               <Item>75</Item>
             </columnWidth>
             <hideFinalFields>false</hideFinalFields>
             <hideNullArrayElements>true</hideNullArrayElements>
@@ -930,7 +930,7 @@
       <Key>SmartWindowOptions</Key>
       <Value class="oracle.jdevimpl.runner.debug.SmartWindowSettings">
          <dataPanelSettings>
-            <columnOrder/>
+            <columnOrder>Name,Value,Type,</columnOrder>
             <columnVisible>
                <Item>true</Item>
                <Item>true</Item>
@@ -941,13 +941,13 @@
                <Item>false</Item>
             </columnVisible>
             <columnWidth>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
+               <Item>231</Item>
+               <Item>190</Item>
+               <Item>116</Item>
+               <Item>75</Item>
+               <Item>75</Item>
+               <Item>75</Item>
+               <Item>75</Item>
             </columnWidth>
             <hideFinalFields>false</hideFinalFields>
             <hideNullArrayElements>true</hideNullArrayElements>
@@ -965,7 +965,7 @@
    <Item>
       <Key>StackWindowOptions</Key>
       <Value class="oracle.jdevimpl.runner.debug.StackWindowSettings">
-         <columnOrder/>
+         <columnOrder>Class,Method,</columnOrder>
          <columnVisible>
             <Item>true</Item>
             <Item>true</Item>
@@ -973,10 +973,10 @@
             <Item>false</Item>
          </columnVisible>
          <columnWidth>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
-            <Item>0</Item>
+            <Item>137</Item>
+            <Item>137</Item>
+            <Item>75</Item>
+            <Item>75</Item>
          </columnWidth>
          <showPackages>false</showPackages>
       </Value>
@@ -1095,7 +1095,7 @@
       <Value class="oracle.jdevimpl.runner.debug.ThreadsWindowSettings">
          <showThreadGroupStructure>true</showThreadGroupStructure>
          <threadsPanelSettings>
-            <columnOrder/>
+            <columnOrder>Name,Status,</columnOrder>
             <columnVisible>
                <Item>true</Item>
                <Item>true</Item>
@@ -1104,11 +1104,11 @@
                <Item>false</Item>
             </columnVisible>
             <columnWidth>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
+               <Item>75</Item>
+               <Item>75</Item>
+               <Item>75</Item>
+               <Item>75</Item>
+               <Item>75</Item>
             </columnWidth>
          </threadsPanelSettings>
       </Value>
@@ -1189,7 +1189,7 @@
       <Key>WatchWindowOptions</Key>
       <Value class="oracle.jdevimpl.runner.debug.WatchWindowSettings">
          <dataPanelSettings>
-            <columnOrder/>
+            <columnOrder>Name,Value,Type,</columnOrder>
             <columnVisible>
                <Item>true</Item>
                <Item>true</Item>
@@ -1200,13 +1200,13 @@
                <Item>false</Item>
             </columnVisible>
             <columnWidth>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
-               <Item>0</Item>
+               <Item>231</Item>
+               <Item>190</Item>
+               <Item>116</Item>
+               <Item>75</Item>
+               <Item>75</Item>
+               <Item>75</Item>
+               <Item>75</Item>
             </columnWidth>
             <hideFinalFields>false</hideFinalFields>
             <hideNullArrayElements>true</hideNullArrayElements>

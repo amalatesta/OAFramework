@@ -18,6 +18,13 @@
                <projectURL/>
                <workspaceURL/>
             </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.ide.ceditor.CodeEditorAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../myprojects/oracle/apps/ak/hello/webui/HelloWorldMainCO.java"/>
+               <projectURL path="../../myprojects/HelloWorldOAProject.jpr"/>
+               <workspaceURL path="../../myprojects/HelloWorldOAWorkspace.jws"/>
+            </Item>
          </lruFiles>
          <recentFilesShowAll>false</recentFilesShowAll>
       </Value>
